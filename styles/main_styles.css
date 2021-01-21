@@ -831,7 +831,12 @@ section
 	background-color: transparent;
 	transition: 0.5s;
 }
-
+.banner .animate{
+	position: relative;
+	left: 0;
+	bottom: -10%;
+	opacity: 0;
+}
 .banner .card a:hover > .card-img-top{
 	opacity: 0.7;
 	transition: 0.5s;
@@ -852,6 +857,13 @@ section
 }
 .banner .card .card-body .price .badge{
 	font-size: 14px;
+}
+.banner #showMore{
+	padding: 10px 20px;
+	border: none;
+	background-color: #2a2a2a;
+	color: #fff;
+	border-radius: 10px;
 }
 .banner_category
 {

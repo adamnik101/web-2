@@ -557,7 +557,7 @@ jQuery(document).ready(function ($) {
     "name": "Kena: Bridge of Spirits",
     "publisher": "Ember Lab",
     "releaseDate": "Feb 6, 2021",
-    "newRelease": false,
+    "newRelease": true,
     "image": {
       "cover": "images/banner_4.jpg",
       "gallery": ["", "", ""]
@@ -612,7 +612,7 @@ jQuery(document).ready(function ($) {
     "name": "Stranded Deep",
     "publisher": "Beam Team Games",
     "releaseDate": "Apr 30, 2016",
-    "newRelease": false,
+    "newRelease": true,
     "image": {
       "cover": "images/banner_5.jpg",
       "gallery": ["", "", ""]
@@ -775,7 +775,7 @@ jQuery(document).ready(function ($) {
       "openCritics": "Strong"
     }
   }, //#endregion
-  //#region 
+  //#region Red Dead Redemption II
   {
     "id": 6,
     "name": "Red Dead Redemption II",
@@ -788,7 +788,7 @@ jQuery(document).ready(function ($) {
     },
     "price": {
       "discount": false,
-      "value": 29.99
+      "value": 59.99
     },
     "idCategory": [1, 4],
     "idMode": 1,
@@ -893,6 +893,10 @@ jQuery(document).ready(function ($) {
 
     ;
     $("#newReleases").html(display);
+    $(".animate").animate({
+      opacity: "1",
+      bottom: "0"
+    }, 200);
   } //function displayItems(info,itemID,)
 
 });
