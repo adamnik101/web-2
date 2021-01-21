@@ -833,9 +833,8 @@ section
 }
 .banner .animate{
 	position: relative;
-	left: 0;
-	bottom: -10%;
 	opacity: 0;
+	bottom: -10%;
 }
 .banner .card a:hover > .card-img-top{
 	opacity: 0.7;
@@ -858,7 +857,7 @@ section
 .banner .card .card-body .price .badge{
 	font-size: 14px;
 }
-.banner #showMore{
+.banner #showNew, #showSales{
 	padding: 10px 20px;
 	border: none;
 	background-color: #2a2a2a;

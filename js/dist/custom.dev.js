@@ -612,7 +612,7 @@ jQuery(document).ready(function ($) {
     "name": "Stranded Deep",
     "publisher": "Beam Team Games",
     "releaseDate": "Apr 30, 2016",
-    "newRelease": true,
+    "newRelease": false,
     "image": {
       "cover": "images/banner_5.jpg",
       "gallery": ["", "", ""]
@@ -726,7 +726,7 @@ jQuery(document).ready(function ($) {
     "name": "Grand Theft Auto V",
     "publisher": "Rockstar Games",
     "releaseDate": "Oct 29, 2020",
-    "newRelease": true,
+    "newRelease": false,
     "image": {
       "cover": "images/banner_7.jpg",
       "gallery": ["", "", ""]
@@ -781,9 +781,64 @@ jQuery(document).ready(function ($) {
     "name": "Red Dead Redemption II",
     "publisher": "Rockstar Games",
     "releaseDate": "Oct 29, 2020",
-    "newRelease": true,
+    "newRelease": false,
     "image": {
       "cover": "images/banner_8.jpg",
+      "gallery": ["", "", ""]
+    },
+    "price": {
+      "discount": false,
+      "value": 59.99
+    },
+    "idCategory": [1, 4],
+    "idMode": 1,
+    "idPlatform": 1,
+    "specifications": {
+      "minimum": [{
+        "name": "OS",
+        "value": "Windows 7"
+      }, {
+        "name": "Processor",
+        "value": "Intel Core i5-3570K or AMD FX-8310"
+      }, {
+        "name": "Memory",
+        "value": "8 GB"
+      }, {
+        "name": "Graphics",
+        "value": "NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+      }, {
+        "name": "Storage",
+        "value": "70 GB (SSD Recommended)"
+      }],
+      "recommended": [{
+        "name": "OS",
+        "value": "Windows 10"
+      }, {
+        "name": "Processor",
+        "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+      }, {
+        "name": "Memory",
+        "value": "12 GB"
+      }, {
+        "name": "Graphics",
+        "value": "NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+      }]
+    },
+    "ratings": {
+      "criticsRecommend": 61,
+      "criticsAvg": 76,
+      "openCritics": "Strong"
+    }
+  }, //#endregion
+  //#region Godfall
+  {
+    "id": 6,
+    "name": "Godfall",
+    "publisher": "Rockstar Games",
+    "releaseDate": "Nov 10, 2020",
+    "newRelease": true,
+    "image": {
+      "cover": "images/banner_9.jpg",
       "gallery": ["", "", ""]
     },
     "price": {
@@ -839,12 +894,19 @@ jQuery(document).ready(function ($) {
 
   var loadedFirstFourItems = false;
   var maxItems = 4;
+  var numberOfNew = 0;
   var currentItem = 0;
 
   function newRelease() {
     //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
+    var showHideItems;
+
     for (var _i = 0, _allGames = allGames; _i < _allGames.length; _i++) {
       var item = _allGames[_i];
+
+      if (item.newRelease) {
+        numberOfNew++;
+      }
 
       if (item.newRelease && !loadedFirstFourItems && currentItem < maxItems) {
         displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), ""); //price(item = saljemo objekat za dalju obradu, discount= true/false)
@@ -855,14 +917,29 @@ jQuery(document).ready(function ($) {
         if (currentItem == maxItems) {
           loadedFirstFourItems = true;
           maxItems += maxItems;
+          $("#newReleases").html(display);
         }
       }
     }
 
-    $("#newReleases").html(display);
+    showHideItems = numberOfNew - currentItem;
+    $("#showNew").html("Show " + showHideItems + " more");
+    $("#showNew").on("click", function () {
+      var itemsInRow = 4;
+
+      if (currentItem == itemsInRow) {
+        showMore(showHideItems);
+      }
+
+      $("#showNew").remove();
+    });
   }
 
-  newRelease();
+  function displayAllSections() {
+    newRelease();
+  }
+
+  displayAllSections();
 
   function price(item, discount) {
     if (!discount) {
@@ -872,19 +949,10 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  $("#showMore").on("click", function () {
-    if (currentItem == 4) {
-      showMore();
-    }
-  });
-
-  function showMore() {
+  function showMore(buttonItemCount) {
     var animation = " animate";
 
     for (var item in allGames) {
-      console.log(currentItem);
-      console.log(item);
-
       if (allGames[item].newRelease && loadedFirstFourItems && !allGames[item].shownNewReleaseSection && currentItem < maxItems) {
         currentItem++;
         displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation);
@@ -892,11 +960,16 @@ jQuery(document).ready(function ($) {
     }
 
     ;
+    var i = 0;
+    var delay = 0;
     $("#newReleases").html(display);
-    $(".animate").animate({
-      opacity: "1",
-      bottom: "0"
-    }, 200);
+    $(".animate").each(function () {
+      $(".animate").eq(i).delay(600 * delay++).animate({
+        bottom: "0",
+        opacity: "1"
+      }), i++;
+    });
+    $("#showNew").html("Hide last " + buttonItemCount);
   } //function displayItems(info,itemID,)
 
 });
