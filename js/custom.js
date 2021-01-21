@@ -809,7 +809,7 @@ function newRelease(){ //obrada artikala koji imaju true za new release, ako je 
 		if(item.newRelease && !loadedFirstFourItems){
 			displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount)) //price(item = saljemo objekat za dalju obradu, discount= true/false)
 			if(currentItem == maxItems){
-				loadedFirstFourItems = fa;
+				loadedFirstFourItems = true;
 			}
 			currentItem++;
 		}

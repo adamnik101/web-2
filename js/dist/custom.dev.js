@@ -631,7 +631,7 @@ jQuery(document).ready(function ($) {
           displayItems(_item.image.cover, _item.name, _item.publisher, price(_item, _item.price.discount)); //price(item = saljemo objekat za dalju obradu, discount= true/false)
 
           if (currentItem == maxItems) {
-            loadedFirstFourItems = fa;
+            loadedFirstFourItems = true;
           }
 
           currentItem++;
