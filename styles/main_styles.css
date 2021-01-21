@@ -833,8 +833,8 @@ section
 }
 .banner .animate{
 	position: relative;
-	opacity: 0;
 	bottom: -10%;
+	opacity: 0;
 }
 .banner .card a:hover > .card-img-top{
 	opacity: 0.7;

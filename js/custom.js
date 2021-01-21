@@ -1133,6 +1133,211 @@ jQuery(document).ready(function($)
 				}
 			},
 			//#endregion
+			//#region Snowrunner
+			{
+				"id" : 6,
+				"name" : "Snowrunner",
+				"publisher": "Saber Interactive",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_10.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":false,
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Metro Exodus
+			{
+				"id" : 6,
+				"name" : "Metro Exodus",
+				"publisher": "4A Games",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_11.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":false,
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			{
+				"id" : 6,
+				"name" : "Snowrunner",
+				"publisher": "Saber Interactive",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_10.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":false,
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
 		]
 var display = "";
 function displayItems(img, name, publisher, price, animation){
@@ -1174,11 +1379,10 @@ function newRelease(){ //obrada artikala koji imaju true za new release, ako je 
 	showHideItems = numberOfNew - currentItem;
 	$("#showNew").html("Show " + showHideItems + " more")
 	$("#showNew").on("click", function(){
-		var itemsInRow = 4;
-		if(currentItem == itemsInRow){
+		if(currentItem == 4){
+			$("#showNew").remove();
 			showMore(showHideItems);
 		}
-		$("#showNew").remove();
 	})
 }
 
@@ -1197,7 +1401,7 @@ function price(item, discount) {
 function showMore(buttonItemCount){
 		let animation = " animate"
 			for(let item in allGames){
-				if(allGames[item].newRelease && loadedFirstFourItems && !allGames[item].shownNewReleaseSection &&(currentItem < maxItems)){
+				if(allGames[item].newRelease && loadedFirstFourItems && !allGames[item].shownNewReleaseSection){
 					currentItem++;
 					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation);
 				}
