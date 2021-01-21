@@ -721,7 +721,7 @@ jQuery(document).ready(function($)
 				"name" : "Kena: Bridge of Spirits",
 				"publisher": "Ember Lab",
 				"releaseDate":"Feb 6, 2021",
-				"newRelease":true,
+				"newRelease":false,
 				"image" :{
 					"cover":"images/banner_4.jpg",
 					"gallery":[
@@ -784,11 +784,291 @@ jQuery(document).ready(function($)
 				}
 			}, 
 			//#endregion
+			//#region Stranded Deep
+			{
+				"id" : 5,
+				"name" : "Stranded Deep",
+				"publisher": "Beam Team Games",
+				"releaseDate":"Apr 30, 2016",
+				"newRelease":false,
+				"image" :{
+					"cover":"images/banner_5.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":true,
+					"amount":50,
+					"value":{
+						"before":29.99,
+						"after" :14.99
+					}
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Blair Witch
+			{
+				"id" : 6,
+				"name" : "Blair Witch",
+				"publisher": "Bloober Team",
+				"releaseDate":"Oct 29, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_6.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":false,
+					"value":29.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region GTA V
+			{
+				"id" : 6,
+				"name" : "Grand Theft Auto V",
+				"publisher": "Rockstar Games",
+				"releaseDate":"Oct 29, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_7.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":false,
+					"value":29.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region 
+			{
+				"id" : 6,
+				"name" : "Red Dead Redemption II",
+				"publisher": "Rockstar Games",
+				"releaseDate":"Oct 29, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_8.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":false,
+					"value":29.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
 		]
 var display = "";
-function displayItems(img, name, publisher, price){
+function displayItems(img, name, publisher, price, animation){
 	display += `
-	<div class="card">
+	<div class="card mb-3 col${animation}">
 	<a href="#!">
 	<img src="${img}" class="card-img-top" alt="...">
 	<div class="card-body">
@@ -806,21 +1086,15 @@ var maxItems = 4;
 var currentItem = 0;
 function newRelease(){ //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
 	for(let item of allGames){
-		if(item.newRelease && !loadedFirstFourItems){
-			displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount)) //price(item = saljemo objekat za dalju obradu, discount= true/false)
+		if(item.newRelease && !loadedFirstFourItems && (currentItem < maxItems)){
+			displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "") //price(item = saljemo objekat za dalju obradu, discount= true/false)
+			currentItem++;
+			item.shownNewReleaseSection = true;
 			if(currentItem == maxItems){
 				loadedFirstFourItems = true;
-			}
-			currentItem++;
+				maxItems += maxItems; 
+			} 
 		}
-	}
-	for(let item in allGames){
-			if(currentItem > maxItems){
-				console.log(currentItem)
-				console.log(allGames[item].image.cover)
-				/* displayItems(allGames[item.image.cover], allGames[item.name]) */
-			}
-			/* displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount)) */
 	}
 	$("#newReleases").html(display)
 }
@@ -834,17 +1108,25 @@ function price(item, discount) {
 			return `<span class="badge badge-danger">- ${item.price.amount} %</span> <s class="text-muted">${item.price.value.before}</s> <span>${item.price.value.after}</span>`
 		}
 }
-function showMore() {
-	if(loadedFirstFourItems){
-		for(let item in allGames){
-				console.log(item)
-				/* displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount)) */
-		}
-	}
-}
 $("#showMore").on("click", function(){
-	newRelease();
+	if(currentItem == 4){
+		showMore();
+	}
 })
+function showMore(){
+		let animation = " animate"
+			for(let item in allGames){
+				console.log(currentItem)
+				console.log(item)
+				if(allGames[item].newRelease && loadedFirstFourItems && !allGames[item].shownNewReleaseSection &&(currentItem < maxItems)){
+					currentItem++;
+					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation);
+				}
+
+			};
+			$("#newReleases").html(display)	
+}
+		
 //function displayItems(info,itemID,)
 		
 });
