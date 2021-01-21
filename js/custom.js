@@ -1273,12 +1273,12 @@ jQuery(document).ready(function($)
 			//#endregion
 			{
 				"id" : 6,
-				"name" : "Snowrunner",
-				"publisher": "Saber Interactive",
+				"name" : "The Elder Scrolls V: Skyrim",
+				"publisher": "Bethesda",
 				"releaseDate":"Nov 10, 2020",
-				"newRelease":true,
+				"newRelease":false,
 				"image" :{
-					"cover":"images/banner_10.jpg",
+					"cover":"images/banner_12.jpg",
 					"gallery":[
 						"","",""
 					]
