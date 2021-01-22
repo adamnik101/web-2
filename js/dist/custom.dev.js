@@ -1052,7 +1052,7 @@ jQuery(document).ready(function ($) {
   var display = "";
 
   function displayItems(img, name, publisher, price, animation) {
-    display += "\n\t<div class=\"card mb-3 col".concat(animation, "\">\n\t<a href=\"#!\">\n\t<img src=\"").concat(img, "\" class=\"card-img-top\" alt=\"...\">\n\t<div class=\"card-body\">\n\t  <h5 class=\"card-title\">").concat(name, "</h5>\n\t  <ul class=\"card-info\">\n\t\t  <li class=\"text-muted developer\">").concat(publisher, "</li>\n\t\t  <li class=\"price\"> ").concat(price, "</li>\n\t\t</ul>\n\t</div></a>\n  </div>\n\t");
+    display += "\n\t<div class=\"card mb-3 col-12".concat(animation, "\">\n\t<a href=\"#!\">\n\t<img src=\"").concat(img, "\" class=\"card-img-top\" alt=\"...\">\n\t<div class=\"card-body\">\n\t  <h5 class=\"card-title\">").concat(name, "</h5>\n\t  <ul class=\"card-info\">\n\t\t  <li class=\"text-muted developer\">").concat(publisher, "</li>\n\t\t  <li class=\"price\"> ").concat(price, "</li>\n\t\t</ul>\n\t</div></a>\n  </div>\n\t");
   }
 
   var loadedFirstFourItems = false;

@@ -1342,7 +1342,7 @@ jQuery(document).ready(function($)
 var display = "";
 function displayItems(img, name, publisher, price, animation){
 	display += `
-	<div class="card mb-3 col${animation}">
+	<div class="card mb-3 col-12${animation}">
 	<a href="#!">
 	<img src="${img}" class="card-img-top" alt="...">
 	<div class="card-body">
