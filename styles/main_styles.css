@@ -831,6 +831,7 @@ section
 	position: relative;
 	bottom: -10%;
 	opacity: 0;
+	height: 0;
 }
 .banner .card a:hover > .card-img-top{
 	opacity: 0.7;
@@ -853,7 +854,7 @@ section
 .banner .card .card-body .price .badge{
 	font-size: 14px;
 }
-.banner #showNew, #showSales{
+.banner .showMore{
 	padding: 10px 20px;
 	border: none;
 	background-color: #2a2a2a;
@@ -896,6 +897,7 @@ section
 .catalogHome > div{
 	height: 100%;
 }
+
 .catalogHome #png{
 	position: relative;
 	height: 100%;

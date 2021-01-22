@@ -398,7 +398,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 59.99
     },
     "idCategory": [1, 4],
@@ -453,7 +455,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 59.99
     },
     "idCategory": [1, 4],
@@ -508,7 +512,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 59.99
     },
     "idCategory": [1, 4],
@@ -563,7 +569,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 49.99
     },
     "idCategory": [1, 4],
@@ -618,8 +626,10 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": true,
-      "amount": 50,
+      "discount": {
+        "amount": 50,
+        "isDiscounted": true
+      },
       "value": {
         "before": 29.99,
         "after": 14.99
@@ -677,7 +687,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 29.99
     },
     "idCategory": [1, 4],
@@ -722,7 +734,7 @@ jQuery(document).ready(function ($) {
   }, //#endregion
   //#region GTA V
   {
-    "id": 6,
+    "id": 7,
     "name": "Grand Theft Auto V",
     "publisher": "Rockstar Games",
     "releaseDate": "Oct 29, 2020",
@@ -732,8 +744,14 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
-      "value": 29.99
+      "discount": {
+        "isDiscounted": true,
+        "amount": 50
+      },
+      "value": {
+        "before": 29.99,
+        "after": 14.99
+      }
     },
     "idCategory": [1, 4],
     "idMode": 1,
@@ -777,7 +795,7 @@ jQuery(document).ready(function ($) {
   }, //#endregion
   //#region Red Dead Redemption II
   {
-    "id": 6,
+    "id": 8,
     "name": "Red Dead Redemption II",
     "publisher": "Rockstar Games",
     "releaseDate": "Oct 29, 2020",
@@ -787,8 +805,14 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
-      "value": 59.99
+      "discount": {
+        "isDiscounted": true,
+        "amount": 10
+      },
+      "value": {
+        "before": 59.99,
+        "after": 49.99
+      }
     },
     "idCategory": [1, 4],
     "idMode": 1,
@@ -832,7 +856,7 @@ jQuery(document).ready(function ($) {
   }, //#endregion
   //#region Godfall
   {
-    "id": 6,
+    "id": 9,
     "name": "Godfall",
     "publisher": "Rockstar Games",
     "releaseDate": "Nov 10, 2020",
@@ -842,7 +866,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 59.99
     },
     "idCategory": [1, 4],
@@ -887,7 +913,7 @@ jQuery(document).ready(function ($) {
   }, //#endregion
   //#region Snowrunner
   {
-    "id": 6,
+    "id": 10,
     "name": "Snowrunner",
     "publisher": "Saber Interactive",
     "releaseDate": "Nov 10, 2020",
@@ -897,7 +923,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 59.99
     },
     "idCategory": [1, 4],
@@ -942,7 +970,7 @@ jQuery(document).ready(function ($) {
   }, //#endregion
   //#region Metro Exodus
   {
-    "id": 6,
+    "id": 11,
     "name": "Metro Exodus",
     "publisher": "4A Games",
     "releaseDate": "Nov 10, 2020",
@@ -952,7 +980,9 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
+      "discount": {
+        "isDiscounted": false
+      },
       "value": 59.99
     },
     "idCategory": [1, 4],
@@ -996,7 +1026,7 @@ jQuery(document).ready(function ($) {
     }
   }, //#endregion
   {
-    "id": 6,
+    "id": 12,
     "name": "The Elder Scrolls V: Skyrim",
     "publisher": "Bethesda",
     "releaseDate": "Nov 10, 2020",
@@ -1006,8 +1036,14 @@ jQuery(document).ready(function ($) {
       "gallery": ["", "", ""]
     },
     "price": {
-      "discount": false,
-      "value": 59.99
+      "discount": {
+        "amount": 10,
+        "isDiscounted": true
+      },
+      "value": {
+        "before": 39.99,
+        "after": 19.99
+      }
     },
     "idCategory": [1, 4],
     "idMode": 1,
@@ -1048,21 +1084,176 @@ jQuery(document).ready(function ($) {
       "criticsAvg": 76,
       "openCritics": "Strong"
     }
-  }];
-  var display = "";
+  }, //#region Far Cry 3
+  {
+    "id": 13,
+    "name": "Far Cry 3",
+    "publisher": "Ubisoft",
+    "releaseDate": "Nov 10, 2013",
+    "newRelease": false,
+    "image": {
+      "cover": "images/banner_13.jpg",
+      "gallery": ["", "", ""]
+    },
+    "price": {
+      "discount": {
+        "isDiscounted": true,
+        "amount": 50
+      },
+      "value": {
+        "before": 29.99,
+        "after": 14.99
+      }
+    },
+    "idCategory": [1, 4],
+    "idMode": 1,
+    "idPlatform": 1,
+    "specifications": {
+      "minimum": [{
+        "name": "OS",
+        "value": "Windows 7"
+      }, {
+        "name": "Processor",
+        "value": "Intel Core i5-3570K or AMD FX-8310"
+      }, {
+        "name": "Memory",
+        "value": "8 GB"
+      }, {
+        "name": "Graphics",
+        "value": "NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+      }, {
+        "name": "Storage",
+        "value": "70 GB (SSD Recommended)"
+      }],
+      "recommended": [{
+        "name": "OS",
+        "value": "Windows 10"
+      }, {
+        "name": "Processor",
+        "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+      }, {
+        "name": "Memory",
+        "value": "12 GB"
+      }, {
+        "name": "Graphics",
+        "value": "NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+      }]
+    },
+    "ratings": {
+      "criticsRecommend": 61,
+      "criticsAvg": 76,
+      "openCritics": "Strong"
+    }
+  }, //#endregion
+  //#region 
+  {
+    "id": 13,
+    "name": "Minecraft Dungeons",
+    "publisher": "Mojang",
+    "releaseDate": "Nov 10, 2020",
+    "newRelease": false,
+    "image": {
+      "cover": "images/banner_14.jpg",
+      "gallery": ["", "", ""]
+    },
+    "price": {
+      "discount": {
+        "isDiscounted": true,
+        "amount": 50
+      },
+      "value": {
+        "before": 29.99,
+        "after": 14.99
+      }
+    },
+    "idCategory": [1, 4],
+    "idMode": 1,
+    "idPlatform": 1,
+    "specifications": {
+      "minimum": [{
+        "name": "OS",
+        "value": "Windows 7"
+      }, {
+        "name": "Processor",
+        "value": "Intel Core i5-3570K or AMD FX-8310"
+      }, {
+        "name": "Memory",
+        "value": "8 GB"
+      }, {
+        "name": "Graphics",
+        "value": "NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+      }, {
+        "name": "Storage",
+        "value": "70 GB (SSD Recommended)"
+      }],
+      "recommended": [{
+        "name": "OS",
+        "value": "Windows 10"
+      }, {
+        "name": "Processor",
+        "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+      }, {
+        "name": "Memory",
+        "value": "12 GB"
+      }, {
+        "name": "Graphics",
+        "value": "NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+      }]
+    },
+    "ratings": {
+      "criticsRecommend": 61,
+      "criticsAvg": 76,
+      "openCritics": "Strong"
+    }
+  } //#endregion
+  ];
+  var displayNew = "";
+  var displaySale = "";
 
-  function displayItems(img, name, publisher, price, animation) {
-    display += "\n\t<div class=\"card mb-3 col-12".concat(animation, "\">\n\t<a href=\"#!\">\n\t<img src=\"").concat(img, "\" class=\"card-img-top\" alt=\"...\">\n\t<div class=\"card-body\">\n\t  <h5 class=\"card-title\">").concat(name, "</h5>\n\t  <ul class=\"card-info\">\n\t\t  <li class=\"text-muted developer\">").concat(publisher, "</li>\n\t\t  <li class=\"price\"> ").concat(price, "</li>\n\t\t</ul>\n\t</div></a>\n  </div>\n\t");
+  function displayItems(img, name, publisher, price, animation, display) {
+    var div = document.createElement("div");
+    div.className = "card mb-3 col-12".concat(animation);
+    var a = document.createElement("a");
+    a.setAttribute("href", "#!");
+    div.appendChild(a);
+    var image = document.createElement("img");
+    image.setAttribute("src", img);
+    image.setAttribute("alt", name);
+    image.className = "card-img-top";
+    a.appendChild(image);
+    var card = document.createElement("div");
+    card.className = "card-body";
+    a.appendChild(card);
+    var h5 = document.createElement("h5");
+    h5.textContent = name;
+    h5.className = "card-title";
+    card.appendChild(h5);
+    var ul = document.createElement("ul");
+    ul.className = "card-info";
+    card.appendChild(ul);
+    var li1 = document.createElement("li");
+    li1.className = "text-muted developer";
+    li1.textContent = publisher;
+    ul.appendChild(li1);
+    var li2 = document.createElement("li");
+    li2.className = "price";
+    li2.innerHTML = price;
+    ul.appendChild(li2);
+    $("#" + display).append(div);
   }
 
-  var loadedFirstFourItems = false;
-  var maxItems = 4;
-  var numberOfNew = 0;
-  var currentItem = 0;
+  var loadedNew = false;
+  var loadedSale = false;
 
-  function newRelease() {
+  function newRelease(sectionId, parent) {
     //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
-    var showHideItems;
+    var newToShow;
+    var saleToShow;
+    var maxItems = 4;
+    var numberOfNew = 0;
+    var numberOfSale = 0;
+    var currentItem = 0;
+    var content;
 
     for (var _i = 0, _allGames = allGames; _i < _allGames.length; _i++) {
       var item = _allGames[_i];
@@ -1071,65 +1262,101 @@ jQuery(document).ready(function ($) {
         numberOfNew++;
       }
 
-      if (item.newRelease && !loadedFirstFourItems && currentItem < maxItems) {
-        displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), ""); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+      if (item.price.discount.isDiscounted) {
+        numberOfSale++;
+        /* console.log(numberOfSale) */
+      }
+
+      if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
+        content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
 
         currentItem++;
         item.shownNewReleaseSection = true;
 
         if (currentItem == maxItems) {
-          loadedFirstFourItems = true;
+          loadedNew = true;
           maxItems += maxItems;
-          $("#newReleases").html(display);
+          $("#" + sectionId).html(content);
         }
+      }
+
+      if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
+        displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
+        currentItem++;
+        item.shownHotSales = true;
+        $("#" + parent + " .showMore").html("Show " + " more");
       }
     }
 
-    showHideItems = numberOfNew - currentItem;
-    $("#showNew").html("Show " + showHideItems + " more");
-    $("#showNew").on("click", function () {
+    newToShow = numberOfNew - currentItem;
+    saleToShow = numberOfSale - currentItem;
+
+    if (sectionId == "newReleases") {
+      $("#" + parent + " .showMore").html("Show " + newToShow + " more");
+    } else {
+      $("#" + parent + " .showMore").html("Show " + saleToShow + " more");
+    }
+
+    console.log(numberOfNew);
+    $("#" + parent + " .showMore").on("click", function () {
       if (currentItem == 4) {
-        $("#showNew").remove();
-        showMore(showHideItems);
+        showMore(sectionId, parent, content, currentItem);
       }
     });
   }
 
   function displayAllSections() {
-    newRelease();
+    newRelease("newReleases", "new");
+    newRelease("hotSales", "sale");
   }
 
   displayAllSections();
 
   function price(item, discount) {
-    if (!discount) {
+    if (!discount.isDiscounted) {
       return "<i class=\"fas fa-euro-sign\"></i> ".concat(item.price.value);
     } else {
-      return "<span class=\"badge badge-danger\">- ".concat(item.price.amount, " %</span> <s class=\"text-muted\">").concat(item.price.value.before, "</s> <span>").concat(item.price.value.after, "</span>");
+      return "<span class=\"badge badge-danger\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\">").concat(item.price.value.before, "</s> <span>").concat(item.price.value.after, "</span>");
     }
   }
 
-  function showMore(buttonItemCount) {
+  function showMore(sectionId, parent, content, currentItem) {
     var animation = " animate";
 
     for (var item in allGames) {
-      if (allGames[item].newRelease && loadedFirstFourItems && !allGames[item].shownNewReleaseSection) {
-        currentItem++;
-        displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation);
+      if (item > currentItem && allGames[item].newRelease && allGames[item].id > currentItem && !allGames[item].shownHotSales && parent == "new") {
+        displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId); //console.log(allGames[item])
       }
+
+      if (item > 4 && !allGames[item].newRelease && allGames[item].price.discount.isDiscounted && !allGames[item].shownHotSales && parent == "sale") {
+        displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
+      }
+      /* if(!allGames[item].newRelease && !loadedAllNew ){
+      	
+      	//currentItem++;
+      	//displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
+      }
+      if(!allGames[item].price.discount.isDiscounted && currentItem == 4){
+      	//console.log(allGames[item])
+      	//displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
+      } */
+
     }
 
     ;
     var i = 0;
     var delay = 0;
-    $("#newReleases").html(display);
-    $(".animate").each(function () {
-      $(".animate").eq(i).delay(600 * delay++).animate({
+    $("#" + sectionId).html(content);
+    $("#" + sectionId + " .animate").animate({
+      height: "500px"
+    });
+    $("#" + sectionId + " .animate").each(function () {
+      $("#" + sectionId + " .animate").eq(i).delay(600 * delay++).animate({
         bottom: "0",
         opacity: "1"
       }), i++;
     });
-    $("#showNew").html("Hide last " + buttonItemCount);
+    $("#" + parent + " .showMore").fadeOut(600);
   } //function displayItems(info,itemID,)
 
 });
