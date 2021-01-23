@@ -387,7 +387,7 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function newRelease(sectionId, parent) {
+  function newRelease(sectionId, parent, data) {
     //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
     var newToShow;
     var saleToShow;
@@ -401,7 +401,7 @@ jQuery(document).ready(function ($) {
     var _iteratorError = undefined;
 
     try {
-      for (var _iterator = result.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      for (var _iterator = data.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var item = _step.value;
 
         if (item.newRelease) {
@@ -465,9 +465,8 @@ jQuery(document).ready(function ($) {
   }
 
   function displayAllSections(result) {
-    console.log(result);
-    newRelease("newReleases", "new");
-    newRelease("hotSales", "sale");
+    newRelease("newReleases", "new", result);
+    newRelease("hotSales", "sale", result);
   }
 
   displayAllSections();

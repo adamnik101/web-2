@@ -479,7 +479,7 @@ function getGames(){
 		error: function(xhr,status, error) { console.log(error); }
 	});
 }
-function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
+function newRelease(sectionId, parent, data){ //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
 	let newToShow;
 	let saleToShow;
 	var maxItems = 4;
@@ -489,7 +489,7 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 
 	
 	var content;
-	for(let item of result.allGames){
+	for(let item of data.allGames){
 		
 		if(item.newRelease){
 			numberOfNew++;
@@ -533,9 +533,8 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 }
 
 function displayAllSections(result){
-	console.log(result)
-	newRelease("newReleases", "new");
-	newRelease("hotSales", "sale");
+	newRelease("newReleases", "new", result);
+	newRelease("hotSales", "sale", result);
 }
 displayAllSections();
 function price(item, discount) {
