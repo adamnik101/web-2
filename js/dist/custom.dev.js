@@ -25,11 +25,7 @@ jQuery(document).ready(function ($) {
     type: "get",
     dataType: "json",
     success: function success(result) {
-      console.log(result);
-
-      for (var e in result) {
-        console.log(result[e].name);
-      }
+      console.log(result[0].name);
     },
     error: function error(xhr, status, _error) {
       console.log(_error);
