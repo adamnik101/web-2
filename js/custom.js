@@ -24,10 +24,11 @@ jQuery(document).ready(function($)
 		type: "get",
 		dataType: "json",
 		success: function(result) {
-			for(let e of result){
-				console.log(e)
-			}
+			
 		console.log(result);
+		for(let e in result){
+			console.log(e)
+		}
 		},
 		error: function(xhr,status, error) { console.log(error); }
 		});
