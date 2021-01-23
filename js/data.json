@@ -279,7 +279,7 @@
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 59.99
+            "value" : 39.99
         },
         "specifications":{
             "minimum":[
@@ -468,7 +468,7 @@
         "releaseDate" : "Dec 10, 2020",
         "newRelease" : false,
         "image" : {
-            "cover" : "images/banner_9.jpg",
+            "cover" : "images/banner_8.jpg",
             "gallery" : [
                 "","",""
             ]
