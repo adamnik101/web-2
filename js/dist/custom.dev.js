@@ -478,6 +478,8 @@ jQuery(document).ready(function ($) {
     var animation = " animate";
 
     for (var item in data.allGames) {
+      console.log(data.allGames[item]);
+
       if (item > currentItem && data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
         displayItems(data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
       }
