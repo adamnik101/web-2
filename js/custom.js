@@ -18,17 +18,16 @@
 
 jQuery(document).ready(function($)
 {
-var data;
-	$.ajax({
-		url : "js/data.json",
-		type : "get",
-		dataType : "json",
-		success: function(games) {
-			console.log(JSON.parse(games))
-		},
-			error: function(xhr,status, error) { console.log(error); }
-	}) 
 	"use strict";
+	$.ajax({
+		url: "js/data.json",
+		type: "get",
+		dataType: "json",
+		success: function(result) {
+		console.log(result);
+		},
+		error: function(xhr,status, error) { console.log(error); }
+		});
 	/* 
 
 	1. Vars and Inits
@@ -403,7 +402,7 @@ var data;
 
 	8. Init Slider
 	*/
-if(window.top.location.href == "https://adamnik101.github.io/web-2/index.html"){		
+		
 		var owl = $('.owl-carousel');
 		owl.owlCarousel(
 			{
@@ -440,13 +439,1107 @@ if(window.top.location.href == "https://adamnik101.github.io/web-2/index.html"){
 
 
 
-
+		var categories = [
+			{
+				"id":1,
+				"name":"Action"
+			},
+			{
+				"id":2,
+				"name":"Adventure"
+			},
+			{
+				"id":3,
+				"name":"Indie"
+			},
+			{
+				"id":4,
+				"name":"RPG"
+			},
+			{
+				"id":5,
+				"name":"Strategy"
+			},
+			{
+				"id":6,
+				"name":"Shooter"
+			},
+			{
+				"id":7,
+				"name":"First Person"
+			},
+			{
+				"id":8,
+				"name":"Racing"
+			},
+			{
+				"id":9,
+				"name":"Horror"
+			},
+			{
+				"id":10,
+				"name":"Simulation"
+			},
+			,
+			{
+				"id":11,
+				"name":"Stealth"
+			},
+			,
+			{
+				"id":12,
+				"name":"Casual"
+			}
+		]
+		var platform = [
+			{
+				"id" : 1,
+				"name" : "Windows"
+			},
+			{
+				"id" : 2,
+				"name" : "Mac OS"
+			}
+		]
+		var modes = [
+			{
+				"id":1,
+				"name":"Single Player"
+			},
+			{
+				"id":2,
+				"name":"Multiplayer"
+			},
+			{
+				"id":3,
+				"name":"Co-op"
+			}
+		]
+		var allGames = [
+			//#region Cyberpunk 2077
+			{
+				"id" : 1,
+				"name" : "Cyberpunk 2077",
+				"publisher": "CD PROJEKT RED",
+				"releaseDate":"Dec 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_1.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Hitman III
+			{
+				"id" : 2,
+				"name" : "Hitman III",
+				"publisher": "IO Interactive A/S",
+				"releaseDate":"Jan 20, 2021",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_3.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region AC Valhalla
+			{
+				"id" : 3,
+				"name" : "Assassin's Creed Valhalla",
+				"publisher": "Ubisoft Montreal",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_2.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Kena
+			{
+				"id" : 4,
+				"name" : "Kena: Bridge of Spirits",
+				"publisher": "Ember Lab",
+				"releaseDate":"Feb 6, 2021",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_4.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":49.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			}, 
+			//#endregion
+			//#region Stranded Deep
+			{
+				"id" : 5,
+				"name" : "Stranded Deep",
+				"publisher": "Beam Team Games",
+				"releaseDate":"Apr 30, 2016",
+				"newRelease":false,
+				"image" :{
+					"cover":"images/banner_5.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"amount" : 50,
+						"isDiscounted" : true	
+					},
+					"value":{
+						"before":29.99,
+						"after" :14.99
+					}
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Blair Witch
+			{
+				"id" : 6,
+				"name" : "Blair Witch",
+				"publisher": "Bloober Team",
+				"releaseDate":"Oct 29, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_6.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":29.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region GTA V
+			{
+				"id" : 7,
+				"name" : "Grand Theft Auto V",
+				"publisher": "Rockstar Games",
+				"releaseDate":"Oct 29, 2020",
+				"newRelease":false,
+				"image" :{
+					"cover":"images/banner_7.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : true,
+						"amount" : 50	
+					},
+					"value":{
+						"before" : 29.99,
+						"after" : 14.99
+					}
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Red Dead Redemption II
+			{
+				"id" : 8,
+				"name" : "Red Dead Redemption II",
+				"publisher": "Rockstar Games",
+				"releaseDate":"Oct 29, 2020",
+				"newRelease":false,
+				"image" :{
+					"cover":"images/banner_8.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : true,
+						"amount" : 10
+					},
+					"value":{
+						"before" : 59.99,
+						"after" : 49.99
+					}
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Godfall
+			{
+				"id" : 9,
+				"name" : "Godfall",
+				"publisher": "Rockstar Games",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_9.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Snowrunner
+			{
+				"id" : 10,
+				"name" : "Snowrunner",
+				"publisher": "Saber Interactive",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_10.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region Metro Exodus
+			{
+				"id" : 11,
+				"name" : "Metro Exodus",
+				"publisher": "4A Games",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":true,
+				"image" :{
+					"cover":"images/banner_11.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : false	
+					},
+					"value":59.99
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			{
+				"id" : 12,
+				"name" : "The Elder Scrolls V: Skyrim",
+				"publisher": "Bethesda",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":false,
+				"image" :{
+					"cover":"images/banner_12.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"amount" : 10,
+						"isDiscounted" : true	
+					},
+					"value":{
+						"before" : 39.99,
+						"after" : 19.99
+					}
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#region Far Cry 3
+			{
+				"id" : 13,
+				"name" : "Far Cry 3",
+				"publisher": "Ubisoft",
+				"releaseDate":"Nov 10, 2013",
+				"newRelease":false,
+				"image" :{
+					"cover":"images/banner_13.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : true,
+						"amount" : 50	
+					},
+					"value":{
+						"before" : 29.99,
+						"after" : 14.99
+					}
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+			//#region 
+			{
+				"id" : 13,
+				"name" : "Minecraft Dungeons",
+				"publisher": "Mojang",
+				"releaseDate":"Nov 10, 2020",
+				"newRelease":false,
+				"image" :{
+					"cover":"images/banner_14.jpg",
+					"gallery":[
+						"","",""
+					]
+				},
+				"price":{
+					"discount":{
+						"isDiscounted" : true,
+						"amount" : 50	
+					},
+					"value":{
+						"before" : 29.99,
+						"after" : 14.99
+					}
+				},
+				"idCategory": [1,4],
+				"idMode" : 1,
+				"idPlatform" : 1,
+				"specifications":{
+					"minimum":[
+						{
+							"name":"OS",
+							"value": "Windows 7"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i5-3570K or AMD FX-8310"
+						},
+						{
+							"name":"Memory",
+							"value": "8 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+						},
+						{
+							"name":"Storage",
+							"value":"70 GB (SSD Recommended)"
+						}
+					],
+					"recommended":[
+						{
+							"name":"OS",
+							"value": "Windows 10"
+						},
+						{
+							"name":"Processor",
+							"value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+						},
+						{
+							"name":"Memory",
+							"value": "12 GB"
+						},
+						{
+							"name":"Graphics",
+							"value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+						}
+					]
+				},
+				"ratings":{
+					"criticsRecommend": 61,
+					"criticsAvg": 76,
+					"openCritics": "Strong"
+				}
+			},
+			//#endregion
+		]
+		var displayNew = "";
+		var displaySale = "";
 function displayItems(img, name, publisher, price, animation, display){
 	let div = document.createElement("div");
 	div.className = `card mb-3 col-12${animation}`;
 	let a = document.createElement("a");
 	a.setAttribute("href","#!");
-	a.className = "item";
 	div.appendChild(a);
 	let image = document.createElement("img");
 	image.setAttribute("src", img);
@@ -484,7 +1577,7 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	var currentItem = 0;
 	
 	var content;
-	for(let item of data){
+	for(let item of allGames){
 		
 		if(item.newRelease){
 			numberOfNew++;
@@ -500,7 +1593,6 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 			if(currentItem == maxItems){
 				loadedNew = true;
 				maxItems += maxItems; 
-				$("#" + sectionId).html(content);
 			}
 		}
 		if(currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales"){
@@ -518,6 +1610,9 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	else{
 		$("#" + parent + " .showMore").html("Show " + saleToShow + " more")
 	}
+	
+	
+	console.log(numberOfNew)
 	$("#" + parent + " .showMore").on("click", function(){
 		if(currentItem == 4){
 			showMore(sectionId, parent, content, currentItem);
@@ -525,14 +1620,11 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	})
 }
 
-	
-
 function displayAllSections(){
 	newRelease("newReleases", "new");
 	newRelease("hotSales", "sale");
 }
 displayAllSections();
-
 function price(item, discount) {
 		if(!discount.isDiscounted){
 			return `<i class="fas fa-euro-sign"></i> ${item.price.value}`
@@ -544,14 +1636,23 @@ function price(item, discount) {
 
 function showMore(sectionId, parent, content, currentItem){
 		let animation = " animate"
-			for(let item in data){
-				if(item > currentItem && data[item].newRelease && data[item].id > currentItem  && !data[item].shownHotSales && parent == "new" ){
-					displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);	
-					//console.log(data[item])
+			for(let item in allGames){
+				if(item > currentItem && allGames[item].newRelease && allGames[item].id > currentItem  && !allGames[item].shownHotSales && parent == "new" ){
+					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);	
+					//console.log(allGames[item])
 				}
-				if(item > 4 && !data[item].newRelease && data[item].price.discount.isDiscounted && !data[item].shownHotSales && parent == "sale"){
-					displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);	
+				if(item > 4 && !allGames[item].newRelease && allGames[item].price.discount.isDiscounted && !allGames[item].shownHotSales && parent == "sale"){
+					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);	
 				}
+				/* if(!allGames[item].newRelease && !loadedAllNew ){
+					
+					//currentItem++;
+					//displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
+				}
+				if(!allGames[item].price.discount.isDiscounted && currentItem == 4){
+					//console.log(allGames[item])
+					//displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
+				} */
 			};
 			var i = 0;
 			var delay = 0;
@@ -567,26 +1668,7 @@ function showMore(sectionId, parent, content, currentItem){
 			}) 
 			$("#" + parent + " .showMore").fadeOut(600);
 }
-}
-if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){
-	//console.log(localStorage.getItem("name"))
-	function displaySingle(){
-		$(".name").append(localStorage.getItem("name"))
-		console.log(localStorage.getItem("name"))
-		for(let single of data){
-			if(localStorage.getItem("name") == single.name){
-				console.log(single.name)
-			}
-		}
-	}
-	displaySingle();
-}
-$(document).on("click", ".item" ,function(){
-			localStorage.setItem("name", $(this).find("h5").html()); 
-			window.open("single.html", "_self");
-		//
-
-})
+		
 //function displayItems(info,itemID,)
 		
 });
