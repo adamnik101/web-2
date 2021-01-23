@@ -25,7 +25,6 @@ jQuery(document).ready(function($)
 	1. Vars and Inits
 
 	*/
-	console.log(allGames)
 
 	var header = $('.header');
 	var topNav = $('.top_nav')
