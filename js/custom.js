@@ -31,7 +31,7 @@ jQuery(document).ready(function($)
 		method : "GET",
 		type : "json",
 		success : function(data) {
-		console.log(data);
+		console.log(JSON.parse(data));
 		},
 		error : function(xhr, error, status) {
 		console.log(status);
