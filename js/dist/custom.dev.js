@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
     type: "get",
     dataType: "json",
     success: function success(result) {
-      var data = JSON.parse(result);
+      var data = JSON.stringify(result);
       console.log(data);
 
       for (var e in result) {
