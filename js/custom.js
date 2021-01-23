@@ -25,6 +25,7 @@ jQuery(document).ready(function($)
 	1. Vars and Inits
 
 	*/
+	console.log(allGames)
 
 	var header = $('.header');
 	var topNav = $('.top_nav')
@@ -466,6 +467,7 @@ function displayItems(img, name, publisher, price, animation, display){
 }
 var loadedNew = false;
 var loadedSale = false;
+var allGames;
 function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
 	let newToShow;
 	let saleToShow;
@@ -473,41 +475,43 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	var numberOfNew = 0;
 	var numberOfSale = 0;
 	var currentItem = 0;
-	var allGames = '';
+
 	$.ajax({
 		url: "js/data.json",
 		type: "get",
 		dataType: "json",
 		success: function(result) {
-			for(let item of result.allGames){
-		
-				if(item.newRelease){
-					numberOfNew++;
-				}
-				if(item.price.discount.isDiscounted){
-					numberOfSale++;
-					/* console.log(numberOfSale) */
-				}
-				if(item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases"){
-					content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId) //price(item = saljemo objekat za dalju obradu, discount= true/false)
-					currentItem++;
-					item.shownNewReleaseSection = true;
-					if(currentItem == maxItems){
-						loadedNew = true;
-						maxItems += maxItems; 
-					}
-				}
-				if(currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales"){
-					displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
-					currentItem++;
-					item.shownHotSales = true;
-					$("#" + parent + " .showMore").html("Show " + " more")
-				}
-			}
+			allGames = result;
 		},
 		error: function(xhr,status, error) { console.log(error); }
 		});
 	var content;
+	JSON.parse(allGames);
+	for(let item of allGames){
+		
+		if(item.newRelease){
+			numberOfNew++;
+		}
+		if(item.price.discount.isDiscounted){
+			numberOfSale++;
+			/* console.log(numberOfSale) */
+		}
+		if(item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases"){
+			content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId) //price(item = saljemo objekat za dalju obradu, discount= true/false)
+			currentItem++;
+			item.shownNewReleaseSection = true;
+			if(currentItem == maxItems){
+				loadedNew = true;
+				maxItems += maxItems; 
+			}
+		}
+		if(currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales"){
+			displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
+			currentItem++;
+			item.shownHotSales = true;
+			$("#" + parent + " .showMore").html("Show " + " more")
+		}
+	}
 	newToShow = numberOfNew - currentItem;
 	saleToShow = numberOfSale - currentItem;
 	if(sectionId == "newReleases"){

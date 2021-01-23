@@ -23,6 +23,7 @@ jQuery(document).ready(function ($) {
   	1. Vars and Inits
   	*/
 
+  console.log(allGames);
   var header = $('.header');
   var topNav = $('.top_nav');
   var mainSlider = $('.main_slider');
@@ -369,6 +370,7 @@ jQuery(document).ready(function ($) {
 
   var loadedNew = false;
   var loadedSale = false;
+  var allGames;
 
   function newRelease(sectionId, parent) {
     //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
@@ -378,68 +380,70 @@ jQuery(document).ready(function ($) {
     var numberOfNew = 0;
     var numberOfSale = 0;
     var currentItem = 0;
-    var allGames = '';
     $.ajax({
       url: "js/data.json",
       type: "get",
       dataType: "json",
       success: function success(result) {
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-          for (var _iterator = result.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var item = _step.value;
-
-            if (item.newRelease) {
-              numberOfNew++;
-            }
-
-            if (item.price.discount.isDiscounted) {
-              numberOfSale++;
-              /* console.log(numberOfSale) */
-            }
-
-            if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
-              content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
-
-              currentItem++;
-              item.shownNewReleaseSection = true;
-
-              if (currentItem == maxItems) {
-                loadedNew = true;
-                maxItems += maxItems;
-              }
-            }
-
-            if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
-              displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
-              currentItem++;
-              item.shownHotSales = true;
-              $("#" + parent + " .showMore").html("Show " + " more");
-            }
-          }
-        } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
-        } finally {
-          try {
-            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-              _iterator["return"]();
-            }
-          } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
-            }
-          }
-        }
+        allGames = result;
       },
       error: function error(xhr, status, _error) {
         console.log(_error);
       }
     });
     var content;
+    JSON.parse(allGames);
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var item = _step.value;
+
+        if (item.newRelease) {
+          numberOfNew++;
+        }
+
+        if (item.price.discount.isDiscounted) {
+          numberOfSale++;
+          /* console.log(numberOfSale) */
+        }
+
+        if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
+          content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+
+          currentItem++;
+          item.shownNewReleaseSection = true;
+
+          if (currentItem == maxItems) {
+            loadedNew = true;
+            maxItems += maxItems;
+          }
+        }
+
+        if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
+          displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
+          currentItem++;
+          item.shownHotSales = true;
+          $("#" + parent + " .showMore").html("Show " + " more");
+        }
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
     newToShow = numberOfNew - currentItem;
     saleToShow = numberOfSale - currentItem;
 
