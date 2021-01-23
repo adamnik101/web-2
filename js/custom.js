@@ -27,7 +27,7 @@ jQuery(document).ready(function($)
 			var data = JSON.stringify(result);
 		console.log(data);
 		for(let e in result){
-			console.log(e)
+			console.log(e.name)
 		}
 		},
 		error: function(xhr,status, error) { console.log(error); }
