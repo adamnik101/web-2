@@ -24,7 +24,7 @@ var data;
 		type : "get",
 		dataType : "json",
 		success: function(games) {
-			data = JSON.parse(games)
+			console.log(JSON.parse(games))
 		},
 			error: function(xhr,status, error) { console.log(error); }
 	}) 
@@ -576,7 +576,6 @@ if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html")
 		for(let single of data){
 			if(localStorage.getItem("name") == single.name){
 				console.log(single.name)
-				
 			}
 		}
 	}
