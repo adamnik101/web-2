@@ -132,6 +132,270 @@
         }
     },
     {
+        "id" : 3,
+        "name" : "Assassin's Creed Valhalla",
+        "publisher" : "Ubisoft",
+        "releaseDate" : "Dec 10, 2020",
+        "newRelease" : true,
+        "image" : {
+            "cover" : "images/banner_2.jpg",
+            "gallery" : [
+                "","",""
+            ]
+        },
+        "price" : {
+            "discount" : {
+                "isDiscounted" : false
+            },
+            "value" : 59.99
+        },
+        "specifications":{
+            "minimum":[
+                {
+                    "name":"OS",
+                    "value": "Windows 7"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                },
+                {
+                    "name":"Memory",
+                    "value": "8 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                },
+                {
+                    "name":"Storage",
+                    "value":"70 GB (SSD Recommended)"
+                }
+            ],
+            "recommended":[
+                {
+                    "name":"OS",
+                    "value": "Windows 10"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                },
+                {
+                    "name":"Memory",
+                    "value": "12 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                }
+            ]
+        },
+        "ratings":{
+            "criticsRecommend": 61,
+            "criticsAvg": 76,
+            "openCritics": "Strong"
+        }
+    },
+    {
+        "id" : 4,
+        "name" : "Kena: Bridge of Spirits",
+        "publisher" : "Ember Lab",
+        "releaseDate" : "Dec 10, 2020",
+        "newRelease" : true,
+        "image" : {
+            "cover" : "images/banner_4.jpg",
+            "gallery" : [
+                "","",""
+            ]
+        },
+        "price" : {
+            "discount" : {
+                "isDiscounted" : false
+            },
+            "value" : 49.99
+        },
+        "specifications":{
+            "minimum":[
+                {
+                    "name":"OS",
+                    "value": "Windows 7"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                },
+                {
+                    "name":"Memory",
+                    "value": "8 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                },
+                {
+                    "name":"Storage",
+                    "value":"70 GB (SSD Recommended)"
+                }
+            ],
+            "recommended":[
+                {
+                    "name":"OS",
+                    "value": "Windows 10"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                },
+                {
+                    "name":"Memory",
+                    "value": "12 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                }
+            ]
+        },
+        "ratings":{
+            "criticsRecommend": 61,
+            "criticsAvg": 76,
+            "openCritics": "Strong"
+        }
+    },
+    {
+        "id" : 5,
+        "name" : "Blair Witch",
+        "publisher" : "Bloober Team",
+        "releaseDate" : "Dec 10, 2020",
+        "newRelease" : true,
+        "image" : {
+            "cover" : "images/banner_6.jpg",
+            "gallery" : [
+                "","",""
+            ]
+        },
+        "price" : {
+            "discount" : {
+                "isDiscounted" : false
+            },
+            "value" : 59.99
+        },
+        "specifications":{
+            "minimum":[
+                {
+                    "name":"OS",
+                    "value": "Windows 7"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                },
+                {
+                    "name":"Memory",
+                    "value": "8 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                },
+                {
+                    "name":"Storage",
+                    "value":"70 GB (SSD Recommended)"
+                }
+            ],
+            "recommended":[
+                {
+                    "name":"OS",
+                    "value": "Windows 10"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                },
+                {
+                    "name":"Memory",
+                    "value": "12 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                }
+            ]
+        },
+        "ratings":{
+            "criticsRecommend": 61,
+            "criticsAvg": 76,
+            "openCritics": "Strong"
+        }
+    },
+    {
+        "id" : 6,
+        "name" : "Snowrunner",
+        "publisher" : "Saber Interactive",
+        "releaseDate" : "Dec 10, 2020",
+        "newRelease" : true,
+        "image" : {
+            "cover" : "images/banner_10.jpg",
+            "gallery" : [
+                "","",""
+            ]
+        },
+        "price" : {
+            "discount" : {
+                "isDiscounted" : false
+            },
+            "value" : 59.99
+        },
+        "specifications":{
+            "minimum":[
+                {
+                    "name":"OS",
+                    "value": "Windows 7"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                },
+                {
+                    "name":"Memory",
+                    "value": "8 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                },
+                {
+                    "name":"Storage",
+                    "value":"70 GB (SSD Recommended)"
+                }
+            ],
+            "recommended":[
+                {
+                    "name":"OS",
+                    "value": "Windows 10"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                },
+                {
+                    "name":"Memory",
+                    "value": "12 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                }
+            ]
+        },
+        "ratings":{
+            "criticsRecommend": 61,
+            "criticsAvg": 76,
+            "openCritics": "Strong"
+        }
+    },
+    {
         "id" : 2,
         "name" : "Assassin's Creed Valhalla",
         "publisher" : "Ubisoft",

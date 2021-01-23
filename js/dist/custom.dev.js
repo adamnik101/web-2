@@ -387,7 +387,7 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function newRelease(sectionId, parent, data) {
+  function homepageGames(sectionId, parent, data) {
     //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
     var newToShow;
     var saleToShow;
@@ -465,8 +465,8 @@ jQuery(document).ready(function ($) {
   }
 
   function displayAllSections(result) {
-    newRelease("newReleases", "new", result);
-    newRelease("hotSales", "sale", result);
+    homepageGames("newReleases", "new", result);
+    homepageGames("hotSales", "sale", result);
   }
 
   displayAllSections();
