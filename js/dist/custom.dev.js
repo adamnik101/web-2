@@ -24,7 +24,8 @@ jQuery(document).ready(function ($) {
     type: "get",
     dataType: "json",
     success: function success(games) {
-      data = games; //	prikaziPodatke(result); 
+      data = games;
+      console.log(data); //	prikaziPodatke(result); 
     },
     error: function error(xhr, status, _error) {
       console.log(_error);
