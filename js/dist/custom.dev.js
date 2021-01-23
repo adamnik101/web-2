@@ -45,6 +45,7 @@ jQuery(document).ready(function ($) {
   initFavorite();
   initFixProductBorder();
   initIsotopeFiltering();
+  getGames();
   /* 
   	2. Set Header
   	*/
