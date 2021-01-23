@@ -478,7 +478,7 @@ jQuery(document).ready(function ($) {
     var animation = " animate";
 
     for (var item in data.allGames) {
-      console.log(item);
+      console.log(item, currentItem);
 
       if (item > currentItem && data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
         console.log(data.allGames[item]);
