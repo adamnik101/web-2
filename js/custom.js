@@ -18,20 +18,22 @@
 
 jQuery(document).ready(function($)
 {
-	var data;
+
 	$.ajax({
 		url : "js/data.json",
 		type : "get",
 		dataType : "json",
 		success: function(games) {
-			data = games;
-			console.log(data)
-		//	prikaziPodatke(result); 
+			prikaziPodatke(games); 
 		},
 			error: function(xhr,status, error) { console.log(error); }
-	})
+	}) 
 	"use strict";
-
+function prikaziPodatke(games){
+	for(let t of games){
+		console.log(t.name);
+	}
+}
 	/* 
 
 	1. Vars and Inits
