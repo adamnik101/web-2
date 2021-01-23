@@ -486,7 +486,6 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 		error: function(xhr,status, error) { console.log(error); }
 		});
 	var content;
-	allGames = JSON.parse(allGames);
 	for(let item of allGames){
 		
 		if(item.newRelease){
