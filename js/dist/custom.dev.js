@@ -392,7 +392,7 @@ jQuery(document).ready(function ($) {
       }
     });
     var content;
-    JSON.parse(allGames);
+    allGames = JSON.parse(allGames);
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
