@@ -376,7 +376,7 @@ jQuery(document).ready(function ($) {
       type: "GET",
       dataType: "json",
       success: function success(result) {
-        displayAllSections(result.allGames);
+        displayAllSections(result);
       },
       error: function error(xhr, status, _error) {
         console.log(_error);
@@ -398,7 +398,7 @@ jQuery(document).ready(function ($) {
     var _iteratorError = undefined;
 
     try {
-      for (var _iterator = data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      for (var _iterator = data.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var item = _step.value;
 
         if (item.newRelease) {
@@ -479,13 +479,13 @@ jQuery(document).ready(function ($) {
   function showMore(sectionId, parent, content, currentItem, data) {
     var animation = " animate";
 
-    for (var item in data) {
-      if (item > currentItem && data[item].newRelease && data[item].id > currentItem && !data[item].shownHotSales && parent == "new") {
-        displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);
+    for (var item in data.allGames) {
+      if (item > currentItem && data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
+        displayItems(data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
       }
 
-      if (item > 4 && !data[item].newRelease && data[item].price.discount.isDiscounted && !data[item].shownHotSales && parent == "sale") {
-        displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);
+      if (item > 4 && !data.allGames[item].newRelease && data.allGames[item].price.discount.isDiscounted && !data.allGames[item].shownHotSales && parent == "sale") {
+        displayItems(data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
       }
     }
 
