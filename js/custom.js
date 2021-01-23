@@ -23,8 +23,8 @@ jQuery(document).ready(function($)
 		url : "js/data.json",
 		type : "get",
 		dataType : "json",
-		success: function(data) {
-			data = data;
+		success: function(games) {
+			data = games;
 		//	prikaziPodatke(result); 
 		},
 			error: function(xhr,status, error) { console.log(error); }
