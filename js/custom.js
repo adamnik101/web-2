@@ -28,7 +28,7 @@ jQuery(document).ready(function($)
 			allGames = result.allGames;
 		console.log(allGames);
 		for(let i of allGames){
-			console.log(i.name);
+			console.log(i.publisher);
 		}
 		},
 		error: function(xhr,status, error) { console.log(error); }

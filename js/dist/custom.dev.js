@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
       try {
         for (var _iterator = allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var i = _step.value;
-          console.log(i.name);
+          console.log(i.publisher);
         }
       } catch (err) {
         _didIteratorError = true;
