@@ -18,22 +18,17 @@
 
 jQuery(document).ready(function($)
 {
-
+var data;
 	$.ajax({
 		url : "js/data.json",
 		type : "get",
 		dataType : "json",
 		success: function(games) {
-			prikaziPodatke(games); 
+			data = JSON.parse(games)
 		},
 			error: function(xhr,status, error) { console.log(error); }
 	}) 
 	"use strict";
-function prikaziPodatke(games){
-	for(let t of games){
-		console.log(t.name);
-	}
-}
 	/* 
 
 	1. Vars and Inits
@@ -579,7 +574,6 @@ if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html")
 		$(".name").append(localStorage.getItem("name"))
 		console.log(localStorage.getItem("name"))
 		for(let single of data){
-			console.log("data[item].name")
 			if(localStorage.getItem("name") == single.name){
 				console.log(single.name)
 				
