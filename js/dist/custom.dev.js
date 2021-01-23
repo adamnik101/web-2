@@ -372,6 +372,20 @@ jQuery(document).ready(function ($) {
   var loadedSale = false;
   var allGames;
 
+  function getGames() {
+    $.ajax({
+      url: "js/data.json",
+      type: "GET",
+      dataType: "json",
+      success: function success(result) {
+        displayAllSections(result);
+      },
+      error: function error(xhr, status, _error) {
+        console.log(_error);
+      }
+    });
+  }
+
   function newRelease(sectionId, parent) {
     //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
     var newToShow;
@@ -380,25 +394,13 @@ jQuery(document).ready(function ($) {
     var numberOfNew = 0;
     var numberOfSale = 0;
     var currentItem = 0;
-    $.ajax({
-      url: "js/data.json",
-      type: "get",
-      dataType: "json",
-      success: function success(result) {
-        allGames = result;
-      },
-      error: function error(xhr, status, _error) {
-        console.log(_error);
-      }
-    });
     var content;
-    allGames = JSON.parse(allGames);
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
 
     try {
-      for (var _iterator = allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      for (var _iterator = result.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var item = _step.value;
 
         if (item.newRelease) {
@@ -461,7 +463,8 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function displayAllSections() {
+  function displayAllSections(result) {
+    console.log(result);
     newRelease("newReleases", "new");
     newRelease("hotSales", "sale");
   }

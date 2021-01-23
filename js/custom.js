@@ -468,6 +468,17 @@ function displayItems(img, name, publisher, price, animation, display){
 var loadedNew = false;
 var loadedSale = false;
 var allGames;
+function getGames(){
+	$.ajax({
+		url : "js/data.json",
+		type : "GET",
+		dataType : "json",
+		success : function(result){
+			displayAllSections(result)
+		},
+		error: function(xhr,status, error) { console.log(error); }
+	});
+}
 function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
 	let newToShow;
 	let saleToShow;
@@ -476,18 +487,9 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	var numberOfSale = 0;
 	var currentItem = 0;
 
-	$.ajax({
-		url: "js/data.json",
-		type: "get",
-		dataType: "json",
-		success: function(result) {
-			allGames = result;
-		},
-		error: function(xhr,status, error) { console.log(error); }
-		});
+	
 	var content;
-	allGames = JSON.parse(allGames);
-	for(let item of allGames){
+	for(let item of result.allGames){
 		
 		if(item.newRelease){
 			numberOfNew++;
@@ -530,7 +532,8 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	})
 }
 
-function displayAllSections(){
+function displayAllSections(result){
+	console.log(result)
 	newRelease("newReleases", "new");
 	newRelease("hotSales", "sale");
 }
