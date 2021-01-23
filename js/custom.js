@@ -474,7 +474,7 @@ function getGames(){
 		type : "GET",
 		dataType : "json",
 		success : function(result){
-			displayAllSections(result)
+			displayAllSections(result.allGames)
 		},
 		error: function(xhr,status, error) { console.log(error); }
 	});
@@ -489,7 +489,7 @@ function homepageGames(sectionId, parent, data){ //obrada artikala koji imaju tr
 
 	
 	var content;
-	for(let item of data.allGames){
+	for(let item of data){
 		
 		if(item.newRelease){
 			numberOfNew++;
@@ -527,7 +527,7 @@ function homepageGames(sectionId, parent, data){ //obrada artikala koji imaju tr
 	console.log(numberOfNew)
 	$("#" + parent + " .showMore").on("click", function(){
 		if(currentItem == 4){
-			showMore(sectionId, parent, content, currentItem);
+			showMore(sectionId, parent, content, currentItem, data);
 		}
 	})
 }
@@ -546,25 +546,16 @@ function price(item, discount) {
 		}
 }
 
-function showMore(sectionId, parent, content, currentItem){
+function showMore(sectionId, parent, content, currentItem, data){
 		let animation = " animate"
-			for(let item in allGames){
-				if(item > currentItem && allGames[item].newRelease && allGames[item].id > currentItem  && !allGames[item].shownHotSales && parent == "new" ){
-					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);	
-					//console.log(allGames[item])
-				}
-				if(item > 4 && !allGames[item].newRelease && allGames[item].price.discount.isDiscounted && !allGames[item].shownHotSales && parent == "sale"){
-					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);	
-				}
-				/* if(!allGames[item].newRelease && !loadedAllNew ){
+			for(let item in data){
+				if(item > currentItem && data[item].newRelease && data[item].id > currentItem  && !data[item].shownHotSales && parent == "new" ){
+					displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], allGames[item].price.discount), animation, sectionId);	
 					
-					//currentItem++;
-					//displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
 				}
-				if(!allGames[item].price.discount.isDiscounted && currentItem == 4){
-					//console.log(allGames[item])
-					//displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
-				} */
+				if(item > 4 && !allGames[item].newRelease && data[item].price.discount.isDiscounted && !data[item].shownHotSales && parent == "sale"){
+					displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);	
+				}
 			};
 			var i = 0;
 			var delay = 0;
