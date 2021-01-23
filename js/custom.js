@@ -549,6 +549,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 			for(let item in data.allGames){
 				console.log(item);
 				if(item > 4 && data.allGames[item].newRelease && data.allGames[item].id > currentItem  && !data.allGames[item].shownHotSales && parent == "new" ){
+					console.log(data.allGames[item]);
 					displayItems(data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);	
 					
 				}
