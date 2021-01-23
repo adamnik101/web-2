@@ -483,7 +483,7 @@ function homepageGames(sectionId, parent, data){ //obrada artikala koji imaju tr
 	var maxItems = 4;
 	var numberOfNew = 0;
 	var numberOfSale = 0;
-	var currentItem = 0;
+	var currentItem = 1;
 
 	
 	var content;
