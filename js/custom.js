@@ -525,7 +525,7 @@ function homepageGames(sectionId, parent, data){ //obrada artikala koji imaju tr
 	console.log(numberOfNew)
 	$("#" + parent + " .showMore").on("click", function(){
 		if(currentItem == 4){
-			showMore(sectionId, parent, content, currentItem, data);
+			showMore(sectionId, parent, content, currentItem, data.allGames);
 		}
 	})
 }
