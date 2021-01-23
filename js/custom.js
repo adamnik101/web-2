@@ -404,7 +404,7 @@ jQuery(document).ready(function($)
 
 	8. Init Slider
 	*/
-if(window.top.location.href == "file:///C:/Users/Adam/Desktop/WEB%202%20-%20sajt/web-2/index.html"){		
+if(window.top.location.href == "https://adamnik101.github.io/web-2/index.html"){		
 		var owl = $('.owl-carousel');
 		owl.owlCarousel(
 			{
@@ -569,7 +569,7 @@ function showMore(sectionId, parent, content, currentItem){
 			$("#" + parent + " .showMore").fadeOut(600);
 }
 }
-if(window.top.location.href == "file:///C:/Users/Adam/Desktop/WEB%202%20-%20sajt/web-2/single.html"){
+if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){
 	//console.log(localStorage.getItem("name"))
 	function displaySingle(){
 		$(".name").append(localStorage.getItem("name"))

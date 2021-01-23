@@ -312,7 +312,7 @@ jQuery(document).ready(function ($) {
   */
 
 
-  if (window.top.location.href == "file:///C:/Users/Adam/Desktop/WEB%202%20-%20sajt/web-2/index.html") {
+  if (window.top.location.href == "https://adamnik101.github.io/web-2/index.html") {
     /* function progress(){
     	setTimeout(function(){
     		$("#progressBar").animate({
@@ -501,7 +501,7 @@ jQuery(document).ready(function ($) {
     displayAllSections();
   }
 
-  if (window.top.location.href == "file:///C:/Users/Adam/Desktop/WEB%202%20-%20sajt/web-2/single.html") {
+  if (window.top.location.href == "https://adamnik101.github.io/web-2/single.html") {
     //console.log(localStorage.getItem("name"))
     var displaySingle = function displaySingle() {
       $(".name").append(localStorage.getItem("name"));
