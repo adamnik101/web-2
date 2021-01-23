@@ -19,21 +19,13 @@
 jQuery(document).ready(function($)
 {
 	"use strict";
-	var allGames;
-	$.ajax({
-		url: "js/data.json",
-		type: "get",
-		dataType: "json",
-		success: function(result) {
-			allGames = result.allGames;
-		},
-		error: function(xhr,status, error) { console.log(error); }
-		});
+	
 	/* 
 
 	1. Vars and Inits
 
 	*/
+	console.log(allGames)
 
 	var header = $('.header');
 	var topNav = $('.top_nav')
@@ -482,7 +474,20 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	var numberOfNew = 0;
 	var numberOfSale = 0;
 	var currentItem = 0;
-	
+	var allGames = '';
+	$.ajax({
+		url: "js/data.json",
+		type: "get",
+		dataType: "json",
+		success: function(result) {
+			for(let o of result.allGames){
+				console.log(o.name);
+				console.log(o.publisher)
+				console.log(o.price.discount.isDiscounted);
+			}
+		},
+		error: function(xhr,status, error) { console.log(error); }
+		});
 	var content;
 	for(let item of allGames){
 		

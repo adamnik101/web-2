@@ -19,23 +19,11 @@
 ******************************/
 jQuery(document).ready(function ($) {
   "use strict";
-
-  var allGames;
-  $.ajax({
-    url: "js/data.json",
-    type: "get",
-    dataType: "json",
-    success: function success(result) {
-      allGames = result.allGames;
-    },
-    error: function error(xhr, status, _error) {
-      console.log(_error);
-    }
-  });
   /* 
   	1. Vars and Inits
   	*/
 
+  console.log(allGames);
   var header = $('.header');
   var topNav = $('.top_nav');
   var mainSlider = $('.main_slider');
@@ -391,14 +379,50 @@ jQuery(document).ready(function ($) {
     var numberOfNew = 0;
     var numberOfSale = 0;
     var currentItem = 0;
+    var allGames = '';
+    $.ajax({
+      url: "js/data.json",
+      type: "get",
+      dataType: "json",
+      success: function success(result) {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = result.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var o = _step.value;
+            console.log(o.name);
+            console.log(o.publisher);
+            console.log(o.price.discount.isDiscounted);
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+              _iterator["return"]();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      },
+      error: function error(xhr, status, _error) {
+        console.log(_error);
+      }
+    });
     var content;
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
 
     try {
-      for (var _iterator = allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var item = _step.value;
+      for (var _iterator2 = allGames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        var item = _step2.value;
 
         if (item.newRelease) {
           numberOfNew++;
@@ -429,16 +453,16 @@ jQuery(document).ready(function ($) {
         }
       }
     } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
+      _didIteratorError2 = true;
+      _iteratorError2 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-          _iterator["return"]();
+        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+          _iterator2["return"]();
         }
       } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
+        if (_didIteratorError2) {
+          throw _iteratorError2;
         }
       }
     }
