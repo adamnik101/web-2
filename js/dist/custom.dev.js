@@ -18,12 +18,13 @@
 
 ******************************/
 jQuery(document).ready(function ($) {
+  var data;
   $.ajax({
     url: "js/data.json",
     type: "get",
     dataType: "json",
-    success: function success(result) {
-      console.log(result); //	prikaziPodatke(result); 
+    success: function success(data) {
+      data = data; //	prikaziPodatke(result); 
     },
     error: function error(xhr, status, _error) {
       console.log(_error);
@@ -382,7 +383,7 @@ jQuery(document).ready(function ($) {
       var _iteratorError = undefined;
 
       try {
-        for (var _iterator = allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var item = _step.value;
 
           if (item.newRelease) {
@@ -461,13 +462,13 @@ jQuery(document).ready(function ($) {
     var showMore = function showMore(sectionId, parent, content, currentItem) {
       var animation = " animate";
 
-      for (var item in allGames) {
-        if (item > currentItem && allGames[item].newRelease && allGames[item].id > currentItem && !allGames[item].shownHotSales && parent == "new") {
-          displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId); //console.log(allGames[item])
+      for (var item in data) {
+        if (item > currentItem && data[item].newRelease && data[item].id > currentItem && !data[item].shownHotSales && parent == "new") {
+          displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId); //console.log(data[item])
         }
 
-        if (item > 4 && !allGames[item].newRelease && allGames[item].price.discount.isDiscounted && !allGames[item].shownHotSales && parent == "sale") {
-          displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);
+        if (item > 4 && !data[item].newRelease && data[item].price.discount.isDiscounted && !data[item].shownHotSales && parent == "sale") {
+          displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);
         }
       }
 
@@ -511,9 +512,9 @@ jQuery(document).ready(function ($) {
       var _iteratorError2 = undefined;
 
       try {
-        for (var _iterator2 = allGames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        for (var _iterator2 = data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           var single = _step2.value;
-          console.log("allGames[item].name");
+          console.log("data[item].name");
 
           if (localStorage.getItem("name") == single.name) {
             console.log(single.name);

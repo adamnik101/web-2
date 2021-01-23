@@ -18,12 +18,13 @@
 
 jQuery(document).ready(function($)
 {
+	var data;
 	$.ajax({
 		url : "js/data.json",
 		type : "get",
 		dataType : "json",
-		success: function(result) {
-			console.log(result);
+		success: function(data) {
+			data = data;
 		//	prikaziPodatke(result); 
 		},
 			error: function(xhr,status, error) { console.log(error); }
@@ -485,7 +486,7 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 	var currentItem = 0;
 	
 	var content;
-	for(let item of allGames){
+	for(let item of data){
 		
 		if(item.newRelease){
 			numberOfNew++;
@@ -545,13 +546,13 @@ function price(item, discount) {
 
 function showMore(sectionId, parent, content, currentItem){
 		let animation = " animate"
-			for(let item in allGames){
-				if(item > currentItem && allGames[item].newRelease && allGames[item].id > currentItem  && !allGames[item].shownHotSales && parent == "new" ){
-					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);	
-					//console.log(allGames[item])
+			for(let item in data){
+				if(item > currentItem && data[item].newRelease && data[item].id > currentItem  && !data[item].shownHotSales && parent == "new" ){
+					displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);	
+					//console.log(data[item])
 				}
-				if(item > 4 && !allGames[item].newRelease && allGames[item].price.discount.isDiscounted && !allGames[item].shownHotSales && parent == "sale"){
-					displayItems(allGames[item].image.cover, allGames[item].name, allGames[item].publisher, price(allGames[item], allGames[item].price.discount), animation, sectionId);	
+				if(item > 4 && !data[item].newRelease && data[item].price.discount.isDiscounted && !data[item].shownHotSales && parent == "sale"){
+					displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);	
 				}
 			};
 			var i = 0;
@@ -574,8 +575,8 @@ if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html")
 	function displaySingle(){
 		$(".name").append(localStorage.getItem("name"))
 		console.log(localStorage.getItem("name"))
-		for(let single of allGames){
-			console.log("allGames[item].name")
+		for(let single of data){
+			console.log("data[item].name")
 			if(localStorage.getItem("name") == single.name){
 				console.log(single.name)
 				
