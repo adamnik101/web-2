@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
       console.log(data);
 
       for (var e in result) {
-        console.log(e.name);
+        console.log(result[e].name);
       }
     },
     error: function error(xhr, status, _error) {
