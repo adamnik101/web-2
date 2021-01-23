@@ -24,7 +24,10 @@ jQuery(document).ready(function($)
 		type: "get",
 		dataType: "json",
 		success: function(result) {
-		console.log(result.allGames[0]);
+		console.log(result.allGames);
+		for(let i of result.allGames){
+			console.log(i);
+		}
 		},
 		error: function(xhr,status, error) { console.log(error); }
 		});
