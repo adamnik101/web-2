@@ -397,12 +397,12 @@
     },
     {
         "id" : 7,
-        "name" : "Assassin's Creed Valhalla",
-        "publisher" : "Ubisoft",
+        "name" : "Godfall",
+        "publisher" : "Counterplay Games",
         "releaseDate" : "Dec 10, 2020",
         "newRelease" : true,
         "image" : {
-            "cover" : "images/banner_2.jpg",
+            "cover" : "images/banner_9.jpg",
             "gallery" : [
                 "","",""
             ]
