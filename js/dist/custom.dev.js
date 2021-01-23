@@ -23,8 +23,7 @@ jQuery(document).ready(function ($) {
     type: "get",
     dataType: "json",
     success: function success(result) {
-      console.log(result);
-      prikaziPodatke(result);
+      console.log(result); //	prikaziPodatke(result); 
     },
     error: function error(xhr, status, _error) {
       console.log(_error);

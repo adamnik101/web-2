@@ -24,7 +24,8 @@ jQuery(document).ready(function($)
 		dataType : "json",
 		success: function(result) {
 			console.log(result);
-			prikaziPodatke(result); },
+		//	prikaziPodatke(result); 
+		},
 			error: function(xhr,status, error) { console.log(error); }
 	})
 	"use strict";
