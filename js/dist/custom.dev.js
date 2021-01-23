@@ -23,7 +23,6 @@ jQuery(document).ready(function ($) {
   	1. Vars and Inits
   	*/
 
-  console.log(allGames);
   var header = $('.header');
   var topNav = $('.top_nav');
   var mainSlider = $('.main_slider');
@@ -370,8 +369,6 @@ jQuery(document).ready(function ($) {
   }
 
   var loadedNew = false;
-  var loadedSale = false;
-  var allGames;
 
   function getGames() {
     $.ajax({
@@ -484,10 +481,10 @@ jQuery(document).ready(function ($) {
 
     for (var item in data) {
       if (item > currentItem && data[item].newRelease && data[item].id > currentItem && !data[item].shownHotSales && parent == "new") {
-        displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], allGames[item].price.discount), animation, sectionId);
+        displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);
       }
 
-      if (item > 4 && !allGames[item].newRelease && data[item].price.discount.isDiscounted && !data[item].shownHotSales && parent == "sale") {
+      if (item > 4 && !data[item].newRelease && data[item].price.discount.isDiscounted && !data[item].shownHotSales && parent == "sale") {
         displayItems(data[item].image.cover, data[item].name, data[item].publisher, price(data[item], data[item].price.discount), animation, sectionId);
       }
     }
