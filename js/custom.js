@@ -19,13 +19,15 @@
 jQuery(document).ready(function($)
 {
 	"use strict";
+	var allGames;
 	$.ajax({
 		url: "js/data.json",
 		type: "get",
 		dataType: "json",
 		success: function(result) {
-		console.log(result.allGames);
-		for(let i of result.allGames){
+			allGames = result.allGames;
+		console.log(allGames);
+		for(let i of allGames){
 			console.log(i.name);
 		}
 		},
