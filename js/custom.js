@@ -24,7 +24,7 @@ jQuery(document).ready(function($)
 		type: "get",
 		dataType: "json",
 		success: function(result) {
-		console.log(result.allGames.name);
+		console.log(result.allGames);
 		},
 		error: function(xhr,status, error) { console.log(error); }
 		});
