@@ -534,7 +534,7 @@ function displayAllSections(result){
 	homepageGames("newReleases", "new", result);
 	homepageGames("hotSales", "sale", result);
 }
-displayAllSections();
+
 function price(item, discount) {
 		if(!discount.isDiscounted){
 			return `<i class="fas fa-euro-sign"></i> ${item.price.value}`

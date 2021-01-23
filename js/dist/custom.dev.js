@@ -466,8 +466,6 @@ jQuery(document).ready(function ($) {
     homepageGames("hotSales", "sale", result);
   }
 
-  displayAllSections();
-
   function price(item, discount) {
     if (!discount.isDiscounted) {
       return "<i class=\"fas fa-euro-sign\"></i> ".concat(item.price.value);
