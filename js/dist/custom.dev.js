@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
       try {
         for (var _iterator = result.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var i = _step.value;
-          console.log(i);
+          console.log(i.name);
         }
       } catch (err) {
         _didIteratorError = true;

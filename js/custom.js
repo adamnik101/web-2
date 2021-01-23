@@ -26,7 +26,7 @@ jQuery(document).ready(function($)
 		success: function(result) {
 		console.log(result.allGames);
 		for(let i of result.allGames){
-			console.log(i);
+			console.log(i.name);
 		}
 		},
 		error: function(xhr,status, error) { console.log(error); }
