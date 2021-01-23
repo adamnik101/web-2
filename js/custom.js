@@ -18,7 +18,15 @@
 
 jQuery(document).ready(function($)
 {
-	
+	$.ajax({
+		url : "js/data.json",
+		type : "get",
+		dataType : "json",
+		success: function(result) {
+			console.log(result);
+			prikaziPodatke(result); },
+			error: function(xhr,status, error) { console.log(error); }
+	})
 	"use strict";
 
 	/* 
@@ -26,6 +34,7 @@ jQuery(document).ready(function($)
 	1. Vars and Inits
 
 	*/
+
 	var header = $('.header');
 	var topNav = $('.top_nav')
 	var mainSlider = $('.main_slider');
@@ -581,15 +590,5 @@ $(document).on("click", ".item" ,function(){
 
 })
 //function displayItems(info,itemID,)
-$.ajax({
-	url : "js/data.json",
-	method : "GET",
-	type : "json",
-	success : function(data) {
-	console.log(data);
-	},
-	error : function(xhr, error, status) {
-	console.log(status);
-	}
-	})
+		
 });

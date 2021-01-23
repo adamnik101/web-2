@@ -18,10 +18,23 @@
 
 ******************************/
 jQuery(document).ready(function ($) {
+  $.ajax({
+    url: "js/data.json",
+    type: "get",
+    dataType: "json",
+    success: function success(result) {
+      console.log(result);
+      prikaziPodatke(result);
+    },
+    error: function error(xhr, status, _error) {
+      console.log(_error);
+    }
+  });
   "use strict";
   /* 
   	1. Vars and Inits
   	*/
+
 
   var header = $('.header');
   var topNav = $('.top_nav');
@@ -530,16 +543,4 @@ jQuery(document).ready(function ($) {
     localStorage.setItem("name", $(this).find("h5").html());
     window.open("single.html", "_self"); //
   }); //function displayItems(info,itemID,)
-
-  $.ajax({
-    url: "js/data.json",
-    method: "GET",
-    type: "json",
-    success: function success(data) {
-      console.log(data);
-    },
-    error: function error(xhr, _error, status) {
-      console.log(status);
-    }
-  });
 });
