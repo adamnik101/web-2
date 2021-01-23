@@ -479,40 +479,35 @@ function newRelease(sectionId, parent){ //obrada artikala koji imaju true za new
 		type: "get",
 		dataType: "json",
 		success: function(result) {
-			for(let o of result.allGames){
-				console.log(o.name);
-				console.log(o.publisher)
-				console.log(o.price.discount.isDiscounted);
+			for(let item of result.allGames){
+		
+				if(item.newRelease){
+					numberOfNew++;
+				}
+				if(item.price.discount.isDiscounted){
+					numberOfSale++;
+					/* console.log(numberOfSale) */
+				}
+				if(item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases"){
+					content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId) //price(item = saljemo objekat za dalju obradu, discount= true/false)
+					currentItem++;
+					item.shownNewReleaseSection = true;
+					if(currentItem == maxItems){
+						loadedNew = true;
+						maxItems += maxItems; 
+					}
+				}
+				if(currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales"){
+					displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
+					currentItem++;
+					item.shownHotSales = true;
+					$("#" + parent + " .showMore").html("Show " + " more")
+				}
 			}
 		},
 		error: function(xhr,status, error) { console.log(error); }
 		});
 	var content;
-	for(let item of allGames){
-		
-		if(item.newRelease){
-			numberOfNew++;
-		}
-		if(item.price.discount.isDiscounted){
-			numberOfSale++;
-			/* console.log(numberOfSale) */
-		}
-		if(item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases"){
-			content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId) //price(item = saljemo objekat za dalju obradu, discount= true/false)
-			currentItem++;
-			item.shownNewReleaseSection = true;
-			if(currentItem == maxItems){
-				loadedNew = true;
-				maxItems += maxItems; 
-			}
-		}
-		if(currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales"){
-			displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
-			currentItem++;
-			item.shownHotSales = true;
-			$("#" + parent + " .showMore").html("Show " + " more")
-		}
-	}
 	newToShow = numberOfNew - currentItem;
 	saleToShow = numberOfSale - currentItem;
 	if(sectionId == "newReleases"){

@@ -390,10 +390,35 @@ jQuery(document).ready(function ($) {
 
         try {
           for (var _iterator = result.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var o = _step.value;
-            console.log(o.name);
-            console.log(o.publisher);
-            console.log(o.price.discount.isDiscounted);
+            var item = _step.value;
+
+            if (item.newRelease) {
+              numberOfNew++;
+            }
+
+            if (item.price.discount.isDiscounted) {
+              numberOfSale++;
+              /* console.log(numberOfSale) */
+            }
+
+            if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
+              content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+
+              currentItem++;
+              item.shownNewReleaseSection = true;
+
+              if (currentItem == maxItems) {
+                loadedNew = true;
+                maxItems += maxItems;
+              }
+            }
+
+            if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
+              displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
+              currentItem++;
+              item.shownHotSales = true;
+              $("#" + parent + " .showMore").html("Show " + " more");
+            }
           }
         } catch (err) {
           _didIteratorError = true;
@@ -415,57 +440,6 @@ jQuery(document).ready(function ($) {
       }
     });
     var content;
-    var _iteratorNormalCompletion2 = true;
-    var _didIteratorError2 = false;
-    var _iteratorError2 = undefined;
-
-    try {
-      for (var _iterator2 = allGames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-        var item = _step2.value;
-
-        if (item.newRelease) {
-          numberOfNew++;
-        }
-
-        if (item.price.discount.isDiscounted) {
-          numberOfSale++;
-          /* console.log(numberOfSale) */
-        }
-
-        if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
-          content = displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
-
-          currentItem++;
-          item.shownNewReleaseSection = true;
-
-          if (currentItem == maxItems) {
-            loadedNew = true;
-            maxItems += maxItems;
-          }
-        }
-
-        if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
-          displayItems(item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
-          currentItem++;
-          item.shownHotSales = true;
-          $("#" + parent + " .showMore").html("Show " + " more");
-        }
-      }
-    } catch (err) {
-      _didIteratorError2 = true;
-      _iteratorError2 = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-          _iterator2["return"]();
-        }
-      } finally {
-        if (_didIteratorError2) {
-          throw _iteratorError2;
-        }
-      }
-    }
-
     newToShow = numberOfNew - currentItem;
     saleToShow = numberOfSale - currentItem;
 
