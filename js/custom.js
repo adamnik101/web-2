@@ -380,17 +380,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 }
 }		
 		if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){
-			var owl_single = $(document).find(".single");
-			owl_single.owlCarousel(
-				{
-					items:1,
-					loop : true,
-					autoplay: true,
-					mouseDrag: true,
-					touchDrag: true,
-					dots: false
-				}
-				);
+			
 		function getSingle(){
 			$.ajax({
 				url : "js/data.json",
@@ -435,6 +425,17 @@ function showMore(sectionId, parent, content, currentItem, data){
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
 					getScreenshots(item.image.gallery);
+					var owl_single = $(".single");
+						owl_single.owlCarousel(
+							{
+								items:1,
+								loop : true,
+								autoplay: true,
+								mouseDrag: true,
+								touchDrag: true,
+								dots: false
+							}
+							);
 					/* let owl = document.createElement("div");
 					owl.className = "owl-carousel-single"
 					let img_div = document.createElement("div");
