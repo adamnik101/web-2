@@ -1361,6 +1361,7 @@ section
 
  .single{
 	 width: 100%;
+	 height: 500px;
 } 
 .single .item{
 	width: 100%;
