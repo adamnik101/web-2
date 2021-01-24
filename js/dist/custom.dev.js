@@ -556,6 +556,14 @@ jQuery(document).ready(function ($) {
             $(img_div).append(img_src);
             $(_owl).append(img_div);
             $("#slika").append(_owl);
+            var owl_single = $('.owl-carousel-single');
+            owl_single.owlCarousel({
+              items: 1,
+              loop: true,
+              mouseDrag: true,
+              touchDrag: true,
+              dots: false
+            });
           }
         }
       } catch (err) {
@@ -575,14 +583,6 @@ jQuery(document).ready(function ($) {
     };
 
     getSingle();
-    var owl_single = $('.owl-carousel-single');
-    owl_single.owlCarousel({
-      items: 1,
-      loop: true,
-      mouseDrag: true,
-      touchDrag: true,
-      dots: false
-    });
   } //function displayItems(info,itemID,)
 
 
