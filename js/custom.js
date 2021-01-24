@@ -392,6 +392,8 @@ function showMore(sectionId, parent, content, currentItem, data){
 				error: function(xhr,status, error) { console.log(error); }
 			});
 		}
+		
+		getSingle();
 		var owl_single = $('.single');
 			owl_single.owlCarousel(
 				{
@@ -403,7 +405,6 @@ function showMore(sectionId, parent, content, currentItem, data){
 					dots: false
 				}
 				);
-		getSingle();
 		function getScreenshots(gallery){
 			var screenshots = '<div class="owl-carousel single">';
 			for (let i in gallery){
