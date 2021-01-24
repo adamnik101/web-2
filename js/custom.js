@@ -577,7 +577,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 
 		} */
 //function displayItems(info,itemID,)
-		$("body .openSingle").on("click", function(){
-			console.log($(this));
+		$(document).on("click", ".openSingle",function(){
+			console.log($(this).find("h5").html());
 		})
 });
