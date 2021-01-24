@@ -548,6 +548,7 @@ jQuery(document).ready(function ($) {
             fillSystemReq("recommended", item.specifications.recommended);
             var img = document.createElement("img");
             img.setAttribute("src", item.image.cover);
+            img.className = "img-fluid";
             $("#slika").append(img);
           }
         }

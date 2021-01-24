@@ -609,6 +609,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 					fillSystemReq("recommended", item.specifications.recommended);
 					let img = document.createElement("img");
 					img.setAttribute("src", item.image.cover);
+					img.className = "img-fluid"
 					$("#slika").append(img);
 				}
 			}
