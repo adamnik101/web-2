@@ -795,6 +795,9 @@ section
 	border-radius: 10px;
 	transition: 0.5s;
 }
+#newReleases,#hotSales{
+	width: 100%;
+}
 .banner .card .card-body{
 	padding: 20px 0 0 0;
 }
