@@ -438,7 +438,7 @@ jQuery(document).ready(function ($) {
       }
     };
 
-    var owl_single = $('.single');
+    var owl_single = $(document).find(".single");
     owl_single.owlCarousel({
       items: 1,
       loop: true,
