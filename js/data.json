@@ -74,7 +74,7 @@
         "image" : {
             "cover" : "images/banner_14.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_minecraft_1.jpg","images/screenshot_minecraft_2.jpg","images/screenshot_minecraft_3.jpg"
             ]
         },
         "price" : {
