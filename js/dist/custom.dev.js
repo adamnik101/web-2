@@ -546,12 +546,16 @@ jQuery(document).ready(function ($) {
             $("#name").append(item.name);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
-            var img = document.createElement("div");
-            img.className = "owl-carousel-single";
+
+            var _owl = document.createElement("div");
+
+            _owl.className = "owl-carousel-single";
+            var img_div = document.createElement("div");
             var img_src = document.createElement("img");
             img_src.setAttribute("src", item.image.cover);
-            $(img).append(img_src);
-            $("#slika").append(img);
+            $(owl_div).append(img_src);
+            $(_owl).append(img_div);
+            $("#slika").append(_owl);
           }
         }
       } catch (err) {

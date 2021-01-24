@@ -607,12 +607,14 @@ function showMore(sectionId, parent, content, currentItem, data){
 					$("#name").append(item.name);
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
-					let img = document.createElement("div");
-					img.className = "owl-carousel-single"
+					let owl = document.createElement("div");
+					owl.className = "owl-carousel-single"
+					let img_div = document.createElement("div");
 					let img_src = document.createElement("img");
 					img_src.setAttribute("src", item.image.cover);
-					$(img).append(img_src);
-					$("#slika").append(img);
+					$(owl_div).append(img_src);
+					$(owl).append(img_div);
+					$("#slika").append(owl);
 				}
 			}
 		}
