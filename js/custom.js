@@ -388,6 +388,17 @@ function showMore(sectionId, parent, content, currentItem, data){
 				dataType : "json",
 				success : function(result){
 					displaySingle(result);
+					var owl_single = $(".single");
+						owl_single.owlCarousel(
+							{
+								items:1,
+								loop : true,
+								autoplay: true,
+								mouseDrag: true,
+								touchDrag: true,
+								dots: false
+							}
+							);
 				},
 				error: function(xhr,status, error) { console.log(error); }
 			});
@@ -437,17 +448,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 					}
 				}
 			}
-					var owl_single = $(".single");
-						owl_single.owlCarousel(
-							{
-								items:1,
-								loop : true,
-								autoplay: true,
-								mouseDrag: true,
-								touchDrag: true,
-								dots: false
-							}
-							);
+					
 		}
 
 		

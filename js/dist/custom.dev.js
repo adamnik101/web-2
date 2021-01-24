@@ -370,6 +370,15 @@ jQuery(document).ready(function ($) {
         dataType: "json",
         success: function success(result) {
           displaySingle(result);
+          var owl_single = $(".single");
+          owl_single.owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            mouseDrag: true,
+            touchDrag: true,
+            dots: false
+          });
         },
         error: function error(xhr, status, _error2) {
           console.log(_error2);
@@ -439,15 +448,6 @@ jQuery(document).ready(function ($) {
     };
 
     getSingle();
-    var owl_single = $(".single");
-    owl_single.owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      mouseDrag: true,
-      touchDrag: true,
-      dots: false
-    });
   } //function displayItems(info,itemID,)
 
 
