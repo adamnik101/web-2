@@ -573,8 +573,19 @@ function showMore(sectionId, parent, content, currentItem, data){
 			}) 
 			$("#" + parent + " .showMore").fadeOut(600);
 }
-
-		if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){	
+					
+		if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){
+			var owl_single = $('.single');
+			owl_single.owlCarousel(
+				{
+					items:1,
+					loop : true,
+					autoplay: true,
+					mouseDrag: true,
+					touchDrag: true,
+					dots: false
+				}
+				);
 		function getSingle(){
 			$.ajax({
 				url : "js/data.json",
@@ -615,19 +626,11 @@ function showMore(sectionId, parent, content, currentItem, data){
 					$(img_div).append(img_src);
 					$(owl).append(img_div);
 					$("#slika").append(owl); */
-					var owl_single = $('.owl-carousel-single');
-					owl_single.owlCarousel(
-						{
-							items:1,
-							loop : true,
-							mouseDrag: true,
-							touchDrag: true,
-							dots: false
-						}
-						);
+					
 					}
 				}
 			}
+			
 		}
 
 		
