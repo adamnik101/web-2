@@ -380,7 +380,18 @@ function showMore(sectionId, parent, content, currentItem, data){
 }
 }		
 		if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){
-			
+			screenshots += `</div`;
+			var owl_single = $('.single');
+			owl_single.owlCarousel(
+				{
+					items:1,
+					loop : true,
+					autoplay: true,
+					mouseDrag: true,
+					touchDrag: true,
+					dots: false
+				}
+				);
 		function getSingle(){
 			$.ajax({
 				url : "js/data.json",
@@ -402,18 +413,6 @@ function showMore(sectionId, parent, content, currentItem, data){
 				<img src="${gallery[i]}" class="img-fluid" alt="gameplay screenshot">
 			</div>`
 			}
-			screenshots += `</div`;
-			var owl_single = $('.single');
-			owl_single.owlCarousel(
-				{
-					items:1,
-					loop : true,
-					autoplay: true,
-					mouseDrag: true,
-					touchDrag: true,
-					dots: false
-				}
-				);
 			$("#slika").append(screenshots);
 		}
 		function fillSystemReq(minOrRec, specifications){
