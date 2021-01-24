@@ -380,7 +380,6 @@ function showMore(sectionId, parent, content, currentItem, data){
 }
 }		
 		if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){
-			screenshots += `</div`;
 			var owl_single = $('.single');
 			owl_single.owlCarousel(
 				{
@@ -413,6 +412,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 				<img src="${gallery[i]}" class="img-fluid" alt="gameplay screenshot">
 			</div>`
 			}
+			screenshots += `</div`;
 			$("#slika").append(screenshots);
 		}
 		function fillSystemReq(minOrRec, specifications){

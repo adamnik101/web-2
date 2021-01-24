@@ -384,6 +384,7 @@ jQuery(document).ready(function ($) {
         screenshots += "<div class=\"item\">\n\t\t\t\t<img src=\"".concat(gallery[i], "\" class=\"img-fluid\" alt=\"gameplay screenshot\">\n\t\t\t</div>");
       }
 
+      screenshots += "</div";
       $("#slika").append(screenshots);
     };
 
@@ -437,7 +438,6 @@ jQuery(document).ready(function ($) {
       }
     };
 
-    screenshots += "</div";
     var owl_single = $('.single');
     owl_single.owlCarousel({
       items: 1,
