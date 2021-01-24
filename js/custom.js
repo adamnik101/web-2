@@ -439,7 +439,7 @@ function displayItems(id, img, name, publisher, price, animation, display){
 	let a = document.createElement("a");
 	a.setAttribute("href","#!");
 	a.className = "openSingle";
-	a.setAttribute("id", )
+	a.setAttribute("id", id)
 	div.appendChild(a);
 	let image = document.createElement("img");
 	image.setAttribute("src", img);

@@ -342,7 +342,7 @@ jQuery(document).ready(function ($) {
     var a = document.createElement("a");
     a.setAttribute("href", "#!");
     a.className = "openSingle";
-    a.setAttribute("id");
+    a.setAttribute("id", id);
     div.appendChild(a);
     var image = document.createElement("img");
     image.setAttribute("src", img);
