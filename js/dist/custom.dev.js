@@ -543,7 +543,7 @@ jQuery(document).ready(function ($) {
           if (item.id == localStorage.getItem("id")) {
             $("#name").append(item.name);
             fillSystemReq("minimum", item.specifications.minimum);
-            fillSystemReq("recommended", item.specifications.minimum);
+            fillSystemReq("recommended", item.specifications.recommended);
           }
         }
       } catch (err) {

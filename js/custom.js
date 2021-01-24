@@ -605,7 +605,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
 					fillSystemReq("minimum", item.specifications.minimum)
-					fillSystemReq("recommended", item.specifications.minimum)
+					fillSystemReq("recommended", item.specifications.recommended)
 				}
 			}
 		}
