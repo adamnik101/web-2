@@ -470,7 +470,7 @@
         "image" : {
             "cover" : "images/banner_3.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_hitman_1.jpg","images/screenshot_hitman_2.jpg","images/screenshot_hitman_3.jpg"
             ]
         },
         "price" : {
@@ -606,7 +606,7 @@
         "image" : {
             "cover" : "images/banner_13.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_fc1_1.jpg","images/screenshot_fc1_2.jpg","images/screenshot_fc1_3.jpg"
             ]
         },
         "price" : {
