@@ -340,7 +340,7 @@ jQuery(document).ready(function ($) {
     var div = document.createElement("div");
     div.className = "card mb-3 col-12".concat(animation);
     var a = document.createElement("a");
-    a.setAttribute("href", "single.html");
+    a.setAttribute("href", "#!");
     a.className = "openSingle";
     div.appendChild(a);
     var image = document.createElement("img");
