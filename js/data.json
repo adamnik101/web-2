@@ -140,7 +140,7 @@
         "image" : {
             "cover" : "images/banner_2.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_valhalla_1.jpg","images/screenshot_valhalla_2.jpg","images/screenshot_valhalla_3.jpg"
             ]
         },
         "price" : {
