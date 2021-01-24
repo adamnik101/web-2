@@ -553,7 +553,7 @@ jQuery(document).ready(function ($) {
             var img_div = document.createElement("div");
             var img_src = document.createElement("img");
             img_src.setAttribute("src", item.image.cover);
-            $(owl_div).append(img_src);
+            $(img_div).append(img_src);
             $(_owl).append(img_div);
             $("#slika").append(_owl);
           }

@@ -612,7 +612,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 					let img_div = document.createElement("div");
 					let img_src = document.createElement("img");
 					img_src.setAttribute("src", item.image.cover);
-					$(owl_div).append(img_src);
+					$(img_div).append(img_src);
 					$(owl).append(img_div);
 					$("#slika").append(owl);
 				}
