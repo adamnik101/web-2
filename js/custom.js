@@ -26,17 +26,7 @@ jQuery(document).ready(function($)
 
 	*/
 	/* owl carousel */
-	var owl_single = $('.single');
-			owl_single.owlCarousel(
-				{
-					items:1,
-					loop : true,
-					autoplay: true,
-					mouseDrag: true,
-					touchDrag: true,
-					dots: false
-				}
-				);
+	
 	var header = $('.header');
 	var topNav = $('.top_nav')
 	var mainSlider = $('.main_slider');
@@ -390,7 +380,17 @@ function showMore(sectionId, parent, content, currentItem, data){
 }
 }		
 		if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){
-			
+			var owl_single = $('.single');
+			owl_single.owlCarousel(
+				{
+					items:1,
+					loop : true,
+					autoplay: true,
+					mouseDrag: true,
+					touchDrag: true,
+					dots: false
+				}
+				);
 		function getSingle(){
 			$.ajax({
 				url : "js/data.json",
