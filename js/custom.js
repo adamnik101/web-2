@@ -590,7 +590,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 		function displaySingle(data){
 			for(let item of data.allGames){
 				if(item.id == localStorage.getItem("id")){
-					$("#name").append(item.id);
+					$("#name").append(item.name);
 				}
 			}
 		}

@@ -533,7 +533,7 @@ jQuery(document).ready(function ($) {
           var item = _step2.value;
 
           if (item.id == localStorage.getItem("id")) {
-            $("#name").append(item.id);
+            $("#name").append(item.name);
           }
         }
       } catch (err) {
