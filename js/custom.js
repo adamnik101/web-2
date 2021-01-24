@@ -587,10 +587,25 @@ function showMore(sectionId, parent, content, currentItem, data){
 			});
 		}
 		getSingle();
+		var systemReq = '';
+		function fillSystemReq(minOrRec, specifications){
+			for(let i in specifications){
+				systemReq += `
+				<li>
+					<h6 class="text-muted">${specifications[i].name}</h6>
+					<p>${specifications[i].value}</p>
+				</li>
+			`
+			}
+			
+		$("#" + minOrRec).append(systemReq);
+		}
 		function displaySingle(data){
 			for(let item of data.allGames){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
+					fillSystemReq("minimum", item.specifications.minimum)
+					fillSystemReq("recommended", item.specifications.minimum)
 				}
 			}
 		}

@@ -523,6 +523,14 @@ jQuery(document).ready(function ($) {
       });
     };
 
+    var fillSystemReq = function fillSystemReq(minOrRec, specifications) {
+      for (var i in specifications) {
+        systemReq += "\n\t\t\t\t<li>\n\t\t\t\t\t<h6 class=\"text-muted\">".concat(specifications[i].name, "</h6>\n\t\t\t\t\t<p>").concat(specifications[i].value, "</p>\n\t\t\t\t</li>\n\t\t\t");
+      }
+
+      $("#" + minOrRec).append(systemReq);
+    };
+
     var displaySingle = function displaySingle(data) {
       var _iteratorNormalCompletion2 = true;
       var _didIteratorError2 = false;
@@ -534,6 +542,8 @@ jQuery(document).ready(function ($) {
 
           if (item.id == localStorage.getItem("id")) {
             $("#name").append(item.name);
+            fillSystemReq("minimum", item.specifications.minimum);
+            fillSystemReq("recommended", item.specifications.minimum);
           }
         }
       } catch (err) {
@@ -553,6 +563,7 @@ jQuery(document).ready(function ($) {
     };
 
     getSingle();
+    var systemReq = '';
   } //function displayItems(info,itemID,)
 
 

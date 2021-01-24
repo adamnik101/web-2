@@ -760,7 +760,7 @@
             }
         },
         "specifications":{
-            "minimum":[
+            "Minimum":[
                 {
                     "name":"OS",
                     "value": "Windows 7"
@@ -782,7 +782,7 @@
                     "value":"70 GB (SSD Recommended)"
                 }
             ],
-            "recommended":[
+            "Recommended":[
                 {
                     "name":"OS",
                     "value": "Windows 10"
