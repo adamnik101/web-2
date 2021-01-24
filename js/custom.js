@@ -474,7 +474,7 @@ function getGames(){
 		type : "GET",
 		dataType : "json",
 		success : function(result){
-			displayAllSections(result)
+			displayAllSections(result);
 		},
 		error: function(xhr,status, error) { console.log(error); }
 	});
@@ -574,9 +574,27 @@ function showMore(sectionId, parent, content, currentItem, data){
 			$("#" + parent + " .showMore").fadeOut(600);
 }
 
-		/* if(window.location.top.href === "https://adamnik101.github.io/web-2/single.hmtl"){
-
-		} */
+		if(window.location.href === "single.html"){	
+		function getSingle(){
+			$.ajax({
+				url : "js/data.json",
+				type : "GET",
+				dataType : "json",
+				success : function(result){
+					displaySingle(result);
+				},
+				error: function(xhr,status, error) { console.log(error); }
+			});
+		}
+		getSingle();
+		function displaySingle(data){
+			for(let item of data.allGames){
+				if(item.id == localStorage.getItem("id")){
+					$("#name").append(item.id);
+				}
+			}
+		}
+		}
 //function displayItems(info,itemID,)
 		$(document).on("click", ".openSingle",function(){
 			localStorage.setItem("id", ($(this).attr("id")));

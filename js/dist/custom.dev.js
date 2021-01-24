@@ -507,9 +507,53 @@ jQuery(document).ready(function ($) {
     });
     $("#" + parent + " .showMore").fadeOut(600);
   }
-  /* if(window.location.top.href === "https://adamnik101.github.io/web-2/single.hmtl"){
-  	} */
-  //function displayItems(info,itemID,)
+
+  if (window.location.href === "single.html") {
+    var getSingle = function getSingle() {
+      $.ajax({
+        url: "js/data.json",
+        type: "GET",
+        dataType: "json",
+        success: function success(result) {
+          displaySingle(result);
+        },
+        error: function error(xhr, status, _error2) {
+          console.log(_error2);
+        }
+      });
+    };
+
+    var displaySingle = function displaySingle(data) {
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = data.allGames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var item = _step2.value;
+
+          if (item.id == localStorage.getItem("id")) {
+            $("#name").append(item.id);
+          }
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+            _iterator2["return"]();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+    };
+
+    getSingle();
+  } //function displayItems(info,itemID,)
 
 
   $(document).on("click", ".openSingle", function () {
