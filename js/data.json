@@ -272,7 +272,7 @@
         "image" : {
             "cover" : "images/banner_6.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_blair_1.jpg","images/screenshot_blair_2.jpg","images/screenshot_blair_3.jpg"
             ]
         },
         "price" : {
