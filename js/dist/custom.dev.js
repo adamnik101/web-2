@@ -506,8 +506,9 @@ jQuery(document).ready(function ($) {
     });
     $("#" + parent + " .showMore").fadeOut(600);
   }
-
-  if (window.location.top.href === "https://adamnik101.github.io/web-2/single.hmtl") {} //function displayItems(info,itemID,)
+  /* if(window.location.top.href === "https://adamnik101.github.io/web-2/single.hmtl"){
+  	} */
+  //function displayItems(info,itemID,)
 
 
   $("document .openSingle").on("click", function () {
