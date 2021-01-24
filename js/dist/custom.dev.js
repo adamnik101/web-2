@@ -44,18 +44,12 @@ jQuery(document).ready(function ($) {
   var fsOverlay = $('.fs_menu_overlay');
   setHeader();
   $(window).on('resize', function () {
-    initFixProductBorder();
     setHeader();
   });
   $(document).on('scroll', function () {
     setHeader();
   });
   initMenu();
-  initTimer();
-  initFavorite();
-  initFixProductBorder();
-  initIsotopeFiltering();
-  getGames();
   /* 
   	2. Set Header
   	*/
@@ -154,369 +148,227 @@ jQuery(document).ready(function ($) {
   	4. Init Timer
   	*/
 
-
-  function initTimer() {
-    if ($('.timer').length) {
-      // Uncomment line below and replace date
-      // var target_date = new Date("Dec 7, 2017").getTime();
-      // comment lines below
-      var date = new Date();
-      date.setDate(date.getDate() + 3);
-      var target_date = date.getTime(); //----------------------------------------
-      // variables for time units
-
-      var days, hours, minutes, seconds;
-      var d = $('#day');
-      var h = $('#hour');
-      var m = $('#minute');
-      var s = $('#second');
-      setInterval(function () {
-        // find the amount of "seconds" between now and target
-        var current_date = new Date().getTime();
-        var seconds_left = (target_date - current_date) / 1000; // do some time calculations
-
-        days = parseInt(seconds_left / 86400);
-        seconds_left = seconds_left % 86400;
-        hours = parseInt(seconds_left / 3600);
-        seconds_left = seconds_left % 3600;
-        minutes = parseInt(seconds_left / 60);
-        seconds = parseInt(seconds_left % 60); // display result
-
-        d.text(days);
-        h.text(hours);
-        m.text(minutes);
-        s.text(seconds);
-      }, 1000);
-    }
-  }
   /* 
   5. Init Favorite
   */
 
-
-  function initFavorite() {
-    if ($('.favorite').length) {
-      var favs = $('.favorite');
-      favs.each(function () {
-        var fav = $(this);
-        var active = false;
-
-        if (fav.hasClass('active')) {
-          active = true;
-        }
-
-        fav.on('click', function () {
-          if (active) {
-            fav.removeClass('active');
-            active = false;
-          } else {
-            fav.addClass('active');
-            active = true;
-          }
-        });
-      });
-    }
-  }
   /* 
   6. Init Fix Product Border
   */
 
-
-  function initFixProductBorder() {
-    if ($('.product_filter').length) {
-      var products = $('.product_filter:visible');
-      var wdth = window.innerWidth; // reset border
-
-      products.each(function () {
-        $(this).css('border-right', 'solid 1px #e9e9e9');
-      }); // if window width is 991px or less
-
-      if (wdth < 480) {
-        for (var i = 0; i < products.length; i++) {
-          var product = $(products[i]);
-          product.css('border-right', 'none');
-        }
-      } else if (wdth < 576) {
-        if (products.length < 5) {
-          var product = $(products[products.length - 1]);
-          product.css('border-right', 'none');
-        }
-
-        for (var i = 1; i < products.length; i += 2) {
-          var product = $(products[i]);
-          product.css('border-right', 'none');
-        }
-      } else if (wdth < 768) {
-        if (products.length < 5) {
-          var product = $(products[products.length - 1]);
-          product.css('border-right', 'none');
-        }
-
-        for (var i = 2; i < products.length; i += 3) {
-          var product = $(products[i]);
-          product.css('border-right', 'none');
-        }
-      } else if (wdth < 992) {
-        if (products.length < 5) {
-          var product = $(products[products.length - 1]);
-          product.css('border-right', 'none');
-        }
-
-        for (var i = 3; i < products.length; i += 4) {
-          var product = $(products[i]);
-          product.css('border-right', 'none');
-        }
-      } //if window width is larger than 991px
-      else {
-          if (products.length < 5) {
-            var product = $(products[products.length - 1]);
-            product.css('border-right', 'none');
-          }
-
-          for (var i = 4; i < products.length; i += 5) {
-            var product = $(products[i]);
-            product.css('border-right', 'none');
-          }
-        }
-    }
-  }
   /* 
   7. Init Isotope Filtering
   */
 
-
-  function initIsotopeFiltering() {
-    if ($('.grid_sorting_button').length) {
-      $('.grid_sorting_button').click(function () {
-        // putting border fix inside of setTimeout because of the transition duration
-        setTimeout(function () {
-          initFixProductBorder();
-        }, 500);
-        $('.grid_sorting_button.active').removeClass('active');
-        $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
-        $('.product-grid').isotope({
-          filter: selector,
-          animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-          }
-        });
-        return false;
-      });
-    }
-  }
   /* 
   8. Init Slider
   */
 
 
-  var owl = $('.owl-carousel');
-  owl.owlCarousel({
-    items: 1,
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    dots: false
-  });
-  /* function progress(){
-  	setTimeout(function(){
-  		$("#progressBar").animate({
-  			"width" : "100%"
-  		},10000,"linear", function(){
-  			$(this).css("width", "0%");
-  			owl.trigger('next.owl.carousel');
-  			progress;
-  		})
-  	})
-  }
-  progress(); */
+  if (window.top.location.href == "https://adamnik101.github.io/web-2/index.html") {
+    /* function progress(){
+    	setTimeout(function(){
+    		$("#progressBar").animate({
+    			"width" : "100%"
+    		},10000,"linear", function(){
+    			$(this).css("width", "0%");
+    			owl.trigger('next.owl.carousel');
+    			progress;
+    		})
+    	})
+    }
+    progress(); */
+    var progress = function progress() {
+      $("#progressBar").css("width", "0%");
+      $("#progressBar").animate({
+        width: "100%"
+      }, 10000, "linear", function () {
+        progress();
+        owl.trigger('next.owl.carousel');
+      });
+    };
 
-  function progress() {
-    $("#progressBar").css("width", "0%");
-    $("#progressBar").animate({
-      width: "100%"
-    }, 10000, "linear", function () {
-      progress();
-      owl.trigger('next.owl.carousel');
-    });
-  }
+    var displayItems = function displayItems(id, img, name, publisher, price, animation, display) {
+      var div = document.createElement("div");
+      div.className = "card mb-3 col-12".concat(animation);
+      var a = document.createElement("a");
+      a.setAttribute("href", "#!");
+      a.className = "openSingle";
+      a.setAttribute("id", id);
+      div.appendChild(a);
+      var image = document.createElement("img");
+      image.setAttribute("src", img);
+      image.setAttribute("alt", name);
+      image.className = "card-img-top";
+      a.appendChild(image);
+      var card = document.createElement("div");
+      card.className = "card-body";
+      a.appendChild(card);
+      var h5 = document.createElement("h5");
+      h5.textContent = name;
+      h5.className = "card-title";
+      card.appendChild(h5);
+      var ul = document.createElement("ul");
+      ul.className = "card-info";
+      card.appendChild(ul);
+      var li1 = document.createElement("li");
+      li1.className = "text-muted developer";
+      li1.textContent = publisher;
+      ul.appendChild(li1);
+      var li2 = document.createElement("li");
+      li2.className = "price";
+      li2.innerHTML = price;
+      ul.appendChild(li2);
+      $("#" + display).append(div);
+    };
 
-  progress();
-  var displayNew = "";
-  var displaySale = "";
-
-  function displayItems(id, img, name, publisher, price, animation, display) {
-    var div = document.createElement("div");
-    div.className = "card mb-3 col-12".concat(animation);
-    var a = document.createElement("a");
-    a.setAttribute("href", "#!");
-    a.className = "openSingle";
-    a.setAttribute("id", id);
-    div.appendChild(a);
-    var image = document.createElement("img");
-    image.setAttribute("src", img);
-    image.setAttribute("alt", name);
-    image.className = "card-img-top";
-    a.appendChild(image);
-    var card = document.createElement("div");
-    card.className = "card-body";
-    a.appendChild(card);
-    var h5 = document.createElement("h5");
-    h5.textContent = name;
-    h5.className = "card-title";
-    card.appendChild(h5);
-    var ul = document.createElement("ul");
-    ul.className = "card-info";
-    card.appendChild(ul);
-    var li1 = document.createElement("li");
-    li1.className = "text-muted developer";
-    li1.textContent = publisher;
-    ul.appendChild(li1);
-    var li2 = document.createElement("li");
-    li2.className = "price";
-    li2.innerHTML = price;
-    ul.appendChild(li2);
-    $("#" + display).append(div);
-  }
-
-  var loadedNew = false;
-
-  function getGames() {
-    $.ajax({
-      url: "js/data.json",
-      type: "GET",
-      dataType: "json",
-      success: function success(result) {
-        displayAllSections(result);
-      },
-      error: function error(xhr, status, _error) {
-        console.log(_error);
-      }
-    });
-  }
-
-  function homepageGames(sectionId, parent, data) {
-    //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
-    var newToShow;
-    var saleToShow;
-    var maxItems = 4;
-    var numberOfNew = 0;
-    var numberOfSale = 0;
-    var currentItem = 0;
-    var content;
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = data.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var item = _step.value;
-
-        if (item.newRelease) {
-          numberOfNew++;
+    var getGames = function getGames() {
+      $.ajax({
+        url: "js/data.json",
+        type: "GET",
+        dataType: "json",
+        success: function success(result) {
+          displayAllSections(result);
+        },
+        error: function error(xhr, status, _error) {
+          console.log(_error);
         }
+      });
+    };
 
-        if (item.price.discount.isDiscounted) {
-          numberOfSale++;
-          /* console.log(numberOfSale) */
-        }
+    var homepageGames = function homepageGames(sectionId, parent, data) {
+      //obrada artikala koji imaju true za new release, ako je true onda se prosledjuje dalje za ispisivanje
+      var newToShow;
+      var saleToShow;
+      var maxItems = 4;
+      var numberOfNew = 0;
+      var numberOfSale = 0;
+      var currentItem = 0;
+      var content;
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
 
-        if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
-          content = displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+      try {
+        for (var _iterator = data.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var item = _step.value;
 
-          currentItem++;
-          item.shownNewReleaseSection = true;
+          if (item.newRelease) {
+            numberOfNew++;
+          }
 
-          if (currentItem == maxItems) {
-            loadedNew = true;
-            maxItems += maxItems;
+          if (item.price.discount.isDiscounted) {
+            numberOfSale++;
+            /* console.log(numberOfSale) */
+          }
+
+          if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
+            content = displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+
+            currentItem++;
+            item.shownNewReleaseSection = true;
+
+            if (currentItem == maxItems) {
+              loadedNew = true;
+              maxItems += maxItems;
+            }
+          }
+
+          if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
+            displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
+            currentItem++;
+            item.shownHotSales = true;
+            $("#" + parent + " .showMore").html("Show " + " more");
           }
         }
-
-        if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
-          displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
-          currentItem++;
-          item.shownHotSales = true;
-          $("#" + parent + " .showMore").html("Show " + " more");
-        }
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-          _iterator["return"]();
-        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
       } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
+        try {
+          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+            _iterator["return"]();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
         }
       }
-    }
 
-    newToShow = numberOfNew - currentItem;
-    saleToShow = numberOfSale - currentItem;
+      newToShow = numberOfNew - currentItem;
+      saleToShow = numberOfSale - currentItem;
 
-    if (sectionId == "newReleases") {
-      $("#" + parent + " .showMore").html("Show " + newToShow + " more");
-    } else {
-      $("#" + parent + " .showMore").html("Show " + saleToShow + " more");
-    }
-
-    console.log(numberOfNew);
-    $("#" + parent + " .showMore").on("click", function () {
-      if (currentItem == 4) {
-        showMore(sectionId, parent, content, currentItem, data);
-      }
-    });
-  }
-
-  function displayAllSections(result) {
-    homepageGames("newReleases", "new", result);
-    homepageGames("hotSales", "sale", result);
-  }
-
-  function price(item, discount) {
-    if (!discount.isDiscounted) {
-      return "<i class=\"fas fa-euro-sign\"></i> ".concat(item.price.value);
-    } else {
-      return "<span class=\"badge badge-danger\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\">").concat(item.price.value.before, "</s> <span>").concat(item.price.value.after, "</span>");
-    }
-  }
-
-  function showMore(sectionId, parent, content, currentItem, data) {
-    var animation = " animate";
-
-    for (var item in data.allGames) {
-      console.log(item, currentItem);
-
-      if (data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
-        console.log(data.allGames[item]);
-        displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
+      if (sectionId == "newReleases") {
+        $("#" + parent + " .showMore").html("Show " + newToShow + " more");
+      } else {
+        $("#" + parent + " .showMore").html("Show " + saleToShow + " more");
       }
 
-      if (!data.allGames[item].newRelease && data.allGames[item].price.discount.isDiscounted && !data.allGames[item].shownHotSales && parent == "sale") {
-        displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
-      }
-    }
+      console.log(numberOfNew);
+      $("#" + parent + " .showMore").on("click", function () {
+        if (currentItem == 4) {
+          showMore(sectionId, parent, content, currentItem, data);
+        }
+      });
+    };
 
-    ;
-    var i = 0;
-    var delay = 0;
-    $("#" + sectionId).html(content);
-    $("#" + sectionId + " .animate").animate({
-      height: "500px"
+    var displayAllSections = function displayAllSections(result) {
+      homepageGames("newReleases", "new", result);
+      homepageGames("hotSales", "sale", result);
+    };
+
+    var price = function price(item, discount) {
+      if (!discount.isDiscounted) {
+        return "<i class=\"fas fa-euro-sign\"></i> ".concat(item.price.value);
+      } else {
+        return "<span class=\"badge badge-danger\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\">").concat(item.price.value.before, "</s> <span>").concat(item.price.value.after, "</span>");
+      }
+    };
+
+    var showMore = function showMore(sectionId, parent, content, currentItem, data) {
+      var animation = " animate";
+
+      for (var item in data.allGames) {
+        console.log(item, currentItem);
+
+        if (data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
+          console.log(data.allGames[item]);
+          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
+        }
+
+        if (!data.allGames[item].newRelease && data.allGames[item].price.discount.isDiscounted && !data.allGames[item].shownHotSales && parent == "sale") {
+          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
+        }
+      }
+
+      ;
+      var i = 0;
+      var delay = 0;
+      $("#" + sectionId).html(content);
+      $("#" + sectionId + " .animate").animate({
+        height: "500px"
+      });
+      $("#" + sectionId + " .animate").each(function () {
+        $("#" + sectionId + " .animate").eq(i).delay(600 * delay++).animate({
+          bottom: "0",
+          opacity: "1"
+        }), i++;
+      });
+      $("#" + parent + " .showMore").fadeOut(600);
+    };
+
+    getGames();
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+      items: 1,
+      loop: true,
+      mouseDrag: false,
+      touchDrag: false,
+      dots: false
     });
-    $("#" + sectionId + " .animate").each(function () {
-      $("#" + sectionId + " .animate").eq(i).delay(600 * delay++).animate({
-        bottom: "0",
-        opacity: "1"
-      }), i++;
-    });
-    $("#" + parent + " .showMore").fadeOut(600);
+    progress();
+    var loadedNew = false;
   }
 
   if (window.top.location.href == "https://adamnik101.github.io/web-2/single.html") {
