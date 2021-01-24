@@ -394,7 +394,16 @@ function showMore(sectionId, parent, content, currentItem, data){
 		}
 		
 		getSingle();
-		var owl_single = $('.single');
+		
+		function getScreenshots(gallery){
+			var screenshots = '<div class="owl-carousel single">';
+			for (let i in gallery){
+				screenshots += `<div class="item">
+				<img src="${gallery[i]}" class="img-fluid" alt="gameplay screenshot">
+			</div>`
+			}
+			screenshots += `</div`;
+			var owl_single = $('.single');
 			owl_single.owlCarousel(
 				{
 					items:1,
@@ -405,14 +414,6 @@ function showMore(sectionId, parent, content, currentItem, data){
 					dots: false
 				}
 				);
-		function getScreenshots(gallery){
-			var screenshots = '<div class="owl-carousel single">';
-			for (let i in gallery){
-				screenshots += `<div class="item">
-				<img src="${gallery[i]}" class="img-fluid" alt="gameplay screenshot">
-			</div>`
-			}
-			screenshots += `</div`;
 			$("#slika").append(screenshots);
 		}
 		function fillSystemReq(minOrRec, specifications){

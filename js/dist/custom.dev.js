@@ -385,6 +385,15 @@ jQuery(document).ready(function ($) {
       }
 
       screenshots += "</div";
+      var owl_single = $('.single');
+      owl_single.owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        mouseDrag: true,
+        touchDrag: true,
+        dots: false
+      });
       $("#slika").append(screenshots);
     };
 
@@ -439,15 +448,6 @@ jQuery(document).ready(function ($) {
     };
 
     getSingle();
-    var owl_single = $('.single');
-    owl_single.owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      mouseDrag: true,
-      touchDrag: true,
-      dots: false
-    });
   } //function displayItems(info,itemID,)
 
 
