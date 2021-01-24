@@ -377,8 +377,19 @@ jQuery(document).ready(function ($) {
       });
     };
 
+    var getScreenshots = function getScreenshots() {
+      var screenshots = '<div class="owl-carousel single">';
+
+      for (var i in gallery) {
+        screenshots += "<div class=\"item\">\n\t\t\t\t<img src=\"".concat(gallery[i], "\" class=\"img-fluid\" alt=\"gameplay screenshot\">\n\t\t\t</div>");
+      }
+
+      screenshots += "</div";
+      $("#slika").append(screenshots);
+    };
+
     var fillSystemReq = function fillSystemReq(minOrRec, specifications) {
-      var systemReq = '';
+      var systemReq = "";
 
       for (var i in specifications) {
         systemReq += "\n\t\t\t\t<li>\n\t\t\t\t\t<h6 class=\"text-muted\">".concat(specifications[i].name, "</h6>\n\t\t\t\t\t<p>").concat(specifications[i].value, "</p>\n\t\t\t\t</li>\n\t\t\t");
@@ -400,6 +411,7 @@ jQuery(document).ready(function ($) {
             $("#name").append(item.name);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
+            getScreenshots(item.image.gallery);
             /* let owl = document.createElement("div");
             owl.className = "owl-carousel-single"
             let img_div = document.createElement("div");

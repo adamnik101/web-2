@@ -403,9 +403,18 @@ function showMore(sectionId, parent, content, currentItem, data){
 			});
 		}
 		getSingle();
-		
+		function getScreenshots(){
+			var screenshots = '<div class="owl-carousel single">';
+			for (let i in gallery){
+				screenshots += `<div class="item">
+				<img src="${gallery[i]}" class="img-fluid" alt="gameplay screenshot">
+			</div>`
+			}
+			screenshots += `</div`;
+			$("#slika").append(screenshots);
+		}
 		function fillSystemReq(minOrRec, specifications){
-			var systemReq = '';
+			var systemReq = "";
 			for(let i in specifications){
 				systemReq += `
 				<li>
@@ -423,6 +432,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 					$("#name").append(item.name);
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
+					getScreenshots(item.image.gallery);
 					/* let owl = document.createElement("div");
 					owl.className = "owl-carousel-single"
 					let img_div = document.createElement("div");
