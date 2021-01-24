@@ -607,14 +607,14 @@ function showMore(sectionId, parent, content, currentItem, data){
 					$("#name").append(item.name);
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
-					let owl = document.createElement("div");
+					/* let owl = document.createElement("div");
 					owl.className = "owl-carousel-single"
 					let img_div = document.createElement("div");
 					let img_src = document.createElement("img");
 					img_src.setAttribute("src", item.image.cover);
 					$(img_div).append(img_src);
 					$(owl).append(img_div);
-					$("#slika").append(owl);
+					$("#slika").append(owl); */
 					var owl_single = $('.owl-carousel-single');
 					owl_single.owlCarousel(
 						{

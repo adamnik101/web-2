@@ -546,16 +546,15 @@ jQuery(document).ready(function ($) {
             $("#name").append(item.name);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
-
-            var _owl = document.createElement("div");
-
-            _owl.className = "owl-carousel-single";
-            var img_div = document.createElement("div");
-            var img_src = document.createElement("img");
+            /* let owl = document.createElement("div");
+            owl.className = "owl-carousel-single"
+            let img_div = document.createElement("div");
+            let img_src = document.createElement("img");
             img_src.setAttribute("src", item.image.cover);
             $(img_div).append(img_src);
-            $(_owl).append(img_div);
-            $("#slika").append(_owl);
+            $(owl).append(img_div);
+            $("#slika").append(owl); */
+
             var owl_single = $('.owl-carousel-single');
             owl_single.owlCarousel({
               items: 1,
