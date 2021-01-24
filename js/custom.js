@@ -607,13 +607,26 @@ function showMore(sectionId, parent, content, currentItem, data){
 					$("#name").append(item.name);
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
-					let img = document.createElement("img");
-					img.setAttribute("src", item.image.cover);
-					img.className = "img-fluid"
+					let img = document.createElement("div");
+					img.className = "owl-carousel-single"
+					let img_src = document.createElement("img");
+					img_src.setAttribute("src", item.image.cover);
+					$(img).append(img_src);
 					$("#slika").append(img);
 				}
 			}
 		}
+
+		var owl_single = $('.owl-carousel-single');
+		owl_single.owlCarousel(
+			{
+				items:1,
+				loop : true,
+				mouseDrag: true,
+				touchDrag: true,
+				dots: false
+			  }
+			);
 		}
 //function displayItems(info,itemID,)
 		$(document).on("click", ".openSingle",function(){
