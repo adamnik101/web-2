@@ -484,7 +484,7 @@
     {
         "id" : 8,
         "name" : "Hitman III",
-        "publisher" : "I/O Interactive",
+        "publisher" : "IO Interactive",
         "releaseDate" : "Dec 10, 2020",
         "newRelease" : true,
         "image" : {
@@ -503,41 +503,45 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 10 (64-bit)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940"
                 },
                 {
-                    "name":"Memory",
+                    "name":"RAM",
                     "value": "8 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"NVIDIA GeForce GTX 660 / Radeon HD 7870"
+                },
+                {
+                    "name":"Direct X",
+                    "value":"DirectX 12"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"80 GB (SSD Recommended)"
                 }
             ],
             "recommended":[
                 {
                     "name":"OS",
-                    "value": "Windows 10"
+                    "value": "Windows 10 (64-bit)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "Intel CPU Core i7 4790 4 GHz"
                 },
                 {
-                    "name":"Memory",
-                    "value": "12 GB"
+                    "name":"RAM",
+                    "value": "16 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"Nvidia GPU GeForce GTX 1070 / AMD GPU Radeon RX Vega 56 8GB"
                 }
             ]
         },
