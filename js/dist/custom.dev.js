@@ -340,7 +340,8 @@ jQuery(document).ready(function ($) {
     var div = document.createElement("div");
     div.className = "card mb-3 col-12".concat(animation);
     var a = document.createElement("a");
-    a.setAttribute("href", "#!");
+    a.setAttribute("href", "single.html");
+    a.className = "openSingle";
     div.appendChild(a);
     var image = document.createElement("img");
     image.setAttribute("src", img);
@@ -504,6 +505,12 @@ jQuery(document).ready(function ($) {
       }), i++;
     });
     $("#" + parent + " .showMore").fadeOut(600);
-  } //function displayItems(info,itemID,)
+  }
 
+  if (window.location.top.href === "https://adamnik101.github.io/web-2/single.hmtl") {} //function displayItems(info,itemID,)
+
+
+  $("document .openSingle").on("click", function () {
+    console.log(this);
+  });
 });

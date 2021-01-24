@@ -437,7 +437,8 @@ function displayItems(img, name, publisher, price, animation, display){
 	let div = document.createElement("div");
 	div.className = `card mb-3 col-12${animation}`;
 	let a = document.createElement("a");
-	a.setAttribute("href","#!");
+	a.setAttribute("href","single.html");
+	a.className = "openSingle";
 	div.appendChild(a);
 	let image = document.createElement("img");
 	image.setAttribute("src", img);
@@ -571,7 +572,12 @@ function showMore(sectionId, parent, content, currentItem, data){
 			}) 
 			$("#" + parent + " .showMore").fadeOut(600);
 }
-		
+
+		if(window.location.top.href === "https://adamnik101.github.io/web-2/single.hmtl"){
+
+		}
 //function displayItems(info,itemID,)
-		
+		$("document .openSingle").on("click", function(){
+			console.log(this);
+		})
 });
