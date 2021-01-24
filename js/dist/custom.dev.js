@@ -377,7 +377,7 @@ jQuery(document).ready(function ($) {
       });
     };
 
-    var getScreenshots = function getScreenshots() {
+    var getScreenshots = function getScreenshots(gallery) {
       var screenshots = '<div class="owl-carousel single">';
 
       for (var i in gallery) {

@@ -403,7 +403,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 			});
 		}
 		getSingle();
-		function getScreenshots(){
+		function getScreenshots(gallery){
 			var screenshots = '<div class="owl-carousel single">';
 			for (let i in gallery){
 				screenshots += `<div class="item">
