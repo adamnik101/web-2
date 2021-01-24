@@ -311,9 +311,9 @@ jQuery(document).ready(function ($) {
 
     var price = function price(item, discount) {
       if (!discount.isDiscounted) {
-        return "<i class=\"fas fa-euro-sign\"></i> ".concat(item.price.value);
+        return "<i class=\"fas fa-euro-sign\"></i>".concat(item.price.value);
       } else {
-        return "<span class=\"badge badge-danger\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\">").concat(item.price.value.before, "</s> <span>").concat(item.price.value.after, "</span>");
+        return "<span class=\"badge badge-danger\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\"><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.before, "</s> <span><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.after, "</span>");
       }
     };
 

@@ -344,10 +344,10 @@ function displayAllSections(result){
 
 function price(item, discount) {
 		if(!discount.isDiscounted){
-			return `<i class="fas fa-euro-sign"></i> ${item.price.value}`
+			return `<i class="fas fa-euro-sign"></i>${item.price.value}`
 		}
 		else{
-			return `<span class="badge badge-danger">- ${item.price.discount.amount} %</span> <s class="text-muted">${item.price.value.before}</s> <span>${item.price.value.after}</span>`
+			return `<span class="badge badge-danger">- ${item.price.discount.amount} %</span> <s class="text-muted"><i class="fas fa-euro-sign"></i>${item.price.value.before}</s> <span><i class="fas fa-euro-sign"></i>${item.price.value.after}</span>`
 		}
 }
 
