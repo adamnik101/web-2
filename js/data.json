@@ -219,23 +219,27 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 7/8.1/10 (64-bit)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "AMD FX-6100/Intel i3-3220 or Equivalent"
                 },
                 {
-                    "name":"Memory",
+                    "name":"RAM",
                     "value": "8 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"AMD Radeon HD 7750/NVIDIA GeForce GTX 650 or Equivalent"
+                },
+                {
+                    "name":"Direct X",
+                    "value":"Version 11"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"25 GB"
                 }
             ],
             "recommended":[
@@ -245,15 +249,19 @@
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "AMD Ryzen 7 1700/Intel i7-6700K or Equivalent"
                 },
                 {
-                    "name":"Memory",
-                    "value": "12 GB"
+                    "name":"RAM",
+                    "value": "16 GB"
+                },
+                {
+                    "name":"Direct X",
+                    "value":"Version 11"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"AMD RX Vega 56/ Nvidia GTX 1070 or Equivalent"
                 }
             ]
         },
@@ -289,19 +297,23 @@
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "Intel Core i3-3220 (3.30 GHz) / AMD A8-7600 (3.1 GHz)"
                 },
                 {
-                    "name":"Memory",
-                    "value": "8 GB"
+                    "name":"RAM",
+                    "value": "4 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"GeForce GTX 750 Ti / AMD Radeon R7 265"
+                },
+                {
+                    "name":"Direct X",
+                    "value":"DirectX 11.0"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"16 GB"
                 }
             ],
             "recommended":[
@@ -311,15 +323,15 @@
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "Intel Core i5-6500 (3.2 GHz) / AMD Ryzen 5 1600"
                 },
                 {
-                    "name":"Memory",
-                    "value": "12 GB"
+                    "name":"RAM",
+                    "value": "8 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"GeForce GTX 1070 / AMD Radeon RX 590"
                 }
             ]
         },
@@ -351,23 +363,23 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 7/8/10 (64-bit)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "Intel i3-4130 3.4 GHz / AMD Ryzen 3 2200U 3.4 GHz"
                 },
                 {
-                    "name":"Memory",
+                    "name":"RAM",
                     "value": "8 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"2 GB, GeForce GTX 660 / Radeon R9 270"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"20 GB"
                 }
             ],
             "recommended":[
@@ -377,15 +389,15 @@
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "Intel i7-8700 3.2 GHz / AMD Ryzen 7 2700 3.2 GHz"
                 },
                 {
                     "name":"Memory",
-                    "value": "12 GB"
+                    "value": "16 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"4 GB, GeForce GTX 970 / Radeon RX 580"
                 }
             ]
         },
@@ -417,23 +429,27 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 10"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "Intel Core i5-6600 | AMD Ryzen 5 1600"
                 },
                 {
-                    "name":"Memory",
-                    "value": "8 GB"
+                    "name":"RAM",
+                    "value": "12 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"Nvidia GeForce GTX 1060, 6 GB | AMD Radeon RX 580, 8 GB"
+                },
+                {
+                    "name":"Direct X",
+                    "value":"DirectX 11"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"50 GB (SSD Recommended)"
                 }
             ],
             "recommended":[
@@ -443,15 +459,19 @@
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "Intel Core i7-8700 | AMD Ryzen 5 3600"
                 },
                 {
-                    "name":"Memory",
-                    "value": "12 GB"
+                    "name":"RAM",
+                    "value": "16 GB"
+                },
+                {
+                    "name":"Direct X",
+                    "value":"DirectX 12"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"Nvidia GeForce GTX 1080 Ti, 11 GB | AMD Radeon RX 5700 XT, 8 GB"
                 }
             ]
         },
