@@ -242,22 +242,22 @@ jQuery(document).ready(function ($) {
 
       try {
         for (var _iterator = data.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var _item = _step.value;
+          var item = _step.value;
 
-          if (_item.newRelease) {
+          if (item.newRelease) {
             numberOfNew++;
           }
 
-          if (_item.price.discount.isDiscounted) {
+          if (item.price.discount.isDiscounted) {
             numberOfSale++;
             /* console.log(numberOfSale) */
           }
 
-          if (_item.newRelease && !loadedNew && !_item.price.discount.isDiscounted && sectionId == "newReleases") {
-            content = displayItems(_item.id, _item.image.cover, _item.name, _item.publisher, price(_item, _item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+          if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
+            content = displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
 
             currentItem++;
-            _item.shownNewReleaseSection = true;
+            item.shownNewReleaseSection = true;
 
             if (currentItem == maxItems) {
               loadedNew = true;
@@ -265,10 +265,10 @@ jQuery(document).ready(function ($) {
             }
           }
 
-          if (currentItem < 4 && _item.price.discount.isDiscounted && !_item.newRelease && sectionId == "hotSales") {
-            displayItems(_item.id, _item.image.cover, _item.name, _item.publisher, price(_item, _item.price.discount), "", sectionId);
+          if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
+            displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
             currentItem++;
-            _item.shownHotSales = true;
+            item.shownHotSales = true;
             $("#" + parent + " .showMore").html("Show " + " more");
           }
         }
@@ -320,16 +320,16 @@ jQuery(document).ready(function ($) {
     var showMore = function showMore(sectionId, parent, content, currentItem, data) {
       var animation = " animate";
 
-      for (var _item2 in data.allGames) {
-        console.log(_item2, currentItem);
+      for (var item in data.allGames) {
+        console.log(item, currentItem);
 
-        if (data.allGames[_item2].newRelease && data.allGames[_item2].id > currentItem && !data.allGames[_item2].shownHotSales && parent == "new") {
-          console.log(data.allGames[_item2]);
-          displayItems(data.allGames[_item2].id, data.allGames[_item2].image.cover, data.allGames[_item2].name, data.allGames[_item2].publisher, price(data.allGames[_item2], data.allGames[_item2].price.discount), animation, sectionId);
+        if (data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
+          console.log(data.allGames[item]);
+          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
         }
 
-        if (!data.allGames[_item2].newRelease && data.allGames[_item2].price.discount.isDiscounted && !data.allGames[_item2].shownHotSales && parent == "sale") {
-          displayItems(data.allGames[_item2].id, data.allGames[_item2].image.cover, data.allGames[_item2].name, data.allGames[_item2].publisher, price(data.allGames[_item2], data.allGames[_item2].price.discount), animation, sectionId);
+        if (!data.allGames[item].newRelease && data.allGames[item].price.discount.isDiscounted && !data.allGames[item].shownHotSales && parent == "sale") {
+          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
         }
       }
 
@@ -405,12 +405,13 @@ jQuery(document).ready(function ($) {
 
       try {
         for (var _iterator2 = data.allGames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var _item3 = _step2.value;
+          var item = _step2.value;
 
-          if (_item3.id == localStorage.getItem("id")) {
-            $("#name").append(_item3.name);
-            fillSystemReq("minimum", _item3.specifications.minimum);
-            fillSystemReq("recommended", _item3.specifications.recommended);
+          if (item.id == localStorage.getItem("id")) {
+            $("#name").append(item.name);
+            fillSystemReq("minimum", item.specifications.minimum);
+            fillSystemReq("recommended", item.specifications.recommended);
+            getScreenshots(item.image.gallery);
             /* let owl = document.createElement("div");
             owl.className = "owl-carousel-single"
             let img_div = document.createElement("div");
@@ -438,7 +439,6 @@ jQuery(document).ready(function ($) {
     };
 
     getSingle();
-    getScreenshots(item.image.gallery);
     var owl_single = $(".single");
     owl_single.owlCarousel({
       items: 1,
