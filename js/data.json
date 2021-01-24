@@ -848,7 +848,7 @@
         "image" : {
             "cover" : "images/banner_12.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_skyrim_1.jpg","images/screenshot_skyrim_2.jpg"
             ]
         },
         "price" : {
