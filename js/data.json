@@ -462,7 +462,7 @@
         }
     },
     {
-        "id" : 7,
+        "id" : 8,
         "name" : "Hitman III",
         "publisher" : "I/O Interactive",
         "releaseDate" : "Dec 10, 2020",
@@ -528,7 +528,7 @@
         }
     },
     {
-        "id" : 7,
+        "id" : 9,
         "name" : "Red Dead Redemption II",
         "publisher" : "Rockstar Games",
         "releaseDate" : "Dec 10, 2020",
@@ -598,7 +598,7 @@
         }
     },
     {
-        "id" : 7,
+        "id" : 10,
         "name" : "Far Cry 3",
         "publisher" : "Ubisoft",
         "releaseDate" : "Dec 10, 2020",
@@ -668,7 +668,7 @@
         }
     },
     {
-        "id" : 7,
+        "id" : 11,
         "name" : "Grand Theft Auto V",
         "publisher" : "Rockstar Games",
         "releaseDate" : "Dec 10, 2020",
@@ -686,7 +686,147 @@
             },
             "value" : {
                 "before" : 39.99,
-                "after" : 19.49
+                "after" : 19.99
+            }
+        },
+        "specifications":{
+            "minimum":[
+                {
+                    "name":"OS",
+                    "value": "Windows 7"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                },
+                {
+                    "name":"Memory",
+                    "value": "8 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                },
+                {
+                    "name":"Storage",
+                    "value":"70 GB (SSD Recommended)"
+                }
+            ],
+            "recommended":[
+                {
+                    "name":"OS",
+                    "value": "Windows 10"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                },
+                {
+                    "name":"Memory",
+                    "value": "12 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                }
+            ]
+        },
+        "ratings":{
+            "criticsRecommend": 61,
+            "criticsAvg": 76,
+            "openCritics": "Strong"
+        }
+    },
+    {
+        "id" : 12,
+        "name" : "Stranded Deep",
+        "publisher" : "Beam Team Games",
+        "releaseDate" : "Dec 10, 2020",
+        "newRelease" : false,
+        "image" : {
+            "cover" : "images/banner_5.jpg",
+            "gallery" : [
+                "","",""
+            ]
+        },
+        "price" : {
+            "discount" : {
+                "isDiscounted" : true,
+                "amount" : 50
+            },
+            "value" : {
+                "before" : 19.99,
+                "after" : 9.99
+            }
+        },
+        "specifications":{
+            "minimum":[
+                {
+                    "name":"OS",
+                    "value": "Windows 7"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                },
+                {
+                    "name":"Memory",
+                    "value": "8 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                },
+                {
+                    "name":"Storage",
+                    "value":"70 GB (SSD Recommended)"
+                }
+            ],
+            "recommended":[
+                {
+                    "name":"OS",
+                    "value": "Windows 10"
+                },
+                {
+                    "name":"Processor",
+                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                },
+                {
+                    "name":"Memory",
+                    "value": "12 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                }
+            ]
+        },
+        "ratings":{
+            "criticsRecommend": 61,
+            "criticsAvg": 76,
+            "openCritics": "Strong"
+        }
+    },
+    {
+        "id" : 13,
+        "name" : "The Elder Scrolls V",
+        "publisher" : "Bethesda",
+        "releaseDate" : "Dec 10, 2020",
+        "newRelease" : false,
+        "image" : {
+            "cover" : "images/banner_12.jpg",
+            "gallery" : [
+                "","",""
+            ]
+        },
+        "price" : {
+            "discount" : {
+                "isDiscounted" : true,
+                "amount" : 30
+            },
+            "value" : {
+                "before" : 24.99,
+                "after" : 19.99
             }
         },
         "specifications":{
