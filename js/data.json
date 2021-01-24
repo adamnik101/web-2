@@ -338,7 +338,7 @@
         "image" : {
             "cover" : "images/banner_10.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_snowrunner_1.jpg","images/screenshot_snowrunner_2.jpg","images/screenshot_snowrunner_3.jpg", "images/screenshot_snowrunner_4.jpg"
             ]
         },
         "price" : {
@@ -404,7 +404,7 @@
         "image" : {
             "cover" : "images/banner_9.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_godfall_1.jpg","images/screenshot_godfall_1.jpg"
             ]
         },
         "price" : {
