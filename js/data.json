@@ -560,7 +560,7 @@
         "image" : {
             "cover" : "images/banner_8.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_rdr2_1.jpg","images/screenshot_rdr2_2.jpg","images/screenshot_rdr2_3.jpg", "images/screenshot_rdr2_4.jpg"
             ]
         },
         "price" : {
