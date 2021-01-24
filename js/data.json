@@ -8,7 +8,7 @@
         "image" : {
             "cover" : "images/banner_1.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_cyberpunk_1","",""
             ]
         },
         "price" : {
