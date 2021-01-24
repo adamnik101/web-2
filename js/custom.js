@@ -424,18 +424,6 @@ function showMore(sectionId, parent, content, currentItem, data){
 					$("#name").append(item.name);
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
-					getScreenshots(item.image.gallery);
-					var owl_single = $(".single");
-						owl_single.owlCarousel(
-							{
-								items:1,
-								loop : true,
-								autoplay: true,
-								mouseDrag: true,
-								touchDrag: true,
-								dots: false
-							}
-							);
 					/* let owl = document.createElement("div");
 					owl.className = "owl-carousel-single"
 					let img_div = document.createElement("div");
@@ -448,7 +436,18 @@ function showMore(sectionId, parent, content, currentItem, data){
 					}
 				}
 			}
-			
+			getScreenshots(item.image.gallery);
+					var owl_single = $(".single");
+						owl_single.owlCarousel(
+							{
+								items:1,
+								loop : true,
+								autoplay: true,
+								mouseDrag: true,
+								touchDrag: true,
+								dots: false
+							}
+							);
 		}
 
 		
