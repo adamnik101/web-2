@@ -23,6 +23,17 @@ jQuery(document).ready(function ($) {
   	1. Vars and Inits
   	*/
 
+  /* owl carousel */
+
+  var owl_single = $('.single');
+  owl_single.owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    mouseDrag: true,
+    touchDrag: true,
+    dots: false
+  });
   var header = $('.header');
   var topNav = $('.top_nav');
   var mainSlider = $('.main_slider');
@@ -572,15 +583,6 @@ jQuery(document).ready(function ($) {
       }
     };
 
-    var owl_single = $('.single');
-    owl_single.owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      mouseDrag: true,
-      touchDrag: true,
-      dots: false
-    });
     getSingle();
   } //function displayItems(info,itemID,)
 
