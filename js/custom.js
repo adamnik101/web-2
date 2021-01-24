@@ -574,7 +574,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 			$("#" + parent + " .showMore").fadeOut(600);
 }
 
-		if(window.location.href === "single.html"){	
+		if(window.top.location.href == "https://adamnik101.github.io/web-2/single.html"){	
 		function getSingle(){
 			$.ajax({
 				url : "js/data.json",
@@ -598,5 +598,6 @@ function showMore(sectionId, parent, content, currentItem, data){
 //function displayItems(info,itemID,)
 		$(document).on("click", ".openSingle",function(){
 			localStorage.setItem("id", ($(this).attr("id")));
+			open("single.html", "_self");
 		})
 });
