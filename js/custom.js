@@ -605,8 +605,11 @@ function showMore(sectionId, parent, content, currentItem, data){
 			for(let item of data.allGames){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
-					fillSystemReq("minimum", item.specifications.minimum)
-					fillSystemReq("recommended", item.specifications.recommended)
+					fillSystemReq("minimum", item.specifications.minimum);
+					fillSystemReq("recommended", item.specifications.recommended);
+					let img = document.createElement("img");
+					img.setAttribute("src", item.image.cover);
+					$("#slika").append(img);
 				}
 			}
 		}

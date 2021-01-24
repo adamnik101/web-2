@@ -546,6 +546,9 @@ jQuery(document).ready(function ($) {
             $("#name").append(item.name);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
+            var img = document.createElement("img");
+            img.setAttribute("src", item.image.cover);
+            $("#slika").append(img);
           }
         }
       } catch (err) {
