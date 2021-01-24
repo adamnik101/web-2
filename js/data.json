@@ -577,41 +577,41 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 7 - Service Pack 1 (6.1.7601)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
                 },
                 {
-                    "name":"Memory",
+                    "name":"RAM",
                     "value": "8 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"150 GB (SSD Recommended)"
                 }
             ],
             "recommended":[
                 {
                     "name":"OS",
-                    "value": "Windows 10"
+                    "value": "Windows 10 - April 2018 Update (v1803)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
                 },
                 {
-                    "name":"Memory",
+                    "name":"RAM",
                     "value": "12 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
                 }
             ]
         },
@@ -647,41 +647,45 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows® 7SP1 / Windows® 8"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "2.6 GHz Intel® Core®2 Duo E6700, 3.0Ghz AMD® Athlon64 X2 6000+"
                 },
                 {
-                    "name":"Memory",
-                    "value": "8 GB"
+                    "name":"RAM",
+                    "value": "4 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"512 MB DirectX® 10 compliant with Shader Model 4.0 or higher"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"15 GB"
                 }
             ],
             "recommended":[
                 {
                     "name":"OS",
-                    "value": "Windows 10"
+                    "value": "Windows 8"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "2.9 Ghz Intel® Core®i3-530 or better, 3.1 GHz AMD® PhenomII X2"
                 },
                 {
-                    "name":"Memory",
-                    "value": "12 GB"
+                    "name":"RAM",
+                    "value": "4 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"1024Mb Video/Graphics Card"
+                },
+                {
+                    "name":"Storage",
+                    "value":"17 GB"
                 }
             ]
         },
@@ -717,41 +721,45 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 7+"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz"
                 },
                 {
-                    "name":"Memory",
-                    "value": "8 GB"
+                    "name":"RAM",
+                    "value": "4 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"NVIDIA 9800 GT 1GB / AMD HD 4870 1GB"
+                },
+                {
+                    "name":"Direct X",
+                    "value":"DirectX 10.0+"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"90 GB"
                 }
             ],
             "recommended":[
                 {
                     "name":"OS",
-                    "value": "Windows 10"
+                    "value": "Windows 10 (64-bit)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "Intel Core i5 3470 @ 3.2GHZ (4 CPUs) / AMD X8 FX-8350 @ 4GHZ (8 CPUs)"
                 },
                 {
-                    "name":"Memory",
-                    "value": "12 GB"
+                    "name":"RAM",
+                    "value": "8 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"NVIDIA GTX 660 2GB / AMD HD7870 2GB"
                 }
             ]
         },
@@ -787,11 +795,33 @@
             "Minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 7+ (64-bits)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "X64 Quad Core CPU 2.0GHz+"
+                },
+                {
+                    "name":"RAM",
+                    "value": "4 GB"
+                },
+                {
+                    "name":"Graphics",
+                    "value":"Intel HD6500 and above. Minimum 512MB VRAM. Pixel Shader 3.0 support. Deferred lighting support (most 2005 and later cards)"
+                },
+                {
+                    "name":"Storage",
+                    "value":"2 GB"
+                }
+            ],
+            "Recommended":[
+                {
+                    "name":"OS",
+                    "value": "Windows 7+ (64-bits)"
+                },
+                {
+                    "name":"Processor",
+                    "value": "X64 Quad Core CPU 3.0GHz+"
                 },
                 {
                     "name":"Memory",
@@ -799,29 +829,7 @@
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
-                },
-                {
-                    "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
-                }
-            ],
-            "Recommended":[
-                {
-                    "name":"OS",
-                    "value": "Windows 10"
-                },
-                {
-                    "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
-                },
-                {
-                    "name":"Memory",
-                    "value": "12 GB"
-                },
-                {
-                    "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"NVIDIA GTX600 series or ATI HD7000 series with 2-4GB VRAM"
                 }
             ]
         },
@@ -857,41 +865,41 @@
             "minimum":[
                 {
                     "name":"OS",
-                    "value": "Windows 7"
+                    "value": "Windows 7/Vista/XP PC (32 or 64 bit)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i5-3570K or AMD FX-8310"
+                    "value": "Dual Core 2.0 GHz or equivalent"
                 },
                 {
-                    "name":"Memory",
-                    "value": "8 GB"
+                    "name":"RAM",
+                    "value": "2 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+                    "value":"NVIDIA GeForce 7600 GT & ATI Radeon X1800"
                 },
                 {
                     "name":"Storage",
-                    "value":"70 GB (SSD Recommended)"
+                    "value":"6 GB"
                 }
             ],
             "recommended":[
                 {
                     "name":"OS",
-                    "value": "Windows 10"
+                    "value": "Windows 7/Vista/XP PC (32 or 64 bit)"
                 },
                 {
                     "name":"Processor",
-                    "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+                    "value": "Quad-core Intel or AMD CPU"
                 },
                 {
                     "name":"Memory",
-                    "value": "12 GB"
+                    "value": "4 GB"
                 },
                 {
                     "name":"Graphics",
-                    "value":"NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+                    "value":"NVIDIA GeForce GTX 260 or higher; ATI Radeon HD 4890 or higher"
                 }
             ]
         },
