@@ -704,7 +704,7 @@
         "image" : {
             "cover" : "images/banner_7.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_gtav_1.jpg","images/screenshot_gtav_2.jpg","images/screenshot_gtav_3.jpg"
             ]
         },
         "price" : {
@@ -778,7 +778,7 @@
         "image" : {
             "cover" : "images/banner_5.jpg",
             "gallery" : [
-                "","",""
+                "images/screenshot_stranded_1.jpg","images/screenshot_stranded_2.jpg","images/screenshot_stranded_3.jpg"
             ]
         },
         "price" : {
@@ -792,7 +792,7 @@
             }
         },
         "specifications":{
-            "Minimum":[
+            "minimum":[
                 {
                     "name":"OS",
                     "value": "Windows 7+ (64-bits)"
@@ -814,7 +814,7 @@
                     "value":"2 GB"
                 }
             ],
-            "Recommended":[
+            "recommended":[
                 {
                     "name":"OS",
                     "value": "Windows 7+ (64-bits)"
