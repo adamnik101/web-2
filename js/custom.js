@@ -587,8 +587,9 @@ function showMore(sectionId, parent, content, currentItem, data){
 			});
 		}
 		getSingle();
-		var systemReq = '';
+		
 		function fillSystemReq(minOrRec, specifications){
+			var systemReq = '';
 			for(let i in specifications){
 				systemReq += `
 				<li>
