@@ -266,12 +266,14 @@ section
 	margin: 10px;
 	height: 20px;
 	border-radius: 50%;
-	background-color: rgb(122, 122, 122) !important;
+	transition: 0.2s;
+	background-color: #616161 !important;
 }
 .owl-dots .owl-dot:focus{
 	outline: none;
 }
 .owl-dots .active{
+	transition: 0.2s;
 		background-color: #e21e21 !important;
 	}
 
