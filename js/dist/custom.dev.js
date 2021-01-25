@@ -254,7 +254,7 @@ jQuery(document).ready(function ($) {
           }
 
           if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
-            content = displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+            content = displayItems(item.id, item.image.cover, item.name, item.info.about[0].value, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
 
             currentItem++;
             item.shownNewReleaseSection = true;
@@ -266,7 +266,7 @@ jQuery(document).ready(function ($) {
           }
 
           if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
-            displayItems(item.id, item.image.cover, item.name, item.publisher, price(item, item.price.discount), "", sectionId);
+            displayItems(item.id, item.image.cover, item.name, item.info.about[0].value, price(item, item.price.discount), "", sectionId);
             currentItem++;
             item.shownHotSales = true;
             $("#" + parent + " .showMore").html("Show " + " more");
@@ -325,11 +325,11 @@ jQuery(document).ready(function ($) {
 
         if (data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
           console.log(data.allGames[item]);
-          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
+          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].info.about[0].value, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
         }
 
         if (!data.allGames[item].newRelease && data.allGames[item].price.discount.isDiscounted && !data.allGames[item].shownHotSales && parent == "sale") {
-          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].publisher, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
+          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].info.about[0].value, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
         }
       }
 
