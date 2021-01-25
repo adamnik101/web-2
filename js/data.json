@@ -861,8 +861,26 @@
     {
         "id" : 11,
         "name" : "Grand Theft Auto V",
-        "publisher" : "Rockstar Games",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Rockstar Games"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Sep 17, 2013"
+            },
+            {
+                "name" : "Rating",
+                "value" : "9.8/10"
+            }],
+            "text" : [["GRAND THEFT AUTO ONLINE", "Discover an ever-evolving world of choices and ways to play as you climb the criminal ranks of Los Santos and Blaine County in the ultimate shared Online experience."],
+                ["LAUNCH YOUR CRIMINAL EMPIRE", "Launch business ventures from your Maze Bank West Executive Office, research powerful weapons technology from your underground Gunrunning Bunker and use your Counterfeit Cash Factory to start a lucrative counterfeiting operation."],
+                ["A FLEET OF POWERFUL VEHICLES", "Tear through the streets with a range of 10 high performance vehicles including a Supercar, Motorcycles, the weaponized Dune FAV, a Helicopter, a Rally Car and more. You’ll also get properties including a 10 car garage to store your growing fleet."],
+                ["WEAPONS, CLOTHING & TATTOOS", "You’ll also get access to the Compact Grenade Launcher, Marksman Rifle and Compact Rifle along with Stunt Racing Outfits, Biker Tattoos and more."]
+        ]
+        },
         "newRelease" : false,
         "image" : {
             "cover" : "images/banner_7.jpg",
@@ -935,8 +953,23 @@
     {
         "id" : 12,
         "name" : "Stranded Deep",
-        "publisher" : "Beam Team Games",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Beam Team Games"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Apr 30, 2017"
+            },
+            {
+                "name" : "Rating",
+                "value" : "8.7/10"
+            }],
+            "text" : [["Survive", "Take the role of a plane crash survivor stranded somewhere in the Pacific Ocean. Come face to face with some of the most life threatening scenarios that will result in a different experience each time you play. Scavenge. Discover. Survive."]
+        ]
+        },
         "newRelease" : false,
         "image" : {
             "cover" : "images/banner_5.jpg",
