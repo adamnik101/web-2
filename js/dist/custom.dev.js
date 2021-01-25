@@ -378,7 +378,8 @@ jQuery(document).ready(function ($) {
             mouseDrag: true,
             touchDrag: true,
             dots: true,
-            nav: false
+            nav: false,
+            autoplayHoverPause: true
           });
         },
         error: function error(xhr, status, _error2) {

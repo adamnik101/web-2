@@ -397,7 +397,8 @@ function showMore(sectionId, parent, content, currentItem, data){
 								mouseDrag: true,
 								touchDrag: true,
 								dots: true,
-								nav: false
+								nav: false,
+								autoplayHoverPause: true
 							}
 							);
 				},
