@@ -263,13 +263,13 @@ section
 	margin: 10px;
 	height: 20px;
 	border-radius: 50%;
-	background-color: rgb(122, 122, 122);
+	background-color: rgb(122, 122, 122) !important;
 }
 .owl-dots .owl-dot:focus{
 	outline: none;
 }
-.owl-dots .owl-dot .active{
-		background-color: rgb(24, 24, 24);
+.owl-dots .active{
+		background-color: #e21e21 !important;
 	}
 
 /*********************************
