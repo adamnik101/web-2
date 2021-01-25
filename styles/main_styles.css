@@ -824,6 +824,7 @@ section
 }
 .banner .animate{
 	position: relative;
+	height: 450px;
 	bottom: -10%;
 	opacity: 0;
 	height: 0;
