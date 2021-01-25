@@ -14,7 +14,7 @@
             },
             {
                 "name" : "Rating",
-                "value" : 8.4
+                "value" : "8.4/10"
             }],
             "text" : [["NIGHT CITY CHANGES EVERY BODY","Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you."],
         ["PLAY AS A MERCENARY OUTLAW", "Become a cyberpunk, an urban mercenary equipped with cybernetic enhancements and build your legend on the streets of Night City."],
@@ -98,7 +98,7 @@
             },
             {
                 "name" : "Rating",
-                "value" : 9.3
+                "value" : "9.3/10"
             }],
             "text" : [["UNITE.","Brave the dungeons alone, or team up with friends! Up to four players can battle together in local and online co-op."],
         ["FIGHT.", "Use melee swings, hang back with ranged attacks, or tank your way through shielded by heavy armor! Personalize your character and unlock unique items and weapon enchantments for devastating special attacks"],
@@ -182,7 +182,7 @@
             },
             {
                 "name" : "Rating",
-                "value" : 9.6
+                "value" : "9.6/10"
             }],
             "text" : [["WRITE YOUR VIKING SAGA","Blaze your own path across England with advanced RPG mechanics. Fight brutal battles, lead fiery raids or use strategy and alliances with other leaders to bring victory. Every choice you make in combat and conversation is another step on the path to greatness."],
         ["LEAD EPIC RAIDS", "Lead a crew of raiders and launch lightning-fast surprise attacks against Saxon armies and fortresses. Claim the riches of your enemies' lands for your clan and expand your influence far beyond your growing settlement."],
@@ -265,7 +265,7 @@
             },
             {
                 "name" : "Rating",
-                "value" : 9.0
+                "value" : "9.0/10"
             }],
             "text" : [["The Story","Kena, a young Spirit Guide, travels to an abandoned village in search of the sacred mountain shrine.  She struggles to uncover the secrets of this forgotten community hidden in an overgrown forest where wandering spirits are trapped."],
         ["Find the Rot", "Timid and illusive spirits scattered throughout the forest. They maintain balance by decomposing dead and rotting elements."]
@@ -355,7 +355,7 @@
             },
             {
                 "name" : "Rating",
-                "value" : 8.9
+                "value" : "8.9/10"
             }],
             "text" : [["Your darkest fears will awaken in these woods.","It’s 1996. A young boy disappears in the Black Hills Forest near Burkittsville, Maryland. As Ellis, a former police officer with a troubled past, you join the search. What starts as an ordinary investigation soon turns into an endless nightmare as you confront your fears and the Blair Witch, a mysterious force that haunts the woods…"]
         ]
@@ -440,7 +440,7 @@
             },
             {
                 "name" : "Rating",
-                "value" : 8.9
+                "value" : "8.9/10"
             }],
             "text" : [["Overcome mud","SnowRunner puts you in the driver’s seat of powerful vehicles as you conquer extreme open environments with the most advanced terrain simulation ever. Drive 40 vehicles from brands such as Ford, Chevrolet, and Freightliner as you leave your mark on an untamed open world."]
         ]
@@ -521,7 +521,7 @@
             },
             {
                 "name" : "Rating",
-                "value" : 9.2
+                "value" : "9.2/10"
             }],
             "text" : [["Explore Water Realm","Aperion is on the precipice of ruin. You are the last of the Valorian knights, god-like warriors able to equip Valorplates, legendary armor sets that transform wielders into unstoppable masters of melee combat. Tear through foes as you climb through the elemental realms and challenge the mad god, Macros who awaits you at the top. Ascend in Godfall, the first-of-its-kind, looter-slasher, melee action-RPG."]
         ]
