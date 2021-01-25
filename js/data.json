@@ -18,10 +18,10 @@
             }],
             "text" : [["NIGHT CITY CHANGES EVERY BODY","Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you."],
         ["PLAY AS A MERCENARY OUTLAW", "Become a cyberpunk, an urban mercenary equipped with cybernetic enhancements and build your legend on the streets of Night City."],
-        ["LIVE IN THE CITY OF THE FUTURE", "Enter the massive open world of Night City, a place that sets new standards in terms of visuals, complexity and depth."]
+        ["LIVE IN THE CITY OF THE FUTURE", "Enter the massive open world of Night City, a place that sets new standards in terms of visuals, complexity and depth."],
+        ["STEAL THE IMPLANT THAT GRANTS ETERNAL LIFE", "Take the riskiest job of your life and go after a prototype implant that is the key to immortality."]
         ]
         },
-        "releaseDate" : "Dec 10, 2020",
         "newRelease" : true,
         "image" : {
             "cover" : "images/banner_1.jpg",
@@ -86,8 +86,26 @@
     {
         "id" : 2,
         "name" : "Minecraft Dungeons",
-        "publisher" : "Mojang",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Mojang"
+            },
+            {
+                "name" : "Release date",
+                "value" : "May 26, 2020"
+            },
+            {
+                "name" : "Rating",
+                "value" : 9.3
+            }],
+            "text" : [["UNITE.","Brave the dungeons alone, or team up with friends! Up to four players can battle together in local and online co-op."],
+        ["FIGHT.", "Use melee swings, hang back with ranged attacks, or tank your way through shielded by heavy armor! Personalize your character and unlock unique items and weapon enchantments for devastating special attacks"],
+        ["SURVIVE.", "Explore the action-packed, treasure-stuffed, wildly varied levels – all in an epic quest to save the villagers and take down the evil Arch-Illager!"],
+        ["Game details", "Discover a trove of powerful new weapons and items that will help you defeat ruthless swarms of new-and-nasty mobs. Fight or flee through canyons, swamps and – of course – mines! Any adventurer brave or foolish enough to explore this blocky and beautiful world will need to come prepared. So quickly, gear up!"]
+        ]
+        },
         "newRelease" : true,
         "image" : {
             "cover" : "images/banner_14.jpg",
