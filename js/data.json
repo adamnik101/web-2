@@ -598,8 +598,23 @@
     {
         "id" : 8,
         "name" : "Hitman III",
-        "publisher" : "IO Interactive",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "IO Interactive"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Jan 20, 2021"
+            },
+            {
+                "name" : "Rating",
+                "value" : "9.6/10"
+            }],
+            "text" : [["Death Awaits.","Agent 47 returns in HITMAN 3, the dramatic conclusion to the World of Assassination trilogy."]
+        ]
+        },
         "newRelease" : true,
         "image" : {
             "cover" : "images/banner_3.jpg",
@@ -668,8 +683,24 @@
     {
         "id" : 9,
         "name" : "Red Dead Redemption II",
-        "publisher" : "Rockstar Games",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Rockstar Games"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Nov 5, 2019"
+            },
+            {
+                "name" : "Rating",
+                "value" : "9.9/10"
+            }],
+            "text" : [["America, 1899.","Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."],
+            ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
+        ]
+        },
         "newRelease" : false,
         "image" : {
             "cover" : "images/banner_8.jpg",
@@ -738,8 +769,26 @@
     {
         "id" : 10,
         "name" : "Far Cry 3",
-        "publisher" : "Ubisoft",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Ubisoft"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Nov 29, 2012"
+            },
+            {
+                "name" : "Rating",
+                "value" : "9.7/10"
+            }],
+            "text" : [["AN OPEN WORLD FIRST-PERSON SHOOTER","Create your own FPS adventure. Customize your weapons, your skills and your approach to each mission, whether you favor intense run-and-gun action, stealthy close-up takedowns or long-range sniping."],
+            ["AN ISLAND OF DANGER AND DISCOVERY", "Explore a diverse island playground, from mountain ranges and swampy grasslands to white sandy beaches. Discover relics, hunt exotic animals, play mini-games and travel quickly by land, sea or air. Fight your way through the island’s towns, temples, river ports and more!"],
+            ["UNCOVER A MEMORABLE STORY AND AN INSANE CAST OF CHARACTERS", "Encounter an engaging and disturbed cast of characters as you take a gritty journey to the dark side of humanity, written by a Writers Guild Award winner."],
+            ["PLAY WITH FRIENDS IN A FULL CO-OP CAMPAIGN", "Play online and team up in a four-player campaign which challenges you to be your best and work together to prevail. Experience the island through the eyes of a wayward crew in their own quest to survive against the odds."]
+        ]
+        },
         "newRelease" : false,
         "image" : {
             "cover" : "images/banner_13.jpg",
