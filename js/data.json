@@ -170,8 +170,25 @@
     {
         "id" : 3,
         "name" : "Assassin's Creed Valhalla",
-        "publisher" : "Ubisoft",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Ubisoft"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Nov 10, 2020"
+            },
+            {
+                "name" : "Rating",
+                "value" : 9.6
+            }],
+            "text" : [["WRITE YOUR VIKING SAGA","Blaze your own path across England with advanced RPG mechanics. Fight brutal battles, lead fiery raids or use strategy and alliances with other leaders to bring victory. Every choice you make in combat and conversation is another step on the path to greatness."],
+        ["LEAD EPIC RAIDS", "Lead a crew of raiders and launch lightning-fast surprise attacks against Saxon armies and fortresses. Claim the riches of your enemies' lands for your clan and expand your influence far beyond your growing settlement."],
+        ["GROW YOUR SETTLEMENT", "Your clan's new home grows with your legend. Customise your settlement by building upgradable structures. Unlock new features and quests by constructing a barracks, a blacksmith, a tattoo parlour, and much more."]
+        ]
+        },
         "newRelease" : true,
         "image" : {
             "cover" : "images/banner_2.jpg",
