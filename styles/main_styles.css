@@ -253,6 +253,9 @@ section
 	width: 100%;
 	overflow: hidden;
 }
+#gameName{
+	font-size: 25px;
+}
 .owl-dots{
 	display: flex;
 	flex-direction: row;
