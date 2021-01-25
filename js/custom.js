@@ -407,15 +407,20 @@ function showMore(sectionId, parent, content, currentItem, data){
 		}
 		
 		getSingle();
-		function getAbout(about){
+		function getAbout(about, textInfo){
 			var info = "";
+			var text = "";
 			for(let i in about){
 				info += `<li>
 							<h6>${about[i].name}</h6>
 							<p>${about[i].value}</p>
 						</li>`
 			}
+			for(let i in textInfo){
+				text += `<p>${textInfo[i]}</p>`
+			}
 			$("#about").append(info);
+			$("#aboutOverlay").append(text);
 		}
 		function getScreenshots(gallery){
 			var screenshots = '<div class="owl-carousel single">';
@@ -443,7 +448,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
 					$("#gameName").append(item.name);
-					getAbout(item.info)
+					getAbout(item.info.about, item.info.about.text)
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
 					getScreenshots(item.image.gallery);

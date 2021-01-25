@@ -388,14 +388,20 @@ jQuery(document).ready(function ($) {
       });
     };
 
-    var getAbout = function getAbout(about) {
+    var getAbout = function getAbout(about, textInfo) {
       var info = "";
+      var text = "";
 
       for (var i in about) {
         info += "<li>\n\t\t\t\t\t\t\t<h6>".concat(about[i].name, "</h6>\n\t\t\t\t\t\t\t<p>").concat(about[i].value, "</p>\n\t\t\t\t\t\t</li>");
       }
 
+      for (var _i in textInfo) {
+        text += "<p>".concat(textInfo[_i], "</p>");
+      }
+
       $("#about").append(info);
+      $("#aboutOverlay").append(text);
     };
 
     var getScreenshots = function getScreenshots(gallery) {
@@ -431,7 +437,7 @@ jQuery(document).ready(function ($) {
           if (item.id == localStorage.getItem("id")) {
             $("#name").append(item.name);
             $("#gameName").append(item.name);
-            getAbout(item.info);
+            getAbout(item.info.about, item.info.about.text);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
             getScreenshots(item.image.gallery);
