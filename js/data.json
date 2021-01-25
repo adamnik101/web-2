@@ -257,19 +257,18 @@
             "about" : [
             {
                 "name" : "Publisher",
-                "value" : "Ubisoft"
+                "value" : "Ember Lab"
             },
             {
                 "name" : "Release date",
-                "value" : "Nov 10, 2020"
+                "value" : "Feb 6, 2020"
             },
             {
                 "name" : "Rating",
-                "value" : 9.6
+                "value" : 9.0
             }],
-            "text" : [["WRITE YOUR VIKING SAGA","Blaze your own path across England with advanced RPG mechanics. Fight brutal battles, lead fiery raids or use strategy and alliances with other leaders to bring victory. Every choice you make in combat and conversation is another step on the path to greatness."],
-        ["LEAD EPIC RAIDS", "Lead a crew of raiders and launch lightning-fast surprise attacks against Saxon armies and fortresses. Claim the riches of your enemies' lands for your clan and expand your influence far beyond your growing settlement."],
-        ["GROW YOUR SETTLEMENT", "Your clan's new home grows with your legend. Customise your settlement by building upgradable structures. Unlock new features and quests by constructing a barracks, a blacksmith, a tattoo parlour, and much more."]
+            "text" : [["The Story","Kena, a young Spirit Guide, travels to an abandoned village in search of the sacred mountain shrine.  She struggles to uncover the secrets of this forgotten community hidden in an overgrown forest where wandering spirits are trapped."],
+        ["Find the Rot", "Timid and illusive spirits scattered throughout the forest. They maintain balance by decomposing dead and rotting elements."]
         ]
         },
         "newRelease" : true,
@@ -344,8 +343,23 @@
     {
         "id" : 5,
         "name" : "Blair Witch",
-        "publisher" : "Bloober Team",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Bloober Team"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Oct 29, 2020"
+            },
+            {
+                "name" : "Rating",
+                "value" : 8.9
+            }],
+            "text" : [["Your darkest fears will awaken in these woods.","It’s 1996. A young boy disappears in the Black Hills Forest near Burkittsville, Maryland. As Ellis, a former police officer with a troubled past, you join the search. What starts as an ordinary investigation soon turns into an endless nightmare as you confront your fears and the Blair Witch, a mysterious force that haunts the woods…"]
+        ]
+        },
         "newRelease" : true,
         "image" : {
             "cover" : "images/banner_6.jpg",
@@ -414,8 +428,23 @@
     {
         "id" : 6,
         "name" : "Snowrunner",
-        "publisher" : "Saber Interactive",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Bloober Team"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Oct 29, 2020"
+            },
+            {
+                "name" : "Rating",
+                "value" : 8.9
+            }],
+            "text" : [["Overcome mud","SnowRunner puts you in the driver’s seat of powerful vehicles as you conquer extreme open environments with the most advanced terrain simulation ever. Drive 40 vehicles from brands such as Ford, Chevrolet, and Freightliner as you leave your mark on an untamed open world."]
+        ]
+        },
         "newRelease" : true,
         "image" : {
             "cover" : "images/banner_10.jpg",
@@ -480,8 +509,23 @@
     {
         "id" : 7,
         "name" : "Godfall",
-        "publisher" : "Counterplay Games",
-        "releaseDate" : "Dec 10, 2020",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "Counterplay Games"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Nov 12, 2020"
+            },
+            {
+                "name" : "Rating",
+                "value" : 9.2
+            }],
+            "text" : [["Explore Water Realm","Aperion is on the precipice of ruin. You are the last of the Valorian knights, god-like warriors able to equip Valorplates, legendary armor sets that transform wielders into unstoppable masters of melee combat. Tear through foes as you climb through the elemental realms and challenge the mad god, Macros who awaits you at the top. Ascend in Godfall, the first-of-its-kind, looter-slasher, melee action-RPG."]
+        ]
+        },
         "newRelease" : true,
         "image" : {
             "cover" : "images/banner_9.jpg",
