@@ -417,7 +417,8 @@ function showMore(sectionId, parent, content, currentItem, data){
 						</li>`
 			}
 			for(let i in textInfo){
-				text += `<p>${textInfo[i]}</p>`
+				text += `<h6>${textInfo[i][0]}</h6>
+						 <p>${textInfo[i][1]}</p>`
 			}
 			$("#about").append(info);
 			$("#infoText").append(text);

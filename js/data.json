@@ -2,7 +2,25 @@
     {
         "id" : 1,
         "name" : "Cyberpunk 2077",
-        "publisher" : "CD PROJEKT RED",
+        "info" :{
+            "about" : [
+            {
+                "name" : "Publisher",
+                "value" : "CD PROJEKT RED"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Dec 10, 2020"
+            },
+            {
+                "name" : "Rating",
+                "value" : 8.4
+            }],
+            "text" : [["NIGHT CITY CHANGES EVERY BODY","Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you."],
+        ["PLAY AS A MERCENARY OUTLAW", "Become a cyberpunk, an urban mercenary equipped with cybernetic enhancements and build your legend on the streets of Night City."],
+        ["LIVE IN THE CITY OF THE FUTURE", "Enter the massive open world of Night City, a place that sets new standards in terms of visuals, complexity and depth."]
+        ]
+        },
         "releaseDate" : "Dec 10, 2020",
         "newRelease" : true,
         "image" : {

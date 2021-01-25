@@ -397,7 +397,7 @@ jQuery(document).ready(function ($) {
       }
 
       for (var _i in textInfo) {
-        text += "<p>".concat(textInfo[_i], "</p>");
+        text += "<h6>".concat(textInfo[_i][0], "</h6>\n\t\t\t\t\t\t <p>").concat(textInfo[_i][1], "</p>");
       }
 
       $("#about").append(info);
