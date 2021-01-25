@@ -842,8 +842,20 @@
     {
         "id" : 13,
         "name" : "The Elder Scrolls V",
-        "publisher" : "Bethesda",
-        "releaseDate" : "Dec 10, 2020",
+        "info" : [
+            {
+                "name" : "Publisher",
+                "value" : "Bethesda"
+            },
+            {
+                "name" : "Release date",
+                "value" : "Oct 28, 2016"
+            },
+            {
+                "name" : "Rating",
+                "value" : 8.9
+            }
+        ],
         "newRelease" : false,
         "image" : {
             "cover" : "images/banner_12.jpg",

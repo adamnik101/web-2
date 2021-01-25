@@ -407,7 +407,16 @@ function showMore(sectionId, parent, content, currentItem, data){
 		}
 		
 		getSingle();
-		
+		function getAbout(about){
+			var info = "";
+			for(let i in about){
+				info += `<li>
+							<h6>${about[i].name}</h6>
+							<p>${about[i].value}</p>
+						</li>`
+			}
+			$("#about").append(info);
+		}
 		function getScreenshots(gallery){
 			var screenshots = '<div class="owl-carousel single">';
 			for (let i in gallery){
@@ -425,10 +434,8 @@ function showMore(sectionId, parent, content, currentItem, data){
 				<li>
 					<h6 class="text-muted">${specifications[i].name}</h6>
 					<p>${specifications[i].value}</p>
-				</li>
-			`
+				</li>`
 			}
-			
 		$("#" + minOrRec).append(systemReq);
 		}
 		function displaySingle(data){
@@ -436,6 +443,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
 					$("#gameName").append(item.name);
+					getAbout(item.info)
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
 					getScreenshots(item.image.gallery);

@@ -388,6 +388,16 @@ jQuery(document).ready(function ($) {
       });
     };
 
+    var getAbout = function getAbout(about) {
+      var info = "";
+
+      for (var i in about) {
+        info += "<li>\n\t\t\t\t\t\t\t<h6>".concat(about[i].name, "</h6>\n\t\t\t\t\t\t\t<p>").concat(about[i].value, "</p>\n\t\t\t\t\t\t</li>");
+      }
+
+      $("#about").append(info);
+    };
+
     var getScreenshots = function getScreenshots(gallery) {
       var screenshots = '<div class="owl-carousel single">';
 
@@ -403,7 +413,7 @@ jQuery(document).ready(function ($) {
       var systemReq = "";
 
       for (var i in specifications) {
-        systemReq += "\n\t\t\t\t<li>\n\t\t\t\t\t<h6 class=\"text-muted\">".concat(specifications[i].name, "</h6>\n\t\t\t\t\t<p>").concat(specifications[i].value, "</p>\n\t\t\t\t</li>\n\t\t\t");
+        systemReq += "\n\t\t\t\t<li>\n\t\t\t\t\t<h6 class=\"text-muted\">".concat(specifications[i].name, "</h6>\n\t\t\t\t\t<p>").concat(specifications[i].value, "</p>\n\t\t\t\t</li>");
       }
 
       $("#" + minOrRec).append(systemReq);
@@ -421,6 +431,7 @@ jQuery(document).ready(function ($) {
           if (item.id == localStorage.getItem("id")) {
             $("#name").append(item.name);
             $("#gameName").append(item.name);
+            getAbout(item.info);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
             getScreenshots(item.image.gallery);
