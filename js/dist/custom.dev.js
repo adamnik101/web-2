@@ -377,8 +377,8 @@ jQuery(document).ready(function ($) {
             autoplay: true,
             mouseDrag: true,
             touchDrag: true,
-            dots: false,
-            nav: true
+            dots: true,
+            nav: false
           });
         },
         error: function error(xhr, status, _error2) {

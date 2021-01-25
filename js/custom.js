@@ -396,8 +396,8 @@ function showMore(sectionId, parent, content, currentItem, data){
 								autoplay: true,
 								mouseDrag: true,
 								touchDrag: true,
-								dots: false,
-								nav: true
+								dots: true,
+								nav: false
 							}
 							);
 				},
