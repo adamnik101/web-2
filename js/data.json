@@ -1052,7 +1052,7 @@
                 "name" : "Rating",
                 "value" : 8.9
             }],
-            "text" : ["Skyrim retains the traditional open world gameplay found in the Elder Scrolls series. The player is free to roam the land of Skyrim at will. Within Skyrim lie five cities, comparatively larger to those in Oblivion's Cyrodiil setting, and expanses of wilderness and mountainous ranges. When visiting cities, the player can complete activities such as farming and mining, and is able to smith weapons from a forge. Aside from the main story quest, the player can complete side-quests, which are dynamically created based on the player's actions within the game. The in-game head-up display can be hidden, and the menu is presented in a compass-style overlay."]
+            "text" : [["Explore Skyrim","Skyrim retains the traditional open world gameplay found in the Elder Scrolls series. The player is free to roam the land of Skyrim at will. Within Skyrim lie five cities, comparatively larger to those in Oblivion's Cyrodiil setting, and expanses of wilderness and mountainous ranges. When visiting cities, the player can complete activities such as farming and mining, and is able to smith weapons from a forge. Aside from the main story quest, the player can complete side-quests, which are dynamically created based on the player's actions within the game. The in-game head-up display can be hidden, and the menu is presented in a compass-style overlay."]]
         },
         "newRelease" : false,
         "image" : {
