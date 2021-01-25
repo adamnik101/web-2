@@ -260,12 +260,12 @@ section
 	justify-content: center;
 }
 .owl-dots .owl-dot{
-	width: 20px;
+	width: 50px;
 	margin: 10px;
-	height: 20px;
-	border-radius: 50%;
+	height: 10px;
+	border-radius: none;
 	transition: 0.2s;
-	background-color: #616161 !important;
+	background-color: #2c2c2c !important;
 }
 .owl-dots .owl-dot:focus{
 	outline: none;
