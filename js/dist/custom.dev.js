@@ -401,7 +401,7 @@ jQuery(document).ready(function ($) {
       }
 
       $("#about").append(info);
-      $("#aboutOverlay").append(text);
+      $("#infoText").append(text);
     };
 
     var getScreenshots = function getScreenshots(gallery) {
@@ -437,7 +437,7 @@ jQuery(document).ready(function ($) {
           if (item.id == localStorage.getItem("id")) {
             $("#name").append(item.name);
             $("#gameName").append(item.name);
-            getAbout(item.info.about, item.info.about.text);
+            getAbout(item.info.about, item.info.text);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
             getScreenshots(item.image.gallery);

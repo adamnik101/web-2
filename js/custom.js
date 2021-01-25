@@ -420,7 +420,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 				text += `<p>${textInfo[i]}</p>`
 			}
 			$("#about").append(info);
-			$("#aboutOverlay").append(text);
+			$("#infoText").append(text);
 		}
 		function getScreenshots(gallery){
 			var screenshots = '<div class="owl-carousel single">';
@@ -448,7 +448,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
 					$("#gameName").append(item.name);
-					getAbout(item.info.about, item.info.about.text)
+					getAbout(item.info.about, item.info.text)
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
 					getScreenshots(item.image.gallery);
