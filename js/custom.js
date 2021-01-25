@@ -435,6 +435,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 			for(let item of data.allGames){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
+					$("#gameName").append(item.name);
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
 					getScreenshots(item.image.gallery);
