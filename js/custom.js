@@ -404,12 +404,19 @@ function showMore(sectionId, parent, content, currentItem, data){
 		}
 		
 		getSingle();
-		function getLogoSection(logo, alt){
+		function getLogoPriceSection(logo, alt, price){
 			var logoDisplay = `<div class="col-3">
 							<img src="${logo}" class="img-fluid" alt="${alt}">
 						</div>
-						<div class="col-9">
-						</div>`
+						<div class="col-9">`;
+						if(price.discount.isDiscounted){
+							logoDisplay += `
+								<button type="button" value="${price.value.after}" id="price"><s class="text-muted">${price.value.before}</s> ${price.value.after}</button>`
+						}
+						else{
+							logoDisplay +=`<button type="button" value="${price.value}" id="price">${price.value}</button>`
+						}
+						logoDisplay += "</div>"
 					$("#logo-game-container").append(logoDisplay);
 		}
 		function getAbout(about, textInfo){
@@ -454,7 +461,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
 					$("#gameName").append(item.name);
-					getLogoSection(item.image.logo, item.name);
+					getLogoPriceSection(item.image.logo, item.name, item.price);
 					getAbout(item.info.about, item.info.text)
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);

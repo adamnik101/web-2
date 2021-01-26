@@ -384,8 +384,16 @@ jQuery(document).ready(function ($) {
       });
     };
 
-    var getLogoSection = function getLogoSection(logo, alt) {
-      var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9\">\n\t\t\t\t\t\t</div>");
+    var getLogoPriceSection = function getLogoPriceSection(logo, alt, price) {
+      var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9\">");
+
+      if (price.discount.isDiscounted) {
+        logoDisplay += "\n\t\t\t\t\t\t\t\t<button type=\"button\" value=\"".concat(price.value.after, "\" id=\"price\"><s class=\"text-muted\">").concat(price.value.before, "</s> ").concat(price.value.after, "</button>");
+      } else {
+        logoDisplay += "<button type=\"button\" value=\"".concat(price.value, "\" id=\"price\">").concat(price.value, "</button>");
+      }
+
+      logoDisplay += "</div>";
       $("#logo-game-container").append(logoDisplay);
     };
 
@@ -438,7 +446,7 @@ jQuery(document).ready(function ($) {
           if (item.id == localStorage.getItem("id")) {
             $("#name").append(item.name);
             $("#gameName").append(item.name);
-            getLogoSection(item.image.logo, item.name);
+            getLogoPriceSection(item.image.logo, item.name, item.price);
             getAbout(item.info.about, item.info.text);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
