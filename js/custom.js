@@ -421,12 +421,12 @@ function showMore(sectionId, parent, content, currentItem, data){
 							logoDisplay +=`<div class="d-flex flex-column align-items-end">
 												<button type="button" id="price" value="${price.value.after}">Buy Now!</button>
 												<p class="d-flex justify-content-around align-items-center pt-3">
-													<span class="badge badge-danger">-${item.discount.amount}%</span>
+													<span class="badge badge-danger">-${price.discount.amount}%</span>
 													<s class="pl-2 pr-2">
-														<i class="fas fa-euro-sign "></i>${item.value.before}
+														<i class="fas fa-euro-sign "></i>${price.value.before}
 													</s> 
 													<span id="current">
-														<i class="fas fa-euro-sign"></i>${item.value.after}
+														<i class="fas fa-euro-sign"></i>${price.value.after}
 													</span>
 												</p>	
 											</div>`
