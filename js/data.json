@@ -112,7 +112,8 @@
             "cover" : "images/banner_14.jpg",
             "gallery" : [
                 "images/screenshot_minecraft_1.jpg","images/screenshot_minecraft_2.jpg","images/screenshot_minecraft_3.jpg"
-            ]
+            ],
+            "logo" : "images/minecraft_logo.png"
         },
         "price" : {
             "discount" : {
@@ -195,7 +196,8 @@
             "cover" : "images/banner_2.jpg",
             "gallery" : [
                 "images/screenshot_valhalla_1.jpg","images/screenshot_valhalla_2.jpg","images/screenshot_valhalla_3.jpg"
-            ]
+            ],
+            "logo" : "images/valhalla_logo.png"
         },
         "price" : {
             "discount" : {
@@ -277,7 +279,8 @@
             "cover" : "images/banner_4.jpg",
             "gallery" : [
                 "images/screenshot_kena_1.jpg","images/screenshot_kena_2.jpg","images/screenshot_kena_3.jpg"
-            ]
+            ],
+            "logo" : "images/kena_logo.png"
         },
         "price" : {
             "discount" : {
@@ -366,7 +369,8 @@
             "cover" : "images/banner_6.jpg",
             "gallery" : [
                 "images/screenshot_blair_1.jpg","images/screenshot_blair_2.jpg","images/screenshot_blair_3.jpg"
-            ]
+            ],
+            "logo" : "images/blair_logo.png"
         },
         "price" : {
             "discount" : {
@@ -451,7 +455,8 @@
             "cover" : "images/banner_10.jpg",
             "gallery" : [
                 "images/screenshot_snowrunner_1.jpg","images/screenshot_snowrunner_2.jpg","images/screenshot_snowrunner_3.jpg", "images/screenshot_snowrunner_4.jpg"
-            ]
+            ],
+            "logo" : "images/snowrunner_logo.png"
         },
         "price" : {
             "discount" : {
@@ -532,7 +537,8 @@
             "cover" : "images/banner_9.jpg",
             "gallery" : [
                 "images/screenshot_godfall_1.jpg","images/screenshot_godfall_2.jpg"
-            ]
+            ],
+            "logo" : "images/godfall_logo.png"
         },
         "price" : {
             "discount" : {
@@ -621,7 +627,8 @@
             "cover" : "images/banner_3.jpg",
             "gallery" : [
                 "images/screenshot_hitman_1.jpg","images/screenshot_hitman_2.jpg","images/screenshot_hitman_3.jpg"
-            ]
+            ],
+            "logo" : "images/hitman_logo.png"
         },
         "price" : {
             "discount" : {
