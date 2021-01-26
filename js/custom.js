@@ -474,6 +474,7 @@ function showMore(sectionId, parent, content, currentItem, data){
 		function displaySingle(data){
 			for(let item of data.allGames){
 				if(item.id == localStorage.getItem("id")){
+					$("title").textContent = "Game Hut " + item.name;
 					$("#name").append(item.name);
 					$("#gameName").append(item.name);
 					getLogoPriceSection(item.image.logo, item.name, item.price);
