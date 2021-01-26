@@ -827,7 +827,6 @@ section
 	height: 450px;
 	bottom: -10%;
 	opacity: 0;
-	height: 0;
 }
 .banner .card a:hover > .card-img-top{
 	opacity: 0.7;
