@@ -444,7 +444,7 @@ jQuery(document).ready(function ($) {
           var item = _step2.value;
 
           if (item.id == localStorage.getItem("id")) {
-            $("title").textContent = "Game Hut " + item.name;
+            document.title = "Game Hut " + item.name;
             $("#name").append(item.name);
             $("#gameName").append(item.name);
             getLogoPriceSection(item.image.logo, item.name, item.price);
