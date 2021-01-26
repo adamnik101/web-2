@@ -256,6 +256,7 @@ section
 
 #logo-game-container .badge{
 	font-size: 16px;
+	background-color: #e21e21;
 }
 #logo-game-container #current{
 	color: #fff;
