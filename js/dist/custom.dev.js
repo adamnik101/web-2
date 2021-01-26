@@ -337,6 +337,9 @@ jQuery(document).ready(function ($) {
       var i = 0;
       var delay = 0;
       $("#" + sectionId).html(content);
+      $("#" + sectionId + " .animate").animate({
+        height: "500px"
+      });
       $("#" + sectionId + " .animate").each(function () {
         $("#" + sectionId + " .animate").eq(i).delay(600 * delay++).animate({
           bottom: "0",
