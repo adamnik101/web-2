@@ -714,7 +714,8 @@
             "cover" : "images/banner_8.jpg",
             "gallery" : [
                 "images/screenshot_rdr2_1.jpg","images/screenshot_rdr2_2.jpg","images/screenshot_rdr2_3.jpg", "images/screenshot_rdr2_4.jpg"
-            ]
+            ],
+            "logo" : "images/rdr2_logo.png"
         },
         "price" : {
             "discount" : {
@@ -802,7 +803,8 @@
             "cover" : "images/banner_13.jpg",
             "gallery" : [
                 "images/screenshot_fc3_1.jpg","images/screenshot_fc3_2.jpg","images/screenshot_fc3_3.jpg"
-            ]
+            ],
+            "logo" : "images/fc3_logo.png"
         },
         "price" : {
             "discount" : {
@@ -894,7 +896,8 @@
             "cover" : "images/banner_7.jpg",
             "gallery" : [
                 "images/screenshot_gtav_1.jpg","images/screenshot_gtav_2.jpg","images/screenshot_gtav_3.jpg"
-            ]
+            ],
+            "logo" : "images/gta_logo.png"
         },
         "price" : {
             "discount" : {
@@ -983,7 +986,8 @@
             "cover" : "images/banner_5.jpg",
             "gallery" : [
                 "images/screenshot_stranded_1.jpg","images/screenshot_stranded_2.jpg","images/screenshot_stranded_3.jpg"
-            ]
+            ],
+            "logo" : "images/stranded_logo.png"
         },
         "price" : {
             "discount" : {
@@ -1045,7 +1049,7 @@
     },
     {
         "id" : 13,
-        "name" : "The Elder Scrolls V",
+        "name" : "The Elder Scrolls V: Skyrim",
         "info" :{
             "about" : [
             {
@@ -1067,7 +1071,8 @@
             "cover" : "images/banner_12.jpg",
             "gallery" : [
                 "images/screenshot_skyrim_1.jpg","images/screenshot_skyrim_2.jpg"
-            ]
+            ],
+            "logo" : "images/skyrim_logo.png"
         },
         "price" : {
             "discount" : {
