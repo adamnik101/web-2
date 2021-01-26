@@ -385,6 +385,11 @@ jQuery(document).ready(function ($) {
       });
     };
 
+    var getLogoSection = function getLogoSection(logo, alt) {
+      var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9\">\n\t\t\t\t\t\t\t<h3>").concat(alt, "</h3>\n\t\t\t\t\t\t</div>");
+      $("#logo-game-container").append(logoDisplay);
+    };
+
     var getAbout = function getAbout(about, textInfo) {
       var info = "";
       var text = "";
@@ -401,11 +406,11 @@ jQuery(document).ready(function ($) {
       $("#infoText").append(text);
     };
 
-    var getScreenshots = function getScreenshots(gallery) {
+    var getScreenshots = function getScreenshots(gallery, alt) {
       var screenshots = '<div class="owl-carousel single">';
 
       for (var i in gallery) {
-        screenshots += "<div class=\"item\">\n\t\t\t\t<img src=\"".concat(gallery[i], "\" class=\"img-fluid\" alt=\"gameplay screenshot\">\n\t\t\t</div>");
+        screenshots += "<div class=\"item\">\n\t\t\t\t<img src=\"".concat(gallery[i], "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t</div>");
       }
 
       screenshots += "</div";
@@ -434,10 +439,11 @@ jQuery(document).ready(function ($) {
           if (item.id == localStorage.getItem("id")) {
             $("#name").append(item.name);
             $("#gameName").append(item.name);
+            getLogoSection(item.image.logo, item.name);
             getAbout(item.info.about, item.info.text);
             fillSystemReq("minimum", item.specifications.minimum);
             fillSystemReq("recommended", item.specifications.recommended);
-            getScreenshots(item.image.gallery);
+            getScreenshots(item.image.gallery, item.name);
             /* let owl = document.createElement("div");
             owl.className = "owl-carousel-single"
             let img_div = document.createElement("div");

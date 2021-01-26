@@ -404,6 +404,15 @@ function showMore(sectionId, parent, content, currentItem, data){
 		}
 		
 		getSingle();
+		function getLogoSection(logo, alt){
+			var logoDisplay = `<div class="col-3">
+							<img src="${logo}" class="img-fluid" alt="${alt}">
+						</div>
+						<div class="col-9">
+							<h3>${alt}</h3>
+						</div>`
+					$("#logo-game-container").append(logoDisplay);
+		}
 		function getAbout(about, textInfo){
 			var info = "";
 			var text = "";
@@ -420,11 +429,11 @@ function showMore(sectionId, parent, content, currentItem, data){
 			$("#about").append(info);
 			$("#infoText").append(text);
 		}
-		function getScreenshots(gallery){
+		function getScreenshots(gallery, alt){
 			var screenshots = '<div class="owl-carousel single">';
 			for (let i in gallery){
 				screenshots += `<div class="item">
-				<img src="${gallery[i]}" class="img-fluid" alt="gameplay screenshot">
+				<img src="${gallery[i]}" class="img-fluid" alt="${alt}">
 			</div>`
 			}
 			screenshots += `</div`;
@@ -446,10 +455,11 @@ function showMore(sectionId, parent, content, currentItem, data){
 				if(item.id == localStorage.getItem("id")){
 					$("#name").append(item.name);
 					$("#gameName").append(item.name);
+					getLogoSection(item.image.logo, item.name);
 					getAbout(item.info.about, item.info.text)
 					fillSystemReq("minimum", item.specifications.minimum);
 					fillSystemReq("recommended", item.specifications.recommended);
-					getScreenshots(item.image.gallery);
+					getScreenshots(item.image.gallery, item.name);
 					/* let owl = document.createElement("div");
 					owl.className = "owl-carousel-single"
 					let img_div = document.createElement("div");
