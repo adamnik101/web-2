@@ -663,6 +663,7 @@ section
 	font-size: 25px;
 	background-color: #e21e21;
 	color: #ffffff;
+	box-shadow: 0px 0px 10px #000;
 }
 
 .single_product_container
