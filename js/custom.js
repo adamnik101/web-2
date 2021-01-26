@@ -408,13 +408,28 @@ function showMore(sectionId, parent, content, currentItem, data){
 			var logoDisplay = `<div class="col-3">
 							<img src="${logo}" class="img-fluid" alt="${alt}">
 						</div>
-						<div class="col-9">`;
-						if(price.discount.isDiscounted){
-							logoDisplay += `
-								<button type="button" value="${price.value.after}" id="price"><s class="text-muted">${price.value.before}</s> ${price.value.after}</button>`
+						<div class="col-9 d-flex flex-column align-items-end">`;
+						if(!price.discount.isDiscounted){
+							logoDisplay += `<div class="d-flex flex-column align-items-end">
+												<button type="button" id="price" value="${price.value}">Buy Now!</button>
+													<span id="current" class="pt-3">
+														<i class="fas fa-euro-sign"></i>${price.value}
+													</span>	
+											</div>`
 						}
 						else{
-							logoDisplay +=`<button type="button" value="${price.value}" id="price">${price.value}</button>`
+							logoDisplay +=`<div class="d-flex flex-column align-items-end">
+												<button type="button" id="price" value="${price.value.after}">Buy Now!</button>
+												<p class="d-flex justify-content-around align-items-center pt-3">
+													<span class="badge badge-danger">-${item.discount.amount}%</span>
+													<s class="pl-2 pr-2">
+														<i class="fas fa-euro-sign "></i>${item.value.before}
+													</s> 
+													<span id="current">
+														<i class="fas fa-euro-sign"></i>${item.value.after}
+													</span>
+												</p>	
+											</div>`
 						}
 						logoDisplay += "</div>"
 					$("#logo-game-container").append(logoDisplay);

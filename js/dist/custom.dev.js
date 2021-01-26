@@ -242,22 +242,22 @@ jQuery(document).ready(function ($) {
 
       try {
         for (var _iterator = data.allGames[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var item = _step.value;
+          var _item = _step.value;
 
-          if (item.newRelease) {
+          if (_item.newRelease) {
             numberOfNew++;
           }
 
-          if (item.price.discount.isDiscounted) {
+          if (_item.price.discount.isDiscounted) {
             numberOfSale++;
             /* console.log(numberOfSale) */
           }
 
-          if (item.newRelease && !loadedNew && !item.price.discount.isDiscounted && sectionId == "newReleases") {
-            content = displayItems(item.id, item.image.cover, item.name, item.info.about[0].value, price(item, item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
+          if (_item.newRelease && !loadedNew && !_item.price.discount.isDiscounted && sectionId == "newReleases") {
+            content = displayItems(_item.id, _item.image.cover, _item.name, _item.info.about[0].value, price(_item, _item.price.discount), "", sectionId); //price(item = saljemo objekat za dalju obradu, discount= true/false)
 
             currentItem++;
-            item.shownNewReleaseSection = true;
+            _item.shownNewReleaseSection = true;
 
             if (currentItem == maxItems) {
               loadedNew = true;
@@ -265,10 +265,10 @@ jQuery(document).ready(function ($) {
             }
           }
 
-          if (currentItem < 4 && item.price.discount.isDiscounted && !item.newRelease && sectionId == "hotSales") {
-            displayItems(item.id, item.image.cover, item.name, item.info.about[0].value, price(item, item.price.discount), "", sectionId);
+          if (currentItem < 4 && _item.price.discount.isDiscounted && !_item.newRelease && sectionId == "hotSales") {
+            displayItems(_item.id, _item.image.cover, _item.name, _item.info.about[0].value, price(_item, _item.price.discount), "", sectionId);
             currentItem++;
-            item.shownHotSales = true;
+            _item.shownHotSales = true;
             $("#" + parent + " .showMore").html("Show " + " more");
           }
         }
@@ -319,13 +319,13 @@ jQuery(document).ready(function ($) {
     var showMore = function showMore(sectionId, parent, content, currentItem, data) {
       var animation = " animate";
 
-      for (var item in data.allGames) {
-        if (data.allGames[item].newRelease && data.allGames[item].id > currentItem && !data.allGames[item].shownHotSales && parent == "new") {
-          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].info.about[0].value, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
+      for (var _item2 in data.allGames) {
+        if (data.allGames[_item2].newRelease && data.allGames[_item2].id > currentItem && !data.allGames[_item2].shownHotSales && parent == "new") {
+          displayItems(data.allGames[_item2].id, data.allGames[_item2].image.cover, data.allGames[_item2].name, data.allGames[_item2].info.about[0].value, price(data.allGames[_item2], data.allGames[_item2].price.discount), animation, sectionId);
         }
 
-        if (!data.allGames[item].newRelease && data.allGames[item].price.discount.isDiscounted && !data.allGames[item].shownHotSales && parent == "sale") {
-          displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].info.about[0].value, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);
+        if (!data.allGames[_item2].newRelease && data.allGames[_item2].price.discount.isDiscounted && !data.allGames[_item2].shownHotSales && parent == "sale") {
+          displayItems(data.allGames[_item2].id, data.allGames[_item2].image.cover, data.allGames[_item2].name, data.allGames[_item2].info.about[0].value, price(data.allGames[_item2], data.allGames[_item2].price.discount), animation, sectionId);
         }
       }
 
@@ -385,12 +385,12 @@ jQuery(document).ready(function ($) {
     };
 
     var getLogoPriceSection = function getLogoPriceSection(logo, alt, price) {
-      var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9\">");
+      var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9 d-flex flex-column align-items-end\">");
 
-      if (price.discount.isDiscounted) {
-        logoDisplay += "\n\t\t\t\t\t\t\t\t<button type=\"button\" value=\"".concat(price.value.after, "\" id=\"price\"><s class=\"text-muted\">").concat(price.value.before, "</s> ").concat(price.value.after, "</button>");
+      if (!price.discount.isDiscounted) {
+        logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\" class=\"pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
       } else {
-        logoDisplay += "<button type=\"button\" value=\"".concat(price.value, "\" id=\"price\">").concat(price.value, "</button>");
+        logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.after, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"d-flex justify-content-around align-items-center pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-danger\">-").concat(item.discount.amount, "%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<s class=\"pl-2 pr-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign \"></i>").concat(item.value.before, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</s> \n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(item.value.after, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</p>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
       }
 
       logoDisplay += "</div>";
@@ -441,16 +441,16 @@ jQuery(document).ready(function ($) {
 
       try {
         for (var _iterator2 = data.allGames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var item = _step2.value;
+          var _item3 = _step2.value;
 
-          if (item.id == localStorage.getItem("id")) {
-            $("#name").append(item.name);
-            $("#gameName").append(item.name);
-            getLogoPriceSection(item.image.logo, item.name, item.price);
-            getAbout(item.info.about, item.info.text);
-            fillSystemReq("minimum", item.specifications.minimum);
-            fillSystemReq("recommended", item.specifications.recommended);
-            getScreenshots(item.image.gallery, item.name);
+          if (_item3.id == localStorage.getItem("id")) {
+            $("#name").append(_item3.name);
+            $("#gameName").append(_item3.name);
+            getLogoPriceSection(_item3.image.logo, _item3.name, _item3.price);
+            getAbout(_item3.info.about, _item3.info.text);
+            fillSystemReq("minimum", _item3.specifications.minimum);
+            fillSystemReq("recommended", _item3.specifications.recommended);
+            getScreenshots(_item3.image.gallery, _item3.name);
             /* let owl = document.createElement("div");
             owl.className = "owl-carousel-single"
             let img_div = document.createElement("div");
