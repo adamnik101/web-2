@@ -409,7 +409,6 @@ function showMore(sectionId, parent, content, currentItem, data){
 							<img src="${logo}" class="img-fluid" alt="${alt}">
 						</div>
 						<div class="col-9">
-							<h3>${alt}</h3>
 						</div>`
 					$("#logo-game-container").append(logoDisplay);
 		}

@@ -386,7 +386,7 @@ jQuery(document).ready(function ($) {
     };
 
     var getLogoSection = function getLogoSection(logo, alt) {
-      var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9\">\n\t\t\t\t\t\t\t<h3>").concat(alt, "</h3>\n\t\t\t\t\t\t</div>");
+      var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9\">\n\t\t\t\t\t\t</div>");
       $("#logo-game-container").append(logoDisplay);
     };
 
