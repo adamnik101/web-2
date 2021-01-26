@@ -328,8 +328,7 @@ function homepageGames(sectionId, parent, data){ //obrada artikala koji imaju tr
 		$("#" + parent + " .showMore").html("Show " + saleToShow + " more")
 	}
 	
-	
-	console.log(numberOfNew)
+
 	$("#" + parent + " .showMore").on("click", function(){
 		if(currentItem == 4){
 			showMore(sectionId, parent, content, currentItem, data);
@@ -354,9 +353,7 @@ function price(item, discount) {
 function showMore(sectionId, parent, content, currentItem, data){
 		let animation = " animate"
 			for(let item in data.allGames){
-				console.log(item, currentItem);
 				if(data.allGames[item].newRelease && data.allGames[item].id > currentItem  && !data.allGames[item].shownHotSales && parent == "new" ){
-					console.log(data.allGames[item]);
 					displayItems(data.allGames[item].id, data.allGames[item].image.cover, data.allGames[item].name, data.allGames[item].info.about[0].value, price(data.allGames[item], data.allGames[item].price.discount), animation, sectionId);	
 					
 				}
@@ -366,10 +363,10 @@ function showMore(sectionId, parent, content, currentItem, data){
 			};
 			var i = 0;
 			var delay = 0;
-			$("#" + sectionId).html(content);
 			$("#" + sectionId + " .animate").animate({
 				height : "500px"
 			});
+			$("#" + sectionId).html(content);
 			 $("#" + sectionId + " .animate").each(function(){
 				$("#" + sectionId + " .animate").eq(i).delay(600 * delay++).animate({
                     bottom : "0",
