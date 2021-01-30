@@ -1,4 +1,4 @@
-{"allGames": [
+ allGames: [
     {
         "id" : 1,
         "name" : "Cyberpunk 2077",
@@ -1132,4 +1132,4 @@
             "openCritics": "Strong"
         }
     }
-]}
+]

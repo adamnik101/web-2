@@ -834,24 +834,70 @@ section
 .banner h5{
 	color: #fff;
 }
-.banner .card{
+.ribbon {
+  position: absolute;
+  left: -5px; 
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#F70505 0%, #8F0808 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #8F0808;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #8F0808;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+ .card{
 	border: none;
 	background-color: transparent;
 	transition: 0.5s;
-}
-.banner .animate{
 	position: relative;
+}
+ .animate{
+	position: relative;
+	height: 0px;
 	bottom: -10%;
 	opacity: 0;
 }
-.banner .card a:hover > .card-img-top{
+ .card a:hover > .card-img-top{
 	opacity: 0.7;
 	transition: 0.5s;
 }
-.banner .card-title{
+ .card-title{
 	margin: 0 0 3px 0;
 }
-.banner .card .card-img-top{
+ .card .card-img-top{
 	border-radius: 10px;
 	transition: 0.5s;
 	box-shadow: 0px 0px 10px #000;
@@ -859,46 +905,22 @@ section
 #newReleases,#hotSales{
 	width: 100%;
 }
-.banner .card .card-body{
+ .card .card-body{
 	padding: 20px 0 0 0;
 }
-.banner .card .card-body .price{
+ .card .card-body .price{
 	color: #fff;
 	font-size: 15px;
 }
-.banner .card .card-body .price .badge{
+ .card .card-body .price .badge{
 	font-size: 14px;
 }
-.banner .showMore{
+ .showMore{
 	padding: 10px 20px;
 	border: none;
 	background-color: #2a2a2a;
 	color: #fff;
 	border-radius: 10px;
-}
-.banner_category
-{
-	height: 50px;
-	background: #FFFFFF;
-	min-width: 180px;
-	padding-left: 25px;
-	padding-right: 25px;
-}
-.banner_category a
-{
-	display: block;
-	color: #1e1e27;
-	text-transform: uppercase;
-	font-size: 22px;
-	font-weight: 600;
-	text-align: center;
-	line-height: 50px;
-	width: 100%;
-	-webkit-transition: color 0.3s ease;
-	-moz-transition: color 0.3s ease;
-	-ms-transition: color 0.3s ease;
-	-o-transition: color 0.3s ease;
-	transition: color 0.3s ease;
 }
 .catalogHome{
 	height: 500px;
@@ -1430,3 +1452,125 @@ section
 	width: 100%;
 	height: 100%;
 }
+#filter{
+	background-color: #2a2a2a;
+}
+#filter #filterBg{
+	color: #fff;
+	background-color: #616161;
+}
+#filter #filterBg .fas{
+	color: #fff;
+	font-size: 25px;
+}
+#filter span{
+	color: #fff;
+}
+
+.slidecontainer {
+	width: 80%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+	-webkit-appearance: none;  /* Override default CSS styles */
+	appearance: none;
+	width: 100%; /* Full-width */
+	height: 25px; /* Specified height */
+	background: #d3d3d3; /* Grey background */
+	outline: none; /* Remove outline */
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+	opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	background: #e21e21; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	background: #4CAF50; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+  }
+  .slidecontainer label{
+	  color: #fff;
+  }
+  #categoryChb li{
+	  color: #fff;
+  }
+#categoryChb .customChb{
+	display: block;
+	position: relative;
+	cursor: pointer;
+	padding-left: 35px;
+	margin-bottom: 15px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.customChb input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .customChb:hover input ~ .checkmark {
+	background-color: #d3d3d3;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .customChb input:checked ~ .checkmark {
+	background-color: #e21e21;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .customChb input:checked ~ .checkmark:after {
+	display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .customChb .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }

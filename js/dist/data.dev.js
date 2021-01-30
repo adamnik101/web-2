@@ -1,61 +1,6 @@
 "use strict";
 
-var categories = [{
-  "id": 1,
-  "name": "Action"
-}, {
-  "id": 2,
-  "name": "Adventure"
-}, {
-  "id": 3,
-  "name": "Indie"
-}, {
-  "id": 4,
-  "name": "RPG"
-}, {
-  "id": 5,
-  "name": "Strategy"
-}, {
-  "id": 6,
-  "name": "Shooter"
-}, {
-  "id": 7,
-  "name": "First Person"
-}, {
-  "id": 8,
-  "name": "Racing"
-}, {
-  "id": 9,
-  "name": "Horror"
-}, {
-  "id": 10,
-  "name": "Simulation"
-}, {
-  "id": 11,
-  "name": "Stealth"
-}, {
-  "id": 12,
-  "name": "Casual"
-}];
-var platform = [{
-  "id": 1,
-  "name": "Windows"
-}, {
-  "id": 2,
-  "name": "Mac OS"
-}];
-var modes = [{
-  "id": 1,
-  "name": "Single Player"
-}, {
-  "id": 2,
-  "name": "Multiplayer"
-}, {
-  "id": 3,
-  "name": "Co-op"
-}];
-var allGames = [//#region Cyberpunk 2077
-{
+allGames: [{
   "id": 1,
   "name": "Cyberpunk 2077",
   "info": {
@@ -114,7 +59,6 @@ var allGames = [//#region Cyberpunk 2077
       "value": "NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
     }]
   },
-  "catId": [1, 2, 7, 6, 4],
   "ratings": {
     "criticsRecommend": 61,
     "criticsAvg": 76,
@@ -123,7 +67,6 @@ var allGames = [//#region Cyberpunk 2077
 }, {
   "id": 2,
   "name": "Minecraft Dungeons",
-  "catId": [2, 12],
   "info": {
     "about": [{
       "name": "Publisher",
@@ -213,7 +156,6 @@ var allGames = [//#region Cyberpunk 2077
     },
     "value": 59.99
   },
-  "catId": [1, 2, 11, 4],
   "specifications": {
     "minimum": [{
       "name": "OS",
@@ -266,7 +208,6 @@ var allGames = [//#region Cyberpunk 2077
     }],
     "text": [["The Story", "Kena, a young Spirit Guide, travels to an abandoned village in search of the sacred mountain shrine.  She struggles to uncover the secrets of this forgotten community hidden in an overgrown forest where wandering spirits are trapped."], ["Find the Rot", "Timid and illusive spirits scattered throughout the forest. They maintain balance by decomposing dead and rotting elements."]]
   },
-  "catId": [2, 1],
   "newRelease": true,
   "image": {
     "cover": "images/banner_4.jpg",
@@ -337,7 +278,6 @@ var allGames = [//#region Cyberpunk 2077
     }],
     "text": [["Your darkest fears will awaken in these woods.", "It’s 1996. A young boy disappears in the Black Hills Forest near Burkittsville, Maryland. As Ellis, a former police officer with a troubled past, you join the search. What starts as an ordinary investigation soon turns into an endless nightmare as you confront your fears and the Blair Witch, a mysterious force that haunts the woods…"]]
   },
-  "catId": [9, 2, 7],
   "newRelease": true,
   "image": {
     "cover": "images/banner_6.jpg",
@@ -405,7 +345,6 @@ var allGames = [//#region Cyberpunk 2077
     }],
     "text": [["Overcome mud", "SnowRunner puts you in the driver’s seat of powerful vehicles as you conquer extreme open environments with the most advanced terrain simulation ever. Drive 40 vehicles from brands such as Ford, Chevrolet, and Freightliner as you leave your mark on an untamed open world."]]
   },
-  "catId": [12, 11],
   "newRelease": true,
   "image": {
     "cover": "images/banner_10.jpg",
@@ -455,75 +394,6 @@ var allGames = [//#region Cyberpunk 2077
     "openCritics": "Strong"
   }
 }, {
-  "id": 13,
-  "name": "The Elder Scrolls V: Skyrim",
-  "info": {
-    "about": [{
-      "name": "Publisher",
-      "value": "Bethesda"
-    }, {
-      "name": "Release date",
-      "value": "Oct 28, 2016"
-    }, {
-      "name": "Rating",
-      "value": 8.9
-    }],
-    "text": [["Explore Skyrim", "Skyrim retains the traditional open world gameplay found in the Elder Scrolls series. The player is free to roam the land of Skyrim at will. Within Skyrim lie five cities, comparatively larger to those in Oblivion's Cyrodiil setting, and expanses of wilderness and mountainous ranges. When visiting cities, the player can complete activities such as farming and mining, and is able to smith weapons from a forge. Aside from the main story quest, the player can complete side-quests, which are dynamically created based on the player's actions within the game. The in-game head-up display can be hidden, and the menu is presented in a compass-style overlay."]]
-  },
-  "catId": [1, 2, 4],
-  "newRelease": false,
-  "image": {
-    "cover": "images/banner_12.jpg",
-    "gallery": ["images/screenshot_skyrim_1.jpg", "images/screenshot_skyrim_2.jpg"],
-    "logo": "images/skyrim_logo.png"
-  },
-  "price": {
-    "discount": {
-      "isDiscounted": true,
-      "amount": 30
-    },
-    "value": {
-      "before": 24.99,
-      "after": 19.99
-    }
-  },
-  "specifications": {
-    "minimum": [{
-      "name": "OS",
-      "value": "Windows 7/Vista/XP PC (32 or 64 bit)"
-    }, {
-      "name": "Processor",
-      "value": "Dual Core 2.0 GHz or equivalent"
-    }, {
-      "name": "RAM",
-      "value": "2 GB"
-    }, {
-      "name": "Graphics",
-      "value": "NVIDIA GeForce 7600 GT & ATI Radeon X1800"
-    }, {
-      "name": "Storage",
-      "value": "6 GB"
-    }],
-    "recommended": [{
-      "name": "OS",
-      "value": "Windows 7/Vista/XP PC (32 or 64 bit)"
-    }, {
-      "name": "Processor",
-      "value": "Quad-core Intel or AMD CPU"
-    }, {
-      "name": "Memory",
-      "value": "4 GB"
-    }, {
-      "name": "Graphics",
-      "value": "NVIDIA GeForce GTX 260 or higher; ATI Radeon HD 4890 or higher"
-    }]
-  },
-  "ratings": {
-    "criticsRecommend": 61,
-    "criticsAvg": 76,
-    "openCritics": "Strong"
-  }
-}, {
   "id": 7,
   "name": "Godfall",
   "info": {
@@ -539,7 +409,6 @@ var allGames = [//#region Cyberpunk 2077
     }],
     "text": [["Explore Water Realm", "Aperion is on the precipice of ruin. You are the last of the Valorian knights, god-like warriors able to equip Valorplates, legendary armor sets that transform wielders into unstoppable masters of melee combat. Tear through foes as you climb through the elemental realms and challenge the mad god, Macros who awaits you at the top. Ascend in Godfall, the first-of-its-kind, looter-slasher, melee action-RPG."]]
   },
-  "catId": [1, 2],
   "newRelease": true,
   "image": {
     "cover": "images/banner_9.jpg",
@@ -611,7 +480,6 @@ var allGames = [//#region Cyberpunk 2077
     "text": [["Death Awaits.", "Agent 47 returns in HITMAN 3, the dramatic conclusion to the World of Assassination trilogy."]]
   },
   "newRelease": true,
-  "catId": [11, 1],
   "image": {
     "cover": "images/banner_3.jpg",
     "gallery": ["images/screenshot_hitman_1.jpg", "images/screenshot_hitman_2.jpg", "images/screenshot_hitman_3.jpg"],
@@ -664,7 +532,6 @@ var allGames = [//#region Cyberpunk 2077
   }
 }, {
   "id": 9,
-  "catId": [1, 2, 4, 6],
   "name": "Red Dead Redemption II",
   "info": {
     "about": [{
@@ -734,7 +601,6 @@ var allGames = [//#region Cyberpunk 2077
 }, {
   "id": 10,
   "name": "Far Cry 3",
-  "catId": [1, 2, 7, 11, 6],
   "info": {
     "about": [{
       "name": "Publisher",
@@ -806,7 +672,6 @@ var allGames = [//#region Cyberpunk 2077
 }, {
   "id": 11,
   "name": "Grand Theft Auto V",
-  "catId": [4, 6, 12],
   "info": {
     "about": [{
       "name": "Publisher",
@@ -878,7 +743,6 @@ var allGames = [//#region Cyberpunk 2077
 }, {
   "id": 12,
   "name": "Stranded Deep",
-  "catId": [12, 2, 10, 3],
   "info": {
     "about": [{
       "name": "Publisher",
@@ -945,69 +809,66 @@ var allGames = [//#region Cyberpunk 2077
     "openCritics": "Strong"
   }
 }, {
-  "id": 14,
-  "name": "Medium",
-  "catId": [9, 2],
+  "id": 13,
+  "name": "The Elder Scrolls V: Skyrim",
   "info": {
     "about": [{
       "name": "Publisher",
-      "value": "Bloober Team"
+      "value": "Bethesda"
     }, {
       "name": "Release date",
-      "value": "Jan 28, 2021"
+      "value": "Oct 28, 2016"
     }, {
       "name": "Rating",
-      "value": "9.0/10"
+      "value": 8.9
     }],
-    "text": [["SEE WHAT’S HIDDEN", "Delve deep into a mature and morally ambiguous story, where nothing is what it seems and everything has another side. As a medium you see, hear and experience more than others, and with every new perspective you will change your perception on what happened at the Niwa resort."], ["PLAY IN TWO WORLDS AT THE SAME TIME", "Never-seen-before gameplay that plays out across two worlds displayed at the same time. Explore the physical world and the spirit world simultaneously, and use the interactions between them to solve dual-reality puzzles, unlock new paths, and awaken memories of past events."], ["ENTER A DARK REALITY INSPIRED BY BEKSIŃSKI", "The Medium’s spirit world is a dark mirror reflection of our reality, a grim and unsettling place where our unpunished deeds, evil urges, and vile secrets manifest themselves and can take on a form. This world has been invented and designed under the inspiration of Zdzisław Beksiński’s paintings, Polish dystopian surrealist internationally recognized for his distinctive and strikingly ominous style."], ["MUSIC BY YAMAOKA & REIKOWSKI", "Immerse yourself in the disturbing and oppressive atmosphere of the game thanks to the original ‘dual’ soundtrack co-created by Akira Yamaoka and Arkadiusz Reikowski. Yamaoka-san is a legendary Japanese composer best known for his work on the Silent Hill series; Reikowski is a Hollywood Music in Media Awards nominee who worked on such acclaimed horror games as Blair Witch, Layers of Fear, and Observer. Now they join their creative forces for the music and songs of The Medium."]]
+    "text": [["Explore Skyrim", "Skyrim retains the traditional open world gameplay found in the Elder Scrolls series. The player is free to roam the land of Skyrim at will. Within Skyrim lie five cities, comparatively larger to those in Oblivion's Cyrodiil setting, and expanses of wilderness and mountainous ranges. When visiting cities, the player can complete activities such as farming and mining, and is able to smith weapons from a forge. Aside from the main story quest, the player can complete side-quests, which are dynamically created based on the player's actions within the game. The in-game head-up display can be hidden, and the menu is presented in a compass-style overlay."]]
   },
-  "newRelease": true,
+  "newRelease": false,
   "image": {
-    "cover": "images/banner_15.jpg",
-    "gallery": ["images/screenshot_medium_1.jpg", "images/screenshot_medium_2.jpg", "images/screenshot_medium_3.jpg", "images/screenshot_medium_4.jpg"],
-    "logo": "images/medium_logo.png"
+    "cover": "images/banner_12.jpg",
+    "gallery": ["images/screenshot_skyrim_1.jpg", "images/screenshot_skyrim_2.jpg"],
+    "logo": "images/skyrim_logo.png"
   },
   "price": {
     "discount": {
-      "isDiscounted": false
+      "isDiscounted": true,
+      "amount": 30
     },
-    "value": 39.99
+    "value": {
+      "before": 24.99,
+      "after": 19.99
+    }
   },
   "specifications": {
     "minimum": [{
       "name": "OS",
-      "value": "Windows 10 (64bit version only)"
+      "value": "Windows 7/Vista/XP PC (32 or 64 bit)"
     }, {
       "name": "Processor",
-      "value": "Intel® Core™ i5-6600 / AMD Ryzen™ 5 2500X"
+      "value": "Dual Core 2.0 GHz or equivalent"
     }, {
       "name": "RAM",
-      "value": "8 GB"
+      "value": "2 GB"
     }, {
       "name": "Graphics",
-      "value": "@1080p NVIDIA GeForce® GTX 1060 6GB / AMD Radeon™ R9 390X (or equivalent with 4 GB VRAM)"
-    }, {
-      "name": "Direct X",
-      "value": "11"
+      "value": "NVIDIA GeForce 7600 GT & ATI Radeon X1800"
     }, {
       "name": "Storage",
-      "value": "30 GB"
+      "value": "6 GB"
     }],
     "recommended": [{
       "name": "OS",
-      "value": "Windows 10 (64bit version only)"
+      "value": "Windows 7/Vista/XP PC (32 or 64 bit)"
     }, {
       "name": "Processor",
-      "value": "Intel® Core™ i5-9600 / AMD Ryzen™ 7 3700X"
+      "value": "Quad-core Intel or AMD CPU"
     }, {
-      "name": "RAM",
-      "value": "16 GB"
-    }, {
-      "name": "Direct X",
-      "value": "DirectX 12"
+      "name": "Memory",
+      "value": "4 GB"
     }, {
       "name": "Graphics",
-      "value": "@1080p NVIDIA GeForce® GTX 1660 Ti / Radeon™ RX Vega 56 | @4K NVIDIA GeForce® RTX 2070 / Radeon™ RX 5700 XT"
+      "value": "NVIDIA GeForce GTX 260 or higher; ATI Radeon HD 4890 or higher"
     }]
   },
   "ratings": {
@@ -1015,5 +876,4 @@ var allGames = [//#region Cyberpunk 2077
     "criticsAvg": 76,
     "openCritics": "Strong"
   }
-} //#endregion
-];
+}];
