@@ -158,12 +158,12 @@ jQuery(document).ready(function ($) {
 
   function displayGames(data, parent, animation) {
     // ipisivanje bloka sa igricom
-    var display = document.createElement("div");
-
-    if (parent == "products") {
-      display.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
+    if (parent != "products") {
+      $("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4");
     } else {
-      display.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4";
+      $("#" + parent).removeClass();
+      $("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3");
+      $("#" + parent).empty();
     }
 
     var _iteratorNormalCompletion = true;
@@ -214,10 +214,11 @@ jQuery(document).ready(function ($) {
         li2.className = "price";
         li2.innerHTML = price(game, game.price.discount);
         ul.appendChild(li2);
-        display.append(div);
 
         if (parent != "products") {
-          $("#" + parent).append(display);
+          $("#" + parent).append(div);
+        } else {
+          $("#" + parent).append(div);
         }
       }
     } catch (err) {
@@ -492,6 +493,7 @@ jQuery(document).ready(function ($) {
   $("#priceToggle").click(function () {
     $("#priceRange").slideToggle();
   });
+  var maxItemsStore = 9;
 
   function displayCheckbox(data) {
     var display = "";
@@ -523,7 +525,6 @@ jQuery(document).ready(function ($) {
   }
 
   function displayStoreFirst(data) {
-    var maxItemsStore = 9;
     var counter = [];
     var items = data.filter(function (game, index) {
       if (counter.length < maxItemsStore) {
@@ -534,6 +535,19 @@ jQuery(document).ready(function ($) {
   }
 
   displayStoreFirst(allGames);
+  $("#filterCat").on("click", function () {
+    $("#categoryChb").slideToggle();
+  });
+
+  function removeUnchecked(arr, value) {
+    var index = arr.indexOf(value); // dohvatanje indeksa elementa koji je unchecked u nizu 
+
+    if (index != -1) {
+      // ako se nalazi u nizu
+      arr.splice(index, 1); // uklanjanje tog elementa 
+    }
+  }
+
   var filtered = [];
   var allChecked = [];
   $(document).on("change", ":checkbox", function () {
@@ -541,36 +555,24 @@ jQuery(document).ready(function ($) {
 
     if ($(this).is(":checked")) {
       allChecked.push(val);
-      filtered = allGames.filter(function (game) {
-        if (allChecked.every(function (value) {
-          return game.catId.includes(value);
-        })) {
-          return game;
-        }
-      });
-    } else if (!$(this).is(":checked")) {
-      console.log($(this));
+    } else {
+      removeUnchecked(allChecked, val);
     }
-    /* else if(!($(this).is("checked"))){
-    	let val = Number($(this).val());
-    	
-    	filtered = filtered.filter(function(game){
-    		for(let checked of allChecked){
-    			if(game.catId.indexOf(checked) == -1){
-    				return game;
-    			}
-    			allChecked.splice(checked, 1)
-    		}
-    		})
-    } */
 
-
-    $(".openSingle").fadeIn();
+    filtered = allGames.filter(function (game) {
+      if (allChecked.every(function (value) {
+        return game.catId.includes(value);
+      })) {
+        return game;
+      }
+    });
     displayGames(filtered, "products", "");
 
-    if (filtered.length == 0) {
-      var alert = "<h3>There are no results that match your search</h3>";
-      $("#products").html(alert);
+    if (!filtered.length) {
+      $("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
+      $("#products").addClass("d-flex align-items-center justify-content-center h-100");
+      var msg = "<div id=\"noMatch\" class=\"pt-5\">\n\t\t\t\t\t\t\t\t<i class=\"far fa-frown pb-3\"></i>\n\t\t\t\t\t\t\t\t<p>No results found</p>\t\n\t\t\t\t\t\t\t\t<span>Unfortunately I could not find any results matching your search.</span>\t   \n\t\t\t\t\t\t   </div>";
+      $("#products").html(msg);
     }
   });
   $("form").on("input", function () {

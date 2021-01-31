@@ -132,7 +132,7 @@
 		</div>
 	</div>
 
-	<div class="container single_product_container">
+	<div class="container single_product_container mb-5">
 		<div class="row">
 			<div class="col">
 
@@ -162,7 +162,7 @@
 							<span>Price</span>
 							<i class="fas fa-chevron-down"></i>
 						</span>
-						<div class="" id="priceRange">
+						<div class="pt-2" id="priceRange">
 							<div class="slidecontainer mx-auto">
 								<form action="" method="GET">
 									<input type="range" min="0" max="100" value="0" class="slider" id="priceFrom">
@@ -180,24 +180,26 @@
 							<i class="fas fa-chevron-down"></i>
 						</span>
 							<ul class="p-3" id="categoryChb">
-								<!-- <li class="d-flex align-items-center justify-content-start">
-									<label for="actionCat" class="customChb w-100"> Action
-										<input type="checkbox" id="actionCat" value="action">
-										<span class="checkmark"></span>
-									</label>					
-								</li>
-								<li class="d-flex align-items-center justify-content-start">
-									<label for="adventureCat" class="customChb w-100"> Adventure
-										<input type="checkbox" id="adventureCat" value="adventure">
-										<span class="checkmark"></span>
-									</label>					
-								</li> -->
+								
 							</ul>
 					</div>
 				</div>
 				
 			</div>
 			<div class="col-12 col-sm-9">
+				<div id="sortBy" class="d-flex justify-content-end align-items-center">
+					<div id="ddlWrapper">
+					<div id="sortBtn-wrapper" class="pt-3 pb-3">
+						<span class="mr-3">Sort By:</span>
+						<button type="button" id="sortBtn">Default</button>
+					</div>
+					<ul id="sortDdl">
+						<li>By price ascending</li>
+						<li>By price ascending</li>
+						<li>By price ascending</li>
+					</ul>
+					</div>
+				</div>
 				<div id="products"></div>
 			</div>
 						

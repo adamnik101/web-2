@@ -355,7 +355,7 @@ section
 {
 	width: 100%;
 	background: #1d1d1d;
-	box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 10px 16px 0px rgba(0, 0, 0, 0.794);
 }
 .navbar
 {
@@ -1466,7 +1466,18 @@ section
 #filter span{
 	color: #fff;
 }
-
+#priceToggle{
+	transition: 0.2s;
+}
+#priceToggle:hover{
+	background-color: #e21e21;
+}
+#filterCat{
+	transition: 0.2s;
+}
+#filterCat:hover{
+	background-color: #e21e21;
+}
 .slidecontainer {
 	width: 80%; /* Width of the outside container */
   }
@@ -1574,3 +1585,52 @@ section
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
   }
+#noMatch{
+	width: 90%;
+	height: 50%;
+	text-align: center;
+}
+#noMatch .fa-frown{
+	font-size: 50px;
+	color: #fff;
+}
+#noMatch p{
+	font-size: 30px;
+	color: #fff;
+} 
+#noMatch span{
+	font-size: 16px;
+	color: #fff;
+}
+#sortBtn-wrapper span{
+	color: #fff;
+}
+#sortBtn{
+	border: none;
+	background-color: #616161;
+	padding: 10px 40px;
+	color: #fff;
+	width: 200px;
+}
+#sortBy{
+	position: relative;
+}
+#sortDdl{
+	width: 200px;
+	background-color: #2c2c2c;
+	position: absolute;
+	top: 59px;
+	right: 0;
+	z-index: 9;
+	box-shadow: 0px 10px 15px  #000;
+}
+#sortDdl li{
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+}
+#sortDdl li:hover{
+	background-color: #cacaca;
+	color: #000;
+	cursor: pointer;
+}

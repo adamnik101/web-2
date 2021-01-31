@@ -322,6 +322,74 @@ var allGames = [//#region Cyberpunk 2077
     "openCritics": "Strong"
   }
 }, {
+  "id": 16,
+  "name": "Mafia: Definite Edition",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Hangar  13 | 2K Games"
+    }, {
+      "name": "Release date",
+      "value": "Sep 25, 2020"
+    }, {
+      "name": "Rating",
+      "value": "9.3/10"
+    }],
+    "text": [["Play a Mob Movie", "Live the life of a Prohibition-era gangster and rise through the ranks of the Mafia."], ["Re-Made Classic", "Recreated 1930's cityscape, filled with interwar architecture, cars and culture to see, hear and interact with."]]
+  },
+  "catId": [1, 6],
+  "newRelease": true,
+  "image": {
+    "cover": "images/banner_16.jpg",
+    "gallery": ["images/screenshot_mafia_1.jpg", "images/screenshot_mafia_2.jpg", "images/screenshot_mafia_3.jpeg", "images/screenshot_mafia_4.jpg"],
+    "logo": "images/mafia_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": false
+    },
+    "value": 49.99
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 10 64-bit"
+    }, {
+      "name": "Processor",
+      "value": "Intel Core-i5 2550K 3.4GHz / AMD FX 8120 3.1 GHz"
+    }, {
+      "name": "RAM",
+      "value": "6 GB"
+    }, {
+      "name": "Graphics",
+      "value": "NVIDIA GeForce GTX 660 / AMD Radeon HD 7870"
+    }, {
+      "name": "Storage",
+      "value": "50 GB"
+    }, {
+      "name": "DirectX",
+      "value": "11"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 64-bit"
+    }, {
+      "name": "Processor",
+      "value": "Intel Core-i7 3770 3.4GHz / AMD FX-8350 4.2GHz"
+    }, {
+      "name": "Memory",
+      "value": "16 GB"
+    }, {
+      "name": "Graphics",
+      "value": "NVIDIA GeForce GTX 1080 / AMD Radeon RX 5700"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
   "id": 5,
   "name": "Blair Witch",
   "info": {
@@ -405,7 +473,7 @@ var allGames = [//#region Cyberpunk 2077
     }],
     "text": [["Overcome mud", "SnowRunner puts you in the driver’s seat of powerful vehicles as you conquer extreme open environments with the most advanced terrain simulation ever. Drive 40 vehicles from brands such as Ford, Chevrolet, and Freightliner as you leave your mark on an untamed open world."]]
   },
-  "catId": [12, 11],
+  "catId": [12, 10],
   "newRelease": true,
   "image": {
     "cover": "images/banner_10.jpg",

@@ -205,56 +205,63 @@ jQuery(document).ready(function($)
 	*/
 
 function displayGames(data, parent, animation){ // ipisivanje bloka sa igricom
-	let display = document.createElement("div");
-	if(parent == "products"){
-	display.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
-	}
-	else{display.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"}
-	for(let game of data){
-	let div = document.createElement("div");
-	div.className = `card mb-3 col${animation}`;
-	let a = document.createElement("a");
-	a.setAttribute("href","#!");
-	a.className = "openSingle";
-	a.setAttribute("id", game.id)
-	a.style.position = "relative";
-	div.appendChild(a);
-	if(game.price.discount.isDiscounted){
-		let ribbon = document.createElement("div");
-		ribbon.className = "ribbon";
-		let span = document.createElement("span");
-		span.innerHTML = "SALE!"
-		ribbon.appendChild(span);
-		a.appendChild(ribbon)
-	}
-	let image = document.createElement("img");
-	image.setAttribute("src", game.image.cover);
-	image.setAttribute("alt", game.name)
-	image.className = "card-img-top";
-	a.appendChild(image);
-	let card = document.createElement("div");
-	card.className = "card-body";
-	a.appendChild(card)
-	let h5 = document.createElement("h5");
-	h5.textContent = game.name;
-	h5.className = "card-title";
-	card.appendChild(h5)
-	let ul = document.createElement("ul");
-	ul.className = "card-info";
-	card.appendChild(ul)
-	let li1 = document.createElement("li");
-	li1.className = "text-muted developer"
-	li1.textContent = game.info.about[0].value;
-	ul.appendChild(li1)
-	let li2 = document.createElement("li");
-	li2.className = "price"
-	li2.innerHTML = price(game, game.price.discount);
-	ul.appendChild(li2)
-	display.append(div);
 	if(parent != "products"){
-	$("#" + parent).append(display)	
+		$("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4")
 	}
-}
+	else{
+		$("#" + parent).removeClass();
+		$("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3")
+		$("#" + parent).empty();
+
+	}
+	for(let game of data){
+		let div = document.createElement("div");
+		div.className = `card mb-3 col${animation}`;
+		let a = document.createElement("a");
+		a.setAttribute("href","#!");
+		a.className = "openSingle";
+		a.setAttribute("id", game.id)
+		a.style.position = "relative";
+		div.appendChild(a);
+		if(game.price.discount.isDiscounted){
+			let ribbon = document.createElement("div");
+			ribbon.className = "ribbon";
+			let span = document.createElement("span");
+			span.innerHTML = "SALE!"
+			ribbon.appendChild(span);
+			a.appendChild(ribbon)
+		}
+		let image = document.createElement("img");
+		image.setAttribute("src", game.image.cover);
+		image.setAttribute("alt", game.name)
+		image.className = "card-img-top";
+		a.appendChild(image);
+		let card = document.createElement("div");
+		card.className = "card-body";
+		a.appendChild(card)
+		let h5 = document.createElement("h5");
+		h5.textContent = game.name;
+		h5.className = "card-title";
+		card.appendChild(h5)
+		let ul = document.createElement("ul");
+		ul.className = "card-info";
+		card.appendChild(ul)
+		let li1 = document.createElement("li");
+		li1.className = "text-muted developer"
+		li1.textContent = game.info.about[0].value;
+		ul.appendChild(li1)
+		let li2 = document.createElement("li");
+		li2.className = "price"
+		li2.innerHTML = price(game, game.price.discount);
+		ul.appendChild(li2)
+		if(parent != "products"){
+			$("#" + parent).append(div)
+		}
+		else{
+			
+			$("#" + parent).append(div)
+		}
+	}
 }
 function price(item, discount) {
 	if(!discount.isDiscounted){
@@ -509,6 +516,7 @@ displayAllSections(allGames)
 		$("#priceToggle").click(function(){
 			$("#priceRange").slideToggle();
 		})
+		var maxItemsStore = 9;
 		function displayCheckbox(data){
 			let display = "";
 			for(let category of data){
@@ -522,7 +530,6 @@ displayAllSections(allGames)
 			$("#categoryChb").html(display);
 		}
 		function displayStoreFirst(data){
-			var maxItemsStore = 9;
 			let counter = [];
 			var items = data.filter(function(game, index){
 				if(counter.length < maxItemsStore){
@@ -532,41 +539,44 @@ displayAllSections(allGames)
 			displayGames(items, "products", "")
 		}
 		displayStoreFirst(allGames);
+
+		$("#filterCat").on("click", function(){
+			$("#categoryChb").slideToggle();
+		})
+		function removeUnchecked(arr, value){ 
+			var index = arr.indexOf(value);	// dohvatanje indeksa elementa koji je unchecked u nizu 
+			if(index != -1){	// ako se nalazi u nizu
+				arr.splice(index, 1) // uklanjanje tog elementa 
+			}
+		}
 		var filtered = [];
 		var allChecked = [];
 		$(document).on("change", ":checkbox", function(){
 			let val = Number($(this).val());
 			if($(this).is(":checked")){
 				allChecked.push(val);
-				filtered = allGames.filter(function(game){
-					if(allChecked.every(value => game.catId.includes(value))){ return game}
-				})
-		}
-		else if(!$(this).is(":checked")){
-			console.log($(this))
-		}
-		/* else if(!($(this).is("checked"))){
-			let val = Number($(this).val());
-			
-			filtered = filtered.filter(function(game){
-				for(let checked of allChecked){
-					if(game.catId.indexOf(checked) == -1){
-						return game;
-					}
-					allChecked.splice(checked, 1)
-				}
-				})
-		} */
-		$(".openSingle").fadeIn();
-		displayGames(filtered, "products", "")
-		if(filtered.length == 0){
-			let alert = `<h3>There are no results that match your search</h3>`;
-			$("#products").html(alert);
-		}
+			}
+			else{
+				removeUnchecked(allChecked, val);
+			}
+			filtered = allGames.filter(function(game){
+				if(allChecked.every(value => game.catId.includes(value))){ return game}
+			})
+			displayGames(filtered, "products", "")
+			if(!filtered.length){
+				$("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
+				$("#products").addClass("d-flex align-items-center justify-content-center h-100")
+				var msg = `<div id="noMatch" class="pt-5">
+								<i class="far fa-frown pb-3"></i>
+								<p>No results found</p>	
+								<span>Unfortunately I could not find any results matching your search.</span>	   
+						   </div>`;
+				$("#products").html(msg) 
+			}
 	})
 		$("form").on("input", function(){
 			$("#from").val($("#priceFrom").val());
 		})
-
+		
 		displayCheckbox(categories);
 });
