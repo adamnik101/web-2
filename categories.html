@@ -160,15 +160,15 @@
 					<div id="price-container" class="d-block">
 						<span class="d-flex justify-content-between align-items-center p-3" id="priceToggle">
 							<span>Price</span>
-							<i class="fas fa-chevron-down"></i>
+							<i class="fas fa-chevron-up"></i>
 						</span>
 						<div class="pt-2" id="priceRange">
 							<div class="slidecontainer mx-auto">
 								<form action="" method="GET">
-									<input type="range" min="0" max="100" value="0" class="slider" id="priceFrom">
+									<input type="range" min="0" max="60" value="0" class="slider" id="priceFrom">
 									<label for="priceFrom" id="labelMin">Min: <i class="fas fa-euro-sign"></i> <output id="from">0</output></label>
-									<input type="range" min="0" max="100" value="100" class="slider" id="priceTo">
-									<label for="priceTo" id="labelMax">Max: <i class="fas fa-euro-sign"></i> 100</label>
+									<input type="range" min="0" max="60" value="60" class="slider" id="priceTo">
+									<label for="priceTo" id="labelMax">Max: <i class="fas fa-euro-sign"></i> <output id="to">60</output></label>
 								</form>
 							  </div>
 						</div>
@@ -177,7 +177,7 @@
 					<div id="categories-container" class="d-block">
 						<span id="filterCat" class="d-flex justify-content-between align-items-center p-3">
 							<span>Categories</span>
-							<i class="fas fa-chevron-down"></i>
+							<i class="fas fa-chevron-up"></i>
 						</span>
 							<ul class="p-3" id="categoryChb">
 								
@@ -201,6 +201,9 @@
 					</div>
 				</div>
 				<div id="products"></div>
+				<div class="col-12 d-flex justify-content-center align-items-center p-4" id="pag">
+					
+				</div>
 			</div>
 						
 

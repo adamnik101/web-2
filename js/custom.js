@@ -506,16 +506,6 @@ displayAllSections(allGames)
 			localStorage.setItem("id", ($(this).attr("id")));
 			open("single.html", "_self");
 		})
-		
-
-	/* 	$("#priceFrom").on("input", function(){
-			let val = $(this).val();
-			$(".slidecontainer").find("#labelMin").html("Min <i class='fas fa-euro-sign'></i> " + val)
-		})
-		 */
-		$("#priceToggle").click(function(){
-			$("#priceRange").slideToggle();
-		})
 		var maxItemsStore = 9;
 		function displayCheckbox(data){
 			let display = "";
@@ -530,26 +520,54 @@ displayAllSections(allGames)
 			$("#categoryChb").html(display);
 		}
 		function displayStoreFirst(data){
-			let counter = [];
-			var items = data.filter(function(game, index){
-				if(counter.length < maxItemsStore){
-					return counter.push(index)
+			let otherPages = [];
+			let currentPage = [];
+			var items = data.filter(function(game){
+				if(currentPage.length < maxItemsStore){
+					return currentPage.push(game)
+				}
+				else{
+					otherPages.push(game);
 				}
 			});
 			displayGames(items, "products", "")
+			if(currentPage.length <= maxItemsStore && currentPage.length > 0){
+				displayPagination(otherPages, currentPage);
+			}
+			else{
+				$("#pag").empty()
+			}
 		}
 		displayStoreFirst(allGames);
+		// rotate font awesome 
 
-		$("#filterCat").on("click", function(){
-			$("#categoryChb").slideToggle();
-		})
+
+		
+		$("#filterCat").on("click", rotateHandler("#categoryChb", "#filterCat"))
+		$("#priceToggle").on("click", rotateHandler("#priceRange", "#priceToggle"))
+		var degreesCat = 0;
+		var degreesPrice = 0;
+		function rotateHandler(button, div){
+			return function(){
+				$(button).slideToggle();
+				if(div == "#filterCat"){
+					degreesCat += 180;
+					$(div).find(".fas").css("transform", "rotate(" + degreesCat + "deg)");
+				}
+				else{
+					degreesPrice += 180;
+					$(div).find(".fas").css("transform", "rotate(" + degreesPrice + "deg)");
+				}
+				
+			}
+		}
 		function removeUnchecked(arr, value){ 
 			var index = arr.indexOf(value);	// dohvatanje indeksa elementa koji je unchecked u nizu 
 			if(index != -1){	// ako se nalazi u nizu
 				arr.splice(index, 1) // uklanjanje tog elementa 
 			}
 		}
-		var filtered = [];
+		var filtered =[];
 		var allChecked = [];
 		$(document).on("change", ":checkbox", function(){
 			let val = Number($(this).val());
@@ -559,12 +577,105 @@ displayAllSections(allGames)
 			else{
 				removeUnchecked(allChecked, val);
 			}
+			
 			filtered = allGames.filter(function(game){
-				if(allChecked.every(value => game.catId.includes(value))){ return game}
+				if(allChecked.every(value => game.catId.includes(value)) && !game.price.discount.isDiscounted && game.price.value > priceFrom && game.price.value < priceTo)
+					{ return game}
+					else if(allChecked.every(value => game.catId.includes(value)) && game.price.value.after > priceFrom && game.price.value.after < priceTo){
+						return game;
+					}
 			})
-			displayGames(filtered, "products", "")
+			displayStoreFirst(filtered)
 			if(!filtered.length){
-				$("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
+				displayNoResults();
+			}
+	})
+
+	// price sliders
+	var filteredPrice = [];
+	var priceFrom = 0;
+	var priceTo = 60;
+		$("#priceFrom").on("input", getRangeValue("#from", "#priceFrom"))
+		$("#priceTo").on("input", getRangeValue("#to", "#priceTo"))
+		function getRangeValue(output, value){
+			return function(){
+				$(output).val($(value).val());
+				if(output == "#from"){
+					priceFrom = $(value).val();
+				}
+				else{
+					priceTo = $(value).val();
+				}
+				filteredPrice = allGames.filter(function(game){
+					if(allChecked.every(value => game.catId.includes(value))){
+						if(!game.price.discount.isDiscounted){
+							return Math.ceil(game.price.value) > priceFrom && Math.floor(game.price.value) < priceTo
+						}
+						else{
+							return Math.ceil(game.price.value.after) >  priceFrom && Math.floor(game.price.value.after) < priceTo
+						}
+				}})
+				displayStoreFirst(filteredPrice)
+				if(!filteredPrice.length){
+					displayNoResults();
+				}
+			}
+		}
+	// sort by ddl
+		$("#sortDdl").hide();
+		$("#sortBtn").focus(function(){
+			$("#sortDdl").fadeIn()
+		})
+		$("#sortBtn").focusout(function(){
+			$("#sortDdl").fadeOut()
+		})
+		displayCheckbox(categories);
+		function displayPagination(otherPages, currentPage){
+			let allItems = [];
+			if(otherPages.length > maxItemsStore){
+				var another = otherPages.slice(maxItemsStore);
+				otherPages.splice(maxItemsStore, maxItemsStore * 2)
+			}
+			allItems.push(currentPage, otherPages, another);
+			console.log(allItems.length);
+			
+			
+			if(allItems.length){
+				let display = `<ul class="d-flex flex-row" id="pagination">`;
+				for(let i = 0; i < allItems.length; i++){
+					if(allItems[i] != undefined && allItems[i].length > 0){
+					display += `<li class="pagination-item mr-2`;
+					if(i ==0){
+						display+=" active-pag";
+					}
+					display += `" id="pag-${i + 1}">${i + 1}</li>`
+					}
+				}
+				display += "</ul>"
+				$("#pag").html(display);
+			}			
+			
+			$(".pagination-item").on("click", function(){
+				if(this.id == "pag-1"){
+					displayGames(currentPage, "products", "")
+						$(".pagination-item").removeClass("active-pag")
+						$(this).addClass("active-pag")
+				}
+				else if(this.id == "pag-2"){
+					$(".pagination-item").removeClass("active-pag")
+					$(this).addClass("active-pag");
+					displayGames(otherPages, "products", "")
+				}
+				else{
+					$(".pagination-item").removeClass("active-pag")
+					$(this).addClass("active-pag");
+					displayGames(another, "products", "")
+				}
+			})
+			
+		}
+		function displayNoResults(){
+			$("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
 				$("#products").addClass("d-flex align-items-center justify-content-center h-100")
 				var msg = `<div id="noMatch" class="pt-5">
 								<i class="far fa-frown pb-3"></i>
@@ -572,11 +683,5 @@ displayAllSections(allGames)
 								<span>Unfortunately I could not find any results matching your search.</span>	   
 						   </div>`;
 				$("#products").html(msg) 
-			}
-	})
-		$("form").on("input", function(){
-			$("#from").val($("#priceFrom").val());
-		})
-		
-		displayCheckbox(categories);
+		}
 });

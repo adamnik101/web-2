@@ -1468,12 +1468,14 @@ section
 }
 #priceToggle{
 	transition: 0.2s;
+	cursor: pointer;
 }
 #priceToggle:hover{
 	background-color: #e21e21;
 }
 #filterCat{
 	transition: 0.2s;
+	cursor: pointer;
 }
 #filterCat:hover{
 	background-color: #e21e21;
@@ -1633,4 +1635,16 @@ section
 	background-color: #cacaca;
 	color: #000;
 	cursor: pointer;
+}
+.pagination-item{
+	background-color: #2a2a2a;
+	color: #fff;
+	padding: 15px 20px;
+	cursor: pointer;
+}
+.pagination-item:hover{
+	background-color: #e21e21;
+}
+.active-pag{
+	background-color: #e21e21;
 }

@@ -484,15 +484,6 @@ jQuery(document).ready(function ($) {
     localStorage.setItem("id", $(this).attr("id"));
     open("single.html", "_self");
   });
-  /* 	$("#priceFrom").on("input", function(){
-  		let val = $(this).val();
-  		$(".slidecontainer").find("#labelMin").html("Min <i class='fas fa-euro-sign'></i> " + val)
-  	})
-  	 */
-
-  $("#priceToggle").click(function () {
-    $("#priceRange").slideToggle();
-  });
   var maxItemsStore = 9;
 
   function displayCheckbox(data) {
@@ -525,19 +516,44 @@ jQuery(document).ready(function ($) {
   }
 
   function displayStoreFirst(data) {
-    var counter = [];
-    var items = data.filter(function (game, index) {
-      if (counter.length < maxItemsStore) {
-        return counter.push(index);
+    var otherPages = [];
+    var currentPage = [];
+    var items = data.filter(function (game) {
+      if (currentPage.length < maxItemsStore) {
+        return currentPage.push(game);
+      } else {
+        otherPages.push(game);
       }
     });
     displayGames(items, "products", "");
+
+    if (currentPage.length <= maxItemsStore && currentPage.length > 0) {
+      displayPagination(otherPages, currentPage);
+    } else {
+      $("#pag").empty();
+    }
   }
 
-  displayStoreFirst(allGames);
-  $("#filterCat").on("click", function () {
-    $("#categoryChb").slideToggle();
-  });
+  displayStoreFirst(allGames); // rotate font awesome 
+
+  $("#filterCat").on("click", rotateHandler("#categoryChb", "#filterCat"));
+  $("#priceToggle").on("click", rotateHandler("#priceRange", "#priceToggle"));
+  var degreesCat = 0;
+  var degreesPrice = 0;
+
+  function rotateHandler(button, div) {
+    return function () {
+      $(button).slideToggle();
+
+      if (div == "#filterCat") {
+        degreesCat += 180;
+        $(div).find(".fas").css("transform", "rotate(" + degreesCat + "deg)");
+      } else {
+        degreesPrice += 180;
+        $(div).find(".fas").css("transform", "rotate(" + degreesPrice + "deg)");
+      }
+    };
+  }
 
   function removeUnchecked(arr, value) {
     var index = arr.indexOf(value); // dohvatanje indeksa elementa koji je unchecked u nizu 
@@ -562,21 +578,117 @@ jQuery(document).ready(function ($) {
     filtered = allGames.filter(function (game) {
       if (allChecked.every(function (value) {
         return game.catId.includes(value);
-      })) {
+      }) && !game.price.discount.isDiscounted && game.price.value > priceFrom && game.price.value < priceTo) {
+        return game;
+      } else if (allChecked.every(function (value) {
+        return game.catId.includes(value);
+      }) && game.price.value.after > priceFrom && game.price.value.after < priceTo) {
         return game;
       }
     });
-    displayGames(filtered, "products", "");
+    displayStoreFirst(filtered);
 
     if (!filtered.length) {
-      $("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
-      $("#products").addClass("d-flex align-items-center justify-content-center h-100");
-      var msg = "<div id=\"noMatch\" class=\"pt-5\">\n\t\t\t\t\t\t\t\t<i class=\"far fa-frown pb-3\"></i>\n\t\t\t\t\t\t\t\t<p>No results found</p>\t\n\t\t\t\t\t\t\t\t<span>Unfortunately I could not find any results matching your search.</span>\t   \n\t\t\t\t\t\t   </div>";
-      $("#products").html(msg);
+      displayNoResults();
     }
+  }); // price sliders
+
+  var filteredPrice = [];
+  var priceFrom = 0;
+  var priceTo = 60;
+  $("#priceFrom").on("input", getRangeValue("#from", "#priceFrom"));
+  $("#priceTo").on("input", getRangeValue("#to", "#priceTo"));
+
+  function getRangeValue(output, value) {
+    return function () {
+      $(output).val($(value).val());
+
+      if (output == "#from") {
+        priceFrom = $(value).val();
+      } else {
+        priceTo = $(value).val();
+      }
+
+      filteredPrice = allGames.filter(function (game) {
+        if (allChecked.every(function (value) {
+          return game.catId.includes(value);
+        })) {
+          if (!game.price.discount.isDiscounted) {
+            return Math.ceil(game.price.value) > priceFrom && Math.floor(game.price.value) < priceTo;
+          } else {
+            return Math.ceil(game.price.value.after) > priceFrom && Math.floor(game.price.value.after) < priceTo;
+          }
+        }
+      });
+      displayStoreFirst(filteredPrice);
+
+      if (!filteredPrice.length) {
+        displayNoResults();
+      }
+    };
+  } // sort by ddl
+
+
+  $("#sortDdl").hide();
+  $("#sortBtn").focus(function () {
+    $("#sortDdl").fadeIn();
   });
-  $("form").on("input", function () {
-    $("#from").val($("#priceFrom").val());
+  $("#sortBtn").focusout(function () {
+    $("#sortDdl").fadeOut();
   });
   displayCheckbox(categories);
+
+  function displayPagination(otherPages, currentPage) {
+    var allItems = [];
+
+    if (otherPages.length > maxItemsStore) {
+      var another = otherPages.slice(maxItemsStore);
+      otherPages.splice(maxItemsStore, maxItemsStore * 2);
+    }
+
+    allItems.push(currentPage, otherPages, another);
+    console.log(allItems.length);
+
+    if (allItems.length) {
+      var display = "<ul class=\"d-flex flex-row\" id=\"pagination\">";
+
+      for (var i = 0; i < allItems.length; i++) {
+        if (allItems[i] != undefined && allItems[i].length > 0) {
+          display += "<li class=\"pagination-item mr-2";
+
+          if (i == 0) {
+            display += " active-pag";
+          }
+
+          display += "\" id=\"pag-".concat(i + 1, "\">").concat(i + 1, "</li>");
+        }
+      }
+
+      display += "</ul>";
+      $("#pag").html(display);
+    }
+
+    $(".pagination-item").on("click", function () {
+      if (this.id == "pag-1") {
+        displayGames(currentPage, "products", "");
+        $(".pagination-item").removeClass("active-pag");
+        $(this).addClass("active-pag");
+      } else if (this.id == "pag-2") {
+        $(".pagination-item").removeClass("active-pag");
+        $(this).addClass("active-pag");
+        displayGames(otherPages, "products", "");
+      } else {
+        $(".pagination-item").removeClass("active-pag");
+        $(this).addClass("active-pag");
+        displayGames(another, "products", "");
+      }
+    });
+  }
+
+  function displayNoResults() {
+    $("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
+    $("#products").addClass("d-flex align-items-center justify-content-center h-100");
+    var msg = "<div id=\"noMatch\" class=\"pt-5\">\n\t\t\t\t\t\t\t\t<i class=\"far fa-frown pb-3\"></i>\n\t\t\t\t\t\t\t\t<p>No results found</p>\t\n\t\t\t\t\t\t\t\t<span>Unfortunately I could not find any results matching your search.</span>\t   \n\t\t\t\t\t\t   </div>";
+    $("#products").html(msg);
+  }
 });

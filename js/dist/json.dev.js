@@ -36,6 +36,9 @@ var categories = [{
 }, {
   "id": 12,
   "name": "Casual"
+}, {
+  "id": 13,
+  "name": "Sports"
 }];
 var platform = [{
   "id": 1,
@@ -663,6 +666,420 @@ var allGames = [//#region Cyberpunk 2077
     "openCritics": "Strong"
   }
 }, {
+  "id": 28,
+  "catId": [8, 10],
+  "name": "Dirt 5",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Codemasters"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_22.jpg",
+    "gallery": ["images/screenshot_dirt_1.jpg", "images/screenshot_dirt_2.jpg", "images/screenshot_dirt_3.jpg"],
+    "logo": "images/dirt_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 25,
+  "catId": [12, 2, 10],
+  "name": "Bee Simulator",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Codemasters"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_25.jpg",
+    "gallery": ["images/screenshot_bee_1.jpg", "images/screenshot_bee_2.jpg", "images/screenshot_bee_3.jpg", "images/screenshot_bee_4.jpg"],
+    "logo": "images/bee_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 31,
+  "catId": [6, 1, 7],
+  "name": "Call of Duty: Cold War",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Codemasters"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_26.jpg",
+    "gallery": ["images/screenshot_cod_1.jpg", "images/screenshot_cod_2.jpg", "images/screenshot_cod_3.jpg", "images/screenshot_cod_4.jpg"],
+    "logo": "images/cod_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 30,
+  "catId": [8, 10, 13],
+  "name": "WRC 9 FIA Rally Championship",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Codemasters"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_27.jpg",
+    "gallery": ["images/screenshot_wrc_1.jpg", "images/screenshot_wrc_2.jpg", "images/screenshot_wrc_3.jpg"],
+    "logo": "images/wrc_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 23,
+  "catId": [13],
+  "name": "Fifa 2020",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "EA Games"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_24.jpg",
+    "gallery": ["images/screenshot_fifa_1.jpg", "images/screenshot_fifa_2.jpg", "images/screenshot_fifa_3.jpg", "images/screenshot_fifa_4.jpg"],
+    "logo": "images/fifa_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 24,
+  "catId": [13],
+  "name": "NBA 2K21",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "2K Games"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_23.jpg",
+    "gallery": ["images/screenshot_nba_1.jpg", "images/screenshot_nba_2.jpg", "images/screenshot_nba_3.jpg"],
+    "logo": "images/nba_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
   "id": 8,
   "name": "Hitman III",
   "info": {
@@ -731,6 +1148,144 @@ var allGames = [//#region Cyberpunk 2077
     "openCritics": "Strong"
   }
 }, {
+  "id": 20,
+  "catId": [5, 12, 10],
+  "name": "Cities Skylines",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Rockstar Games"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_20.jpg",
+    "gallery": ["images/screenshot_cities_1.jpg", "images/screenshot_cities_2.jpg", "images/screenshot_cities_3.jpg"],
+    "logo": "images/cities_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 21,
+  "catId": [1, 12, 3],
+  "name": "Fall Guys",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Devolver Games"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_21.jpg",
+    "gallery": ["images/screenshot_fallguys_1.jpg", "images/screenshot_fallguys_2.jpg", "images/screenshot_fallguys_3.jpg"],
+    "logo": "images/fallguys_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
   "id": 9,
   "catId": [1, 2, 4, 6],
   "name": "Red Dead Redemption II",
@@ -761,6 +1316,213 @@ var allGames = [//#region Cyberpunk 2077
     "value": {
       "before": 59.99,
       "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 19,
+  "catId": [5, 12],
+  "name": "Sid Meier's: Civilization VI",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Rockstar Games"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_19.jpg",
+    "gallery": ["images/screenshot_civilization_1.jpg", "images/screenshot_civilization_2.jpg", "images/screenshot_civilization_3.jpg"],
+    "logo": "images/civilization_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 18,
+  "catId": [8, 12],
+  "name": "Need For Speed: Heat",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "EA Games | Ghost Studios"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_18.jpg",
+    "gallery": ["images/screenshot_nfs_1.jpg", "images/screenshot_nfs_2.jpg", "images/screenshot_nfs_3.jpg"],
+    "logo": "images/nfs_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 50
+    },
+    "value": {
+      "before": 59.99,
+      "after": 29.99
+    }
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7 - Service Pack 1 (6.1.7601)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i5-2500K / AMD FX-6300"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB"
+    }, {
+      "name": "Storage",
+      "value": "150 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10 - April 2018 Update (v1803)"
+    }, {
+      "name": "Processor",
+      "value": "Intel(R) Core(TM) i7-4770K / AMD Ryzen 5 1500x"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB"
+    }]
+  },
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
+  "id": 17,
+  "catId": [8, 10, 12],
+  "name": "Forza Horizon 4",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Playground Games"
+    }, {
+      "name": "Release date",
+      "value": "Nov 5, 2019"
+    }, {
+      "name": "Rating",
+      "value": "9.9/10"
+    }],
+    "text": [["America, 1899.", "Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him."], ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]]
+  },
+  "newRelease": false,
+  "image": {
+    "cover": "images/banner_17.jpg",
+    "gallery": ["images/screenshot_forza_1.jpg", "images/screenshot_forza_2.jpg", "images/screenshot_forza_3.jpg", "images/screenshot_forza_4.jpg"],
+    "logo": "images/forza_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": true,
+      "amount": 20
+    },
+    "value": {
+      "before": 49.99,
+      "after": 39.99
     }
   },
   "specifications": {
@@ -1083,5 +1845,4 @@ var allGames = [//#region Cyberpunk 2077
     "criticsAvg": 76,
     "openCritics": "Strong"
   }
-} //#endregion
-];
+}];
