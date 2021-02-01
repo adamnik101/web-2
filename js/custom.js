@@ -268,7 +268,7 @@ function price(item, discount) {
 		return `<i class="fas fa-euro-sign"></i>${item.price.value}`
 	}
 	else{
-		return `<span class="badge badge-danger">- ${item.price.discount.amount} %</span> <s class="text-muted"><i class="fas fa-euro-sign"></i>${item.price.value.before}</s> <span><i class="fas fa-euro-sign"></i>${item.price.value.after}</span>`
+		return `<span class="badge">- ${item.price.discount.amount} %</span> <s class="text-muted"><i class="fas fa-euro-sign"></i>${item.price.value.before}</s> <span><i class="fas fa-euro-sign"></i>${item.price.value.after}</span>`
 	}
 }
 	if(window.top.location.href == "file:///C:/Users/Adam/Desktop/WEB%202%20-%20sajt/web-2/index.html"){
@@ -637,8 +637,7 @@ displayAllSections(allGames)
 				otherPages.splice(maxItemsStore, maxItemsStore * 2)
 			}
 			allItems.push(currentPage, otherPages, another);
-			console.log(allItems.length);
-			
+			console.log(allItems)
 			
 			if(allItems.length){
 				let display = `<ul class="d-flex flex-row" id="pagination">`;

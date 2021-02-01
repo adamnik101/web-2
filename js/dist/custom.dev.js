@@ -241,7 +241,7 @@ jQuery(document).ready(function ($) {
     if (!discount.isDiscounted) {
       return "<i class=\"fas fa-euro-sign\"></i>".concat(item.price.value);
     } else {
-      return "<span class=\"badge badge-danger\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\"><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.before, "</s> <span><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.after, "</span>");
+      return "<span class=\"badge\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\"><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.before, "</s> <span><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.after, "</span>");
     }
   }
 
@@ -647,7 +647,7 @@ jQuery(document).ready(function ($) {
     }
 
     allItems.push(currentPage, otherPages, another);
-    console.log(allItems.length);
+    console.log(allItems);
 
     if (allItems.length) {
       var display = "<ul class=\"d-flex flex-row\" id=\"pagination\">";

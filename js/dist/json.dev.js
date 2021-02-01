@@ -57,8 +57,7 @@ var modes = [{
   "id": 3,
   "name": "Co-op"
 }];
-var allGames = [//#region Cyberpunk 2077
-{
+var allGames = [{
   "id": 1,
   "name": "Cyberpunk 2077",
   "info": {
@@ -84,7 +83,7 @@ var allGames = [//#region Cyberpunk 2077
     "discount": {
       "isDiscounted": false
     },
-    "value": 59.99
+    "value": 49.99
   },
   "specifications": {
     "minimum": [{
@@ -150,7 +149,7 @@ var allGames = [//#region Cyberpunk 2077
     "discount": {
       "isDiscounted": false
     },
-    "value": 39.99
+    "value": 29.99
   },
   "specifications": {
     "minimum": [{
@@ -487,7 +486,7 @@ var allGames = [//#region Cyberpunk 2077
     "discount": {
       "isDiscounted": false
     },
-    "value": 59.99
+    "value": 34.99
   },
   "specifications": {
     "minimum": [{
@@ -595,6 +594,71 @@ var allGames = [//#region Cyberpunk 2077
     "openCritics": "Strong"
   }
 }, {
+  "id": 39,
+  "name": "Back 4 Blood",
+  "info": {
+    "about": [{
+      "name": "Publisher",
+      "value": "Turtle Rock"
+    }, {
+      "name": "Release date",
+      "value": "Feb 22, 2021"
+    }, {
+      "name": "Rating",
+      "value": "8.4/10"
+    }],
+    "text": [["Extreme Replayability", "A new \"rogue-lite\" Card System creates different experiences each and every time, putting you in control to craft custom decks, roll different builds and undertake more demanding fights."], ["Competitive Multiplayer", "Play with or against friends in PVP. Switch between playing as a Cleaner with special perks and the horrific Ridden. Both sides come with unique weapons, abilities, and specialties."], ["Cooperative Campaign", "Fight your way through a dynamic, perilous world in a 4-player co-op story campaign where you must work together to survive increasingly challenging missions. Play with up to 3 of your friends online or go solo and lead your team in battle. Choose from 8 customizable Cleaners, one of the immune survivors, and a range of lethal weapons and items. Strategize against an ever-evolving enemy bent on your total destruction."]]
+  },
+  "newRelease": true,
+  "image": {
+    "cover": "images/banner_28.jpg",
+    "gallery": ["images/screenshot_b4b_1.jpg", "images/screenshot_b4b_2.jpg", "images/screenshot_b4b_3.jpg"],
+    "logo": "images/b4b_logo.png"
+  },
+  "price": {
+    "discount": {
+      "isDiscounted": false
+    },
+    "value": 44.99
+  },
+  "specifications": {
+    "minimum": [{
+      "name": "OS",
+      "value": "Windows 7"
+    }, {
+      "name": "Processor",
+      "value": "Intel Core i5-3570K or AMD FX-8310"
+    }, {
+      "name": "RAM",
+      "value": "8 GB"
+    }, {
+      "name": "Graphics",
+      "value": "NVIDIA GeForce GTX 780 or AMD Radeon RX 470"
+    }, {
+      "name": "Storage",
+      "value": "70 GB (SSD Recommended)"
+    }],
+    "recommended": [{
+      "name": "OS",
+      "value": "Windows 10"
+    }, {
+      "name": "Processor",
+      "value": "Intel Core i7-4790 or AMD Ryzen 3 3200G"
+    }, {
+      "name": "RAM",
+      "value": "12 GB"
+    }, {
+      "name": "Graphics",
+      "value": "NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury"
+    }]
+  },
+  "catId": [1, 2, 7, 6, 9],
+  "ratings": {
+    "criticsRecommend": 61,
+    "criticsAvg": 76,
+    "openCritics": "Strong"
+  }
+}, {
   "id": 7,
   "name": "Godfall",
   "info": {
@@ -621,7 +685,7 @@ var allGames = [//#region Cyberpunk 2077
     "discount": {
       "isDiscounted": false
     },
-    "value": 59.99
+    "value": 49.99
   },
   "specifications": {
     "minimum": [{
@@ -694,8 +758,8 @@ var allGames = [//#region Cyberpunk 2077
       "amount": 50
     },
     "value": {
-      "before": 59.99,
-      "after": 29.99
+      "before": 19.99,
+      "after": 9.99
     }
   },
   "specifications": {
@@ -763,8 +827,8 @@ var allGames = [//#region Cyberpunk 2077
       "amount": 50
     },
     "value": {
-      "before": 59.99,
-      "after": 29.99
+      "before": 29.99,
+      "after": 14.99
     }
   },
   "specifications": {
@@ -829,11 +893,11 @@ var allGames = [//#region Cyberpunk 2077
   "price": {
     "discount": {
       "isDiscounted": true,
-      "amount": 50
+      "amount": 20
     },
     "value": {
-      "before": 59.99,
-      "after": 29.99
+      "before": 49.99,
+      "after": 39.99
     }
   },
   "specifications": {
@@ -897,13 +961,9 @@ var allGames = [//#region Cyberpunk 2077
   },
   "price": {
     "discount": {
-      "isDiscounted": true,
-      "amount": 50
+      "isDiscounted": false
     },
-    "value": {
-      "before": 59.99,
-      "after": 29.99
-    }
+    "value": 19.99
   },
   "specifications": {
     "minimum": [{
@@ -966,13 +1026,9 @@ var allGames = [//#region Cyberpunk 2077
   },
   "price": {
     "discount": {
-      "isDiscounted": true,
-      "amount": 50
+      "isDiscounted": false
     },
-    "value": {
-      "before": 59.99,
-      "after": 29.99
-    }
+    "value": 29.99
   },
   "specifications": {
     "minimum": [{
@@ -1036,11 +1092,11 @@ var allGames = [//#region Cyberpunk 2077
   "price": {
     "discount": {
       "isDiscounted": true,
-      "amount": 50
+      "amount": 30
     },
     "value": {
-      "before": 59.99,
-      "after": 29.99
+      "before": 39.99,
+      "after": 27.99
     }
   },
   "specifications": {
@@ -1176,8 +1232,8 @@ var allGames = [//#region Cyberpunk 2077
       "amount": 50
     },
     "value": {
-      "before": 59.99,
-      "after": 29.99
+      "before": 15.99,
+      "after": 7.99
     }
   },
   "specifications": {
@@ -1241,13 +1297,9 @@ var allGames = [//#region Cyberpunk 2077
   },
   "price": {
     "discount": {
-      "isDiscounted": true,
-      "amount": 50
+      "isDiscounted": false
     },
-    "value": {
-      "before": 59.99,
-      "after": 29.99
-    }
+    "value": 9.99
   },
   "specifications": {
     "minimum": [{
@@ -1380,11 +1432,11 @@ var allGames = [//#region Cyberpunk 2077
   "price": {
     "discount": {
       "isDiscounted": true,
-      "amount": 50
+      "amount": 20
     },
     "value": {
       "before": 59.99,
-      "after": 29.99
+      "after": 47.99
     }
   },
   "specifications": {
@@ -1448,13 +1500,9 @@ var allGames = [//#region Cyberpunk 2077
   },
   "price": {
     "discount": {
-      "isDiscounted": true,
-      "amount": 50
+      "isDiscounted": false
     },
-    "value": {
-      "before": 59.99,
-      "after": 29.99
-    }
+    "value": 34.99
   },
   "specifications": {
     "minimum": [{
@@ -1517,13 +1565,9 @@ var allGames = [//#region Cyberpunk 2077
   },
   "price": {
     "discount": {
-      "isDiscounted": true,
-      "amount": 20
+      "isDiscounted": false
     },
-    "value": {
-      "before": 49.99,
-      "after": 39.99
-    }
+    "value": 39.99
   },
   "specifications": {
     "minimum": [{
@@ -1590,8 +1634,8 @@ var allGames = [//#region Cyberpunk 2077
       "amount": 50
     },
     "value": {
-      "before": 29.99,
-      "after": 14.99
+      "before": 13.99,
+      "after": 6.99
     }
   },
   "specifications": {
@@ -1801,7 +1845,7 @@ var allGames = [//#region Cyberpunk 2077
     "discount": {
       "isDiscounted": false
     },
-    "value": 39.99
+    "value": 24.99
   },
   "specifications": {
     "minimum": [{
