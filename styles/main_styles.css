@@ -1454,10 +1454,18 @@ section
 }
 #filter{
 	background-color: #2a2a2a;
+	border-radius: 10px;
 }
 #filter #filterBg{
 	color: #fff;
 	background-color: #616161;
+	border-radius: 10px;
+}
+.circ{
+	background-color: #616161;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
 }
 #filter #filterBg .fas{
 	color: #fff;
@@ -1469,6 +1477,7 @@ section
 #priceToggle{
 	transition: 0.2s;
 	cursor: pointer;
+	border-radius: 10px;
 }
 #priceToggle:hover{
 	background-color: #e21e21;
@@ -1476,6 +1485,7 @@ section
 #filterCat{
 	transition: 0.2s;
 	cursor: pointer;
+	border-radius: 10px;
 }
 #filterCat:hover{
 	background-color: #e21e21;
@@ -1489,25 +1499,22 @@ section
 	-webkit-appearance: none;  /* Override default CSS styles */
 	appearance: none;
 	width: 100%; /* Full-width */
-	height: 25px; /* Specified height */
+	height: 10px; /* Specified height */
 	background: #d3d3d3; /* Grey background */
-	outline: none; /* Remove outline */
-	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	outline: none; /* Remove outline */ /* Set transparency (for mouse-over effects on hover) */
 	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
 	transition: opacity .2s;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
-	opacity: 1; /* Fully shown on mouse-over */
+	border-radius: 10px;
   }
   
   /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
   .slider::-webkit-slider-thumb {
 	-webkit-appearance: none; /* Override default look */
 	appearance: none;
-	width: 25px; /* Set a specific slider handle width */
-	height: 25px; /* Slider handle height */
+	width: 15px; /* Set a specific slider handle width */
+	height: 15px; /* Slider handle height */
+	border-radius: 50%;
+	transform: scale(1.5);
 	background: #e21e21; /* Green background */
 	cursor: pointer; /* Cursor on hover */
   }
@@ -1613,6 +1620,7 @@ section
 	padding: 10px 40px;
 	color: #fff;
 	width: 200px;
+	border-radius: 10px;
 }
 #sortBy{
 	position: relative;
@@ -1625,11 +1633,13 @@ section
 	right: 0;
 	z-index: 9;
 	box-shadow: 0px 10px 15px  #000;
+	border-radius: 10px;
 }
 #sortDdl li{
 	padding: 10px;
 	color: #fff;
 	text-align: center;
+	border-radius: 10px;
 }
 #sortDdl li:hover{
 	background-color: #cacaca;
@@ -1640,6 +1650,7 @@ section
 	background-color: #2a2a2a;
 	color: #fff;
 	padding: 15px 20px;
+	border-radius: 5px;
 	cursor: pointer;
 }
 .pagination-item:hover{
@@ -1650,4 +1661,26 @@ section
 }
 .badge{
 	background-color: #e21e21;
+}
+#store-banner{
+	background-image: url("../images/store_banner.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 500px;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px #000;
+}
+#store-banner span{
+	position: absolute;
+	left: 4;
+	top: 150px;
+}
+#store-banner span h1,h4{
+	color: #fff;
+	text-shadow: 0px 0px 10px #000;
+}
+#filter-header{
+	height: 75px;
 }
