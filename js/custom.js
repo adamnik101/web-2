@@ -35,7 +35,8 @@ jQuery(document).ready(function($)
 	var menuActive = false;
 	var hamburgerClose = $('.hamburger_close');
 	var fsOverlay = $('.fs_menu_overlay');
-
+	var location = window.location.pathname;
+	console.log(location)
 	setHeader();
 
 	$(window).on('resize', function()
@@ -292,7 +293,7 @@ function price(item, discount) {
 		return `<span class="badge">- ${item.price.discount.amount} %</span> <s class="text-muted"><i class="fas fa-euro-sign"></i>${item.price.value.listPrice}</s> <span><i class="fas fa-euro-sign"></i>${item.price.value.netPrice}</span>`
 	}
 }
-	if(window.top.location.href == "http://127.0.0.1/web-2/index.html"){
+	if(location.indexOf("index") != -1 || location.indexOf("/")){
 		//getGames();
 		var owl = $('.owl-carousel');
 		owl.owlCarousel(

@@ -33,6 +33,8 @@ jQuery(document).ready(function ($) {
   var menuActive = false;
   var hamburgerClose = $('.hamburger_close');
   var fsOverlay = $('.fs_menu_overlay');
+  var location = window.location.pathname;
+  console.log(location);
   setHeader();
   $(window).on('resize', function () {
     setHeader();
@@ -265,7 +267,7 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  if (window.top.location.href == "http://127.0.0.1/web-2/index.html") {
+  if (location.indexOf("index") != -1 || location.indexOf("/")) {
     /* function progress(){
     	setTimeout(function(){
     		$("#progressBar").animate({
