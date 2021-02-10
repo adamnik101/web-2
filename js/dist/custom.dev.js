@@ -24,25 +24,24 @@ jQuery(document).ready(function ($) {
   	*/
 
   /* owl carousel */
+  // Global
 
   var header = $('.header');
-  var topNav = $('.top_nav');
-  var mainSlider = $('.main_slider');
   var hamburger = $('.hamburger_container');
   var menu = $('.hamburger_menu');
   var menuActive = false;
   var hamburgerClose = $('.hamburger_close');
   var fsOverlay = $('.fs_menu_overlay');
   var location = window.location.pathname;
-  console.log(location);
   setHeader();
+  initMenu();
+  displayCountdown();
   $(window).on('resize', function () {
     setHeader();
   });
   $(document).on('scroll', function () {
     setHeader();
   });
-  initMenu();
   /* 
   	2. Set Header
   	*/
@@ -161,22 +160,7 @@ jQuery(document).ready(function ($) {
     }, 1000);
   }
 
-  displayCountdown();
-  /* 
-  5. Init Favorite
-  */
-
-  /* 
-  6. Init Fix Product Border
-  */
-
-  /* 
-  7. Init Isotope Filtering
-  */
-
-  /* 
-  8. Init Slider
-  */
+  ;
 
   function displayGames(data, parent, animation) {
     // ipisivanje bloka sa igricom
@@ -348,7 +332,7 @@ jQuery(document).ready(function ($) {
     displayAllSections(allGames); //displayAllSections(allGames)
   }
 
-  if (window.top.location.href == "http://127.0.0.1/web-2/single.html") {
+  if (location.indexOf("single") != -1) {
     var getSingle = function getSingle() {
       $.ajax({
         url: "js/data.json",
@@ -490,7 +474,6 @@ jQuery(document).ready(function ($) {
       }
     };
 
-    console.log(allGames);
     displaySingle(allGames);
   } //function displayItems(info,itemID,)
 
@@ -499,173 +482,286 @@ jQuery(document).ready(function ($) {
     localStorage.setItem("id", $(this).attr("id"));
     open("single.html", "_self");
   });
-  var maxItemsStore = 9;
 
-  function displayCheckbox(data, div) {
-    var display = "<div class='p-3'>";
-    var _iteratorNormalCompletion3 = true;
-    var _didIteratorError3 = false;
-    var _iteratorError3 = undefined;
+  if (location.indexOf("categories") != -1) {
+    var displayCheckbox = function displayCheckbox(data, div) {
+      var display = "<div class='p-3'>";
+      var _iteratorNormalCompletion3 = true;
+      var _didIteratorError3 = false;
+      var _iteratorError3 = undefined;
 
-    try {
-      for (var _iterator3 = data[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-        var item = _step3.value;
-        display += "<li class=\"d-flex align-items-center justify-content-start\">\n\t\t\t\t\t\t\t\t<label for=\"".concat(item.name.split(" ").join(""), "\" class=\"customChb w-100\"> ").concat(item.name, "\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" id=\"").concat(item.name.split(" ").join(""), "\" value=\"").concat(item.id, "\" name=");
-
-        if (div == "mode") {
-          display += "modes";
-        } else if (div == "categoryChb") {
-          display += "category";
-        } else {
-          display += "other";
-        }
-
-        display += ">\n\t\t\t\t\t\t\t\t\t<span class=\"checkmark\"></span>\n\t\t\t\t\t\t\t\t</label>\t\t\t\t\t\n\t\t\t\t\t\t\t</li>";
-      }
-    } catch (err) {
-      _didIteratorError3 = true;
-      _iteratorError3 = err;
-    } finally {
       try {
-        if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
-          _iterator3["return"]();
+        for (var _iterator3 = data[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+          var item = _step3.value;
+          display += "<li class=\"d-flex align-items-center justify-content-start\">\n\t\t\t\t\t\t\t\t<label for=\"".concat(item.name.split(" ").join(""), "\" class=\"customChb w-100\"> ").concat(item.name, "\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" id=\"").concat(item.name.split(" ").join(""), "\" value=\"").concat(item.id, "\" name=");
+
+          if (div == "mode") {
+            display += "modes";
+          } else if (div == "categoryChb") {
+            display += "category";
+          } else {
+            display += "other";
+          }
+
+          display += ">\n\t\t\t\t\t\t\t\t\t<span class=\"checkmark\"></span>\n\t\t\t\t\t\t\t\t</label>\t\t\t\t\t\n\t\t\t\t\t\t\t</li>";
         }
+      } catch (err) {
+        _didIteratorError3 = true;
+        _iteratorError3 = err;
       } finally {
-        if (_didIteratorError3) {
-          throw _iteratorError3;
+        try {
+          if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+            _iterator3["return"]();
+          }
+        } finally {
+          if (_didIteratorError3) {
+            throw _iteratorError3;
+          }
         }
       }
-    }
 
-    ;
-    display += '</div>';
-    $("#" + div).html(display);
-  }
+      ;
+      display += '</div>';
+      $("#" + div).html(display);
+    };
 
-  function displayStoreFirst(data) {
-    var otherPages = [];
-    var currentPage = [];
-    var items = data.filter(function (game) {
-      if (currentPage.length < maxItemsStore) {
-        return currentPage.push(game);
+    var displayStoreFirst = function displayStoreFirst(data) {
+      var otherPages = [];
+      var currentPage = [];
+      var items = data.filter(function (game) {
+        if (currentPage.length < maxItemsStore) {
+          return currentPage.push(game);
+        } else {
+          otherPages.push(game);
+        }
+      });
+      displayGames(items, "products", "");
+
+      if (currentPage.length <= maxItemsStore && currentPage.length > 0) {
+        displayPagination(otherPages, currentPage);
       } else {
-        otherPages.push(game);
-      }
-    });
-    displayGames(items, "products", "");
-
-    if (currentPage.length <= maxItemsStore && currentPage.length > 0) {
-      displayPagination(otherPages, currentPage);
-    } else {
-      $("#pag").empty();
-    }
-  }
-
-  displayStoreFirst(allGames); // rotate font awesome 
-
-  displayCheckbox(categories, "categoryChb");
-  displayCheckbox(modes, "mode");
-  displayCheckbox(otherFilters, "otherFilter");
-  $("#filterCat").on("click", rotateHandler("#categoryChb", "#filterCat"));
-  $("#priceToggle").on("click", rotateHandler("#priceRange", "#priceToggle"));
-  $("#more-filters").on("click", rotateHandler("#mode", "#more-filters"));
-  $("#filter-other").on("click", rotateHandler("#otherFilter", "#filter-other"));
-  var degreesCat = 0,
-      degreesPrice = 0,
-      degreesMore = 0,
-      degreesOther = 0;
-
-  function rotateHandler(button, div) {
-    return function () {
-      $(button).slideToggle();
-
-      if (div == "#filterCat") {
-        degreesCat += 180;
-        $(div).find(".fas").css("transform", "rotate(" + degreesCat + "deg)");
-      } else if (div == "#priceToggle") {
-        degreesPrice += 180;
-        $(div).find(".fas").css("transform", "rotate(" + degreesPrice + "deg)");
-      } else if (div == "#more-filters") {
-        degreesMore += 180;
-        $(div).find(".fas").css("transform", "rotate(" + degreesMore + "deg)");
-      } else {
-        degreesOther += 180;
-        $(div).find(".fas").css("transform", "rotate(" + degreesOther + "deg)");
+        $("#pag").empty();
       }
     };
-  }
 
-  function removeUnchecked(array, value) {
-    var index = array.indexOf(value); // dohvatanje indeksa elementa koji je unchecked u nizu 
+    var rotateHandler = function rotateHandler(button, div) {
+      return function () {
+        $(button).slideToggle();
 
-    if (index != -1) {
-      // ako se nalazi u nizu
-      array.splice(index, 1); // uklanjanje tog elementa 
-    }
-  }
-
-  var filtered = [];
-  var checkedCat = [];
-  var checkedMode = [];
-  var checkedOther = [];
-  $(document).on("change", ":checkbox", function () {
-    var val = Number($(this).val());
-
-    if ($(this).is(":checked")) {
-      if ($(this)[0].name == "modes") {
-        checkedMode.push(val);
-      } else if ($(this)[0].name == "other") {
-        checkedOther.push(val);
-      } else {
-        checkedCat.push(val);
-      }
-    } else {
-      if ($(this)[0].name == "modes") {
-        removeUnchecked(checkedMode, val);
-      } else if ($(this)[0].name == "other") {
-        removeUnchecked(checkedOther, val);
-      } else {
-        removeUnchecked(checkedCat, val);
-      }
-    }
-
-    filtered = allGames.filter(function (game) {
-      if (checkedCat.every(function (value) {
-        return game.catId.includes(value);
-      }) && checkedOther.every(function (value) {
-        if (game.otherId !== null) {
-          return game.otherId.includes(value);
+        if (div == "#filterCat") {
+          degreesCat += 180;
+          $(div).find(".fas").css("transform", "rotate(" + degreesCat + "deg)");
+        } else if (div == "#priceToggle") {
+          degreesPrice += 180;
+          $(div).find(".fas").css("transform", "rotate(" + degreesPrice + "deg)");
+        } else if (div == "#more-filters") {
+          degreesMore += 180;
+          $(div).find(".fas").css("transform", "rotate(" + degreesMore + "deg)");
+        } else {
+          degreesOther += 180;
+          $(div).find(".fas").css("transform", "rotate(" + degreesOther + "deg)");
         }
-      }) && checkedMode.every(function (value) {
-        return game.modes.includes(value);
-      }) && Math.ceil(game.price.value.netPrice) > priceFrom && Math.floor(game.price.value.netPrice) < priceTo) {
-        return game;
+      };
+    };
+
+    var removeUnchecked = function removeUnchecked(array, value) {
+      var index = array.indexOf(value); // dohvatanje indeksa elementa koji je unchecked u nizu 
+
+      if (index != -1) {
+        // ako se nalazi u nizu
+        array.splice(index, 1); // uklanjanje tog elementa 
       }
-    });
-    console.log("category: ", checkedCat, "mode: ", checkedMode, "other: ", checkedOther);
-    displayStoreFirst(filtered);
+    };
 
-    if (!filtered.length) {
-      displayNoResults();
-    }
-  }); // price sliders
+    var getRangeValue = function getRangeValue(output, value, data) {
+      return function () {
+        $(output).val($(value).val());
 
-  var priceFrom = 0;
-  var priceTo = 60;
-  $("#priceFrom").on("input", getRangeValue("#from", "#priceFrom", allGames));
-  $("#priceTo").on("input", getRangeValue("#to", "#priceTo", allGames));
+        if (output == "#from") {
+          priceFrom = $(value).val();
+        } else {
+          priceTo = $(value).val();
+        }
 
-  function getRangeValue(output, value, data) {
-    return function () {
-      $(output).val($(value).val());
+        filtered = data.filter(function (game) {
+          if (checkedCat.every(function (value) {
+            return game.catId.includes(value);
+          }) && checkedOther.every(function (value) {
+            if (game.otherId !== null) {
+              return game.otherId.includes(value);
+            }
+          }) && checkedMode.every(function (value) {
+            return game.modes.includes(value);
+          })) {
+            return Math.ceil(game.price.value.netPrice) > priceFrom && Math.floor(game.price.value.netPrice) < priceTo;
+          }
+        });
+        displayStoreFirst(filtered);
 
-      if (output == "#from") {
-        priceFrom = $(value).val();
+        if (!filtered.length) {
+          displayNoResults();
+        }
+      };
+    }; // sort by ddl
+
+
+    var sortByNameAZ = function sortByNameAZ(data) {
+      data.sort(function (a, b) {
+        var nameA = a.name.toLowerCase();
+        var nameB = b.name.toLowerCase();
+
+        if (nameA < nameB) {
+          return -1;
+        } else if (nameA > nameB) {
+          return 1;
+        }
+
+        return 0;
+      });
+    };
+
+    var sortByNameZA = function sortByNameZA(data) {
+      data.sort(function (a, b) {
+        var nameA = a.name.toLowerCase();
+        var nameB = b.name.toLowerCase();
+
+        if (nameA < nameB) {
+          return 1;
+        } else if (nameA > nameB) {
+          return -1;
+        }
+
+        return 0;
+      });
+    };
+
+    var sortByPriceHighLow = function sortByPriceHighLow(data) {
+      data.sort(function (a, b) {
+        var priceA;
+        var priceB;
+        priceA = Math.round(a.price.value.netPrice);
+        priceB = Math.round(b.price.value.netPrice);
+
+        if (priceA < priceB) {
+          return 1;
+        } else if (priceA > priceB) {
+          return -1;
+        }
+
+        return 0;
+      });
+    };
+
+    var sortByPriceLowHigh = function sortByPriceLowHigh(data) {
+      data.sort(function (a, b) {
+        var priceA;
+        var priceB;
+        priceA = Math.round(a.price.value.netPrice);
+        priceB = Math.round(b.price.value.netPrice);
+
+        if (priceA < priceB) {
+          return -1;
+        } else if (priceA > priceB) {
+          return 1;
+        }
+
+        return 0;
+      });
+    };
+
+    var displayPagination = function displayPagination(otherPages, currentPage) {
+      var allItems = [];
+
+      if (otherPages.length > maxItemsStore) {
+        var another = otherPages.slice(maxItemsStore);
+        otherPages.splice(maxItemsStore, maxItemsStore * 2);
+      }
+
+      allItems.push(currentPage, otherPages, another);
+
+      if (allItems.length) {
+        var display = "<ul class=\"d-flex flex-row\" id=\"pagination\">";
+
+        for (var i = 0; i < allItems.length; i++) {
+          if (allItems[i] != undefined && allItems[i].length > 0) {
+            display += "<li class=\"pagination-item mr-2";
+
+            if (i == 0) {
+              display += " active-pag";
+            }
+
+            display += "\" id=\"pag-".concat(i + 1, "\">").concat(i + 1, "</li>");
+          }
+        }
+
+        display += "</ul>";
+        $("#pag").html(display);
+      }
+
+      $(".pagination-item").on("click", function () {
+        if (this.id == "pag-1") {
+          displayGames(currentPage, "products", "");
+          $(".pagination-item").removeClass("active-pag");
+          $(this).addClass("active-pag");
+        } else if (this.id == "pag-2") {
+          $(".pagination-item").removeClass("active-pag");
+          $(this).addClass("active-pag");
+          displayGames(otherPages, "products", "");
+        } else {
+          $(".pagination-item").removeClass("active-pag");
+          $(this).addClass("active-pag");
+          displayGames(another, "products", "");
+        }
+      });
+    };
+
+    var displayNoResults = function displayNoResults() {
+      $("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
+      $("#products").addClass("d-flex align-items-center justify-content-center h-100");
+      var msg = "<div id=\"noMatch\" class=\"pt-5\">\n\t\t\t\t\t\t\t\t<i class=\"far fa-frown pb-3\"></i>\n\t\t\t\t\t\t\t\t<p>No results found</p>\t\n\t\t\t\t\t\t\t\t<span>Unfortunately I could not find any results matching your search.</span>\t   \n\t\t\t\t\t\t   </div>";
+      $("#products").html(msg);
+    };
+
+    var maxItemsStore = 9;
+    displayStoreFirst(allGames); // rotate font awesome 
+
+    displayCheckbox(categories, "categoryChb");
+    displayCheckbox(modes, "mode");
+    displayCheckbox(otherFilters, "otherFilter");
+    $("#filterCat").on("click", rotateHandler("#categoryChb", "#filterCat"));
+    $("#priceToggle").on("click", rotateHandler("#priceRange", "#priceToggle"));
+    $("#more-filters").on("click", rotateHandler("#mode", "#more-filters"));
+    $("#filter-other").on("click", rotateHandler("#otherFilter", "#filter-other"));
+    var degreesCat = 0,
+        degreesPrice = 0,
+        degreesMore = 0,
+        degreesOther = 0;
+    var filtered = [];
+    var checkedCat = [];
+    var checkedMode = [];
+    var checkedOther = [];
+    $(document).on("change", ":checkbox", function () {
+      var val = Number($(this).val());
+
+      if ($(this).is(":checked")) {
+        if ($(this)[0].name == "modes") {
+          checkedMode.push(val);
+        } else if ($(this)[0].name == "other") {
+          checkedOther.push(val);
+        } else {
+          checkedCat.push(val);
+        }
       } else {
-        priceTo = $(value).val();
+        if ($(this)[0].name == "modes") {
+          removeUnchecked(checkedMode, val);
+        } else if ($(this)[0].name == "other") {
+          removeUnchecked(checkedOther, val);
+        } else {
+          removeUnchecked(checkedCat, val);
+        }
       }
 
-      filtered = data.filter(function (game) {
+      filtered = allGames.filter(function (game) {
         if (checkedCat.every(function (value) {
           return game.catId.includes(value);
         }) && checkedOther.every(function (value) {
@@ -674,165 +770,51 @@ jQuery(document).ready(function ($) {
           }
         }) && checkedMode.every(function (value) {
           return game.modes.includes(value);
-        })) {
-          return Math.ceil(game.price.value.netPrice) > priceFrom && Math.floor(game.price.value.netPrice) < priceTo;
+        }) && Math.ceil(game.price.value.netPrice) > priceFrom && Math.floor(game.price.value.netPrice) < priceTo) {
+          return game;
         }
       });
+      console.log("category: ", checkedCat, "mode: ", checkedMode, "other: ", checkedOther);
       displayStoreFirst(filtered);
 
       if (!filtered.length) {
         displayNoResults();
       }
-    };
-  } // sort by ddl
+    }); // price sliders
 
-
-  $("#sortDdl").hide();
-  $("#sortBtn").focus(function () {
-    $("#sortDdl").fadeIn();
-  });
-  $("#sortBtn").focusout(function () {
-    $("#sortDdl").fadeOut();
-  });
-
-  function sortByNameAZ(data) {
-    data.sort(function (a, b) {
-      var nameA = a.name.toLowerCase();
-      var nameB = b.name.toLowerCase();
-
-      if (nameA < nameB) {
-        return -1;
-      } else if (nameA > nameB) {
-        return 1;
-      }
-
-      return 0;
+    var priceFrom = 0;
+    var priceTo = 60;
+    $("#priceFrom").on("input", getRangeValue("#from", "#priceFrom", allGames));
+    $("#priceTo").on("input", getRangeValue("#to", "#priceTo", allGames));
+    $("#sortDdl").hide();
+    $("#sortBtn").focus(function () {
+      $("#sortDdl").fadeIn();
     });
-  }
-
-  function sortByNameZA(data) {
-    data.sort(function (a, b) {
-      var nameA = a.name.toLowerCase();
-      var nameB = b.name.toLowerCase();
-
-      if (nameA < nameB) {
-        return 1;
-      } else if (nameA > nameB) {
-        return -1;
-      }
-
-      return 0;
+    $("#sortBtn").focusout(function () {
+      $("#sortDdl").fadeOut();
     });
-  }
+    $("#sort").on("change", function () {
+      var value = $(this).val();
 
-  function sortByPriceHighLow(data) {
-    data.sort(function (a, b) {
-      var priceA;
-      var priceB;
-      priceA = Math.round(a.price.value.netPrice);
-      priceB = Math.round(b.price.value.netPrice);
-
-      if (priceA < priceB) {
-        return 1;
-      } else if (priceA > priceB) {
-        return -1;
+      if (value == 1) {
+        sortByNameAZ(allGames);
+        sortByNameAZ(filtered);
+      } else if (value == 2) {
+        sortByNameZA(allGames);
+        sortByNameZA(filtered);
+      } else if (value == 3) {
+        sortByPriceHighLow(allGames);
+        sortByPriceHighLow(filtered);
+      } else if (value == 4) {
+        sortByPriceLowHigh(allGames);
+        sortByPriceLowHigh(filtered);
       }
 
-      return 0;
-    });
-  }
-
-  function sortByPriceLowHigh(data) {
-    data.sort(function (a, b) {
-      var priceA;
-      var priceB;
-      priceA = Math.round(a.price.value.netPrice);
-      priceB = Math.round(b.price.value.netPrice);
-
-      if (priceA < priceB) {
-        return -1;
-      } else if (priceA > priceB) {
-        return 1;
-      }
-
-      return 0;
-    });
-  }
-
-  $("#sort").on("change", function () {
-    var value = $(this).val();
-
-    if (value == 1) {
-      sortByNameAZ(allGames);
-      sortByNameAZ(filtered);
-    } else if (value == 2) {
-      sortByNameZA(allGames);
-      sortByNameZA(filtered);
-    } else if (value == 3) {
-      sortByPriceHighLow(allGames);
-      sortByPriceHighLow(filtered);
-    } else if (value == 4) {
-      sortByPriceLowHigh(allGames);
-      sortByPriceLowHigh(filtered);
-    }
-
-    if (!filtered.length) {
-      displayStoreFirst(allGames);
-    } else {
-      displayStoreFirst(filtered);
-    }
-  });
-
-  function displayPagination(otherPages, currentPage) {
-    var allItems = [];
-
-    if (otherPages.length > maxItemsStore) {
-      var another = otherPages.slice(maxItemsStore);
-      otherPages.splice(maxItemsStore, maxItemsStore * 2);
-    }
-
-    allItems.push(currentPage, otherPages, another);
-
-    if (allItems.length) {
-      var display = "<ul class=\"d-flex flex-row\" id=\"pagination\">";
-
-      for (var i = 0; i < allItems.length; i++) {
-        if (allItems[i] != undefined && allItems[i].length > 0) {
-          display += "<li class=\"pagination-item mr-2";
-
-          if (i == 0) {
-            display += " active-pag";
-          }
-
-          display += "\" id=\"pag-".concat(i + 1, "\">").concat(i + 1, "</li>");
-        }
-      }
-
-      display += "</ul>";
-      $("#pag").html(display);
-    }
-
-    $(".pagination-item").on("click", function () {
-      if (this.id == "pag-1") {
-        displayGames(currentPage, "products", "");
-        $(".pagination-item").removeClass("active-pag");
-        $(this).addClass("active-pag");
-      } else if (this.id == "pag-2") {
-        $(".pagination-item").removeClass("active-pag");
-        $(this).addClass("active-pag");
-        displayGames(otherPages, "products", "");
+      if (!filtered.length) {
+        displayStoreFirst(allGames);
       } else {
-        $(".pagination-item").removeClass("active-pag");
-        $(this).addClass("active-pag");
-        displayGames(another, "products", "");
+        displayStoreFirst(filtered);
       }
     });
-  }
-
-  function displayNoResults() {
-    $("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
-    $("#products").addClass("d-flex align-items-center justify-content-center h-100");
-    var msg = "<div id=\"noMatch\" class=\"pt-5\">\n\t\t\t\t\t\t\t\t<i class=\"far fa-frown pb-3\"></i>\n\t\t\t\t\t\t\t\t<p>No results found</p>\t\n\t\t\t\t\t\t\t\t<span>Unfortunately I could not find any results matching your search.</span>\t   \n\t\t\t\t\t\t   </div>";
-    $("#products").html(msg);
   }
 });

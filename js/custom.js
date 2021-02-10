@@ -26,37 +26,32 @@ jQuery(document).ready(function($)
 
 	*/
 	/* owl carousel */
-	
+	// Global
 	var header = $('.header');
-	var topNav = $('.top_nav')
-	var mainSlider = $('.main_slider');
 	var hamburger = $('.hamburger_container');
 	var menu = $('.hamburger_menu');
 	var menuActive = false;
 	var hamburgerClose = $('.hamburger_close');
 	var fsOverlay = $('.fs_menu_overlay');
 	var location = window.location.pathname;
-	console.log(location)
 	setHeader();
-
+	initMenu();
+	displayCountdown();
 	$(window).on('resize', function()
 	{
 		setHeader();
 	});
-
 	$(document).on('scroll', function()
 	{
 		setHeader();
 	});
 	
-	initMenu();
 	
 	/* 
 
 	2. Set Header
 
 	*/
-
 	function setHeader()
 	{
 		if(window.innerWidth < 992)
@@ -86,7 +81,6 @@ jQuery(document).ready(function($)
 			closeMenu();
 		}
 	}
-
 	/* 
 
 	3. Init Menu
@@ -169,8 +163,6 @@ jQuery(document).ready(function($)
 		fsOverlay.css('pointer-events', "none");
 		menuActive = false;
 	}
-
-
 	function displayCountdown(){
 		var countDownDate = new Date("April 1, 2021 00:00:00").getTime(); // do ovog dana da se vrsi odbrojavanje - uzima se broj milisekundi
 		
@@ -190,41 +182,7 @@ jQuery(document).ready(function($)
 			  $(".deal_ofthe_week_col").html("New deals coming soon!");
 			}
 		  }, 1000);
-	}
-	displayCountdown()
-	 
-	
-
-	
-
-	
-
-    /* 
-
-	5. Init Favorite
-
-	*/
-
-   
-
-    /* 
-
-	6. Init Fix Product Border
-
-	*/
-
-
-    /* 
-
-	7. Init Isotope Filtering
-
-	*/
-
-    /* 
-
-	8. Init Slider
-	
-	*/
+	};
 
 function displayGames(data, parent, animation){ // ipisivanje bloka sa igricom
 	if(parent != "products"){
@@ -376,7 +334,7 @@ displayAllSections(allGames);
 
 }		
 
-		if(window.top.location.href == "http://127.0.0.1/web-2/single.html"){
+		if(location.indexOf("single") != -1){
 			
 		function getSingle(){
 			$.ajax({
@@ -471,7 +429,6 @@ displayAllSections(allGames);
 			}
 		$("#" + minOrRec).append(systemReq);
 		}
-		console.log(allGames)
 		displaySingle(allGames);
 		function displaySingle(allGames){
 			for(let item of allGames){
@@ -533,13 +490,14 @@ displayAllSections(allGames);
 				}
 		}
 					
-		}
+}
 		
 //function displayItems(info,itemID,)
 		$(document).on("click", ".openSingle",function(){
 			localStorage.setItem("id",($(this).attr("id")));
 			open("single.html", "_self");
 		})
+	if(location.indexOf("categories") != -1){
 		var maxItemsStore = 9;
 		function displayCheckbox(data, div){
 			let display = "<div class='p-3'>";
@@ -832,4 +790,5 @@ displayAllSections(allGames);
 						   </div>`;
 				$("#products").html(msg) 
 		}
+	}
 });
