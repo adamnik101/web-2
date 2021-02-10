@@ -39,8 +39,14 @@ COLOR PALETTE
 /***********
 1. Fonts
 ***********/
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900');
+@font-face{
+    font-family:ChineseRocks;
+    src: url('../font/ChineseRocks.ttf');
+}
+@font-face{
+	font-family: VarelaRound;
+	src: url('../font/Poppins-Regular.ttf');
+}
 
 /*********************************
 2. Body and some general stuff
@@ -56,7 +62,7 @@ COLOR PALETTE
 }
 body
 {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'VarelaRound';
 	font-size: 14px;
 	line-height: 23px;
 	font-weight: 400;
@@ -902,9 +908,6 @@ section
 	transition: 0.5s;
 	box-shadow: 0px 0px 10px #000;
 }
-#newReleases,#hotSales{
-	width: 100%;
-}
  .card .card-body{
 	padding: 20px 0 0 0;
 }
@@ -925,7 +928,7 @@ section
 .catalogHome{
 	height: 500px;
 	border-radius: 30px;
-	 background-image: url(../images/big-sale-bg.jpg);
+	background-image: url('../images/big-sale-bg.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -980,14 +983,20 @@ section
 {
 	width: 100%;
 	margin-top: 41px;
-	background: #141414;
+	background-image: url("../images/deal_of_the_week.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .deal_ofthe_week_img
 {
 	height: 540px;
+	position: relative;
 }
 .deal_ofthe_week_img img
 {
+	position: absolute;
+	left: 0;
 	height: 100%;
 }
 .deal_ofthe_week_content
@@ -999,25 +1008,15 @@ section
 	display: inline-block;
 	text-align: center;
 }
-.section_title h2
+.deal_ofthe_week_content .section_title h2
 {
+	color: #fff;
+	font-family: "ChineseRocks";
 	display: inline-block;
+	text-shadow: 0px 5px 5px #000;
 }
-.section_title::after
-{
-	display: block;
-	position: absolute;
-	top: calc(100% + 13px);
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
-	transform: translateX(-50%);
-	width: 60px;
-	height: 5px;
-	background: #fe4c50;
-	content: '';
+.section_title img{
+	width: 60%;
 }
 .timer
 {
@@ -1031,6 +1030,7 @@ section
 	border-radius: 50%;
 	background: #FFFFFF;
 	margin-right: 10px;
+	font-family: "ChineseRocks";
 }
 .timer li:last-child
 {
@@ -1040,7 +1040,7 @@ section
 {
 	font-size: 48px;
 	font-weight: 600;
-	color: #fe4c50;
+	color: #e21e21;
 	margin-top: 10px;
 }
 .timer_unit
@@ -1048,13 +1048,24 @@ section
 	margin-top: 12px;
 	font-size: 16px;
 	font-weight: 500;
-	color: #51545f;
+	color: #2a2a2a;
+	font-size: 20px;
 }
 .deal_ofthe_week_button
 {
-	width: 140px;
+	padding: 10px 30px;
 	background: #1e1e27;
 	margin-top: 52px;
+	font-family: "ChineseRocks";
+}
+.deal_ofthe_week_button a{
+	font-size: 25px;
+}
+.deal_ofthe_week_button a span{
+	transition: 0.5s;
+}
+.deal_ofthe_week_button a:hover span{
+	color: #e21e21;
 }
 .deal_ofthe_week_button:hover
 {
@@ -1064,42 +1075,6 @@ section
 /*********************************
 7. Best Sellers
 *********************************/
-
-.product_slider_container
-{
-	width: 100%;
-	height: 340px;
-	margin-top: 73px;
-}
-.product_slider_container::after
-{
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 1px;
-	height: 100%;
-	background: #FFFFFF;
-	content: '';
-	z-index: 1;
-}
-.product_slider
-{
-	overflow: visible !important;
-}
-.product_slider_item .product-item
-{
-	height: 340px;
-}
-.product_slider_item
-{
-	width: 20%;
-}
-.product_slider_item .product-item
-{
-	width: 100% !important;
-}
-
 /*********************************
 7.1 Slider Nav
 *********************************/
@@ -1153,11 +1128,6 @@ section
 .benefit
 {
 	margin-top: 74px;
-}
-.benefit_row
-{
-	padding-left: 15px;
-	padding-right: 15px;
 }
 .benefit_col
 {
@@ -1219,6 +1189,8 @@ section
 	left: 0;
 	width: 100%;
 	height: 100%;
+	border-radius: 30px;
+	background-image: url('../images/coming_soon_riders_republic.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1228,9 +1200,10 @@ section
 	position: absolute;
 	top: 30px;
 	left: 30px;
+	border-radius: 20px;
 	width: calc(100% - 60px);
 	height: calc(100% - 60px);
-	background: rgba(255,255,255,0.9);
+	background: rgba(0, 0, 0, 0.445);
 	padding-left: 10px;
 	padding-right: 10px;
 	visibility: hidden;
@@ -1256,6 +1229,7 @@ section
 .blog_title
 {
 	font-weight: 500;
+	font-size: 16px;
 	line-height: 1.25;
 	margin-bottom: 0px;
 }
@@ -1474,21 +1448,13 @@ section
 #filter span{
 	color: #fff;
 }
-#priceToggle{
+.hoverFilter:hover{
+	background-color: #e21e21;
+}
+.hoverFilter{
 	transition: 0.2s;
 	cursor: pointer;
 	border-radius: 10px;
-}
-#priceToggle:hover{
-	background-color: #e21e21;
-}
-#filterCat{
-	transition: 0.2s;
-	cursor: pointer;
-	border-radius: 10px;
-}
-#filterCat:hover{
-	background-color: #e21e21;
 }
 .slidecontainer {
 	width: 80%; /* Width of the outside container */
@@ -1528,10 +1494,10 @@ section
   .slidecontainer label{
 	  color: #fff;
   }
-  #categoryChb li{
+  .whiteChb li{
 	  color: #fff;
   }
-#categoryChb .customChb{
+.customChb{
 	display: block;
 	position: relative;
 	cursor: pointer;
@@ -1558,6 +1524,7 @@ section
 	height: 25px;
 	width: 25px;
 	background-color: #eee;
+	border-radius: 5px;
   }
   
   /* On mouse-over, add a grey background color */
@@ -1611,40 +1578,15 @@ section
 	font-size: 16px;
 	color: #fff;
 }
-#sortBtn-wrapper span{
+#sortBtn-wrapper{
 	color: #fff;
 }
-#sortBtn{
+select{
+	background-color: #2a2a2a;
+	padding: 10.5px;
+	border-radius: 10px;
+	color: #fff;
 	border: none;
-	background-color: #616161;
-	padding: 10px 40px;
-	color: #fff;
-	width: 200px;
-	border-radius: 10px;
-}
-#sortBy{
-	position: relative;
-}
-#sortDdl{
-	width: 200px;
-	background-color: #2c2c2c;
-	position: absolute;
-	top: 59px;
-	right: 0;
-	z-index: 9;
-	box-shadow: 0px 10px 15px  #000;
-	border-radius: 10px;
-}
-#sortDdl li{
-	padding: 10px;
-	color: #fff;
-	text-align: center;
-	border-radius: 10px;
-}
-#sortDdl li:hover{
-	background-color: #cacaca;
-	color: #000;
-	cursor: pointer;
 }
 .pagination-item{
 	background-color: #2a2a2a;
@@ -1663,7 +1605,7 @@ section
 	background-color: #e21e21;
 }
 #store-banner{
-	background-image: url("../images/store_banner.jpg");
+	background-image: url("../images/deal_of_the_week.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -1672,9 +1614,15 @@ section
 	border-radius: 10px;
 	box-shadow: 0px 0px 15px #000;
 }
+#store-banner img{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: inherit;
+}
 #store-banner span{
 	position: absolute;
-	left: 4;
+	right: 4px;
 	top: 150px;
 }
 #store-banner span h1,h4{
@@ -1683,4 +1631,35 @@ section
 }
 #filter-header{
 	height: 75px;
+}
+#modal{
+	z-index: 9999;
+}
+#modal-wrapper{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	backdrop-filter: blur(5px);
+}
+#modal-wrapper #modal-header{
+	background-color: #1d1d1d;
+	padding: 20px;
+}
+#modal-wrapper #modal-header h2{
+	color: #e21e21;
+}
+#modal-wrapper #modal-body{
+	background-color: #3b3b3b;
+	padding: 30px;
+	color: #fff;
+}
+#modal-wrapper #modal-footer{
+	background-color: #777777;
+	padding: 20px;
+}
+#modal-wrapper #modal-footer input[type="button"]{
+	border: none;
 }

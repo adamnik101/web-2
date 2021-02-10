@@ -151,6 +151,7 @@
 	<div class="container">
 		<div class="row m-0">
 			<div class="col-12" id="store-banner">
+				<img src="images/store_banner.png" class="img-fluid" alt="guy_with_hat_tipping">
 				<span>
 					<h1>Browse our store!</h1>
 					<h4>Check out our new releases and best deals!</h4>
@@ -170,7 +171,7 @@
 						<i class="fas fa-sliders-h"></i>
 					</span>	
 					<div id="price-container" class="d-block">
-						<span class="d-flex justify-content-between align-items-center p-3" id="priceToggle">
+						<span class="d-flex justify-content-between align-items-center p-3 hoverFilter" id="priceToggle">
 							<span>Price</span>
 							<span class="circ d-flex justify-content-center align-items-center"><i class="fas fa-chevron-up"></i></span>
 						</span>
@@ -187,30 +188,48 @@
 						
 					</div>
 					<div id="categories-container" class="d-block">
-						<span id="filterCat" class="d-flex justify-content-between align-items-center p-3">
+						<span id="filterCat" class="d-flex justify-content-between align-items-center p-3 hoverFilter">
 							<span>Categories</span>
 							<span class="circ d-flex justify-content-center align-items-center"><i class="fas fa-chevron-up"></i></span>
 						</span>
-							<ul class="p-3" id="categoryChb">
+							<ul class="whiteChb" id="categoryChb">
+								
+							</ul>
+					</div>
+					<div id="more-filters-container" class="d-block">
+						<span id="more-filters" class="d-flex justify-content-between align-items-center p-3 hoverFilter">
+							<span>Game Modes</span>
+							<span class="circ d-flex justify-content-center align-items-center"><i class="fas fa-chevron-up"></i></span>
+						</span>
+							<ul id="mode" class="whiteChb">
+								
+							</ul>
+					</div>
+					<div id="other-filter-container" class="d-block">
+						<span id="filter-other" class="d-flex justify-content-between align-items-center p-3 hoverFilter">
+							<span>Other</span>
+							<span class="circ d-flex justify-content-center align-items-center"><i class="fas fa-chevron-up"></i></span>
+						</span>
+							<ul class="whiteChb" id="otherFilter">
 								
 							</ul>
 					</div>
 				</div>
 				
 			</div>
-			<div class="col-12 col-sm-9">
+			<div class="col-12 pr-0 col-sm-9">
 				<div id="sortBy" class="d-flex justify-content-end align-items-center">
 					<div id="ddlWrapper">
 					<div id="sortBtn-wrapper" class="pt-3 pb-3">
-						<span class="mr-3">Sort By:</span>
-						<button type="button" id="sortBtn">Default sorting</button>
+						<span>Sort by: </span>
+						<select name="sorting" id="sort">
+							<option value="0">Choose</option>
+							<option value="1">Name: A-Z</option>
+							<option value="2">Name: Z-A</option>
+							<option value="3">Price: High to Low</option>
+							<option value="4">Price: Low to High</option>
+						</select>
 					</div>
-					<ul id="sortDdl">
-						<li id="priceHighToLow">By price: High to low</li>
-						<li id="priceLowToHigh">By price: Low to High</li>
-						<li id="nameA-Z">By name: A-Z</li>
-						<li id="nameZ-A">By name: Z-A</li>
-					</ul>
 					</div>
 				</div>
 				<div id="products"></div>

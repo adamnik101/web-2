@@ -52,16 +52,6 @@ var categories = [
         "name" : "Sports"
     }
 ]
-var platform = [
-    {
-        "id" : 1,
-        "name" : "Windows"
-    },
-    {
-        "id" : 2,
-        "name" : "Mac OS"
-    }
-]
 var modes = [
     {
         "id":1,
@@ -70,16 +60,28 @@ var modes = [
     {
         "id":2,
         "name":"Multiplayer"
+    }
+]
+var otherFilters = [
+    {
+        "id" : 1,
+        "name" : "New Releases"
     },
     {
-        "id":3,
-        "name":"Co-op"
+        "id" : 2,
+        "name" : "Top Sellers"
+    },
+    {
+        "id" : 3,
+        "name" : "On Sale"
     }
 ]
 var allGames = [
     {
         "id" : 1,
         "name" : "Cyberpunk 2077",
+        "modes": [1],
+        "otherId" : [1,2],
         "info" :{
             "about" : [
             {
@@ -100,7 +102,9 @@ var allGames = [
         ["STEAL THE IMPLANT THAT GRANTS ETERNAL LIFE", "Take the riskiest job of your life and go after a prototype implant that is the key to immortality."]
         ]
         },
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_1.jpg",
             "gallery" : [
@@ -112,7 +116,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 49.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 49.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -166,7 +173,9 @@ var allGames = [
     {
         "id" : 2,
         "name" : "Minecraft Dungeons",
+        "modes": [1, 2],
         "catId" : [2,12],
+        "otherId" : [1,2],
         "info" :{
             "about" : [
             {
@@ -187,7 +196,9 @@ var allGames = [
         ["Game details", "Discover a trove of powerful new weapons and items that will help you defeat ruthless swarms of new-and-nasty mobs. Fight or flee through canyons, swamps and – of course – mines! Any adventurer brave or foolish enough to explore this blocky and beautiful world will need to come prepared. So quickly, gear up!"]
         ]
         },
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_14.jpg",
             "gallery" : [
@@ -199,7 +210,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 29.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 29.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -252,6 +266,8 @@ var allGames = [
     {
         "id" : 3,
         "name" : "Assassin's Creed Valhalla",
+        "modes": [1],
+        "otherId" : [1,2],
         "info" :{
             "about" : [
             {
@@ -271,7 +287,9 @@ var allGames = [
         ["GROW YOUR SETTLEMENT", "Your clan's new home grows with your legend. Customise your settlement by building upgradable structures. Unlock new features and quests by constructing a barracks, a blacksmith, a tattoo parlour, and much more."]
         ]
         },
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_2.jpg",
             "gallery" : [
@@ -283,7 +301,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 59.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 59.99
+            }
         },
         "catId" : [1,2,11,4],
         "specifications":{
@@ -337,6 +358,8 @@ var allGames = [
     {
         "id" : 4,
         "name" : "Kena: Bridge of Spirits",
+        "modes": [1],
+        "otherId" : [1],
         "info" :{
             "about" : [
             {
@@ -356,7 +379,9 @@ var allGames = [
         ]
         },
         "catId" : [2, 1],
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_4.jpg",
             "gallery" : [
@@ -368,7 +393,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 49.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 49.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -429,6 +457,8 @@ var allGames = [
     {
         "id" : 16,
         "name" : "Mafia: Definite Edition",
+        "modes": [1],
+        "otherId" : [1,2],
         "info" :{
             "about" : [
             {
@@ -448,7 +478,9 @@ var allGames = [
         ]
         },
         "catId" : [1, 6],
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_16.jpg",
             "gallery" : [
@@ -460,7 +492,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 49.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 49.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -517,6 +552,8 @@ var allGames = [
     {
         "id" : 5,
         "name" : "Blair Witch",
+        "modes": [1],
+        "otherId" : [1],
         "info" :{
             "about" : [
             {
@@ -535,7 +572,9 @@ var allGames = [
         ]
         },
         "catId" : [9, 2, 7],
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_6.jpg",
             "gallery" : [
@@ -547,7 +586,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 39.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 39.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -604,6 +646,8 @@ var allGames = [
     {
         "id" : 6,
         "name" : "Snowrunner",
+        "modes": [1, 2],
+        "otherId" : [1],
         "info" :{
             "about" : [
             {
@@ -622,7 +666,9 @@ var allGames = [
         ]
         },
         "catId" : [12, 10],
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_10.jpg",
             "gallery" : [
@@ -634,7 +680,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 34.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 34.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -687,6 +736,8 @@ var allGames = [
     {
         "id" : 13,
         "name" : "The Elder Scrolls V: Skyrim",
+        "modes": [1],
+        "otherId" : [3],
         "info" :{
             "about" : [
             {
@@ -704,7 +755,10 @@ var allGames = [
             "text" : [["Explore Skyrim","Skyrim retains the traditional open world gameplay found in the Elder Scrolls series. The player is free to roam the land of Skyrim at will. Within Skyrim lie five cities, comparatively larger to those in Oblivion's Cyrodiil setting, and expanses of wilderness and mountainous ranges. When visiting cities, the player can complete activities such as farming and mining, and is able to smith weapons from a forge. Aside from the main story quest, the player can complete side-quests, which are dynamically created based on the player's actions within the game. The in-game head-up display can be hidden, and the menu is presented in a compass-style overlay."]]
         },
         "catId" : [1,2,4],
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_12.jpg",
             "gallery" : [
@@ -718,8 +772,8 @@ var allGames = [
                 "amount" : 30
             },
             "value" : {
-                "before" : 24.99,
-                "after" : 19.99
+                "listPrice" : 24.99,
+                "netPrice" : 19.99
             }
         },
         "specifications":{
@@ -773,6 +827,8 @@ var allGames = [
     {
         "id" : 39,
         "name" : "Back 4 Blood",
+        "modes": [1, 2],
+        "otherId" : [1],
         "info" :{
             "about" : [
             {
@@ -792,7 +848,9 @@ var allGames = [
         ["Cooperative Campaign", "Fight your way through a dynamic, perilous world in a 4-player co-op story campaign where you must work together to survive increasingly challenging missions. Play with up to 3 of your friends online or go solo and lead your team in battle. Choose from 8 customizable Cleaners, one of the immune survivors, and a range of lethal weapons and items. Strategize against an ever-evolving enemy bent on your total destruction."]
         ]
         },
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_28.jpg",
             "gallery" : [
@@ -804,7 +862,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 44.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 49.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -858,6 +919,8 @@ var allGames = [
     {
         "id" : 7,
         "name" : "Godfall",
+        "modes": [1 , 2],
+        "otherId" : [1],
         "info" :{
             "about" : [
             {
@@ -876,7 +939,9 @@ var allGames = [
         ]
         },
         "catId" : [1,2],
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_9.jpg",
             "gallery" : [
@@ -888,7 +953,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 49.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 49.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -950,6 +1018,8 @@ var allGames = [
         "id" : 28,
         "catId" : [8,10],
         "name" : "Dirt 5",
+        "modes": [1, 2],
+        "otherId" : [3],
         "info" :{
             "about" : [
             {
@@ -968,7 +1038,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_22.jpg",
             "gallery" : [
@@ -982,8 +1055,8 @@ var allGames = [
                 "amount" : 50
             },
             "value" : {
-                "before" : 19.99,
-                "after" : 9.99
+                "listPrice" : 19.99,
+                "netPrice" : 9.99
             }
         },
         "specifications":{
@@ -1036,8 +1109,10 @@ var allGames = [
     },
     {
         "id" : 25,
-        "catId" : [12, 2, 10],
         "name" : "Bee Simulator",
+        "modes": [1],
+        "otherId" : [3],
+        "catId" : [12, 2, 10],
         "info" :{
             "about" : [
             {
@@ -1056,7 +1131,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_25.jpg",
             "gallery" : [
@@ -1070,8 +1148,8 @@ var allGames = [
                 "amount" : 50
             },
             "value" : {
-                "before" : 29.99,
-                "after" : 14.99
+                "listPrice" : 29.99,
+                "netPrice" : 14.99
             }
         },
         "specifications":{
@@ -1126,6 +1204,8 @@ var allGames = [
         "id" : 31,
         "catId" : [6,1,7],
         "name" : "Call of Duty: Cold War",
+        "modes" : [2,1],
+        "otherId" : [3],
         "info" :{
             "about" : [
             {
@@ -1144,7 +1224,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_26.jpg",
             "gallery" : [
@@ -1158,8 +1241,8 @@ var allGames = [
                 "amount" : 20
             },
             "value" : {
-                "before" : 49.99,
-                "after" : 39.99
+                "listPrice" : 49.99,
+                "netPrice" : 39.99
             }
         },
         "specifications":{
@@ -1214,6 +1297,8 @@ var allGames = [
         "id" : 30,
         "catId" : [8,10, 13],
         "name" : "WRC 9 FIA Rally Championship",
+        "modes" : [1,2],
+        "otherId" : null,
         "info" :{
             "about" : [
             {
@@ -1232,7 +1317,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_27.jpg",
             "gallery" : [
@@ -1244,7 +1332,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false,
             },
-            "value" : 19.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 19.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -1298,6 +1389,8 @@ var allGames = [
         "id" : 23,
         "catId" : [13],
         "name" : "Fifa 2020",
+        "modes" : [1,2],
+        "otherId" : null,
         "info" :{
             "about" : [
             {
@@ -1316,7 +1409,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_24.jpg",
             "gallery" : [
@@ -1328,7 +1424,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false,
             },
-            "value" : 29.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 29.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -1382,6 +1481,8 @@ var allGames = [
         "id" : 24,
         "catId" : [13],
         "name" : "NBA 2K21",
+        "modes" : [1,2],
+        "otherId" : [3, 2],
         "info" :{
             "about" : [
             {
@@ -1400,7 +1501,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_23.jpg",
             "gallery" : [
@@ -1414,8 +1518,8 @@ var allGames = [
                 "amount" : 30
             },
             "value" : {
-                "before" : 39.99,
-                "after" : 27.99
+                "listPrice" : 39.99,
+                "netPrice" : 27.99
             }
         },
         "specifications":{
@@ -1469,6 +1573,8 @@ var allGames = [
     {
         "id" : 8,
         "name" : "Hitman III",
+        "modes" : [1],
+        "otherId" : [1,2],
         "info" :{
             "about" : [
             {
@@ -1486,7 +1592,9 @@ var allGames = [
             "text" : [["Death Awaits.","Agent 47 returns in HITMAN 3, the dramatic conclusion to the World of Assassination trilogy."]
         ]
         },
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "catId" : [11, 1],
         "image" : {
             "cover" : "images/banner_3.jpg",
@@ -1499,7 +1607,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false
             },
-            "value" : 59.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 59.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -1557,6 +1668,8 @@ var allGames = [
         "id" : 20,
         "catId" : [5,12,10],
         "name" : "Cities Skylines",
+        "modes" : [1,2],
+        "otherId" : [3],
         "info" :{
             "about" : [
             {
@@ -1575,7 +1688,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_20.jpg",
             "gallery" : [
@@ -1589,8 +1705,8 @@ var allGames = [
                 "amount" : 50
             },
             "value" : {
-                "before" : 15.99,
-                "after" : 7.99
+                "listPrice" : 15.99,
+                "netPrice" : 7.99
             }
         },
         "specifications":{
@@ -1645,6 +1761,8 @@ var allGames = [
         "id" : 21,
         "catId" : [1, 12, 3],
         "name" : "Fall Guys",
+        "modes" : [2],
+        "otherId" : [2],
         "info" :{
             "about" : [
             {
@@ -1663,7 +1781,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_21.jpg",
             "gallery" : [
@@ -1675,7 +1796,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false,
             },
-            "value" : 9.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 9.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -1728,7 +1852,9 @@ var allGames = [
     {
         "id" : 9,
         "catId" : [1,2,4,6],
+        "otherId" : [3, 2],
         "name" : "Red Dead Redemption II",
+        "modes" : [1,2],
         "info" :{
             "about" : [
             {
@@ -1747,7 +1873,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_8.jpg",
             "gallery" : [
@@ -1761,8 +1890,8 @@ var allGames = [
                 "amount" : 50
             },
             "value" : {
-                "before" : 59.99,
-                "after" : 29.99
+                "listPrice" : 59.99,
+                "netPrice" : 29.99
             }
         },
         "specifications":{
@@ -1817,6 +1946,8 @@ var allGames = [
         "id" : 19,
         "catId" : [5,12],
         "name" : "Sid Meier's: Civilization VI",
+        "modes" : [1,2],
+        "otherId" : [3],
         "info" :{
             "about" : [
             {
@@ -1835,7 +1966,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_19.jpg",
             "gallery" : [
@@ -1849,8 +1983,8 @@ var allGames = [
                 "amount" : 20
             },
             "value" : {
-                "before" : 59.99,
-                "after" : 47.99
+                "listPrice" : 59.99,
+                "netPrice" : 47.99
             }
         },
         "specifications":{
@@ -1905,6 +2039,8 @@ var allGames = [
         "id" : 18,
         "catId" : [8,12],
         "name" : "Need For Speed: Heat",
+        "modes" : [1],
+        "otherId" : null,
         "info" :{
             "about" : [
             {
@@ -1923,7 +2059,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_18.jpg",
             "gallery" : [
@@ -1935,7 +2074,10 @@ var allGames = [
             "discount" : {
                 "isDiscounted" : false,
             },
-            "value" : 34.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 34.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -1989,6 +2131,8 @@ var allGames = [
         "id" : 17,
         "catId" : [8, 10, 12],
         "name" : "Forza Horizon 4",
+        "modes" : [1,2],
+        "otherId" : [3,2],
         "info" :{
             "about" : [
             {
@@ -2007,7 +2151,10 @@ var allGames = [
             ["Explore", "Step into the vibrant, ever-evolving world of Red Dead Online and experience life in frontier America. Chase down bounties, battle outlaw gangs and other players, hunt, fish and trade, search for exotic treasures, run Moonshine, and much more to discover in a world of astounding..."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_17.jpg",
             "gallery" : [
@@ -2017,9 +2164,13 @@ var allGames = [
         },
         "price" : {
             "discount" : {
-                "isDiscounted" : false,
+                "isDiscounted" : true,
+                "amount" : 70
             },
-            "value" : 39.99
+            "value" : {
+                "listPrice" : 49.99,
+                "netPrice" : 14.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -2073,6 +2224,8 @@ var allGames = [
         "id" : 10,
         "name" : "Far Cry 3",
         "catId" : [1,2, 7, 11,6],
+        "modes" : [1,2],
+        "otherId" : [3],
         "info" :{
             "about" : [
             {
@@ -2093,7 +2246,10 @@ var allGames = [
             ["PLAY WITH FRIENDS IN A FULL CO-OP CAMPAIGN", "Play online and team up in a four-player campaign which challenges you to be your best and work together to prevail. Experience the island through the eyes of a wayward crew in their own quest to survive against the odds."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_13.jpg",
             "gallery" : [
@@ -2107,8 +2263,8 @@ var allGames = [
                 "amount" : 50
             },
             "value" : {
-                "before" : 13.99,
-                "after" : 6.99
+                "listPrice" : 13.99,
+                "netPrice" : 6.99
             }
         },
         "specifications":{
@@ -2161,12 +2317,15 @@ var allGames = [
             "criticsRecommend": 61,
             "criticsAvg": 76,
             "openCritics": "Strong"
-        }
+        },
+        "mature" : true
     },
     {
         "id" : 11,
         "name" : "Grand Theft Auto V",
+        "modes" : [1,2],
         "catId" : [4, 6, 12],
+        "otherId" : [3,2],
         "info" :{
             "about" : [
             {
@@ -2187,7 +2346,10 @@ var allGames = [
                 ["WEAPONS, CLOTHING & TATTOOS", "You’ll also get access to the Compact Grenade Launcher, Marksman Rifle and Compact Rifle along with Stunt Racing Outfits, Biker Tattoos and more."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_7.jpg",
             "gallery" : [
@@ -2201,8 +2363,8 @@ var allGames = [
                 "amount" : 50
             },
             "value" : {
-                "before" : 39.99,
-                "after" : 19.99
+                "listPrice" : 39.99,
+                "netPrice" : 19.99
             }
         },
         "specifications":{
@@ -2261,6 +2423,8 @@ var allGames = [
         "id" : 12,
         "name" : "Stranded Deep",
         "catId" : [12,2,10,3],
+        "modes" : [1],
+        "otherId" : [3],
         "info" :{
             "about" : [
             {
@@ -2278,7 +2442,10 @@ var allGames = [
             "text" : [["Survive", "Take the role of a plane crash survivor stranded somewhere in the Pacific Ocean. Come face to face with some of the most life threatening scenarios that will result in a different experience each time you play. Scavenge. Discover. Survive."]
         ]
         },
-        "newRelease" : false,
+        "newRelease" : {
+            "value" : false,
+            "id" : null
+        },
         "image" : {
             "cover" : "images/banner_5.jpg",
             "gallery" : [
@@ -2292,8 +2459,8 @@ var allGames = [
                 "amount" : 50
             },
             "value" : {
-                "before" : 19.99,
-                "after" : 9.99
+                "listPrice" : 19.99,
+                "netPrice" : 9.99
             }
         },
         "specifications":{
@@ -2343,12 +2510,13 @@ var allGames = [
             "criticsAvg": 76,
             "openCritics": "Strong"
         }
-    },
-    
+    }, 
     {
         "id" : 14,
         "name" : "Medium",
         "catId" : [9, 2],
+        "modes" : [1],
+        "otherId" : [1],
         "info" :{
             "about" : [
             {
@@ -2370,7 +2538,9 @@ var allGames = [
             ["MUSIC BY YAMAOKA & REIKOWSKI", "Immerse yourself in the disturbing and oppressive atmosphere of the game thanks to the original ‘dual’ soundtrack co-created by Akira Yamaoka and Arkadiusz Reikowski. Yamaoka-san is a legendary Japanese composer best known for his work on the Silent Hill series; Reikowski is a Hollywood Music in Media Awards nominee who worked on such acclaimed horror games as Blair Witch, Layers of Fear, and Observer. Now they join their creative forces for the music and songs of The Medium."]
         ]
         },
-        "newRelease" : true,
+        "newRelease" : {
+            "value" : true
+        },
         "image" : {
             "cover" : "images/banner_15.jpg",
             "gallery" : [
@@ -2380,9 +2550,13 @@ var allGames = [
         },
         "price" : {
             "discount" : {
-                "isDiscounted" : false
+                "isDiscounted" : false,
+                "amount" : null
             },
-            "value" : 24.99
+            "value" : {
+                "listPrice" : null,
+                "netPrice" : 24.99
+            }
         },
         "specifications":{
             "minimum":[
@@ -2438,6 +2612,7 @@ var allGames = [
             "criticsRecommend": 61,
             "criticsAvg": 76,
             "openCritics": "Strong"
-        }
-    },
+        },
+        "mature" : true
+    }
 ]
