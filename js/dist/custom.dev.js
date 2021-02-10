@@ -568,6 +568,15 @@ jQuery(document).ready(function ($) {
   var allChecked = [];
   $(document).on("change", ":checkbox", function () {
     var val = Number($(this).val());
+    var data;
+
+    if (isNameAZ) {
+      data = sortByNameAZ(allGames);
+    } else if (isNameZA) {
+      data = sortByNameZA(allGames);
+    } else {
+      data = allGames;
+    }
 
     if ($(this).is(":checked")) {
       allChecked.push(val);
@@ -575,7 +584,8 @@ jQuery(document).ready(function ($) {
       removeUnchecked(allChecked, val);
     }
 
-    filtered = allGames.filter(function (game) {
+    console.log(data);
+    filtered = data.filter(function (game) {
       if (allChecked.every(function (value) {
         return game.catId.includes(value);
       }) && !game.price.discount.isDiscounted && game.price.value > priceFrom && game.price.value < priceTo) {
@@ -586,20 +596,86 @@ jQuery(document).ready(function ($) {
         return game;
       }
     });
+
+    if (isNameAZ) {
+      filtered = sortByNameAZ(filtered);
+    } else if (isNameZA) {
+      filtered = sortByNameZA(filtered);
+    }
+
     displayStoreFirst(filtered);
 
     if (!filtered.length) {
       displayNoResults();
+    }
+  });
+  var isNameAZ = false;
+  var isNameZA = false;
+
+  function sortByNameAZ(data) {
+    data.sort(function (a, b) {
+      var nameA = a.name.toLowerCase();
+      var nameB = b.name.toLowerCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      return 0;
+    });
+    return data;
+  }
+
+  function sortByNameZA(data) {
+    data.sort(function (a, b) {
+      var nameA = a.name.toLowerCase();
+      var nameB = b.name.toLowerCase();
+
+      if (nameA < nameB) {
+        return 1;
+      }
+
+      if (nameA > nameB) {
+        return -1;
+      }
+
+      return 0;
+    });
+    return data;
+  }
+
+  $("#nameA-Z").on("click", function () {
+    isNameAZ = true;
+    isNameZA = false;
+
+    if (!filteredPrice.length) {
+      displayStoreFirst(sortByNameAZ(allGames));
+    } else {
+      displayStoreFirst(sortByNameZA(filteredPrice));
+    }
+  });
+  $("#nameZ-A").on("click", function () {
+    isNameAZ = false;
+    isNameZA = true;
+
+    if (!filteredPrice.length) {
+      displayStoreFirst(sortByNameZA(allGames));
+    } else {
+      displayStoreFirst(sortByNameAZ(filteredPrice));
     }
   }); // price sliders
 
   var filteredPrice = [];
   var priceFrom = 0;
   var priceTo = 60;
-  $("#priceFrom").on("input", getRangeValue("#from", "#priceFrom"));
-  $("#priceTo").on("input", getRangeValue("#to", "#priceTo"));
+  $("#priceFrom").on("input", getRangeValue("#from", "#priceFrom", allGames));
+  $("#priceTo").on("input", getRangeValue("#to", "#priceTo", allGames));
 
-  function getRangeValue(output, value) {
+  function getRangeValue(output, value, data) {
     return function () {
       $(output).val($(value).val());
 
@@ -609,7 +685,7 @@ jQuery(document).ready(function ($) {
         priceTo = $(value).val();
       }
 
-      filteredPrice = allGames.filter(function (game) {
+      filteredPrice = data.filter(function (game) {
         if (allChecked.every(function (value) {
           return game.catId.includes(value);
         })) {
@@ -620,6 +696,13 @@ jQuery(document).ready(function ($) {
           }
         }
       });
+
+      if (isNameAZ) {
+        filteredPrice = sortByNameAZ(filteredPrice);
+      } else if (isNameZA) {
+        filteredPrice = sortByNameZA(filteredPrice);
+      }
+
       displayStoreFirst(filteredPrice);
 
       if (!filteredPrice.length) {
@@ -646,7 +729,9 @@ jQuery(document).ready(function ($) {
       otherPages.splice(maxItemsStore, maxItemsStore * 2);
     }
 
-    allItems.push(currentPage, otherPages, another);
+    allItems.push(currentPage);
+    allItems.push(otherPages);
+    allItems.push(another);
     console.log(allItems);
 
     if (allItems.length) {
