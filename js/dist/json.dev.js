@@ -134,7 +134,7 @@ var allGames = [{
   "name": "Minecraft Dungeons",
   "modes": [1, 2],
   "catId": [2, 12],
-  "otherId": [1, 2],
+  "otherId": [1],
   "info": {
     "about": [{
       "name": "Publisher",
@@ -1024,7 +1024,7 @@ var allGames = [{
   "catId": [8, 10, 13],
   "name": "WRC 9 FIA Rally Championship",
   "modes": [1, 2],
-  "otherId": null,
+  "otherId": [],
   "info": {
     "about": [{
       "name": "Publisher",
@@ -1097,7 +1097,7 @@ var allGames = [{
   "catId": [13],
   "name": "Fifa 2020",
   "modes": [1, 2],
-  "otherId": null,
+  "otherId": [],
   "info": {
     "about": [{
       "name": "Publisher",
@@ -1614,7 +1614,7 @@ var allGames = [{
   "catId": [8, 12],
   "name": "Need For Speed: Heat",
   "modes": [1],
-  "otherId": null,
+  "otherId": [],
   "info": {
     "about": [{
       "name": "Publisher",

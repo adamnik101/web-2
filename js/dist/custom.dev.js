@@ -147,10 +147,10 @@ jQuery(document).ready(function ($) {
       var hours = Math.floor(razlika % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
       var minutes = Math.floor(razlika % (1000 * 60 * 60) / (1000 * 60));
       var seconds = Math.floor(razlika % (1000 * 60) / 1000);
-      $("#day").html(days);
-      $("#hour").html(hours);
-      $("#minute").html(minutes);
-      $("#second").html(seconds);
+      $(".owl-deals #day").html(days);
+      $(".owl-deals #hour").html(hours);
+      $(".owl-deals #minute").html(minutes);
+      $(".owl-deals #second").html(seconds);
 
       if (razlika < 0) {
         clearInterval(x);
@@ -304,7 +304,12 @@ jQuery(document).ready(function ($) {
 
     var homepageGames = function homepageGames(sectionId, data) {
       // ispisivanje igrica
-      var maxItemsFirstRow = 4;
+      if ($(window).width() < 768 || $(window).width() >= 992) {
+        var maxItemsFirstRow = 4;
+      } else {
+        var maxItemsFirstRow = 3;
+      }
+
       var counter = [];
       var firstRow = data.filter(function (game, index) {
         // izvlacenje prvih 4 igrica
@@ -314,7 +319,7 @@ jQuery(document).ready(function ($) {
           } else if (sectionId == "hotSales") {
             return game.price.discount.isDiscounted && counter.push(index);
           } else if (sectionId == "topSellers") {
-            return game.topSeller && counter.push(index);
+            return game.otherId.includes(2) && counter.push(index);
           }
         }
       });
@@ -332,9 +337,10 @@ jQuery(document).ready(function ($) {
     owl.owlCarousel({
       items: 1,
       loop: true,
-      mouseDrag: false,
+      mouseDrag: true,
       touchDrag: false,
-      dots: false
+      dots: false,
+      margin: 50
     });
     progress();
     displayAllSections(allGames); //displayAllSections(allGames)
@@ -371,9 +377,9 @@ jQuery(document).ready(function ($) {
       var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9 d-flex flex-column align-items-end\">");
 
       if (!price.discount.isDiscounted) {
-        logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\" class=\"pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
+        logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.netPrice, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\" class=\"pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value.netPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
       } else {
-        logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.after, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"d-flex justify-content-around align-items-center pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-danger\">-").concat(price.discount.amount, "%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<s class=\"pl-2 pr-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign \"></i>").concat(price.value.before, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</s> \n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value.after, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</p>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
+        logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.netPrice, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"d-flex justify-content-around align-items-center pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-danger\">-").concat(price.discount.amount, "%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<s class=\"pl-2 pr-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign \"></i>").concat(price.value.listPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</s> \n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value.netPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</p>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
       }
 
       logoDisplay += "</div>";

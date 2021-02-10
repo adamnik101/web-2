@@ -180,10 +180,10 @@ jQuery(document).ready(function($)
 			var hours = Math.floor((razlika % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 			var minutes = Math.floor((razlika % (1000 * 60 * 60)) / (1000 * 60));
 			var seconds = Math.floor((razlika % (1000 * 60)) / 1000);
-			$("#day").html(days);
-			$("#hour").html(hours);
-			$("#minute").html(minutes);
-			$("#second").html(seconds)
+			$(".owl-deals #day").html(days);
+			$(".owl-deals #hour").html(hours);
+			$(".owl-deals #minute").html(minutes);
+			$(".owl-deals #second").html(seconds)
 			if (razlika < 0) {
 			  clearInterval(x);
 			  $(".deal_ofthe_week_col").html("New deals coming soon!");
@@ -299,9 +299,10 @@ function price(item, discount) {
 			{
 				items:1,
 				loop : true,
-				mouseDrag: false,
+				mouseDrag: true,
 				touchDrag: false,
-				dots: false
+				dots: false,
+				margin: 50,
 			  }
 			);
 			/* function progress(){
@@ -340,7 +341,12 @@ function getGames(){
 	});
 }
 function homepageGames(sectionId, data){ // ispisivanje igrica
-	var maxItemsFirstRow = 4;
+	if($(window).width() < 768 || $(window).width() >= 992){
+		var maxItemsFirstRow = 4;
+	}
+	else{
+		var maxItemsFirstRow = 3;
+	}
 		let counter = [];
 		let firstRow = data.filter(function(game, index){ // izvlacenje prvih 4 igrica
 			if(counter.length < maxItemsFirstRow){
@@ -351,7 +357,7 @@ function homepageGames(sectionId, data){ // ispisivanje igrica
 					return game.price.discount.isDiscounted && counter.push(index);
 				}
 				else if(sectionId == "topSellers"){
-					return game.topSeller && counter.push(index);
+					return game.otherId.includes(2) && counter.push(index);
 				}
 			}
 		})
@@ -403,22 +409,22 @@ displayAllSections(allGames);
 						<div class="col-9 d-flex flex-column align-items-end">`;
 						if(!price.discount.isDiscounted){
 							logoDisplay += `<div class="d-flex flex-column align-items-end">
-												<button type="button" id="price" value="${price.value}">Buy Now!</button>
+												<button type="button" id="price" value="${price.value.netPrice}">Buy Now!</button>
 													<span id="current" class="pt-3">
-														<i class="fas fa-euro-sign"></i>${price.value}
+														<i class="fas fa-euro-sign"></i>${price.value.netPrice}
 													</span>	
 											</div>`
 						}
 						else{
 							logoDisplay +=`<div class="d-flex flex-column align-items-end">
-												<button type="button" id="price" value="${price.value.after}">Buy Now!</button>
+												<button type="button" id="price" value="${price.value.netPrice}">Buy Now!</button>
 												<p class="d-flex justify-content-around align-items-center pt-3">
 													<span class="badge badge-danger">-${price.discount.amount}%</span>
 													<s class="pl-2 pr-2">
-														<i class="fas fa-euro-sign "></i>${price.value.before}
+														<i class="fas fa-euro-sign "></i>${price.value.listPrice}
 													</s> 
 													<span id="current">
-														<i class="fas fa-euro-sign"></i>${price.value.after}
+														<i class="fas fa-euro-sign"></i>${price.value.netPrice}
 													</span>
 												</p>	
 											</div>`

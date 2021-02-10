@@ -464,7 +464,7 @@ section
 .hamburger_container i
 {
 	font-size: 24px;
-	color: #1e1e27;
+	color: #e21e21;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
@@ -473,7 +473,7 @@ section
 }
 .hamburger_container:hover i
 {
-	color: #e21e21;
+	color: #eee;
 }
 .hamburger_menu
 {
@@ -925,6 +925,7 @@ section
 	color: #fff;
 	border-radius: 10px;
 }
+
 .catalogHome{
 	height: 500px;
 	border-radius: 30px;
@@ -932,7 +933,6 @@ section
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	box-shadow: 0px 0px 20px rgb(17, 17, 17);
 }
 .catalogHome > div{
 	height: 100%;
@@ -946,6 +946,7 @@ section
 	position: absolute;
 	right: 0;
 	bottom: 0;
+	height: 100%;
 }
 .catalogHome h3{
 	font-size: 50px;
@@ -982,7 +983,8 @@ section
 .deal_ofthe_week
 {
 	width: 100%;
-	margin-top: 41px;
+	height: 500px;
+	border-radius: 30px;
 	background-image: url("../images/deal_of_the_week.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
@@ -990,14 +992,21 @@ section
 }
 .deal_ofthe_week_img
 {
-	height: 540px;
+	height: 500px;
 	position: relative;
+}
+.owl-deals .owl-item img{
+	width: auto;
 }
 .deal_ofthe_week_img img
 {
 	position: absolute;
-	left: 0;
+	left: 50px;
+	bottom: 0;
 	height: 100%;
+}
+.deal_ofthe_week_col{
+	height: 500px;
 }
 .deal_ofthe_week_content
 {
@@ -1016,17 +1025,13 @@ section
 	text-shadow: 0px 5px 5px #000;
 }
 .section_title img{
-	width: 60%;
-}
-.timer
-{
-	margin-top: 66px;
+	width: 60% !important;
 }
 .timer li
 {
 	display: inline-block;
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
 	border-radius: 50%;
 	background: #FFFFFF;
 	margin-right: 10px;
@@ -1046,7 +1051,7 @@ section
 .timer_unit
 {
 	margin-top: 12px;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 500;
 	color: #2a2a2a;
 	font-size: 20px;
@@ -1055,7 +1060,6 @@ section
 {
 	padding: 10px 30px;
 	background: #1e1e27;
-	margin-top: 52px;
 	font-family: "ChineseRocks";
 }
 .deal_ofthe_week_button a{
@@ -1079,47 +1083,6 @@ section
 7.1 Slider Nav
 *********************************/
 
-.product_slider_nav
-{
-	position: absolute;
-	width: 30px;
-	height: 70px;
-	background: #d3d3d6;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%);
-	z-index: 2;
-	cursor: pointer;
-	visibility: hidden;
-	opacity: 0;
-	-webkit-transition: all 300ms ease;
-	-moz-transition: all 300ms ease;
-	-ms-transition: all 300ms ease;
-	-o-transition: all 300ms ease;
-	transition: all 300ms ease;
-}
-.product_slider_container:hover .product_slider_nav
-{
-	visibility: visible;
-	opacity: 1;
-}
-.product_slider_nav i
-{
-	color: #FFFFFF;
-	font-size: 12px;
-}
-.product_slider_nav_left
-{
-	top: 50%;
-	left: 0;
-}
-.product_slider_nav_right
-{
-	top: 50%;
-	right: 0;
-}
 
 /*********************************
 8. Benefit
@@ -1129,16 +1092,11 @@ section
 {
 	margin-top: 74px;
 }
-.benefit_col
-{
-	padding-left: 0px;
-	padding-right: 0px;
-}
 .benefit_item
 {
 	height: 100px;
 	background: #2a2a2a;
-	padding-left: 25px;
+	border-radius: 20px;
 }
 .benefit_icon i
 {

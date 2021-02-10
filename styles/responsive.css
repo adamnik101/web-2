@@ -380,6 +380,10 @@
 	{
 		height: calc((100vw - 30px) / 1.37);
 	}
+	.banner{
+		padding-left: 40px;
+		padding-right: 40px;
+	}
 	.cr
 	{
 		display: block;
@@ -426,17 +430,9 @@
 
 @media only screen and (max-width: 479px)
 {
-	.logo_container a
-	{
-		font-size: 12px;
-	}
 	.hamburger_container
 	{
 		margin-left: 25px;
-	}
-	.hamburger_container i
-	{
-		font-size: 16px;
 	}
 	.hamburger_close
 	{
@@ -468,10 +464,7 @@
 		line-height: 35px;
 		height: 35px;
 	}
-	.navbar
-	{
-		height: 70px;
-	}
+	
 	.navbar_user li a
 	{
 		width: 30px;
