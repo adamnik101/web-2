@@ -73,6 +73,7 @@ jQuery(document).ready(function () {
     getCategories(displayCheckbox, "categoryChb", categories, "categories");
     getCategories(displayCheckbox, "mode", modes, "modes");
     getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters");
+    getUpcoming(displayComingSoon);
   }
 
   $(window).on('resize', function () {
@@ -82,6 +83,8 @@ jQuery(document).ready(function () {
       truncateText();
       removePng();
     }
+
+    filterResponsive();
   });
   $(document).on('scroll', function () {
     setHeader();
@@ -257,7 +260,7 @@ jQuery(document).ready(function () {
       $("#" + parent).addClass("row row-cols-2 row-cols-md-3 row-cols-lg-4 pl-0");
     } else {
       $("#" + parent).removeClass();
-      $("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3");
+      $("#" + parent).addClass("row row-cols-2 row-cols-md-3");
       $("#" + parent).empty();
     }
 
@@ -602,7 +605,7 @@ jQuery(document).ready(function () {
     try {
       for (var _iterator5 = data[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
         var game = _step5.value;
-        content += "<div class=\"soon_item_col\">\n\t\t\t\t\t\t\t<div class=\"soon_item\">\n\t\t\t\t\t\t\t\t<div class=\"soon_background\" id=\"bg".concat(game.id, "\"></div>\n\t\t\t\t\t\t\t\t<div class=\"soon_content d-flex flex-column align-items-center justify-content-center text-center\">\n\t\t\t\t\t\t\t\t\t<img src=\"").concat(game.image.logo.src, "\" class=\"img-fluid\" alt=\"").concat(game.image.logo.alt, "\">\n\t\t\t\t\t\t\t\t\t<h4 class=\"soon_title\">Coming Soon</h4>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>");
+        content += "<div class=\"soon_item_col\">\n\t\t\t\t\t\t\t<div class=\"soon_item\">\n\t\t\t\t\t\t\t\t<div class=\"soon_background\" id=\"bg".concat(game.id, "\"></div>\n\t\t\t\t\t\t\t\t<div class=\"soon_content d-flex flex-column align-items-center justify-content-center text-center\">\n\t\t\t\t\t\t\t\t\t<img src=\"").concat(game.image.logo.src, "\" class=\"img-fluid\" alt=\"").concat(game.image.logo.alt, "\">\n\t\t\t\t\t\t\t\t\t<h4 class=\"soon_title pt-3\">Coming Soon</h4>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>");
       }
     } catch (err) {
       _didIteratorError5 = true;
@@ -663,11 +666,37 @@ jQuery(document).ready(function () {
         576: {
           items: 2
         },
-        700: {
+        992: {
           items: 3
         }
       }
     });
+  }
+
+  function filterResponsive() {
+    if (window.innerWidth < 992) {
+      var _header = "<button type='button' id='closeFilter'>Close filters</button>";
+      $("#filter-header").addClass("d-flex justify-content-center align-items-center");
+      $("#filter-header").html(_header);
+      $("#filter-small").html($("#filterBg"));
+      $("#filter-wrapper").hide();
+      $("#filter-wrapper").css("background-color", "#1d1d1d");
+      $("#filterBg").css("width", "150%");
+      $("#filterBg").on("click", function () {
+        $("#filter-wrapper").fadeIn();
+      });
+      $("#closeFilter").on("click", function () {
+        $("#filter-wrapper").fadeOut();
+      });
+      $("#filter-wrapper").css({
+        position: "fixed",
+        top: "0",
+        left: "0",
+        bottom: "0",
+        "z-index": "999",
+        "overflow-y": "scroll"
+      });
+    }
   }
 
   $(document).on("click", ".openSingle", function () {
@@ -675,10 +704,10 @@ jQuery(document).ready(function () {
     open("single.html", "_self");
   });
   var maxItemsStore = 9;
-  $("#filterCat").on("click", rotateHandler("#categoryChb", "#filterCat"));
-  $("#priceToggle").on("click", rotateHandler("#priceRange", "#priceToggle"));
-  $("#more-filters").on("click", rotateHandler("#mode", "#more-filters"));
-  $("#filter-other").on("click", rotateHandler("#otherFilter", "#filter-other"));
+  $(document).on("click", "#filterCat", rotateHandler("#categoryChb", "#filterCat"));
+  $(document).on("click", "#priceToggle", rotateHandler("#priceRange", "#priceToggle"));
+  $(document).on("click", "#more-filters", rotateHandler("#mode", "#more-filters"));
+  $(document).on("click", "#filter-other", rotateHandler("#otherFilter", "#filter-other"));
   var degreesCat = 0,
       degreesPrice = 0,
       degreesMore = 0,
