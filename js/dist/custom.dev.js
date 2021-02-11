@@ -370,7 +370,8 @@ jQuery(document).ready(function () {
     $("#progressBar").animate({
       width: "100%"
     }, 10000, "linear", function () {
-      progress(); //	owl.trigger('next.owl.carousel');
+      progress();
+      owl.trigger('next.owl.carousel');
     });
   }
 

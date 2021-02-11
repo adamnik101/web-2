@@ -349,7 +349,7 @@ function price(item, discount) {
 					width:"100%"
 				},10000,"linear",function () {
 					progress();
-				//	owl.trigger('next.owl.carousel');
+					owl.trigger('next.owl.carousel');
 				})
 			}
 			progress();
