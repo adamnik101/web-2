@@ -37,7 +37,7 @@ jQuery(document).ready(function()
 	var allGames, categories, modes, otherFilters;
 	setHeader();
 	initMenu();
-	
+	removePng();
 	function getGames(callback){
 		$.ajax({
 			url: "js/data/allGames.json",
