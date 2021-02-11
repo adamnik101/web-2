@@ -223,14 +223,15 @@ jQuery(document).ready(function () {
   }
 
   function openMenu() {
-    menu.addClass('active'); // menu.css('right', "0");
-
+    menu.addClass('active');
+    menu.css("box-shadow", "rgb(0 0 0 / 50%) 0px 0px 0px 10000px");
     fsOverlay.css('pointer-events', "auto");
     menuActive = true;
   }
 
   function closeMenu() {
     menu.removeClass('active');
+    menu.css("box-shadow", "none");
     fsOverlay.css('pointer-events', "none");
     menuActive = false;
   }
@@ -612,7 +613,65 @@ jQuery(document).ready(function () {
     try {
       for (var _iterator5 = data[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
         var game = _step5.value;
-        content += "<div class=\"soon_item_col\">\n\t\t\t\t\t\t\t<div class=\"soon_item\">\n\t\t\t\t\t\t\t\t<div class=\"soon_background\" id=\"bg".concat(game.id, "\"></div>\n\t\t\t\t\t\t\t\t<div class=\"soon_content d-flex flex-column align-items-center justify-content-center text-center\">\n\t\t\t\t\t\t\t\t\t<img src=\"").concat(game.image.logo.src, "\" class=\"img-fluid\" alt=\"").concat(game.image.logo.alt, "\">\n\t\t\t\t\t\t\t\t\t<h4 class=\"soon_title pt-3\">Coming Soon</h4>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>");
+        var month = void 0,
+            day = void 0,
+            year = void 0;
+        var date = game.releaseDate;
+        var dateSplit = date.split("-");
+        day = dateSplit[2];
+        year = dateSplit[0];
+
+        switch (dateSplit[1]) {
+          case "01":
+            month = "Jan";
+            break;
+
+          case "02":
+            month = "Feb";
+            break;
+
+          case "03":
+            month = "Mar";
+            break;
+
+          case "04":
+            month = "Apr";
+            break;
+
+          case "05":
+            month = "May";
+            break;
+
+          case "06":
+            month = "Jun";
+            break;
+
+          case "07":
+            month = "Jul";
+            break;
+
+          case "08":
+            month = "Aug";
+            break;
+
+          case "09":
+            month = "Sep";
+            break;
+
+          case "10":
+            month = "Oct";
+            break;
+
+          case "11":
+            month = "Nov";
+            break;
+
+          case "12":
+            month = "Dec";
+            break;
+        }
+
+        content += "<div class=\"soon_item_col\">\n\t\t\t\t\t\t\t<div class=\"soon_item\">\n\t\t\t\t\t\t\t\t<div class=\"soon_background\" id=\"bg".concat(game.id, "\"></div>\n\t\t\t\t\t\t\t\t<div class=\"soon_content d-flex flex-column align-items-center justify-content-center text-center\">\n\t\t\t\t\t\t\t\t\t<img src=\"").concat(game.image.logo.src, "\" class=\"img-fluid\" alt=\"").concat(game.image.logo.alt, "\">\n\t\t\t\t\t\t\t\t\t<h4 class=\"soon_title pt-3\">Release Date: ").concat(month, " ").concat(day, ", ").concat(year, "</h4>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>");
       }
     } catch (err) {
       _didIteratorError5 = true;

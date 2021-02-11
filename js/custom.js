@@ -208,13 +208,14 @@ jQuery(document).ready(function()
 	function openMenu()
 	{
 		menu.addClass('active');
-		// menu.css('right', "0");
+		menu.css("box-shadow", "rgb(0 0 0 / 50%) 0px 0px 0px 10000px");
 		fsOverlay.css('pointer-events', "auto");
 		menuActive = true;
 	}
 	function closeMenu()
 	{
 		menu.removeClass('active');
+		menu.css("box-shadow", "none");
 		fsOverlay.css('pointer-events', "none");
 		menuActive = false;
 	}
@@ -532,12 +533,31 @@ jQuery(document).ready(function()
 	function displayComingSoon(data){
 		let content = "<div class='owl-carousel' id='coming-owl'>"; 
 		for(let game of data){
+			let month, day, year;
+			let date = game.releaseDate;
+			let dateSplit = date.split("-");
+			day = dateSplit[2];
+			year = dateSplit[0];
+			switch(dateSplit[1]){
+				case "01" : month = "Jan";break;
+				case "02" : month = "Feb";break;
+				case "03" : month = "Mar";break;
+				case "04" : month = "Apr";break;
+				case "05" : month = "May";break;
+				case "06" : month = "Jun";break;
+				case "07" : month = "Jul";break;
+				case "08" : month = "Aug";break;
+				case "09" : month = "Sep";break;
+				case "10" : month = "Oct";break;
+				case "11" : month = "Nov";break;
+				case "12" : month = "Dec";break;
+			}
 			content += `<div class="soon_item_col">
 							<div class="soon_item">
 								<div class="soon_background" id="bg${game.id}"></div>
 								<div class="soon_content d-flex flex-column align-items-center justify-content-center text-center">
 									<img src="${game.image.logo.src}" class="img-fluid" alt="${game.image.logo.alt}">
-									<h4 class="soon_title pt-3">Coming Soon</h4>
+									<h4 class="soon_title pt-3">Release Date: ${month} ${day}, ${year}</h4>
 								</div>
 							</div>
 						</div>`;
