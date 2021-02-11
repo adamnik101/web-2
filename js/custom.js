@@ -38,6 +38,15 @@ jQuery(document).ready(function()
 			error : function(xhr, status, error) { console.log(error); }
 
 		})
+	};
+	function getUpcoming(callback){
+		$.ajax({
+			url : "js/data/comingSoon.json",
+			type : "GET",
+			dataType : "json",
+			success : callback,
+			error : function(xhr, status, err){ console.log(err)}
+		})
 	}
 	
 	
@@ -45,6 +54,7 @@ jQuery(document).ready(function()
 		displayCountdown();
 		getGames(displayAllSections);
 		owlDisplay();
+		getUpcoming(displayComingSoon);
 	}
 	else if(location.indexOf("single") != -1){
 		getSingle();
@@ -510,7 +520,45 @@ jQuery(document).ready(function()
 		else{
 			$("#pag").empty()
 		}
-	}		
+	}	
+	function displayComingSoon(data){
+		let content = "<div class='owl-carousel' id='coming-owl'>"; 
+		for(let game of data){
+			content += `<div class="soon_item_col">
+							<div class="soon_item">
+								<div class="soon_background" id="bg${game.id}"></div>
+								<div class="soon_content d-flex flex-column align-items-center justify-content-center text-center">
+									<img src="${game.image.logo.src}" class="img-fluid" alt="${game.image.logo.alt}">
+									<h4 class="soon_title">Coming Soon</h4>
+								</div>
+							</div>
+						</div>`;
+		}
+		content += "</div>"
+		$(".coming-soon").html(content);
+		for(let game of data){
+			$("#bg" + game.id).css("background-image", "url(" + game.image.background.src + ")");
+		}
+		let coming = $("#coming-owl");
+		coming.owlCarousel((
+			{
+				autoplay: true,
+				mouseDrag: true,
+				touchDrag: true,
+				loop: true,
+				dots: false,
+				nav: false,
+				stagePadding: 50,
+				margin: 20,
+				autoplayHoverPause: true,
+				responsive : {
+					0 : { items : 1},
+					576 : { items : 2},
+					700: { items : 3}
+				}
+			}
+			))
+	}
 	$(document).on("click", ".openSingle",function(){
 		localStorage.setItem("id",($(this).attr("id")));
 		open("single.html", "_self");

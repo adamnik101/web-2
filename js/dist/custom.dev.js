@@ -47,10 +47,25 @@ jQuery(document).ready(function () {
     });
   }
 
+  ;
+
+  function getUpcoming(callback) {
+    $.ajax({
+      url: "js/data/comingSoon.json",
+      type: "GET",
+      dataType: "json",
+      success: callback,
+      error: function error(xhr, status, err) {
+        console.log(err);
+      }
+    });
+  }
+
   if (location.indexOf("index") != -1 || location == "/web-2/") {
     displayCountdown();
     getGames(displayAllSections);
     owlDisplay();
+    getUpcoming(displayComingSoon);
   } else if (location.indexOf("single") != -1) {
     getSingle();
   } else if (location.indexOf("categories") != -1) {
@@ -576,6 +591,83 @@ jQuery(document).ready(function () {
     } else {
       $("#pag").empty();
     }
+  }
+
+  function displayComingSoon(data) {
+    var content = "<div class='owl-carousel' id='coming-owl'>";
+    var _iteratorNormalCompletion5 = true;
+    var _didIteratorError5 = false;
+    var _iteratorError5 = undefined;
+
+    try {
+      for (var _iterator5 = data[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+        var game = _step5.value;
+        content += "<div class=\"soon_item_col\">\n\t\t\t\t\t\t\t<div class=\"soon_item\">\n\t\t\t\t\t\t\t\t<div class=\"soon_background\" id=\"bg".concat(game.id, "\"></div>\n\t\t\t\t\t\t\t\t<div class=\"soon_content d-flex flex-column align-items-center justify-content-center text-center\">\n\t\t\t\t\t\t\t\t\t<img src=\"").concat(game.image.logo.src, "\" class=\"img-fluid\" alt=\"").concat(game.image.logo.alt, "\">\n\t\t\t\t\t\t\t\t\t<h4 class=\"soon_title\">Coming Soon</h4>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>");
+      }
+    } catch (err) {
+      _didIteratorError5 = true;
+      _iteratorError5 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+          _iterator5["return"]();
+        }
+      } finally {
+        if (_didIteratorError5) {
+          throw _iteratorError5;
+        }
+      }
+    }
+
+    content += "</div>";
+    $(".coming-soon").html(content);
+    var _iteratorNormalCompletion6 = true;
+    var _didIteratorError6 = false;
+    var _iteratorError6 = undefined;
+
+    try {
+      for (var _iterator6 = data[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+        var _game = _step6.value;
+        $("#bg" + _game.id).css("background-image", "url(" + _game.image.background.src + ")");
+      }
+    } catch (err) {
+      _didIteratorError6 = true;
+      _iteratorError6 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
+          _iterator6["return"]();
+        }
+      } finally {
+        if (_didIteratorError6) {
+          throw _iteratorError6;
+        }
+      }
+    }
+
+    var coming = $("#coming-owl");
+    coming.owlCarousel({
+      autoplay: true,
+      mouseDrag: true,
+      touchDrag: true,
+      loop: true,
+      dots: false,
+      nav: false,
+      stagePadding: 50,
+      margin: 20,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        700: {
+          items: 3
+        }
+      }
+    });
   }
 
   $(document).on("click", ".openSingle", function () {

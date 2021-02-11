@@ -44,7 +44,7 @@ COLOR PALETTE
     src: url('../font/ChineseRocks.ttf');
 }
 @font-face{
-	font-family: VarelaRound;
+	font-family: Poppins;
 	src: url('../font/Poppins-Regular.ttf');
 }
 
@@ -62,7 +62,7 @@ COLOR PALETTE
 }
 body
 {
-	font-family: 'VarelaRound';
+	font-family: 'Poppins';
 	font-size: 14px;
 	line-height: 23px;
 	font-weight: 400;
@@ -1139,16 +1139,16 @@ section
 {
 	margin-top: 72px;
 }
-.blogs_container
-{
-	margin-top: 53px;
+#coming-owl .owl-stage{
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
-.blog_item
+.soon_item
 {
 	height: 255px;
 	width: 100%;
 }
-.blog_background
+.soon_background
 {
 	position: absolute;
 	top: 0;
@@ -1156,12 +1156,12 @@ section
 	width: 100%;
 	height: 100%;
 	border-radius: 30px;
-	background-image: url('../images/coming_soon_riders_republic.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+	box-shadow: 0px 0px 15px #000;
 }
-.blog_content
+.soon_content
 {
 	position: absolute;
 	top: 30px;
@@ -1186,42 +1186,18 @@ section
 	-o-transition: all 300ms ease;
 	transition: all 300ms ease;
 }
-.blog_item:hover .blog_content
+.soon_item:hover .soon_content
 {
 	visibility: visible;
 	opacity: 1;
 	transform: scale(1);
 }
-.blog_title
+.soon_title
 {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.25;
 	margin-bottom: 0px;
-}
-.blog_meta
-{
-	font-size: 12px;
-	line-height: 30px;
-	font-weight: 400;
-	text-transform: uppercase;
-	color: #51545f;
-	margin-bottom: 0px;
-	margin-top: 3px;
-	letter-spacing: 1px;
-}
-.blog_more
-{
-	font-size: 14px;
-	line-height: 16px;
-	font-weight: 500;
-	color: #fe4c50;
-	border-bottom: solid 1px #fe4c50;
-	margin-top: 12px;
-}
-.blog_more:hover
-{
-	color: #FE7C7F;
 }
 
 /*********************************

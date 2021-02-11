@@ -1,0 +1,72 @@
+[
+    {
+        "id" : 1,
+        "name" : "Riders Republic",
+        "image" : {
+            "logo" : {
+                "src" : "images/riders_logo.png",
+                "alt" : "logoRidersRepublic"
+            },
+            "background" :{
+                "src" : "images/riders_republic.jpg",
+                "alt" : "gameRidersRepublic"
+            }
+        }
+    },
+    {
+        "id" : 2,
+        "name" : "Far Cry 6",
+        "image" : {
+            "logo" : {
+                "src" : "images/fc6_logo.png",
+                "alt" : "logoFarCry6"
+            },
+            "background" :{
+                "src" : "images/fc6.jpg",
+                "alt" : "gameFarCry6"
+            }
+        }
+    },
+    {
+        "id" : 3,
+        "name" : "Biomutant",
+        "image" : {
+            "logo" : {
+                "src" : "images/biomutant_logo.png",
+                "alt" : "logoBiomutant"
+            },
+            "background" :{
+                "src" : "images/biomutant.jpg",
+                "alt" : "biomutantGame"
+            }
+        }
+    },
+    {
+        "id" : 4,
+        "name" : "Vampire ",
+        "image" : {
+            "logo" : {
+                "src" : "images/vampire_logo.png",
+                "alt" : "logoVampireMasqueradeBloodlines2"
+            },
+            "background" :{
+                "src" : "images/vampire.jpg",
+                "alt" : "gameVampireMasqueradeBloodlines2"
+            }
+        }
+    },
+    {
+        "id" : 5,
+        "name" : "Humankind",
+        "image" : {
+            "logo" : {
+                "src" : "images/humankind_logo.png",
+                "alt" : "logoHumankind"
+            },
+            "background" :{
+                "src" : "images/humankind.jpg",
+                "alt" : "gameHumankind"
+            }
+        }
+    }
+]
