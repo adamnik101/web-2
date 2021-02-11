@@ -1,30 +1,7 @@
 "use strict";
 
-/* JS Document */
-
-/******************************
-
-[Table of Contents]
-
-1. Vars and Inits
-2. Set Header
-3. Init Menu
-4. Init Timer
-5. Init Favorite
-6. Init Fix Product Border
-7. Init Isotope Filtering
-8. Init Slider
-
-
-******************************/
 jQuery(document).ready(function () {
-  "use strict";
-  /* 
-  	1. Vars and Inits
-  	*/
-
-  /* owl carousel */
-  // Global
+  "use strict"; // Global
 
   var header = $('.header');
   var hamburger = $('.hamburger_container');
@@ -138,8 +115,6 @@ jQuery(document).ready(function () {
         }
       }
     }
-
-    console.log(savedText);
   }
 
   function truncateText() {
@@ -257,8 +232,6 @@ jQuery(document).ready(function () {
       }
     }, 1000);
   }
-
-  ;
 
   function displayGames(data, parent, animation) {
     // ispisivanje bloka sa igricom
@@ -398,6 +371,7 @@ jQuery(document).ready(function () {
   }
 
   function displayAllSections(result) {
+    // ispisivanje svih sekcija na pocetnoj stranici + funkcije za dinamicko menjanje teksta ~ ellipsis
     homepageGames("newReleases", result);
     homepageGames("hotSales", result);
     homepageGames("topSellers", result);
@@ -406,6 +380,7 @@ jQuery(document).ready(function () {
   }
 
   function getSingle() {
+    //funkcija za dohvatanje podataka o igrici + owl-carousel za single.html
     $.ajax({
       url: "js/data/allGames.json",
       type: "GET",
@@ -428,16 +403,16 @@ jQuery(document).ready(function () {
         console.log(_error3);
       }
     });
-  } //getSingle();
-
+  }
 
   function getLogoPriceSection(logo, alt, price) {
-    var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-9 d-flex flex-column align-items-end\">");
+    //ispisivanje cene na single.html
+    var logoDisplay = "<div class=\"col-3\">\n\t\t\t\t\t\t<img src=\"".concat(logo, "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-9 d-flex flex-column align-items-end\">");
 
     if (!price.discount.isDiscounted) {
-      logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.netPrice, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\" class=\"pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value.netPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
+      logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.netPrice, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\" class=\"pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value.netPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t</span>\t\n\t\t\t\t\t\t\t\t\t\t</div>");
     } else {
-      logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.netPrice, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"d-flex justify-content-around align-items-center pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-danger\">-").concat(price.discount.amount, "%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<s class=\"pl-2 pr-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign \"></i>").concat(price.value.listPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</s> \n\t\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value.netPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</p>\t\n\t\t\t\t\t\t\t\t\t\t\t</div>");
+      logoDisplay += "<div class=\"d-flex flex-column align-items-end\">\n\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" id=\"price\" value=\"".concat(price.value.netPrice, "\">Buy Now!</button>\n\t\t\t\t\t\t\t\t\t\t\t<p class=\"d-flex justify-content-around align-items-center pt-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-danger\">-").concat(price.discount.amount, "%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t<s class=\"pl-2 pr-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign \"></i>").concat(price.value.listPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t</s> \n\t\t\t\t\t\t\t\t\t\t\t\t<span id=\"current\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fas fa-euro-sign\"></i>").concat(price.value.netPrice, "\n\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t\t</p>\t\n\t\t\t\t\t\t\t\t\t\t</div>");
     }
 
     logoDisplay += "</div>";
@@ -445,15 +420,16 @@ jQuery(document).ready(function () {
   }
 
   function getAbout(about, textInfo) {
+    //ispisivanje informacija o igrici na single.html
     var info = "";
     var text = "";
 
     for (var i in about) {
-      info += "<li>\n\t\t\t\t\t\t\t<h6>".concat(about[i].name, "</h6>\n\t\t\t\t\t\t\t<p>").concat(about[i].value, "</p>\n\t\t\t\t\t\t</li>");
+      info += "<li>\n\t\t\t\t\t\t<h6>".concat(about[i].name, "</h6>\n\t\t\t\t\t\t<p>").concat(about[i].value, "</p>\n\t\t\t\t\t</li>");
     }
 
     for (var _i3 in textInfo) {
-      text += "<h6>".concat(textInfo[_i3][0], "</h6>\n\t\t\t\t\t\t <p>").concat(textInfo[_i3][1], "</p>");
+      text += "<h6>".concat(textInfo[_i3][0], "</h6>\n\t\t\t\t\t\t<p>").concat(textInfo[_i3][1], "</p>");
     }
 
     $("#about").append(info);
@@ -461,11 +437,12 @@ jQuery(document).ready(function () {
   }
 
   function getScreenshots(gallery, alt) {
+    //ispisivanje dodatnih slika igrice na single.html
     var screenshots = "";
     screenshots = '<div class="owl-carousel single">';
 
     for (var i in gallery) {
-      screenshots += "<div class=\"item\">\n\t\t\t\t<img src=\"".concat(gallery[i], "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t\t</div>");
+      screenshots += "<div class=\"item\">\n\t\t\t<img src=\"".concat(gallery[i], "\" class=\"img-fluid\" alt=\"").concat(alt, "\">\n\t\t</div>");
     }
 
     screenshots += "</div";
@@ -473,13 +450,22 @@ jQuery(document).ready(function () {
   }
 
   function fillSystemReq(minOrRec, specifications) {
-    var systemReq = "";
-
+    //ispisivanje sistemskih zahteva na single.html 
     for (var i in specifications) {
-      systemReq += "\n\t\t\t\t<li>\n\t\t\t\t\t<h6 class=\"text-muted\">".concat(specifications[i].name, "</h6>\n\t\t\t\t\t<p>").concat(specifications[i].value, "</p>\n\t\t\t\t</li>");
-    }
+      //create
+      var li = document.createElement("li");
+      var h6 = document.createElement("h6");
+      h6.className = "text-muted";
+      var h6Content = document.createTextNode(specifications[i].name);
+      var p = document.createElement("p");
+      var pContent = document.createTextNode(specifications[i].value); //appending
 
-    $("#" + minOrRec).append(systemReq);
+      li.appendChild(h6);
+      h6.appendChild(h6Content);
+      li.appendChild(p);
+      p.appendChild(pContent);
+      $("#" + minOrRec).append(li);
+    }
   }
 
   function displaySingle(allGames) {
@@ -511,23 +497,6 @@ jQuery(document).ready(function () {
             nav: false,
             autoplayHoverPause: true
           });
-
-          if (item.mature) {
-            var modal = "<div id=\"modal-wrapper\" class=\"d-flex justify-content-center align-items-center\"> \n\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"modal-header\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2>Warning</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"modal-body\" class=\"text-center\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"text-white\">This page contains blood and gruesome content, that some people may find disturbing. Are you sure you want to proceed?</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"text-muted\">Your selection will be saved for all other pages!</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"modal-footer\" class=\"d-flex justify-content-around align-items-center\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"button\" class=\"p-2\" value=\"Yes, I want\" name=\"mature\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"button\" class=\"p-2\" value=\"No\" name=\"mature\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>";
-            $("#modal").html(modal);
-            var matureModalValue = document.getElementsByName("mature");
-            matureModalValue.forEach(function (element) {
-              $(element).on("click", function () {
-                if (element.value == "No") {
-                  window.history.back();
-                  sessionStorage.setItem("mature", false);
-                } else {
-                  $("#modal").fadeOut();
-                  sessionStorage.setItem("mature", true);
-                }
-              });
-            });
-          }
         }
       }
     } catch (err) {
@@ -546,12 +515,6 @@ jQuery(document).ready(function () {
     }
   }
 
-  $(document).on("click", ".openSingle", function () {
-    localStorage.setItem("id", $(this).attr("id"));
-    open("single.html", "_self");
-  });
-  var maxItemsStore = 9;
-
   function displayCheckbox(data, div) {
     var display = "<div class='p-3'>";
     var _iteratorNormalCompletion4 = true;
@@ -561,7 +524,7 @@ jQuery(document).ready(function () {
     try {
       for (var _iterator4 = data[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
         var item = _step4.value;
-        display += "<li class=\"d-flex align-items-center justify-content-start\">\n\t\t\t\t\t\t\t\t<label for=\"".concat(item.name.split(" ").join(""), "\" class=\"customChb w-100\"> ").concat(item.name, "\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" id=\"").concat(item.name.split(" ").join(""), "\" value=\"").concat(item.id, "\" name=");
+        display += "<li class=\"d-flex align-items-center justify-content-start\">\n\t\t\t\t\t\t\t<label for=\"".concat(item.name.split(" ").join(""), "\" class=\"customChb w-100\"> ").concat(item.name, "\n\t\t\t\t\t\t\t\t<input type=\"checkbox\" id=\"").concat(item.name.split(" ").join(""), "\" value=\"").concat(item.id, "\" name=");
 
         if (div == "mode") {
           display += "modes";
@@ -571,7 +534,7 @@ jQuery(document).ready(function () {
           display += "other";
         }
 
-        display += ">\n\t\t\t\t\t\t\t\t\t<span class=\"checkmark\"></span>\n\t\t\t\t\t\t\t\t</label>\t\t\t\t\t\n\t\t\t\t\t\t\t</li>";
+        display += ">\n\t\t\t\t\t\t\t\t<span class=\"checkmark\"></span>\n\t\t\t\t\t\t\t</label>\t\t\t\t\t\n\t\t\t\t\t\t</li>";
       }
     } catch (err) {
       _didIteratorError4 = true;
@@ -612,6 +575,11 @@ jQuery(document).ready(function () {
     }
   }
 
+  $(document).on("click", ".openSingle", function () {
+    localStorage.setItem("id", $(this).attr("id"));
+    open("single.html", "_self");
+  });
+  var maxItemsStore = 9;
   $("#filterCat").on("click", rotateHandler("#categoryChb", "#filterCat"));
   $("#priceToggle").on("click", rotateHandler("#priceRange", "#priceToggle"));
   $("#more-filters").on("click", rotateHandler("#mode", "#more-filters"));
@@ -688,14 +656,12 @@ jQuery(document).ready(function () {
         return game;
       }
     });
-    console.log("category: ", checkedCat, "mode: ", checkedMode, "other: ", checkedOther);
     displayStoreFirst(filtered);
 
     if (!filtered.length) {
       displayNoResults();
     }
-  }); // price sliders
-
+  });
   var priceFrom = 0;
   var priceTo = 60;
   $("#priceFrom").on("input", getRangeValue("#from", "#priceFrom"));
@@ -730,8 +696,7 @@ jQuery(document).ready(function () {
         displayNoResults();
       }
     };
-  } // sort by ddl
-
+  }
 
   $("#sortDdl").hide();
   $("#sortBtn").focus(function () {
@@ -880,7 +845,7 @@ jQuery(document).ready(function () {
   function displayNoResults() {
     $("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
     $("#products").addClass("d-flex align-items-center justify-content-center h-100");
-    var msg = "<div id=\"noMatch\" class=\"pt-5\">\n\t\t\t\t\t\t\t\t<i class=\"far fa-frown pb-3\"></i>\n\t\t\t\t\t\t\t\t<p>No results found</p>\t\n\t\t\t\t\t\t\t\t<span>Unfortunately I could not find any results matching your search.</span>\t   \n\t\t\t\t\t\t   </div>";
+    var msg = "<div id=\"noMatch\" class=\"pt-5\">\n\t\t\t\t\t\t\t<i class=\"far fa-frown pb-3\"></i>\n\t\t\t\t\t\t\t<p>No results found</p>\t\n\t\t\t\t\t\t\t<span>Unfortunately I could not find any results matching your search.</span>\t   \n\t\t\t\t\t\t</div>";
     $("#products").html(msg);
   }
 });
