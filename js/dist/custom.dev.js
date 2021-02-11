@@ -169,10 +169,7 @@ jQuery(document).ready(function () {
   }
 
   function removePng() {
-    console.log(window.innerWidth);
-
     if (window.innerWidth < 992) {
-      console.log(":sdasd");
       $(".deal_ofthe_week_img img").hide();
       $(".deal_ofthe_week").height("auto");
     } else {
@@ -254,10 +251,10 @@ jQuery(document).ready(function () {
       var hours = Math.floor(razlika % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
       var minutes = Math.floor(razlika % (1000 * 60 * 60) / (1000 * 60));
       var seconds = Math.floor(razlika % (1000 * 60) / 1000);
-      $(".owl-deals #day").html(days);
-      $(".owl-deals #hour").html(hours);
-      $(".owl-deals #minute").html(minutes);
-      $(".owl-deals #second").html(seconds);
+      $("#day").html(days);
+      $("#hour").html(hours);
+      $("#minute").html(minutes);
+      $("#second").html(seconds);
 
       if (razlika < 0) {
         clearInterval(x);
