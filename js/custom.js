@@ -84,6 +84,7 @@ jQuery(document).ready(function()
 	{
 		setHeader();
 		truncateText();
+		removePng();
 	});
 	$(document).on('scroll', function()
 	{
@@ -148,8 +149,17 @@ jQuery(document).ready(function()
 				text[i].innerHTML = savedText[i];
 			}
 		}
-		
-		
+	}
+	function removePng(){
+		console.log(window.innerWidth)
+		if(window.innerWidth < 992){
+			console.log(":sdasd")
+			$(".deal_ofthe_week_img img").hide();
+			$(".deal_ofthe_week").height("auto")
+		}
+		else{
+			$(".deal_ofthe_week_img img").show();
+		}
 	}
 	/* 
 
@@ -341,7 +351,7 @@ function price(item, discount) {
 					width:"100%"
 				},10000,"linear",function () {
 					progress();
-					owl.trigger('next.owl.carousel');
+				//	owl.trigger('next.owl.carousel');
 				})
 			}
 			progress();

@@ -297,10 +297,6 @@
 	{
 		margin-top: 23px;
 	}
-	.red_button a
-	{
-		font-size: 12px;
-	}
 	.banner_item
 	{
 		margin-bottom: 30px;
@@ -496,7 +492,7 @@
 	}
 	.red_button a
 	{
-		font-size: 10px;
+		font-size: 13px;
 	}
 	.banner_item
 	{
@@ -526,6 +522,9 @@
 	.add_to_cart_button
 	{
 		margin-top: 20px;
+	}
+	.catalogHome{
+		height: 400px;
 	}
 	.deal_ofthe_week_img
 	{

@@ -758,7 +758,7 @@ section
   }
 .main_slider .owl-carousel .main_slider_content
 {
-	width: 60%;
+	width: 100%;
 }
 .main_slider .owl-carousel .main_slider_content h6
 {
@@ -944,22 +944,25 @@ section
 
 .catalogHome #png{
 	position: relative;
+	width: 100%;
 	height: 100%;
 }
 .catalogHome img{
 	position: absolute;
-	right: 0;
-	bottom: 0;
-	height: 100%;
+	right: 0px;
+	bottom: 0px;
+	width: 100%;
 }
 .catalogHome h3{
 	font-size: 50px;
 	color: rgb(255, 255, 255);
 	text-shadow:0px 3px 5px rgb(0, 0, 0); 
+	z-index: 99;
 }
 .catalogHome p{
 	color: #fff;
 	font-size: 17px;
+	z-index: 99;
 	text-shadow:0px 0px 10px rgb(0, 0, 0);
 }
 .catalogHome button[type=button]{
@@ -968,6 +971,7 @@ section
 	border-radius: 5px;
 	padding: 10px 20px;
 	color: rgb(41, 41, 41);
+	z-index: 99;
 	background-color: rgba(255, 255, 255, 0.5);
 }
 /*********************************

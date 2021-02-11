@@ -84,6 +84,7 @@ jQuery(document).ready(function () {
   $(window).on('resize', function () {
     setHeader();
     truncateText();
+    removePng();
   });
   $(document).on('scroll', function () {
     setHeader();
@@ -164,6 +165,18 @@ jQuery(document).ready(function () {
       for (var _i2 = 0; _i2 < text.length; _i2++) {
         text[_i2].innerHTML = savedText[_i2];
       }
+    }
+  }
+
+  function removePng() {
+    console.log(window.innerWidth);
+
+    if (window.innerWidth < 992) {
+      console.log(":sdasd");
+      $(".deal_ofthe_week_img img").hide();
+      $(".deal_ofthe_week").height("auto");
+    } else {
+      $(".deal_ofthe_week_img img").show();
     }
   }
   /* 
@@ -360,8 +373,7 @@ jQuery(document).ready(function () {
     $("#progressBar").animate({
       width: "100%"
     }, 10000, "linear", function () {
-      progress();
-      owl.trigger('next.owl.carousel');
+      progress(); //	owl.trigger('next.owl.carousel');
     });
   }
 
