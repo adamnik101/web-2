@@ -473,7 +473,7 @@ section
 }
 .hamburger_container:hover i
 {
-	color: #eee;
+	color: #fff;
 }
 .hamburger_menu
 {
@@ -482,7 +482,7 @@ section
 	right: -400px;
 	width: 400px;
 	height: 100vh;
-	background: rgba(255,255,255,0.95);
+	background: rgba(19, 19, 19, 0.918);
 	z-index: 10;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
@@ -521,7 +521,7 @@ section
 .hamburger_close i
 {
 	font-size: 24px;
-	color: #1e1e27;
+	color: #e21e21;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
@@ -530,7 +530,7 @@ section
 }
 .hamburger_close:hover i
 {
-	color: #e21e21;
+	color: #fff;
 }
 .hamburger_menu_content
 {
@@ -543,14 +543,14 @@ section
 {
 	display: block;
 	position: relative;
-	border-bottom: solid 1px #b5aec4;
+	border-bottom: solid 1px #747474;
 	/* vertical-align: middle; */
 }
 .menu_item > a
 {
 	display: block;
-	color: #1e1e27;
-	font-weight: 500;
+	color: #e21e21;
+	font-weight: bold;
 	height: 50px;
 	line-height: 50px;
 	font-size: 14px;
@@ -558,7 +558,7 @@ section
 }
 .menu_item > a:hover
 {
-	color: #e21e21;
+	color: #fff;
 }
 .menu_item > a > i
 {
