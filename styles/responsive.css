@@ -201,29 +201,16 @@
 		margin-top: 1px;
 		font-size: 14px;
 	}
-	.benefit_col
-	{
-		margin-bottom: 30px;
+	#store-banner{
+		height: 400px;
 	}
-	.benefit_col:last-child
-	{
-		margin-bottom: 0px;
+	#store-banner img{
+		max-height: 60%;
 	}
-	.blog_item_col
-	{
-		margin-bottom: 30px;
-	}
-	.blog_item_col:last-child
-	{
-		margin-bottom: 0px;
-	}
-	.blog_item
-	{
-		height: 440px;
-	}
-	.blog_title
-	{
-		font-size: 24px;
+	#store-banner span{
+		left: 20px;
+		top: 20px;
+		text-align: center;
 	}
 	.newsletter_text
 	{

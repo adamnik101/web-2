@@ -1,5 +1,7 @@
 "use strict";
 
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
 jQuery(document).ready(function () {
   "use strict"; // Global
 
@@ -11,8 +13,6 @@ jQuery(document).ready(function () {
   var fsOverlay = $('.fs_menu_overlay');
   var location = window.location.pathname;
   var allGames, categories, modes, otherFilters;
-  var filterContent = $("#filter").html();
-  console.log(filterContent);
   setHeader();
   initMenu();
   removePng();
@@ -76,6 +76,7 @@ jQuery(document).ready(function () {
     getCategories(displayCheckbox, "mode", modes, "modes");
     getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters");
     getUpcoming(displayComingSoon);
+    filterResponsive();
   }
 
   $(window).on('resize', function () {
@@ -86,7 +87,10 @@ jQuery(document).ready(function () {
       removePng();
     }
 
-    filterResponsive();
+    if (location.indexOf("categories") != -1) {
+      filterResponsive();
+      truncateText();
+    }
   });
   $(document).on('scroll', function () {
     setHeader();
@@ -224,13 +228,13 @@ jQuery(document).ready(function () {
     menu.addClass('active'); // menu.css('right', "0");
 
     fsOverlay.css('pointer-events', "auto");
-    menuActive = true;
+    menuActive = (_readOnlyError("menuActive"), true);
   }
 
   function closeMenu() {
     menu.removeClass('active');
     fsOverlay.css('pointer-events', "none");
-    menuActive = false;
+    menuActive = (_readOnlyError("menuActive"), false);
   }
 
   function displayCountdown() {
@@ -596,6 +600,9 @@ jQuery(document).ready(function () {
     } else {
       $("#pag").empty();
     }
+
+    getText();
+    truncateText();
   }
 
   function displayComingSoon(data) {

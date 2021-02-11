@@ -3,16 +3,15 @@ jQuery(document).ready(function()
 	"use strict";
 	
 	// Global
-	var header = $('.header');
-	var hamburger = $('.hamburger_container');
-	var menu = $('.hamburger_menu');
-	var menuActive = false;
-	var hamburgerClose = $('.hamburger_close');
-	var fsOverlay = $('.fs_menu_overlay');
-	var location = window.location.pathname;
+	const header = $('.header');
+	const hamburger = $('.hamburger_container');
+	const menu = $('.hamburger_menu');
+	const menuActive = false;
+	const hamburgerClose = $('.hamburger_close');
+	const fsOverlay = $('.fs_menu_overlay');
+	const location = window.location.pathname;
 	var allGames, categories, modes, otherFilters;
-	var filterContent = $("#filter").html();
-	console.log(filterContent)
+
 	setHeader();
 	initMenu();
 	removePng();
@@ -50,8 +49,7 @@ jQuery(document).ready(function()
 			error : function(xhr, status, err){ console.log(err)}
 		})
 	}
-	
-	
+
 	if(location.indexOf("index") != -1 || location == "/web-2/"){
 		displayCountdown();
 		getGames(displayAllSections);
@@ -67,6 +65,7 @@ jQuery(document).ready(function()
 		getCategories(displayCheckbox, "mode", modes, "modes");
 		getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters");
 		getUpcoming(displayComingSoon);
+		filterResponsive();
 	}
 	
 	$(window).on('resize', function()
@@ -76,7 +75,10 @@ jQuery(document).ready(function()
 			truncateText();
 			removePng();
 		}
-		filterResponsive();
+		if(location.indexOf("categories") != -1){
+			filterResponsive();
+			truncateText();
+		}
 	});
 	$(document).on('scroll', function()
 	{
@@ -99,9 +101,9 @@ jQuery(document).ready(function()
 			closeMenu();
 		}
 	}
-		var minPx = 160;
-		var medPx = 185;
-		var cutTo = 10;
+		const minPx = 160;
+		const medPx = 185;
+		const cutTo = 10;
 		var savedText = []; 
 	function getText(){
 		var text = $(".card-title");
@@ -524,6 +526,8 @@ jQuery(document).ready(function()
 		else{
 			$("#pag").empty()
 		}
+		getText();
+		truncateText();
 	}	
 	function displayComingSoon(data){
 		let content = "<div class='owl-carousel' id='coming-owl'>"; 
