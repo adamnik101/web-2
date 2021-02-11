@@ -59,8 +59,10 @@ jQuery(document).ready(function()
 	$(window).on('resize', function()
 	{
 		setHeader();
-		truncateText();
-		removePng();
+		if(location.indexOf("index") != -1 || location == "/web-2/"){
+			truncateText();
+			removePng();
+		}
 	});
 	$(document).on('scroll', function()
 	{
