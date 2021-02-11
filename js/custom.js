@@ -11,6 +11,8 @@ jQuery(document).ready(function()
 	var fsOverlay = $('.fs_menu_overlay');
 	var location = window.location.pathname;
 	var allGames, categories, modes, otherFilters;
+	var filterContent = $("#filter").html();
+	console.log(filterContent)
 	setHeader();
 	initMenu();
 	removePng();
@@ -564,19 +566,29 @@ jQuery(document).ready(function()
 	function filterResponsive(){
 		if(window.innerWidth < 992){
 			let header = "<button type='button' id='closeFilter'>Close filters</button>";
-			$("#filter-header").addClass("d-flex justify-content-center align-items-center");
-			$("#filter-header").html(header)
+			$("#filter-header").html(header);
+			$("#filterBg").css("width", "150%");
 			$("#filter-small").html($("#filterBg"));
 			$("#filter-wrapper").hide();
 			$("#filter-wrapper").css("background-color", "#1d1d1d");
-			$("#filterBg").css("width", "150%")
 			$("#filterBg").on("click", function(){
 				$("#filter-wrapper").fadeIn();
-			})
+			});
 			$("#closeFilter").on("click", function(){
 				$("#filter-wrapper").fadeOut();
-			})
+			});
 			$("#filter-wrapper").css({position : "fixed",top : "0", left: "0" , bottom : "0", "z-index" : "999", "overflow-y": "scroll"});
+			$("#filterBg").on("mouseover", function(){
+				$(this).css("cursor", "pointer");
+			})
+		}
+		else{
+			$("#filter-header").html("");
+			$("#filterBg").css("width", "100%");
+			$("#filter").prepend($("#filterBg"))
+			$("#filter-wrapper").show();
+			$("#filter-wrapper").css("background-color", "transparent")
+			$("#filter-wrapper").css({position : "relative", "z-index" : 1, "overflow-y" : "hidden"})
 		}
 	}
 	$(document).on("click", ".openSingle",function(){
