@@ -1,7 +1,5 @@
 "use strict";
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
 jQuery(document).ready(function () {
   "use strict"; // Global
 
@@ -228,13 +226,13 @@ jQuery(document).ready(function () {
     menu.addClass('active'); // menu.css('right', "0");
 
     fsOverlay.css('pointer-events', "auto");
-    menuActive = (_readOnlyError("menuActive"), true);
+    menuActive = true;
   }
 
   function closeMenu() {
     menu.removeClass('active');
     fsOverlay.css('pointer-events', "none");
-    menuActive = (_readOnlyError("menuActive"), false);
+    menuActive = false;
   }
 
   function displayCountdown() {

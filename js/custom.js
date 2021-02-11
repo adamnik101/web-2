@@ -6,7 +6,7 @@ jQuery(document).ready(function()
 	const header = $('.header');
 	const hamburger = $('.hamburger_container');
 	const menu = $('.hamburger_menu');
-	const menuActive = false;
+	var menuActive = false;
 	const hamburgerClose = $('.hamburger_close');
 	const fsOverlay = $('.fs_menu_overlay');
 	const location = window.location.pathname;
