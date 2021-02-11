@@ -73,6 +73,7 @@ jQuery(document).ready(function () {
   if (location.indexOf("index") != -1 || location == "/web-2/") {
     displayCountdown();
     getGames(displayAllSections);
+    owlDisplay();
   } else if (location.indexOf("single") != -1) {
     getSingle();
   } else if (location.indexOf("categories") != -1) {
@@ -90,9 +91,6 @@ jQuery(document).ready(function () {
   $(document).on('scroll', function () {
     setHeader();
   });
-  /* 
-  	2. Set Header
-  	*/
 
   function setHeader() {
     if ($(window).scrollTop() > 100) {
@@ -177,10 +175,6 @@ jQuery(document).ready(function () {
       $(".deal_ofthe_week_img img").show();
     }
   }
-  /* 
-  	3. Init Menu
-  	*/
-
 
   function initMenu() {
     if (hamburger.length) {
@@ -353,30 +347,31 @@ jQuery(document).ready(function () {
     } else {
       return "<span class=\"badge\">-".concat(item.price.discount.amount, "%</span> <s class=\"text-muted\"><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.listPrice, "</s> <span><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.netPrice, "</span>");
     }
-  } //getGames();
-
-
-  var owl = $('.owl-carousel');
-  owl.owlCarousel({
-    items: 1,
-    loop: true,
-    mouseDrag: true,
-    touchDrag: false,
-    dots: false,
-    margin: 50
-  });
-
-  function progress() {
-    $("#progressBar").css("width", "0%");
-    $("#progressBar").animate({
-      width: "100%"
-    }, 10000, "linear", function () {
-      progress();
-      owl.trigger('next.owl.carousel');
-    });
   }
 
-  progress();
+  function owlDisplay() {
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+      items: 1,
+      loop: true,
+      mouseDrag: false,
+      touchDrag: false,
+      dots: false
+    });
+
+    function progress() {
+      $("#progressBar").css("width", "0%");
+      $("#progressBar").animate({
+        width: "100%"
+      }, 10000, "linear", function () {
+        progress();
+        owl.trigger('next.owl.carousel');
+      });
+    }
+
+    ;
+    progress();
+  }
 
   function homepageGames(sectionId, data) {
     // ispisivanje igrica

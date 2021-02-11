@@ -674,13 +674,14 @@
 		font-size: 12px;
 	}
 	.card-body .price .badge{
-		font-size: 12px !important;
+		font-size: 11px !important;
 		padding: 2px;
-		position: absolute;
-		right: 0;
-		top: 50%;
+
 	}
 	.card-body .price s{
+		font-size: 11px;
+	}
+	.card-body .price span{
 		font-size: 12px;
 	}
 }
