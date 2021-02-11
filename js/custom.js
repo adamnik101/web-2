@@ -37,6 +37,7 @@ jQuery(document).ready(function()
 	var allGames, categories, modes, otherFilters;
 	setHeader();
 	initMenu();
+	
 	function getGames(callback){
 		$.ajax({
 			url: "js/data/allGames.json",
@@ -112,20 +113,43 @@ jQuery(document).ready(function()
 			closeMenu();
 		}
 	}
-	var px = 180;
-	var cutFrom = 23;
-	var back = 15;
+	var minPx = 160;
+	var medPx = 185;
+ 	var cutTo = 10;
+	var savedText = []; 
+	function getText(){
+		var text = $(".card-title");
+		for(let i of text){
+			savedText.push(i.innerHTML)
+		}
+		console.log(savedText);
+	}
+	
 	function truncateText(){
-		let text = $(".card-title");
-		if($(".card-title").width() < px){
-			cutFrom--;
+		var text = $(".card-title");
+		if(text.width() < minPx){
 			for(let i = 0; i < text.length; i++){
-				if(text[i].innerHTML.length > 15){
-					let newText = text[i].innerHTML.substring(0, cutFrom);
+				if(savedText[i].length > 15){
+					let newText = savedText[i].substring(0, cutTo + 4);
 					text[i].innerHTML = newText + "...";
 				}
 			}
 		}
+		else if(text.width() > minPx && text.width() < medPx){
+			for(let i = 0; i < text.length; i++){
+				if(savedText[i].length > 18){
+					let newText = savedText[i].substring(0, cutTo + 10);
+					text[i].innerHTML = newText + "...";
+				}
+			}
+		}
+		else{
+			for(let i = 0; i < text.length; i++){
+				text[i].innerHTML = savedText[i];
+			}
+		}
+		
+		
 	}
 	/* 
 
@@ -287,6 +311,7 @@ function displayGames(data, parent, animation){ // ispisivanje bloka sa igricom
 			$("#" + parent).append(div)
 		}
 	}
+	
 }
 function price(item, discount) {
 	if(!discount.isDiscounted){
@@ -350,6 +375,8 @@ function displayAllSections(result){
 	homepageGames("newReleases", result);
 	homepageGames("hotSales", result);
 	homepageGames("topSellers", result);
+	getText();
+	truncateText();
 }
 
 

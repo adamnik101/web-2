@@ -108,21 +108,61 @@ jQuery(document).ready(function () {
     }
   }
 
-  var px = 180;
-  var cutFrom = 23;
-  var back = 15;
+  var minPx = 160;
+  var medPx = 185;
+  var cutTo = 10;
+  var savedText = [];
+
+  function getText() {
+    var text = $(".card-title");
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = text[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var i = _step.value;
+        savedText.push(i.innerHTML);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    console.log(savedText);
+  }
 
   function truncateText() {
     var text = $(".card-title");
 
-    if ($(".card-title").width() < px) {
-      cutFrom--;
-
+    if (text.width() < minPx) {
       for (var i = 0; i < text.length; i++) {
-        if (text[i].innerHTML.length > 15) {
-          var newText = text[i].innerHTML.substring(0, cutFrom);
+        if (savedText[i].length > 15) {
+          var newText = savedText[i].substring(0, cutTo + 4);
           text[i].innerHTML = newText + "...";
         }
+      }
+    } else if (text.width() > minPx && text.width() < medPx) {
+      for (var _i = 0; _i < text.length; _i++) {
+        if (savedText[_i].length > 18) {
+          var _newText = savedText[_i].substring(0, cutTo + 10);
+
+          text[_i].innerHTML = _newText + "...";
+        }
+      }
+    } else {
+      for (var _i2 = 0; _i2 < text.length; _i2++) {
+        text[_i2].innerHTML = savedText[_i2];
       }
     }
   }
@@ -225,13 +265,13 @@ jQuery(document).ready(function () {
       $("#" + parent).empty();
     }
 
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
 
     try {
-      for (var _iterator = data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var game = _step.value;
+      for (var _iterator2 = data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        var game = _step2.value;
         var div = document.createElement("div");
         div.className = "card mb-3 col".concat(animation);
         var a = document.createElement("a");
@@ -281,16 +321,16 @@ jQuery(document).ready(function () {
         }
       }
     } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
+      _didIteratorError2 = true;
+      _iteratorError2 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-          _iterator["return"]();
+        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+          _iterator2["return"]();
         }
       } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
+        if (_didIteratorError2) {
+          throw _iteratorError2;
         }
       }
     }
@@ -355,6 +395,8 @@ jQuery(document).ready(function () {
     homepageGames("newReleases", result);
     homepageGames("hotSales", result);
     homepageGames("topSellers", result);
+    getText();
+    truncateText();
   }
 
   function getSingle() {
@@ -404,8 +446,8 @@ jQuery(document).ready(function () {
       info += "<li>\n\t\t\t\t\t\t\t<h6>".concat(about[i].name, "</h6>\n\t\t\t\t\t\t\t<p>").concat(about[i].value, "</p>\n\t\t\t\t\t\t</li>");
     }
 
-    for (var _i in textInfo) {
-      text += "<h6>".concat(textInfo[_i][0], "</h6>\n\t\t\t\t\t\t <p>").concat(textInfo[_i][1], "</p>");
+    for (var _i3 in textInfo) {
+      text += "<h6>".concat(textInfo[_i3][0], "</h6>\n\t\t\t\t\t\t <p>").concat(textInfo[_i3][1], "</p>");
     }
 
     $("#about").append(info);
@@ -435,13 +477,13 @@ jQuery(document).ready(function () {
   }
 
   function displaySingle(allGames) {
-    var _iteratorNormalCompletion2 = true;
-    var _didIteratorError2 = false;
-    var _iteratorError2 = undefined;
+    var _iteratorNormalCompletion3 = true;
+    var _didIteratorError3 = false;
+    var _iteratorError3 = undefined;
 
     try {
-      for (var _iterator2 = allGames[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-        var item = _step2.value;
+      for (var _iterator3 = allGames[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+        var item = _step3.value;
 
         if (item.id == localStorage.getItem("id")) {
           document.title = "Game Hut - " + item.name;
@@ -483,16 +525,16 @@ jQuery(document).ready(function () {
         }
       }
     } catch (err) {
-      _didIteratorError2 = true;
-      _iteratorError2 = err;
+      _didIteratorError3 = true;
+      _iteratorError3 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-          _iterator2["return"]();
+        if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+          _iterator3["return"]();
         }
       } finally {
-        if (_didIteratorError2) {
-          throw _iteratorError2;
+        if (_didIteratorError3) {
+          throw _iteratorError3;
         }
       }
     }
@@ -506,13 +548,13 @@ jQuery(document).ready(function () {
 
   function displayCheckbox(data, div) {
     var display = "<div class='p-3'>";
-    var _iteratorNormalCompletion3 = true;
-    var _didIteratorError3 = false;
-    var _iteratorError3 = undefined;
+    var _iteratorNormalCompletion4 = true;
+    var _didIteratorError4 = false;
+    var _iteratorError4 = undefined;
 
     try {
-      for (var _iterator3 = data[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-        var item = _step3.value;
+      for (var _iterator4 = data[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+        var item = _step4.value;
         display += "<li class=\"d-flex align-items-center justify-content-start\">\n\t\t\t\t\t\t\t\t<label for=\"".concat(item.name.split(" ").join(""), "\" class=\"customChb w-100\"> ").concat(item.name, "\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" id=\"").concat(item.name.split(" ").join(""), "\" value=\"").concat(item.id, "\" name=");
 
         if (div == "mode") {
@@ -526,16 +568,16 @@ jQuery(document).ready(function () {
         display += ">\n\t\t\t\t\t\t\t\t\t<span class=\"checkmark\"></span>\n\t\t\t\t\t\t\t\t</label>\t\t\t\t\t\n\t\t\t\t\t\t\t</li>";
       }
     } catch (err) {
-      _didIteratorError3 = true;
-      _iteratorError3 = err;
+      _didIteratorError4 = true;
+      _iteratorError4 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
-          _iterator3["return"]();
+        if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+          _iterator4["return"]();
         }
       } finally {
-        if (_didIteratorError3) {
-          throw _iteratorError3;
+        if (_didIteratorError4) {
+          throw _iteratorError4;
         }
       }
     }
