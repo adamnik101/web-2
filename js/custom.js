@@ -16,7 +16,7 @@
 
 ******************************/
 
-jQuery(document).ready(function($)
+jQuery(document).ready(function()
 {
 	"use strict";
 	
@@ -34,9 +34,58 @@ jQuery(document).ready(function($)
 	var hamburgerClose = $('.hamburger_close');
 	var fsOverlay = $('.fs_menu_overlay');
 	var location = window.location.pathname;
+	
 	setHeader();
 	initMenu();
-	displayCountdown();
+	var allGames;
+	var categories;
+	var modes;
+	var otherFilters;
+	function getGames(callback){
+		$.ajax({
+			url: "js/data/allGames.json",
+			type: "GET",
+			dataType: "json",
+			success: function(result){
+				allGames = result;
+				callback(result);
+			},
+			error: function(xhr,status, error) { console.log(error); }
+		});
+	};
+	function getCategories(callback, divId, storage, path){
+		$.ajax({
+			url : "js/data/" + path +".json",
+			type : "GET",
+			dataType : "json",
+			success : function(result){
+				storage = result;
+				callback(storage, divId)
+			},
+			error : function(xhr, status, error) { console.log(error); }
+
+		})
+	}
+	
+	
+	if(location.indexOf("index") != -1 || location == "/web-2/"){
+		displayCountdown();
+		getGames(displayAllSections)
+	}
+	else if(location.indexOf("single") != -1){
+		getSingle();
+	}
+	else if(location.indexOf("categories") != -1){
+		
+		getGames(displayStoreFirst)
+		getCategories(displayCheckbox, "categoryChb", categories, "categories");
+		getCategories(displayCheckbox, "mode", modes, "modes");
+		getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters")
+		//displayCheckbox(categories, "categoryChb");
+		//displayCheckbox(modes, "mode");
+		//displayCheckbox(otherFilters, "otherFilter");
+	}
+	
 	$(window).on('resize', function()
 	{
 		setHeader();
@@ -184,7 +233,7 @@ jQuery(document).ready(function($)
 		  }, 1000);
 	};
 
-function displayGames(data, parent, animation){ // ipisivanje bloka sa igricom
+function displayGames(data, parent, animation){ // ispisivanje bloka sa igricom
 	if(parent != "products"){
 		$("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pl-0")
 	}
@@ -238,7 +287,6 @@ function displayGames(data, parent, animation){ // ipisivanje bloka sa igricom
 			$("#" + parent).append(div)
 		}
 		else{
-			
 			$("#" + parent).append(div)
 		}
 	}
@@ -251,7 +299,7 @@ function price(item, discount) {
 		return `<span class="badge">- ${item.price.discount.amount} %</span> <s class="text-muted"><i class="fas fa-euro-sign"></i>${item.price.value.listPrice}</s> <span><i class="fas fa-euro-sign"></i>${item.price.value.netPrice}</span>`
 	}
 }
-	if(location.indexOf("index") != -1 || location.indexOf("/")){
+
 		//getGames();
 		var owl = $('.owl-carousel');
 		owl.owlCarousel(
@@ -264,18 +312,6 @@ function price(item, discount) {
 				margin: 50,
 			  }
 			);
-			/* function progress(){
-				setTimeout(function(){
-					$("#progressBar").animate({
-						"width" : "100%"
-					},10000,"linear", function(){
-						$(this).css("width", "0%");
-						owl.trigger('next.owl.carousel');
-						progress;
-					})
-				})
-			}
-			progress(); */
 
 			function progress(){
 				$("#progressBar").css("width","0%");
@@ -288,17 +324,7 @@ function price(item, discount) {
 			}
 			progress();
 
-function getGames(){
-	$.ajax({
-		url : "js/data.json",
-		type : "GET",
-		dataType : "json",
-		success : function(result){
-			displayAllSections(result);
-		},
-		error: function(xhr,status, error) { console.log(error); }
-	});
-}
+
 function homepageGames(sectionId, data){ // ispisivanje igrica
 	if($(window).width() < 768 || $(window).width() >= 992){
 		var maxItemsFirstRow = 4;
@@ -329,16 +355,14 @@ function displayAllSections(result){
 	homepageGames("topSellers", result);
 }
 
-displayAllSections(allGames);
-//displayAllSections(allGames)
 
-}		
 
-		if(location.indexOf("single") != -1){
+
+		
 			
 		function getSingle(){
 			$.ajax({
-				url : "js/data.json",
+				url : "js/data/allGames.json",
 				type : "GET",
 				dataType : "json",
 				success : function(result){
@@ -429,7 +453,6 @@ displayAllSections(allGames);
 			}
 		$("#" + minOrRec).append(systemReq);
 		}
-		displaySingle(allGames);
 		function displaySingle(allGames){
 			for(let item of allGames){
 				if(item.id == localStorage.getItem("id")){
@@ -489,15 +512,11 @@ displayAllSections(allGames);
 					}
 				}
 		}
-					
-}
 		
-//function displayItems(info,itemID,)
 		$(document).on("click", ".openSingle",function(){
 			localStorage.setItem("id",($(this).attr("id")));
 			open("single.html", "_self");
 		})
-	if(location.indexOf("categories") != -1){
 		var maxItemsStore = 9;
 		function displayCheckbox(data, div){
 			let display = "<div class='p-3'>";
@@ -541,11 +560,7 @@ displayAllSections(allGames);
 				$("#pag").empty()
 			}
 		}
-		displayStoreFirst(allGames);
-		// rotate font awesome 
-		displayCheckbox(categories, "categoryChb");
-		displayCheckbox(modes, "mode");
-		displayCheckbox(otherFilters, "otherFilter");
+		
 		
 		$("#filterCat").on("click", rotateHandler("#categoryChb", "#filterCat"));
 		$("#priceToggle").on("click", rotateHandler("#priceRange", "#priceToggle"));
@@ -614,7 +629,7 @@ displayAllSections(allGames);
 			})
 			
 			console.log("category: ", checkedCat,"mode: ", checkedMode, "other: ", checkedOther)
-			displayStoreFirst(filtered)
+			displayStoreFirst(filtered);
 			if(!filtered.length){
 				displayNoResults()
 			}
@@ -623,10 +638,10 @@ displayAllSections(allGames);
 	// price sliders
 	var priceFrom = 0;
 	var priceTo = 60;
-		$("#priceFrom").on("input", getRangeValue("#from", "#priceFrom", allGames));
-		$("#priceTo").on("input", getRangeValue("#to", "#priceTo", allGames));
+		$("#priceFrom").on("input", getRangeValue("#from", "#priceFrom"));
+		$("#priceTo").on("input", getRangeValue("#to", "#priceTo"));
 		
-		function getRangeValue(output, value, data){
+		function getRangeValue(output, value){
 			return function(){
 				$(output).val($(value).val());
 				if(output == "#from"){
@@ -636,7 +651,7 @@ displayAllSections(allGames);
 					priceTo = $(value).val();
 				}
 				
-				filtered = data.filter(function(game){
+				filtered = allGames.filter(function(game){
 					if(checkedCat.every(value => game.catId.includes(value)) && checkedOther.every(function(value){ if(game.otherId !== null){ return game.otherId.includes(value)}}) && checkedMode.every(value => game.modes.includes(value))){
 						return Math.ceil(game.price.value.netPrice) > priceFrom && Math.floor(game.price.value.netPrice) < priceTo
 				}})
@@ -761,6 +776,7 @@ displayAllSections(allGames);
 			}			
 			
 			$(".pagination-item").on("click", function(){
+				window.top.location.href = "#sortBy"
 				if(this.id == "pag-1"){
 					displayGames(currentPage, "products", "")
 						$(".pagination-item").removeClass("active-pag")
@@ -790,5 +806,4 @@ displayAllSections(allGames);
 						   </div>`;
 				$("#products").html(msg) 
 		}
-	}
 });
