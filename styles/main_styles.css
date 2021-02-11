@@ -902,6 +902,10 @@ section
 }
  .card-title{
 	margin: 0 0 3px 0;
+	/* width: 200px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden; */
 }
  .card .card-img-top{
 	border-radius: 10px;

@@ -33,12 +33,9 @@ jQuery(document).ready(function () {
   var hamburgerClose = $('.hamburger_close');
   var fsOverlay = $('.fs_menu_overlay');
   var location = window.location.pathname;
+  var allGames, categories, modes, otherFilters;
   setHeader();
   initMenu();
-  var allGames;
-  var categories;
-  var modes;
-  var otherFilters;
 
   function getGames(callback) {
     $.ajax({
@@ -81,13 +78,12 @@ jQuery(document).ready(function () {
     getGames(displayStoreFirst);
     getCategories(displayCheckbox, "categoryChb", categories, "categories");
     getCategories(displayCheckbox, "mode", modes, "modes");
-    getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters"); //displayCheckbox(categories, "categoryChb");
-    //displayCheckbox(modes, "mode");
-    //displayCheckbox(otherFilters, "otherFilter");
+    getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters");
   }
 
   $(window).on('resize', function () {
     setHeader();
+    truncateText();
   });
   $(document).on('scroll', function () {
     setHeader();
@@ -97,30 +93,37 @@ jQuery(document).ready(function () {
   	*/
 
   function setHeader() {
-    if (window.innerWidth < 992) {
-      if ($(window).scrollTop() > 100) {
-        header.css({
-          'top': "0"
-        });
-      } else {
-        header.css({
-          'top': "0"
-        });
-      }
+    if ($(window).scrollTop() > 100) {
+      header.css({
+        'top': "-50px"
+      });
     } else {
-      if ($(window).scrollTop() > 100) {
-        header.css({
-          'top': "-50px"
-        });
-      } else {
-        header.css({
-          'top': "0"
-        });
-      }
+      header.css({
+        'top': "0"
+      });
     }
 
     if (window.innerWidth > 991 && menuActive) {
       closeMenu();
+    }
+  }
+
+  var px = 180;
+  var cutFrom = 23;
+  var back = 15;
+
+  function truncateText() {
+    var text = $(".card-title");
+
+    if ($(".card-title").width() < px) {
+      cutFrom--;
+
+      for (var i = 0; i < text.length; i++) {
+        if (text[i].innerHTML.length > 15) {
+          var newText = text[i].innerHTML.substring(0, cutFrom);
+          text[i].innerHTML = newText + "...";
+        }
+      }
     }
   }
   /* 
@@ -215,7 +218,7 @@ jQuery(document).ready(function () {
   function displayGames(data, parent, animation) {
     // ispisivanje bloka sa igricom
     if (parent != "products") {
-      $("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pl-0");
+      $("#" + parent).addClass("row row-cols-2 row-cols-md-3 row-cols-lg-4 pl-0");
     } else {
       $("#" + parent).removeClass();
       $("#" + parent).addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3");
