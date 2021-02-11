@@ -666,7 +666,22 @@
 14. 400px
 ************/
 
-@media only screen and (max-width: 400px)
+@media only screen and (max-width: 420px)
 {
-	
+	.card-body{
+		position: relative;
+	}
+	.card-body .developer{
+		font-size: 12px;
+	}
+	.card-body .price .badge{
+		font-size: 12px !important;
+		padding: 2px;
+		position: absolute;
+		right: 0;
+		top: 50%;
+	}
+	.card-body .price s{
+		font-size: 12px;
+	}
 }

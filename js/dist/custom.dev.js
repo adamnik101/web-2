@@ -340,7 +340,7 @@ jQuery(document).ready(function () {
     if (!discount.isDiscounted) {
       return "<i class=\"fas fa-euro-sign\"></i>".concat(item.price.value.netPrice);
     } else {
-      return "<span class=\"badge\">- ".concat(item.price.discount.amount, " %</span> <s class=\"text-muted\"><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.listPrice, "</s> <span><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.netPrice, "</span>");
+      return "<span class=\"badge\">-".concat(item.price.discount.amount, "%</span> <s class=\"text-muted\"><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.listPrice, "</s> <span><i class=\"fas fa-euro-sign\"></i>").concat(item.price.value.netPrice, "</span>");
     }
   } //getGames();
 

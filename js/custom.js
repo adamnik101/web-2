@@ -318,7 +318,7 @@ function price(item, discount) {
 		return `<i class="fas fa-euro-sign"></i>${item.price.value.netPrice}`
 	}
 	else{
-		return `<span class="badge">- ${item.price.discount.amount} %</span> <s class="text-muted"><i class="fas fa-euro-sign"></i>${item.price.value.listPrice}</s> <span><i class="fas fa-euro-sign"></i>${item.price.value.netPrice}</span>`
+		return `<span class="badge">-${item.price.discount.amount}%</span> <s class="text-muted"><i class="fas fa-euro-sign"></i>${item.price.value.listPrice}</s> <span><i class="fas fa-euro-sign"></i>${item.price.value.netPrice}</span>`
 	}
 }
 
