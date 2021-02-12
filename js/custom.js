@@ -55,6 +55,7 @@ jQuery(document).ready(function()
 		getGames(displayAllSections);
 		owlDisplay();
 		getUpcoming(displayComingSoon);
+
 	}
 	else if(location.indexOf("single") != -1){
 		getSingle();
