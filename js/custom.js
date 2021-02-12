@@ -860,7 +860,7 @@ jQuery(document).ready(function()
 	function displayNoResults(){
 		$("#products").removeClass("row-cols-1 row-cols-sm-2 row-cols-md-3");
 			$("#products").addClass("d-flex align-items-center justify-content-center h-100")
-			var msg = `<div id="noMatch" class="pt-5">
+			var msg = `<div id="noMatch" class="pb-5 pb-md-0">
 							<i class="far fa-frown pb-3"></i>
 							<p>No results found</p>	
 							<span>Unfortunately I could not find any results matching your search.</span>	   
