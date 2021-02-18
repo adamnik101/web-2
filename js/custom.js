@@ -1,5 +1,4 @@
-jQuery(document).ready(function()
-{
+window.onload = function(){
 	"use strict";
 	
 	// Global
@@ -866,4 +865,4 @@ jQuery(document).ready(function()
 						</div>`;
 			$("#products").html(msg) 
 	}
-});
+};
