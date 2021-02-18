@@ -11,7 +11,7 @@ jQuery(document).ready(function()
 	const fsOverlay = $('.fs_menu_overlay');
 	const location = window.location.pathname;
 	var allGames, categories, modes, otherFilters;
-
+	console.log(allGames);
 	setHeader();
 	initMenu();
 	removePng();
