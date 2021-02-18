@@ -15,8 +15,9 @@ jQuery(document).ready(function()
 	setHeader();
 	initMenu();
 	removePng();
-	function getGames(method, path, callback){
-		var canal;
+
+	function getData(method, path, callback){
+		let canal;
 		if(window.XMLHttpRequest){
 			canal = new XMLHttpRequest();
 		}
@@ -25,58 +26,56 @@ jQuery(document).ready(function()
 		}
 		canal.onreadystatechange = function(){
 			if(this.status == 200 && this.readyState == 4){
-				allGames = JSON.parse(this.responseText);
-				callback(allGames);
+				if(path == 'comingSoon'){
+					const upcoming = JSON.parse(this.responseText);
+					callback(upcoming);
+				}
+				else{
+					allGames = JSON.parse(this.responseText);
+					callback(allGames);
+				}
 			}
 		}
-		canal.open(method, path, true);
+		canal.open(method, 'js/data/' + path + '.json', true);
 		canal.send();
 	}
-	function getCategories(callback, divId, storage, path){
-		$.ajax({
-			url : "js/data/" + path +".json",
-			type : "GET",
-			dataType : "json",
-			success : function(result){
-				storage = result;
-				callback(storage, divId)
-			},
-			error : function(xhr, status, error) { console.log(error); }
-
-		})
+	function getCategories(callback, divId, storage, path, method){
+		let canal;
+		if(window.XMLHttpRequest){
+			canal = new XMLHttpRequest();
+		}
+		else{
+			canal = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		canal.onreadystatechange = function(){
+			if(this.status == 200 && this.readyState == 4){
+				storage = JSON.parse(this.responseText);
+				callback(storage , divId);
+			}
+		}
+		canal.open(method, 'js/data/' + path + '.json', true);
+		canal.send();
 	};
-	function getUpcoming(callback){
-		$.ajax({
-			url : "js/data/comingSoon.json",
-			type : "GET",
-			dataType : "json",
-			success : callback,
-			error : function(xhr, status, err){ console.log(err)}
-		})
-	}
 
 	if(location.indexOf("index") != -1 || location == "/web-2/"){
 		displayCountdown();
-		getGames('GET', 'js/data/allGames.json', displayAllSections);
+		getData('GET', 'allGames', displayAllSections);
+		getData('GET', 'comingSoon', displayComingSoon);
 		owlDisplay();
-		getUpcoming(displayComingSoon);
-		console.log("adam")
-
 	}
 	else if(location.indexOf("single") != -1){
 		getSingle();
 	}
 	else if(location.indexOf("categories") != -1){	
-		getGames('GET', 'js/data/allGames.json', displayStoreFirst);
-		getCategories(displayCheckbox, "categoryChb", categories, "categories");
-		getCategories(displayCheckbox, "mode", modes, "modes");
-		getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters");
-		getUpcoming(displayComingSoon);
+		getData('GET', 'allGames', displayStoreFirst);
+		getData('GET', 'comingSoon',  displayComingSoon);
+		getCategories(displayCheckbox, "categoryChb", categories, "categories", 'GET');
+		getCategories(displayCheckbox, "mode", modes, "modes", 'GET');
+		getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters", 'GET');
 		filterResponsive();
 	}
 	
-	$(window).on('resize', function()
-	{
+	$(window).on('resize', function() {
 		setHeader();
 		if(location.indexOf("index") != -1 || location == "/web-2/"){
 			truncateText();
@@ -87,12 +86,10 @@ jQuery(document).ready(function()
 			truncateText();
 		}
 	});
-	$(document).on('scroll', function()
-	{
+	$(document).on('scroll', function() {
 		setHeader();
 	});
-	function setHeader()
-	{
+	function setHeader() {
 
 			if($(window).scrollTop() > 100)
 			{
@@ -151,8 +148,7 @@ jQuery(document).ready(function()
 			$(".deal_ofthe_week_img img").show();
 		}
 	}
-	function initMenu()
-	{
+	function initMenu() {
 		if(hamburger.length)
 		{
 			hamburger.on('click', function()
@@ -212,15 +208,13 @@ jQuery(document).ready(function()
 			}
 		}
 	}
-	function openMenu()
-	{
+	function openMenu() {
 		menu.addClass('active');
 		menu.css("box-shadow", "rgb(0 0 0 / 50%) 0px 0px 0px 10000px");
 		fsOverlay.css('pointer-events', "auto");
 		menuActive = true;
 	}
-	function closeMenu()
-	{
+	function closeMenu() {
 		menu.removeClass('active');
 		menu.css("box-shadow", "none");
 		fsOverlay.css('pointer-events', "none");
@@ -717,7 +711,6 @@ jQuery(document).ready(function()
 			else{
 				priceTo = $(value).val();
 			}
-			
 			filtered = allGames.filter(function(game){
 				if(checkedCat.every(value => game.catId.includes(value)) && checkedOther.every(function(value){ if(game.otherId !== null){ return game.otherId.includes(value)}}) && checkedMode.every(value => game.modes.includes(value))){
 					return Math.ceil(game.price.value.netPrice) > priceFrom && Math.floor(game.price.value.netPrice) < priceTo
