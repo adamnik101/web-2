@@ -105,10 +105,10 @@ jQuery(document).ready(function()
 			closeMenu();
 		}
 	}
-		const minPx = 160;
-		const medPx = 185;
-		const cutTo = 10;
-		var savedText = []; 
+	const minPx = 160;
+	const medPx = 185;
+	const cutTo = 10;
+	var savedText = [];
 	function getText(){
 		var text = $(".card-title");
 		for(let i of text){
