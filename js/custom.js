@@ -11,22 +11,27 @@ jQuery(document).ready(function()
 	const fsOverlay = $('.fs_menu_overlay');
 	const location = window.location.pathname;
 	var allGames, categories, modes, otherFilters;
-	console.log(allGames);
+
 	setHeader();
 	initMenu();
 	removePng();
-	function getGames(callback){
-		$.ajax({
-			url: "js/data/allGames.json",
-			type: "GET",
-			dataType: "json",
-			success: function(result){
-				allGames = result;
-				callback(result);
-			},
-			error: function(xhr,status, error) { console.log(error); }
-		});
-	};
+	function getGames(method, path, callback){
+		var canal;
+		if(window.XMLHttpRequest){
+			canal = new XMLHttpRequest();
+		}
+		else{
+			canal = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		canal.onreadystatechange = function(){
+			if(this.status == 200 && this.readyState == 4){
+				allGames = JSON.parse(this.responseText);
+				callback(allGames);
+			}
+		}
+		canal.open(method, path, true);
+		canal.send();
+	}
 	function getCategories(callback, divId, storage, path){
 		$.ajax({
 			url : "js/data/" + path +".json",
@@ -52,16 +57,17 @@ jQuery(document).ready(function()
 
 	if(location.indexOf("index") != -1 || location == "/web-2/"){
 		displayCountdown();
-		getGames(displayAllSections);
+		getGames('GET', 'js/data/allGames.json', displayAllSections);
 		owlDisplay();
 		getUpcoming(displayComingSoon);
+		console.log("adam")
 
 	}
 	else if(location.indexOf("single") != -1){
 		getSingle();
 	}
 	else if(location.indexOf("categories") != -1){	
-		getGames(displayStoreFirst);
+		getGames('GET', 'js/data/allGames.json', displayStoreFirst);
 		getCategories(displayCheckbox, "categoryChb", categories, "categories");
 		getCategories(displayCheckbox, "mode", modes, "modes");
 		getCategories(displayCheckbox, "otherFilter", otherFilters, "otherFilters");
